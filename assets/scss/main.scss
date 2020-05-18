@@ -1,0 +1,23 @@
+/*!
+Theme Name: LamaFront Template
+Description: Main CSS of LamaFront Template
+Author: Lamacompta
+Author URI: https://www.lamacompta.co
+Version: 1.0
+*/
+
+@import 'variables/_variables';
+@import 'mixins/_mixins';
+@import 'colors';
+@import 'general';
+@import 'typography';
+@import 'responsive';
+
+
+// @import 'atoms/_atoms';
+// @import 'molecules/_molecules';
+// @import 'organisms/_organisms';
+// @import 'layouts/_layouts';
+@import 'pages/_pages';
+// @import 'singles/_singles';
+// @import 'template-parts/_template-parts';
