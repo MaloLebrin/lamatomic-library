@@ -116,11 +116,11 @@ export default Vue.extend({
         class="logo-lamacompta"
     >
         <pattern
+            id="Nouvelle_nuance_de_motif_3"
             x="-1062.7"
             y="500.2"
             width="80.7"
             height="102.7"
-            id="Nouvelle_nuance_de_motif_3"
             patternUnits="userSpaceOnUse"
             viewBox="0 -102.7 80.7 102.7"
             style="overflow:visible;"
