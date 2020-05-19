@@ -14,6 +14,7 @@
         :href="href"
         :to="to"
         :target="computedTarget"
+        :title="computedTitle"
         :type="type"
         :disabled="disabled"
         @click="handleClick"
@@ -23,34 +24,40 @@
     </component>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend({
     name: 'Button',
     props: {
         /** ID attribute */
         id: {
             type: String,
-            default: ''
+            default: null
         },
         /** "href" for link - renders an <a> component */
         href: {
             type: String,
-            default: ''
+            default: null
         },
         /** Type attribute for button - ie type="submit" */
         type: {
             type: String,
-            default: ''
+            default: null
         },
         /** "to" prop for vue-router - renders a <nuxt-link> */
         to: {
             type: [Object, String],
-            default: '/'
+            default: null
         },
         /** target attrbitue for the <a> tag */
         target: {
             type: String,
-            default: ''
+            default: null
+        },
+        title: {
+            type: String,
+            default: null
         },
         /** Success mode */
         success: {
@@ -84,9 +91,24 @@ export default {
         }
     },
     computed: {
-        computedTarget() {
+        computedTarget(): String | null {
             return this.target || (this.href ? '_blank' : null)
         },
+
+        computedTitle(): String | null {
+            let title = this.title
+
+            if (this.href) {
+                title = "Se rendre à l'adresse " + this.href
+            }
+
+            if (this.to) {
+                title = 'Se rendre à la page ' + this.to
+            }
+
+            return title
+        },
+
         tag() {
             if (this.href) return 'a'
             if (this.to) return 'nuxt-link'
@@ -94,7 +116,7 @@ export default {
         }
     },
     methods: {
-        handleClick(event) {
+        handleClick(event: Event) {
             /**
              * Click event
              * @type {Event}
@@ -102,7 +124,7 @@ export default {
             this.$emit('click', event)
         }
     }
-}
+})
 </script>
 
 <style lang="scss">
