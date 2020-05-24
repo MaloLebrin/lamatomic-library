@@ -23,15 +23,8 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import Logo from '~/components/atoms/logo/Logo.vue'
-import Button from '~/components/atoms/button/Button.vue'
 
-export default Vue.extend({
-    components: {
-        Logo,
-        Button
-    }
-})
+export default Vue.extend({})
 </script>
 
 <style lang="scss">
