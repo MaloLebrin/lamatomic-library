@@ -6,7 +6,8 @@ module.exports = {
     addons: [
         '@storybook/addon-actions',
         '@storybook/addon-links',
-        '@storybook/preset-typescript'
+        '@storybook/preset-typescript',
+        '@storybook/addon-a11y/register'
     ],
     webpackFinal: async (config, { configType }) => {
         // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'
@@ -25,10 +26,7 @@ module.exports = {
                     loader: 'sass-resources-loader',
                     options: {
                         resources: [
-                            path.resolve(
-                                __dirname,
-                                '../assets/scss/main.scss'
-                            )
+                            path.resolve(__dirname, '../assets/scss/main.scss')
                         ]
                     }
                 }
