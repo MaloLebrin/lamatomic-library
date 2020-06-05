@@ -8,7 +8,7 @@ const wrapper = {
 storiesOf('Atomes/List', module)
     // .addDecorator(withInfo)
     .add(
-        'Défaut',
+        'vertical avec puces (default)',
         () => ({
             ...wrapper,
             template: '<List :items="items"></List>',
@@ -22,13 +22,39 @@ storiesOf('Atomes/List', module)
     )
 
     .add(
-        'Sans décoration',
+        'Without Chips',
         () => ({
             ...wrapper,
-            template: '<List :items="items" :decoration="false"></List>',
+            template: '<List :items="items" :withoutChips="false"></List>',
             data() {
                 return {
                     items: ['Ohohoh', 'Tu sens mauvais', 'yeah']
+                }
+            }
+        }),
+        { info: true }
+    )
+    .add(
+        'Horizontal',
+        () => ({
+            ...wrapper,
+            template: `<list :items="items" :horizontal="true"></List>`,
+            data() {
+                return {
+                    items: ['Ohoho', 'Horizontal', 'avec puces']
+                }
+            }
+        }),
+        { info: true }
+    )
+    .add(
+        'horizontal sans puces',
+        () => ({
+            ...wrapper,
+            template: `<List :items="items" :withoutChips="false" :horizontal="true"></List>`,
+            data() {
+                return {
+                    items: ['Ohoho', 'Horizontal', 'sans puces']
                 }
             }
         }),

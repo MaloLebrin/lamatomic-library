@@ -1,5 +1,12 @@
 <template>
-    <component :is="type" :class="{ list: 1, decoration: decoration }">
+    <component
+        :is="type"
+        :class="{
+            list: 1,
+            withoutChips: withoutChips,
+            horizontal: horizontal
+        }"
+    >
         <li v-for="item in items" :key="item">{{ item }}</li>
     </component>
 </template>
@@ -18,9 +25,13 @@ export default Vue.extend({
             type: Array,
             default: () => []
         },
-        decoration: {
+        withoutChips: {
             type: Boolean,
             default: true
+        },
+        horizontal: {
+            type: Boolean,
+            default: false
         }
     }
 })
@@ -29,9 +40,18 @@ export default Vue.extend({
 <style lang="scss">
 .list {
     padding-left: 2rem;
-
-    &:not(.decoration) {
+    &:not(.withoutChips) {
         list-style: none;
+    }
+    &.horizontal {
+        display: flex;
+        flex-wrap: wrap;
+        & li {
+            margin: 2rem;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
     }
 }
 </style>
