@@ -6,7 +6,6 @@ const wrapper = {
 }
 
 storiesOf('Atomes/List', module)
-    // .addDecorator(withInfo)
     .add(
         'vertical avec puces (default)',
         () => ({
