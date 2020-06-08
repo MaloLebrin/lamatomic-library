@@ -66,9 +66,11 @@ export default Vue.extend({
     },
     computed: {
         computedTarget(): String | null {
-            return (
-                (!this.to ? this.target : null) || (this.href ? '_blank' : null)
-            )
+            if (this.to) {
+                return null
+            }
+
+            return this.target || (this.href ? '_blank' : null)
         },
 
         computedTitle(): String | null {

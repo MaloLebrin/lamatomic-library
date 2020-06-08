@@ -8,21 +8,16 @@ describe('Atom - Link', () => {
     })
 
     test('...with href, then an to who pass href at null', () => {
-        const wrapper = mount(Link, {
-            propsData: { href: 'https://lamacompta.co' },
-            stubs: { NuxtLink: RouterLinkStub }
+        const wrapper = shallowMount(Link, {
+            propsData: {
+                href: 'https://lamacompta.co'
+            }
         })
 
         expect(wrapper.attributes('title')).toBe(
             "Se rendre à l'adresse https://lamacompta.co"
         )
         expect(wrapper.attributes('href')).toBe('https://lamacompta.co')
-
-        wrapper.setData({
-            propsData: { to: 'contact' }
-        })
-
-        expect(wrapper.attributes('href')).toBe(null)
     })
 
     test('...with to', () => {
@@ -33,54 +28,36 @@ describe('Atom - Link', () => {
 
         expect(wrapper.findComponent(RouterLinkStub)).toBeTruthy()
         expect(wrapper.attributes('title')).toBe('Se rendre à la page contact')
+
+        wrapper.setProps({
+            href: 'prout'
+        })
+
+        expect(wrapper.vm.computedHref).toBe(null)
     })
 
     test('...with mail valid then not valid', () => {
-        const wrapper = mount(Link, {
+        const wrapper = shallowMount(Link, {
             propsData: {
-                href: 'lamavert@lamacompta.co',
+                href: 'lama@lamacompta.co',
                 mail: true
             }
         })
 
-        expect(wrapper.attributes('href')).toBe('mailto:lamavert@lamacompta.co')
+        expect(wrapper.attributes('href')).toBe('mailto:lama@lamacompta.co')
         expect(wrapper.attributes('title')).toBe(
-            'Ecrire un mail à lamavert@lamacompta.co'
+            'Ecrire un mail à lama@lamacompta.co'
         )
 
-        wrapper.setData({
-            href: '@lamacompta.co'
+        wrapper.setProps({
+            href: 'prout'
         })
 
-        expect(wrapper.attributes('href')).toBe('@lamacompta.co')
-
-        wrapper.setData({
-            href: 'lamavertlamacompta.co'
-        })
-
-        expect(wrapper.attributes('href')).toBe('lamavertlamacompta.co')
-
-        wrapper.setData({
-            href: 'lamavert@.co'
-        })
-
-        expect(wrapper.attributes('href')).toBe('@lamavert@.co')
-
-        wrapper.setData({
-            href: 'lamavert@lamacomptaco'
-        })
-
-        expect(wrapper.attributes('href')).toBe('lamavert@lamacomptaco')
-
-        wrapper.setData({
-            href: 'lamavert@lamacompta.'
-        })
-
-        expect(wrapper.attributes('href')).toBe('lamavert@lamacompta.')
+        expect(wrapper.vm.computedHref).toBe('prout')
     })
 
     test('...with tel valid then not valid', () => {
-        const wrapper = shallowMount(Link, {
+        const wrapper = mount(Link, {
             propsData: {
                 href: '0123456789',
                 tel: true
@@ -90,41 +67,41 @@ describe('Atom - Link', () => {
         expect(wrapper.attributes('href')).toBe('tel:0123456789')
         expect(wrapper.attributes('title')).toBe('Appeler le 0123456789')
 
-        wrapper.setData({
+        wrapper.setProps({
             href: '+33123456789'
         })
 
-        expect(wrapper.attributes('href')).toBe('tel:+33123456789')
+        expect(wrapper.vm.computedHref).toBe('tel:+33123456789')
 
-        wrapper.setData({
+        wrapper.setProps({
             href: '+33 123456789'
         })
 
-        expect(wrapper.attributes('href')).toBe('tel:+33 123456789')
+        expect(wrapper.vm.computedHref).toBe('tel:+33 123456789')
 
-        wrapper.setData({
+        wrapper.setProps({
             href: '01 23 45 67 89'
         })
 
-        expect(wrapper.attributes('href')).toBe('tel:01 23 45 67 89')
+        expect(wrapper.vm.computedHref).toBe('tel:01 23 45 67 89')
 
-        wrapper.setData({
+        wrapper.setProps({
             href: '+33 1 23 45 67 89'
         })
 
-        expect(wrapper.attributes('href')).toBe('tel:+33 1 23 45 67 89')
+        expect(wrapper.vm.computedHref).toBe('tel:+33 1 23 45 67 89')
 
-        wrapper.setData({
+        wrapper.setProps({
             href: '33123456789'
         })
 
-        expect(wrapper.attributes('href')).toBe('33123456789')
+        expect(wrapper.vm.computedHref).toBe('33123456789')
 
-        wrapper.setData({
+        wrapper.setProps({
             href: '+33 0123456789'
         })
 
-        expect(wrapper.attributes('href')).toBe('+33 0123456789')
+        expect(wrapper.vm.computedHref).toBe('+33 0123456789')
     })
 
     test('...with rel = next', () => {
@@ -140,32 +117,33 @@ describe('Atom - Link', () => {
     test('...with external = true', () => {
         const wrapper = mount(Link, {
             propsData: {
-                rel: true
+                external: true
             }
         })
 
-        expect(wrapper.attributes('external')).toBe(true)
+        expect(wrapper.attributes('external')).toBe('true')
     })
 
     test('...with target', () => {
-        const wrapper = mount(Link, {
+        const wrapper = shallowMount(Link, {
             propsData: {
                 href: '#'
-            }
+            },
+            stubs: { NuxtLink: RouterLinkStub }
         })
 
-        expect(wrapper.attributes('target')).toBe('_blank')
+        expect(wrapper.vm.computedTarget).toBe('_blank')
 
-        wrapper.setData({
+        wrapper.setProps({
             target: '_self'
         })
 
-        expect(wrapper.attributes('target')).toBe('_self')
+        expect(wrapper.vm.computedTarget).toBe('_self')
 
-        wrapper.setData({
+        wrapper.setProps({
             to: 'contact'
         })
 
-        expect(wrapper.attributes('target')).toBe(null)
+        expect(wrapper.vm.computedTarget).toBe(null)
     })
 })
