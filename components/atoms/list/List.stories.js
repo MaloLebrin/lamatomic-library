@@ -7,7 +7,7 @@ const wrapper = {
 
 storiesOf('Atomes/List', module)
     .add(
-        'vertical avec puces (default)',
+        'Vertical avec puces (default)',
         () => ({
             ...wrapper,
             template: '<List :items="items"></List>',
@@ -21,7 +21,7 @@ storiesOf('Atomes/List', module)
     )
 
     .add(
-        'Without Chips',
+        'Vertical sans puces',
         () => ({
             ...wrapper,
             template: '<List :items="items" :withoutChips="false"></List>',
@@ -34,7 +34,7 @@ storiesOf('Atomes/List', module)
         { info: true }
     )
     .add(
-        'Horizontal',
+        'Horizontal avec puces',
         () => ({
             ...wrapper,
             template: `<list :items="items" :horizontal="true"></List>`,
