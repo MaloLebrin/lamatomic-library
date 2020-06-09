@@ -2,10 +2,20 @@
     <component
         :is="tag"
         class="link underlined underlined--thin"
-        :href="href"
+        :class="{
+            tel: tel,
+            mail: mail,
+            rel: rel,
+            external: external
+        }"
+        :href="computedHref"
         :to="to"
         :target="computedTarget"
         :title="computedTitle"
+        :tel="tel"
+        :mail="mail"
+        :rel="rel"
+        :external="external"
     >
         <slot />
     </component>
@@ -21,6 +31,14 @@ export default Vue.extend({
             type: String,
             default: null
         },
+        tel: {
+            type: Boolean,
+            default: false
+        },
+        mail: {
+            type: Boolean,
+            default: false
+        },
         /** "to" prop for vue-router - renders a <nuxt-link> */
         to: {
             type: [Object, String],
@@ -34,10 +52,24 @@ export default Vue.extend({
         title: {
             type: String,
             default: null
+        },
+        /** rel attrbitue: , ... */
+        rel: {
+            type: String,
+            default: null
+        },
+        /** Ajoute un indicateur indiquant qu'on sort du site */
+        external: {
+            type: Boolean,
+            default: false
         }
     },
     computed: {
         computedTarget(): String | null {
+            if (this.to) {
+                return null
+            }
+
             return this.target || (this.href ? '_blank' : null)
         },
 
@@ -52,7 +84,33 @@ export default Vue.extend({
                 title = 'Se rendre à la page ' + this.to
             }
 
+            if (this.tel) {
+                title = 'Appeler le ' + this.href
+            }
+
+            if (this.mail) {
+                title = 'Ecrire un mail à ' + this.href
+            }
+
             return title
+        },
+
+        computedHref(): String | null {
+            const href = this.href
+
+            if (this.tel) {
+                if (ValidTel(href)) {
+                    return 'tel:' + href
+                }
+            } else if (this.mail) {
+                if (ValidMail(href)) {
+                    return 'mailto:' + href
+                }
+            } else if (this.to != null) {
+                return null
+            }
+
+            return href
         },
 
         tag(): String {
@@ -61,6 +119,29 @@ export default Vue.extend({
         }
     }
 })
+
+const ValidTel = function(portableTest: string) {
+    const regex = new RegExp(/^((\+)33+ ?|0)[1-9]( ?(\d{2})){4}$/gi)
+
+    if (regex.test(portableTest)) {
+        return true
+    }
+
+    return false
+}
+
+const ValidMail = function(emailTest: string) {
+    const regex = new RegExp(
+        '^[a-z0-9]+([_|.|-]{1}[a-z0-9]+)*@[a-z0-9]+([_|.|-]{1}[a-z0-9]+)*[.]{1}[a-z]{2,6}$',
+        'i'
+    )
+
+    if (regex.test(emailTest)) {
+        return true
+    }
+
+    return false
+}
 </script>
 
 <style lang="scss">
