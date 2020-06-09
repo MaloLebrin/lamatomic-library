@@ -20,7 +20,6 @@ export default Vue.extend({
             type: String,
             default: null
         },
-        /** "to" prop for vue-router - renders a <nuxt-link> */
         alt: {
             type: String,
             default: null
