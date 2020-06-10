@@ -20,7 +20,7 @@ storiesOf('Atomes/Boutons', module)
         'Succès',
         () => ({
             ...wrapper,
-            template: '<Button success>Kiwi 🥝</Button>'
+            template: '<Button state="success">Kiwi 🥝</Button>'
         }),
         { info: true }
     )
@@ -29,7 +29,7 @@ storiesOf('Atomes/Boutons', module)
         () => ({
             ...wrapper,
             template:
-                "<Button error>Framboise 🍓 (mais c'est une fraise 😲)</Button>"
+                "<Button state='error'>Framboise 🍓 (mais c'est une fraise 😲)</Button>"
         }),
         { info: true }
     )
@@ -37,7 +37,7 @@ storiesOf('Atomes/Boutons', module)
         'Warning',
         () => ({
             ...wrapper,
-            template: '<Button warning>Banane 🍌</Button>'
+            template: '<Button state="warning">Banane 🍌</Button>'
         }),
         { info: true }
     )
@@ -53,7 +53,7 @@ storiesOf('Atomes/Boutons', module)
         'Blanc',
         () => ({
             ...wrapper,
-            template: '<Button white>Banane</Button>'
+            template: '<Button styles="white">Banane</Button>'
         }),
         { info: true }
     )
@@ -61,7 +61,7 @@ storiesOf('Atomes/Boutons', module)
         'Noir',
         () => ({
             ...wrapper,
-            template: '<Button black>Banane</Button>'
+            template: '<Button styles="black">Banane</Button>'
         }),
         { info: true }
     )
@@ -79,6 +79,14 @@ storiesOf('Atomes/Boutons', module)
         () => ({
             ...wrapper,
             template: `<Button to="/contact">Contact ☎</Button>`
+        }),
+        { info: true }
+    )
+    .add(
+        'Submit',
+        () => ({
+            ...wrapper,
+            template: `<Button href='#' type='submit'>Envoyer -></Button>`
         }),
         { info: true }
     )

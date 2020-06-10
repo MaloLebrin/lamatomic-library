@@ -7,13 +7,16 @@ describe('Atom - Button', () => {
         expect(wrapper.find('button')).toBeTruthy()
     })
 
-    test('...tag should be <a> if href is available', () => {
+    test('...tag should be <a> if href is available and title for href', () => {
         const wrapper = mount(Button, {
             propsData: { href: 'https://lamacompta.co' }
         })
 
         expect(wrapper.find('a')).toBeTruthy()
         expect(wrapper.attributes().href).toBe('https://lamacompta.co')
+        expect(wrapper.attributes('title')).toBe(
+            "Se rendre à l'adresse https://lamacompta.co"
+        )
     })
 
     test('...tag should be <nuxt-link> if "to" prop is available', () => {
@@ -22,28 +25,96 @@ describe('Atom - Button', () => {
             stubs: { NuxtLink: RouterLinkStub }
         })
 
+        expect(wrapper.find('nuxt-link')).toBeTruthy()
+        expect(wrapper.vm.computedTitle).toBe('Se rendre à la page contact')
         expect(wrapper.findComponent(RouterLinkStub)).toBeTruthy()
-        expect(wrapper.attributes('title')).toBe('Se rendre à la page contact')
     })
 
-    test('Renders the correct classes based on props passed', () => {
+    test('...with id', () => {
+        const wrapper = mount(Button, {
+            propsData: { id: 'Lamaid' }
+        })
+
+        expect(wrapper.attributes('id')).toBe('Lamaid')
+    })
+
+    test('...target with herf, then with target, then with to', () => {
+        const wrapper = shallowMount(Button, {
+            propsData: { href: '#' },
+            stubs: { NuxtLink: RouterLinkStub }
+        })
+
+        expect(wrapper.attributes('target')).toBe('_blank')
+
+        wrapper.setProps({
+            target: '_self'
+        })
+
+        expect(wrapper.vm.computedTarget).toBe('_self')
+
+        wrapper.setProps({
+            to: 'contact'
+        })
+
+        expect(wrapper.vm.computedTarget).toBe(null)
+    })
+
+    test('...disabled and default state and styles', () => {
         const wrapper = mount(Button, {
             propsData: {
-                success: true,
-                warning: true,
-                error: true,
                 disabled: true,
-                white: true,
-                black: true
+                state: 'default',
+                styles: 'default'
+            }
+        })
+
+        expect(wrapper.attributes().class).not.toContain('default')
+        expect(wrapper.attributes().class).toContain('disabled')
+    })
+
+    test('...with white and success', () => {
+        const wrapper = mount(Button, {
+            propsData: {
+                state: 'success',
+                styles: 'white'
             }
         })
 
         expect(wrapper.attributes().class).toContain('success')
-        expect(wrapper.attributes().class).toContain('warning')
-        expect(wrapper.attributes().class).toContain('error')
-        expect(wrapper.attributes().class).toContain('disabled')
         expect(wrapper.attributes().class).toContain('white')
+    })
+
+    test('...with black and warning', () => {
+        const wrapper = mount(Button, {
+            propsData: {
+                state: 'warning',
+                styles: 'black'
+            }
+        })
+
+        expect(wrapper.attributes().class).toContain('warning')
         expect(wrapper.attributes().class).toContain('black')
+    })
+
+    test('...with error', () => {
+        const wrapper = mount(Button, {
+            propsData: {
+                state: 'error'
+            }
+        })
+
+        expect(wrapper.attributes().class).toContain('error')
+    })
+
+    test('...with type submit, title change', () => {
+        const wrapper = mount(Button, {
+            propsData: {
+                type: 'submit'
+            }
+        })
+
+        expect(wrapper.attributes('type')).toBe('submit')
+        expect(wrapper.attributes('title')).toBe('Validate formulaire')
     })
 
     test('Renders slots', () => {

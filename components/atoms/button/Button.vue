@@ -5,16 +5,18 @@
         :class="{
             button: 1,
             disabled: disabled,
-            success: success,
-            error: error,
-            warning: warning,
-            white: white,
-            black: black
+            success: computedSuccess,
+            warning: computedWarning,
+            error: computedError,
+            white: computedWhite,
+            black: computedBlack
         }"
         :href="href"
         :to="to"
         :target="computedTarget"
         :title="computedTitle"
+        :state="state"
+        :styles="styles"
         :type="type"
         :disabled="disabled"
         @click="handleClick"
@@ -43,14 +45,18 @@ export default Vue.extend({
         /** Type attribute for button - ie type="submit" */
         type: {
             type: String,
-            default: null
+            validator(value) {
+                return ['button', 'reset', 'submit', null].includes(value)
+            },
+            default: null,
+            required: false
         },
         /** "to" prop for vue-router - renders a <nuxt-link> */
         to: {
             type: [Object, String],
             default: null
         },
-        /** target attrbitue for the <a> tag */
+        /** target attribute for the <a> tag: _blank, _self, _top */
         target: {
             type: String,
             default: null
@@ -59,39 +65,38 @@ export default Vue.extend({
             type: String,
             default: null
         },
-        /** Success mode */
-        success: {
-            type: Boolean,
-            default: false
+        /** state: success, warning, error or null */
+        state: {
+            type: String,
+            validator(value) {
+                return ['success', 'warning', 'error', 'default'].includes(
+                    value
+                )
+            },
+            default: 'default',
+            required: false
         },
-        /** Warning mode */
-        warning: {
-            type: Boolean,
-            default: false
-        },
-        /** Error mode */
-        error: {
-            type: Boolean,
-            default: false
+        /** style: default, black or white */
+        styles: {
+            type: String,
+            validator(value) {
+                return ['white', 'black', 'default'].includes(value)
+            },
+            default: 'default',
+            required: false
         },
         /** Disabled mode */
         disabled: {
-            type: Boolean,
-            default: false
-        },
-        /** Disabled mode */
-        white: {
-            type: Boolean,
-            default: false
-        },
-        /** Disabled mode */
-        black: {
             type: Boolean,
             default: false
         }
     },
     computed: {
         computedTarget(): String | null {
+            if (this.to) {
+                return null
+            }
+
             return this.target || (this.href ? '_blank' : null)
         },
 
@@ -106,6 +111,10 @@ export default Vue.extend({
                 title = 'Se rendre à la page ' + this.to
             }
 
+            if (this.type === 'submit') {
+                title = 'Validate formulaire'
+            }
+
             return title
         },
 
@@ -113,6 +122,41 @@ export default Vue.extend({
             if (this.href) return 'a'
             if (this.to) return 'nuxt-link'
             return 'button'
+        },
+
+        computedSuccess() {
+            if (this.state === 'success') {
+                return true
+            }
+            return false
+        },
+
+        computedWarning() {
+            if (this.state === 'warning') {
+                return true
+            }
+            return false
+        },
+
+        computedError() {
+            if (this.state === 'error') {
+                return true
+            }
+            return false
+        },
+
+        computedWhite() {
+            if (this.styles === 'white') {
+                return true
+            }
+            return false
+        },
+
+        computedBlack() {
+            if (this.styles === 'black') {
+                return true
+            }
+            return false
         }
     },
     methods: {
