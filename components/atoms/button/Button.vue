@@ -42,7 +42,7 @@ export default Vue.extend({
             type: String,
             default: null
         },
-        /** Type attribute for button - ie type="submit" */
+        /** Type attribute for button - button, reset, submit or null */
         type: {
             type: String,
             validator(value) {
