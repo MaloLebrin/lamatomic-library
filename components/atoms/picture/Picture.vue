@@ -1,13 +1,5 @@
 <template>
-    <component
-        :is="tag"
-        class="Picture"
-        :src="src"
-        :alt="alt"
-        :title="computedTitle"
-    >
-        <slot />
-    </component>
+    <img class="picture" :src="src" :alt="alt" :title="title" />
 </template>
 
 <script lang="ts">
@@ -28,21 +20,12 @@ export default Vue.extend({
             type: String,
             default: null
         }
-    },
-    computed: {
-        computedTitle(): String {
-            return 'Image de ' + this.title
-        },
-
-        tag(): String {
-            return 'img'
-        }
     }
 })
 </script>
 
 <style lang="scss">
-.Picture {
+.picture {
     text-decoration: none;
     animation: 1s appear;
 }
