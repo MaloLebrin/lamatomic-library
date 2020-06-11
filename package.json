@@ -32,6 +32,7 @@
     "bootstrap-vue": "^2.13.0",
     "core-js": "^2.6.5",
     "nuxt": "^2.0.0",
+    "typed.js": "^2.0.11",
     "vue-typed-js": "^0.1.2"
   },
   "devDependencies": {
