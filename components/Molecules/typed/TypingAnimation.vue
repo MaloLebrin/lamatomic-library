@@ -1,9 +1,14 @@
 <template>
     <vue-typed-js
         :strings="[
-            'Café et thé à volonté,No costume,International,Cabinet à impact positif'
+            'Café et thé à volonté',
+            'No costume',
+            'International',
+            'Cabinet à impact positif'
         ]"
-        :loop="true">
+        :loop="true"
+        :backSpeed="10"
+    >
         <h2><span class="typing"></span></h2>
     </vue-typed-js>
 </template>
@@ -15,7 +20,7 @@ import VueTypedJs from 'vue-typed-js'
 Vue.use(VueTypedJs)
 
 export default {
-    name: 'Typed',
+    name: 'TypingAnimation',
     data() {
         return {
             typedObj: null
