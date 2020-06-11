@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import VueTypedJs from 'VueTypedJs.vue'
+import VueTypedJs from 'TypedJs.vue'
 
 describe('Molecules - VueTypedJs', () => {
     test('... default <vue-typed-js</vue-typed-js>', () => {
