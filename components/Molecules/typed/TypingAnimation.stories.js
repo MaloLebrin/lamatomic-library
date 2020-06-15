@@ -1,15 +1,25 @@
 import { storiesOf } from '@storybook/vue'
-// import { action } from '@storybook/addon-actions'
 import TypingAnimation from './TypingAnimation.vue'
+
 const wrapper = {
     components: { TypingAnimation }
 }
 
-storiesOf('Molecules', module).add(
-    'Typing animation',
+storiesOf('Molecules/TypingAnimation', module).add(
+    'Défaut',
     () => ({
         ...wrapper,
-        template: `<TypingAnimation/>`
+        data() {
+            return {
+                strings: [
+                    'Café et thé à volonté',
+                    'No costume',
+                    'International',
+                    'Cabinet à impact positif'
+                ]
+            }
+        },
+        template: `<TypingAnimation :strings="strings" />`
     }),
     { info: true }
 )
