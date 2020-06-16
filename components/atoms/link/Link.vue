@@ -44,7 +44,7 @@ export default Vue.extend({
             type: [Object, String],
             default: null
         },
-        /** target attrbitue: _self, _blank... */
+        /** target attribute _self, _blank... */
         target: {
             type: String,
             default: null
@@ -53,7 +53,7 @@ export default Vue.extend({
             type: String,
             default: null
         },
-        /** rel attrbitue: , ... */
+        /** rel attribute: , ... */
         rel: {
             type: String,
             default: null

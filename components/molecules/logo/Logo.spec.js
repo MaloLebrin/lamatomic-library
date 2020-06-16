@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import Logo from '~/components/atoms/logo/Logo.vue'
+import Logo from '~/components/molecules/logo/Logo.vue'
 
 describe('Atom - Logo', () => {
     test('...has <svg> tag', () => {
