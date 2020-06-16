@@ -47,8 +47,10 @@
     "@storybook/addons": "^5.3.18",
     "@storybook/preset-typescript": "^3.0.0",
     "@storybook/vue": "^5.3.18",
+    "@types/jest": "^26.0.0",
     "@types/storybook__vue": "^5.2.1",
-    "@vue/test-utils": "^1.0.0-beta.27",
+    "@vue/test-utils": "^1.0.3",
+    "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.1.0",
     "babel-loader": "^8.1.0",
@@ -58,16 +60,15 @@
     "eslint-plugin-nuxt": ">=0.4.2",
     "eslint-plugin-prettier": "^3.1.2",
     "husky": "^4.0.0",
-    "jest": "^24.1.0",
+    "jest": "^26.0.1",
     "lint-staged": "^10.0.0",
     "node-sass": "^4.14.1",
     "prettier": "^1.19.1",
     "sass-loader": "^8.0.2",
     "stylelint": "^10.1.0",
-    "ts-jest": "^25.0.0",
-    "vue-jest": "^4.0.0-0",
+    "ts-jest": "^26.1.0",
+    "vue-jest": "^3.0.5",
     "vue-loader": "^15.9.2",
-    "vue-template-compiler": "^2.6.11",
-    "vue-test-utils": "^1.0.0-beta.11"
+    "vue-template-compiler": "^2.6.11"
   }
 }
