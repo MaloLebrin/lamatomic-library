@@ -5,28 +5,27 @@ unit test:
     - yarn install
     - yarn test
 
-build Storybook:
-  # Official framework image. Look for the different tagged releases at:
-  # https://hub.docker.com/r/library/node/tags/
-  image: node:10.18.0-slim
+# Official framework image. Look for the different tagged releases at:
+# https://hub.docker.com/r/library/node/tags/
+image: node:10.18.0-slim
 
-  # This folder is cached between builds
-  # http://docs.gitlab.com/ce/ci/yaml/README.html#cache
-  cache:
-      paths:
-        - node_modules/
+# This folder is cached between builds
+# http://docs.gitlab.com/ce/ci/yaml/README.html#cache
+cache:
+    paths:
+      - node_modules/
 
-  # This job is required for GitLab Pages
-  pages:
-      stage: deploy
-      # Export storybook as a static site (to public)
-      script:
-        - npm install
-        - npm run build-storybook -- -o public
-      # Required artifact for GitLab Pages
-      artifacts:
-          paths:
-            - public
-      # Only run on the `master` branch
-      only:
-        - master
+# This job is required for GitLab Pages
+pages:
+    stage: deploy
+    # Export storybook as a static site (to public)
+    script:
+      - npm install
+      - npm run build-storybook -- -o public
+    # Required artifact for GitLab Pages
+    artifacts:
+        paths:
+          - public
+    # Only run on the `master` branch
+    only:
+      - master
