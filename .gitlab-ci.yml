@@ -5,7 +5,6 @@ unit test:
     - yarn install
     - yarn test
 
-
 build Storybook:
   # Official framework image. Look for the different tagged releases at:
   # https://hub.docker.com/r/library/node/tags/
