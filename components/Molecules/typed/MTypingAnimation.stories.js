@@ -1,11 +1,11 @@
 import { storiesOf } from '@storybook/vue'
-import TypingAnimation from './TypingAnimation.vue'
+import MTypingAnimation from './MTypingAnimation.vue'
 
 const wrapper = {
-    components: { TypingAnimation }
+    components: { MTypingAnimation }
 }
 
-storiesOf('Molecules/TypingAnimation', module).add(
+storiesOf('Molecules/MTypingAnimation', module).add(
     'Défaut',
     () => ({
         ...wrapper,
@@ -19,7 +19,7 @@ storiesOf('Molecules/TypingAnimation', module).add(
                 ]
             }
         },
-        template: `<TypingAnimation :strings="strings" />`
+        template: `<MTypingAnimation :strings="strings" />`
     }),
     { info: true }
 )

@@ -11,7 +11,7 @@ import VueTypedJs from 'vue-typed-js'
 Vue.use(VueTypedJs)
 
 export default {
-    name: 'TypingAnimation',
+    name: 'MTypingAnimation',
     props: {
         loop: { type: Boolean, default: true },
         backSpeed: { type: Number, default: 10 },
