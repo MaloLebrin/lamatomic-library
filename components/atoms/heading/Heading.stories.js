@@ -5,7 +5,6 @@ const wrapper = {
     components: { Heading }
 }
 storiesOf('Atomes/Heading', module)
-    // .addDecorator
     .add(
         'H1 par default',
         () => ({

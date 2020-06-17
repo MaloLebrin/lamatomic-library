@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import Heading from '~/components/atoms/heading/Heading.vue'
+import Heading from './Heading.vue'
 
 describe('Atom - Heading', () => {
     test('...Heading par default est h2', () => {

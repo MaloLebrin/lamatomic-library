@@ -1,13 +1,5 @@
 <template>
-    <component
-        :is="tag"
-        :id="id"
-        :level="computedLevel"
-        :class="{
-            heading: 1
-        }"
-        :type="type"
-    >
+    <component :is="tag" :id="id" :class="tag" class="heading">
         <slot></slot>
     </component>
 </template>
@@ -29,31 +21,17 @@ export default Vue.extend({
         id: {
             type: String,
             default: 'title'
-        },
-        type: {
-            type: String,
-            default: null
         }
     },
     computed: {
-        tag() {
+        tag(): String {
             return 'h' + this.level
-        },
-        computedLevel(): Number {
-            // eslint-disable-next-line prefer-const
-            let level = this.level
-            if (level > 6) {
-                return 2
-            } else {
-                return level
-            }
         }
     }
 })
 </script>
 
 <style lang="scss">
-heading,
 .heading {
     &.h1 {
         font-size: 2.8rem;
@@ -64,6 +42,22 @@ heading,
     }
     &.h2 {
         font-size: 1.8rem;
+        padding-left: 20px;
+    }
+    &.h3 {
+        font-size: 1.5rem;
+        padding-left: 40px;
+    }
+    &.h4 {
+        font-size: 1.2rem;
+        padding-left: 60px;
+    }
+    &.h5 {
+        font-size: 1rem;
+    }
+    &.h6 {
+        font-size: 0.8rem;
+        font-weight: 900;
     }
     @media screen and (min-width: $minWidthXl) {
         h1,
@@ -73,6 +67,26 @@ heading,
         h2,
         .h2 {
             font-size: 2rem;
+            padding-left: 20px;
+        }
+        h3,
+        .h3 {
+            font-size: 2rem;
+            padding-left: 40px;
+        }
+        h4,
+        .h4 {
+            font-size: 2rem;
+            padding-left: 60px;
+        }
+        h5,
+        .h5 {
+            font-size: 2rem;
+        }
+        h6,
+        .h6 {
+            font-size: 2rem;
+            font-weight: 900;
         }
     }
 }
