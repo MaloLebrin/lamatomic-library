@@ -6,7 +6,7 @@ unit test:
     - yarn test
 
 
-build Storybook
+build Storybook:
   # Official framework image. Look for the different tagged releases at:
   # https://hub.docker.com/r/library/node/tags/
   image: node:10.18.0-slim
