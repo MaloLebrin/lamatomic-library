@@ -1,14 +1,14 @@
 import { mount } from '@vue/test-utils'
-import List from '~/components/atoms/list/List.vue'
+import AList from '~/components/atoms/list/AList.vue'
 
-describe('Atom - List', () => {
+describe('Atom - AList', () => {
     test('...default has <ul> tag', () => {
-        const wrapper = mount(List)
+        const wrapper = mount(AList)
         expect(wrapper.find('ul')).toBeTruthy()
     })
 
     test('...tag should be <ol> if type is ol', () => {
-        const wrapper = mount(List, {
+        const wrapper = mount(AList, {
             propsData: { type: 'ol' }
         })
 
@@ -16,7 +16,7 @@ describe('Atom - List', () => {
     })
 
     test('...list has items', () => {
-        const wrapper = mount(List, {
+        const wrapper = mount(AList, {
             propsData: { items: ['ohoh', 'héhé', 'hihi'] }
         })
 
@@ -26,7 +26,7 @@ describe('Atom - List', () => {
         expect(wrapper.html()).toContain('<li>hihi</li>')
     })
     test('Renders the correct classes based on props passed', () => {
-        const wrapper = mount(List, {
+        const wrapper = mount(AList, {
             propsData: {
                 withoutChips: true,
                 horizontal: true

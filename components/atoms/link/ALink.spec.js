@@ -1,14 +1,14 @@
 import { mount, shallowMount, RouterLinkStub } from '@vue/test-utils'
-import Link from '~/components/atoms/link/Link.vue'
+import ALink from '~/components/atoms/link/ALink.vue'
 
-describe('Atom - Link', () => {
+describe('Atom - ALink', () => {
     test('...has <a> tag', () => {
-        const wrapper = mount(Link)
+        const wrapper = mount(ALink)
         expect(wrapper.find('a')).toBeTruthy()
     })
 
     test('...with href, then an to who pass href at null', () => {
-        const wrapper = shallowMount(Link, {
+        const wrapper = shallowMount(ALink, {
             propsData: {
                 href: 'https://lamacompta.co'
             }
@@ -21,7 +21,7 @@ describe('Atom - Link', () => {
     })
 
     test('...with to', () => {
-        const wrapper = shallowMount(Link, {
+        const wrapper = shallowMount(ALink, {
             propsData: { to: 'contact' },
             stubs: { NuxtLink: RouterLinkStub }
         })
@@ -37,7 +37,7 @@ describe('Atom - Link', () => {
     })
 
     test('...with mail valid then not valid', () => {
-        const wrapper = shallowMount(Link, {
+        const wrapper = shallowMount(ALink, {
             propsData: {
                 href: 'lama@lamacompta.co',
                 mail: true
@@ -57,7 +57,7 @@ describe('Atom - Link', () => {
     })
 
     test('...with tel valid then not valid', () => {
-        const wrapper = mount(Link, {
+        const wrapper = mount(ALink, {
             propsData: {
                 href: '0123456789',
                 tel: true
@@ -105,7 +105,7 @@ describe('Atom - Link', () => {
     })
 
     test('...with rel = next', () => {
-        const wrapper = mount(Link, {
+        const wrapper = mount(ALink, {
             propsData: {
                 rel: 'next'
             }
@@ -115,7 +115,7 @@ describe('Atom - Link', () => {
     })
 
     test('...with external = true', () => {
-        const wrapper = mount(Link, {
+        const wrapper = mount(ALink, {
             propsData: {
                 external: true
             }
@@ -125,7 +125,7 @@ describe('Atom - Link', () => {
     })
 
     test('...with target', () => {
-        const wrapper = shallowMount(Link, {
+        const wrapper = shallowMount(ALink, {
             propsData: {
                 href: '#'
             },
