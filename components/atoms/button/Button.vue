@@ -42,11 +42,11 @@ export default Vue.extend({
             type: String,
             default: null
         },
-        /** Type attribute for button - button, reset, submit or null */
+        /** Type attribute for button - button, reset, submit */
         type: {
             type: String,
             validator(value) {
-                return ['button', 'reset', 'submit', null].includes(value)
+                return ['button', 'reset', 'submit'].includes(value)
             },
             default: null,
             required: false
@@ -65,13 +65,11 @@ export default Vue.extend({
             type: String,
             default: null
         },
-        /** state: success, warning, error or null */
+        /** state: success, warning or error */
         state: {
             type: String,
             validator(value) {
-                return ['success', 'warning', 'error', 'default'].includes(
-                    value
-                )
+                return ['success', 'warning', 'error'].includes(value)
             },
             default: 'default',
             required: false

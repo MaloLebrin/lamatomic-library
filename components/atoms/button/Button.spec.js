@@ -4,7 +4,9 @@ import Button from '~/components/atoms/button/Button.vue'
 describe('Atom - Button', () => {
     test('...default has <button> tag', () => {
         const wrapper = mount(Button)
-        expect(wrapper.find('button')).toBeTruthy()
+        expect(wrapper.html()).toBe(
+            '<button state="default" styles="default" class="button"></button>'
+        )
     })
 
     test('...tag should be <a> if href is available and title for href', () => {
@@ -12,7 +14,7 @@ describe('Atom - Button', () => {
             propsData: { href: 'https://lamacompta.co' }
         })
 
-        expect(wrapper.find('a')).toBeTruthy()
+        expect(wrapper.html()).toContain('a')
         expect(wrapper.attributes().href).toBe('https://lamacompta.co')
         expect(wrapper.attributes('title')).toBe(
             "Se rendre à l'adresse https://lamacompta.co"
@@ -26,6 +28,7 @@ describe('Atom - Button', () => {
         })
 
         expect(wrapper.find('nuxt-link')).toBeTruthy()
+        expect(wrapper.html()).toContain('a')
         expect(wrapper.vm.computedTitle).toBe('Se rendre à la page contact')
         expect(wrapper.findComponent(RouterLinkStub)).toBeTruthy()
     })
@@ -132,5 +135,15 @@ describe('Atom - Button', () => {
         wrapper.find('button').trigger('click')
         expect(wrapper.emitted().click).toBeTruthy()
         expect(wrapper.emitted().click.length).toBe(1)
+    })
+
+    test('test state validator with false value', () => {
+        const wrapper = shallowMount(Button, {
+            slots: {
+                state: 'coconut'
+            }
+        })
+
+        expect(wrapper.attributes('state')).toBe('default')
     })
 })
