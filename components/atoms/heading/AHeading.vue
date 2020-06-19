@@ -8,8 +8,13 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-    name: 'Heading',
+    name: 'AHeading',
+
     props: {
+        id: {
+            type: String,
+            default: null
+        },
         level: {
             type: Number,
             validator(value) {
@@ -17,12 +22,9 @@ export default Vue.extend({
             },
             default: 2,
             required: true
-        },
-        id: {
-            type: String,
-            default: 'title'
         }
     },
+
     computed: {
         tag(): String {
             return 'h' + this.level
@@ -40,51 +42,56 @@ export default Vue.extend({
         line-height: 1.4em;
         letter-spacing: 0.125rem;
     }
+
     &.h2 {
         font-size: 1.8rem;
         padding-left: 20px;
     }
+
     &.h3 {
         font-size: 1.5rem;
         padding-left: 40px;
     }
+
     &.h4 {
         font-size: 1.2rem;
         padding-left: 60px;
     }
+
     &.h5 {
         font-size: 1rem;
     }
+
     &.h6 {
         font-size: 0.8rem;
         font-weight: 900;
     }
+
     @media screen and (min-width: $minWidthXl) {
-        h1,
-        .h1 {
+        &.h1 {
             font-size: 3.5rem;
         }
-        h2,
-        .h2 {
+
+        &.h2 {
             font-size: 2rem;
             padding-left: 20px;
         }
-        h3,
-        .h3 {
+
+        &.h3 {
             font-size: 2rem;
             padding-left: 40px;
         }
-        h4,
-        .h4 {
+
+        &.h4 {
             font-size: 2rem;
             padding-left: 60px;
         }
-        h5,
-        .h5 {
+
+        &.h5 {
             font-size: 2rem;
         }
-        h6,
-        .h6 {
+
+        &.h6 {
             font-size: 2rem;
             font-weight: 900;
         }
