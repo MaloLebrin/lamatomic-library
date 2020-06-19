@@ -2,21 +2,12 @@
     <component
         :is="tag"
         :id="id"
-        :class="{
-            button: 1,
-            disabled: disabled,
-            success: computedSuccess,
-            warning: computedWarning,
-            error: computedError,
-            white: computedWhite,
-            black: computedBlack
-        }"
+        class="button"
+        :class="[{ disabled: disabled }, getState, getStyles]"
         :href="href"
         :to="to"
         :target="computedTarget"
         :title="computedTitle"
-        :state="state"
-        :styles="styles"
         :type="type"
         :disabled="disabled"
         @click="handleClick"
@@ -30,65 +21,78 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-    name: 'Button',
+    name: 'AButton',
     props: {
         /** ID attribute */
         id: {
             type: String,
             default: null
         },
-        /** "href" for link - renders an <a> component */
+
+        /** Href HTML attribute for link as button - renders an <a> component */
         href: {
             type: String,
             default: null
         },
-        /** Type attribute for button - button, reset, submit */
-        type: {
-            type: String,
-            validator(value) {
-                return ['button', 'reset', 'submit'].includes(value)
-            },
-            default: null,
-            required: false
-        },
+
         /** "to" prop for vue-router - renders a <nuxt-link> */
         to: {
             type: [Object, String],
             default: null
         },
-        /** target attribute for the <a> tag: _blank, _self, _top */
+
+        /** Type HTML attribute - button, reset, submit */
+        type: {
+            type: String,
+            default: null,
+            required: false,
+            validator(value) {
+                return ['button', 'reset', 'submit'].includes(value)
+            }
+        },
+
+        /** Target HTML attribute - _blank, _self, _top */
         target: {
             type: String,
-            default: null
+            default: null,
+            validator(value) {
+                return ['_blank', '_self', '_top'].includes(value)
+            }
         },
+
+        /** Title HTML attribute */
         title: {
             type: String,
             default: null
         },
-        /** state: success, warning or error */
+
+        /** "state" prop - success, warning or error */
         state: {
             type: String,
+            default: null,
+            required: false,
             validator(value) {
                 return ['success', 'warning', 'error'].includes(value)
-            },
-            default: 'default',
-            required: false
+            }
         },
-        /** style: default, black or white */
+
+        /** "styles" prop - dark or light */
         styles: {
             type: String,
+            default: null,
+            required: false,
             validator(value) {
-                return ['white', 'black', 'default'].includes(value)
-            },
-            default: 'default',
-            required: false
+                return ['light', 'dark'].includes(value)
+            }
         },
+
         /** Disabled mode */
         disabled: {
             type: Boolean,
             default: false
         }
     },
+
     computed: {
         computedTarget(): String | null {
             if (this.to) {
@@ -110,7 +114,7 @@ export default Vue.extend({
             }
 
             if (this.type === 'submit') {
-                title = 'Validate formulaire'
+                title = 'Envoyer le formulaire'
             }
 
             return title
@@ -122,41 +126,15 @@ export default Vue.extend({
             return 'button'
         },
 
-        computedSuccess() {
-            if (this.state === 'success') {
-                return true
-            }
-            return false
+        getState(): String | null {
+            return this.state
         },
 
-        computedWarning() {
-            if (this.state === 'warning') {
-                return true
-            }
-            return false
-        },
-
-        computedError() {
-            if (this.state === 'error') {
-                return true
-            }
-            return false
-        },
-
-        computedWhite() {
-            if (this.styles === 'white') {
-                return true
-            }
-            return false
-        },
-
-        computedBlack() {
-            if (this.styles === 'black') {
-                return true
-            }
-            return false
+        getStyles(): String | null {
+            return this.styles
         }
     },
+
     methods: {
         handleClick(event: Event) {
             /**
@@ -218,7 +196,7 @@ button,
         }
     }
 
-    &.white {
+    &.light {
         background-color: $white;
         color: $primary;
         border-color: $white;
@@ -230,7 +208,7 @@ button,
         }
     }
 
-    &.black {
+    &.dark {
         background-color: $black;
         color: $white;
         border-color: $black;
