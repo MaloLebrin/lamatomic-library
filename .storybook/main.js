@@ -5,7 +5,9 @@ module.exports = {
     stories: ['../components/**/*.stories.js'],
     addons: [
         '@storybook/addon-actions',
+        '@storybook/addon-actions/register',
         '@storybook/addon-links',
+        '@storybook/addon-links/register',
         '@storybook/preset-typescript',
         '@storybook/addon-a11y/register'
     ],

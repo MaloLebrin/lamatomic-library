@@ -59,6 +59,21 @@ describe('Atom - ALink', () => {
     test('...with tel valid then not valid', () => {
         const wrapper = mount(ALink, {
             propsData: {
+                'no-line': true
+            }
+        })
+
+        expect(wrapper.attributes('href')).toBe('tel:0123456789')
+        expect(wrapper.attributes('title')).toBe('Appeler le 0123456789')
+
+        wrapper.setProps({
+            href: '+33123456789'
+        })
+    })
+
+    test('...with tel valid then not valid', () => {
+        const wrapper = mount(ALink, {
+            propsData: {
                 href: '0123456789',
                 tel: true
             }

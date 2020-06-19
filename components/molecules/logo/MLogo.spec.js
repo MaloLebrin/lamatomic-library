@@ -1,9 +1,9 @@
 import { mount } from '@vue/test-utils'
-import ALogo from './ALogo.vue'
+import MLogo from './MLogo.vue'
 
-describe('Atom - ALogo', () => {
+describe('Atom - MLogo', () => {
     test('...has <svg> tag', () => {
-        const wrapper = mount(ALogo)
+        const wrapper = mount(MLogo)
         expect(wrapper.find('svg')).toBeTruthy()
     })
 })

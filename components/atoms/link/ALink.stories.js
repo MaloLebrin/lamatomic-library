@@ -35,3 +35,11 @@ export const lienMail = () => ({
     },
     template: '<ALink mail href="lamavert@lamacompta.co">Lien mail</ALink>'
 })
+
+export const lienNoLine = () => ({
+    components: { ALink },
+    stubs: {
+        NuxtLink: true
+    },
+    template: '<ALink href="#" no-line>Lien non souligné</ALink>'
+})

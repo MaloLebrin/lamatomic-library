@@ -1,12 +1,14 @@
 <template>
     <component
         :is="tag"
-        class="link underlined underlined--thin"
+        class="link"
         :class="{
             tel: tel,
             mail: mail,
             rel: rel,
-            external: external
+            external: external,
+            underlined: computedUnderlined,
+            'underlined--thin': computedUnderlined
         }"
         :href="computedHref"
         :to="to"
@@ -16,6 +18,7 @@
         :mail="mail"
         :rel="rel"
         :external="external"
+        :no-line="noLine"
     >
         <slot />
     </component>
@@ -60,6 +63,10 @@ export default Vue.extend({
         },
         /** Ajoute un indicateur indiquant qu'on sort du site */
         external: {
+            type: Boolean,
+            default: false
+        },
+        noLine: {
             type: Boolean,
             default: false
         }
@@ -116,6 +123,10 @@ export default Vue.extend({
         tag(): String {
             if (this.to) return 'nuxt-link'
             return 'a'
+        },
+
+        computedUnderlined(): Boolean {
+            return !this.noLine
         }
     }
 })

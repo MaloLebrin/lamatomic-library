@@ -1,25 +1,19 @@
 <template>
-    <div>
-        <Link
-            to="accueil"
-            title="Logo Lamacompta"
-            external="false"
-            rel="sidebar"
-        >
-            <AImage
-                src="./Logo.svg"
-                title="Le super Lamalogo"
-                alt="Logo Lamacompta"
-            />
-        </Link>
-    </div>
+    <ALink to="accueil" title="Logo Lamacompta" external rel="sidebar" no-line>
+        <AImage
+            src="https://pixnio.com/free-images/2017/11/10/2017-11-10-20-55-30-1200x800.jpg"
+            title="Le super Lamalogo"
+            alt="Logo Lamacompta"
+        />
+        Accueil link
+    </ALink>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 
 export default Vue.extend({
-    name: 'Logo'
+    name: 'MLogo'
 })
 </script>
 
