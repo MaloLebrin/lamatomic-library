@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import AList from '~/components/atoms/list/AList.vue'
+import AList from './AList.vue'
 
 describe('Atom - AList', () => {
     test('...default has <ul> tag', () => {

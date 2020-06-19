@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import APicture from '~/components/atoms/picture/APicture.vue'
+import APicture from './APicture.vue'
 
 describe('Atom - APicture', () => {
     test('...has <img> tag', () => {
