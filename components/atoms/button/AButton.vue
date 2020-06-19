@@ -28,7 +28,7 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-    name: 'Button',
+    name: 'AButton',
     props: {
         /** ID attribute */
         id: {

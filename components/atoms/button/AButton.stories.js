@@ -1,9 +1,9 @@
 import { storiesOf } from '@storybook/vue'
 import { action } from '@storybook/addon-actions'
-import Button from './Button.vue'
+import AButton from './AButton.vue'
 
 const wrapper = {
-    components: { Button }
+    components: { AButton }
 }
 
 storiesOf('Atomes/Boutons', module)
@@ -12,7 +12,7 @@ storiesOf('Atomes/Boutons', module)
         'Défaut',
         () => ({
             ...wrapper,
-            template: '<Button>Le LamaBouton ❤</Button>'
+            template: '<AButton>Le LamaBouton ❤</AButton>'
         }),
         { info: true }
     )
@@ -20,7 +20,7 @@ storiesOf('Atomes/Boutons', module)
         'Succès',
         () => ({
             ...wrapper,
-            template: '<Button success>Kiwi 🥝</Button>'
+            template: '<AButton success>Kiwi 🥝</AButton>'
         }),
         { info: true }
     )
@@ -29,7 +29,7 @@ storiesOf('Atomes/Boutons', module)
         () => ({
             ...wrapper,
             template:
-                "<Button error>Framboise 🍓 (mais c'est une fraise 😲)</Button>"
+                "<AButton error>Framboise 🍓 (mais c'est une fraise 😲)</AButton>"
         }),
         { info: true }
     )
@@ -37,7 +37,7 @@ storiesOf('Atomes/Boutons', module)
         'Warning',
         () => ({
             ...wrapper,
-            template: '<Button warning>Banane 🍌</Button>'
+            template: '<AButton warning>Banane 🍌</AButton>'
         }),
         { info: true }
     )
@@ -45,7 +45,7 @@ storiesOf('Atomes/Boutons', module)
         'Désactivé',
         () => ({
             ...wrapper,
-            template: '<Button disabled>Trop jeune désolé 🔞</Button>'
+            template: '<AButton disabled>Trop jeune désolé 🔞</AButton>'
         }),
         { info: true }
     )
@@ -53,7 +53,7 @@ storiesOf('Atomes/Boutons', module)
         'Blanc',
         () => ({
             ...wrapper,
-            template: '<Button white>Banane</Button>'
+            template: '<AButton white>Banane</AButton>'
         }),
         { info: true }
     )
@@ -61,7 +61,7 @@ storiesOf('Atomes/Boutons', module)
         'Noir',
         () => ({
             ...wrapper,
-            template: '<Button black>Banane</Button>'
+            template: '<AButton black>Banane</AButton>'
         }),
         { info: true }
     )
@@ -70,7 +70,7 @@ storiesOf('Atomes/Boutons', module)
         () => ({
             ...wrapper,
             template:
-                '<Button href="https://cdn.futura-sciences.com/buildsv6/images/largeoriginal/3/9/9/399584ebc7_50163211_lama-coronavirus.jpg">Un beau lama 🦙</Button>'
+                '<AButton href="https://cdn.futura-sciences.com/buildsv6/images/largeoriginal/3/9/9/399584ebc7_50163211_lama-coronavirus.jpg">Un beau lama 🦙</AButton>'
         }),
         { info: true }
     )
@@ -78,7 +78,7 @@ storiesOf('Atomes/Boutons', module)
         'Lien Interne',
         () => ({
             ...wrapper,
-            template: `<Button to="/contact">Contact ☎</Button>`
+            template: `<AButton to="/contact">Contact ☎</AButton>`
         }),
         { info: true }
     )
@@ -86,8 +86,8 @@ storiesOf('Atomes/Boutons', module)
         'Evènement au clic',
         () => ({
             ...wrapper,
-            template: '<Button @click="action">Banane</Button>',
-            methods: { action: action('button clicked') }
+            template: '<AButton @click="action">Banane</AButton>',
+            methods: { action: action('AButton clicked') }
         }),
         { info: true }
     )

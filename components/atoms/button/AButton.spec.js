@@ -1,14 +1,14 @@
 import { mount, shallowMount, RouterLinkStub } from '@vue/test-utils'
-import Button from '~/components/atoms/button/Button.vue'
+import AButton from './AButton.vue'
 
-describe('Atom - Button', () => {
-    test('...default has <button> tag', () => {
-        const wrapper = mount(Button)
-        expect(wrapper.find('button')).toBeTruthy()
+describe('Atom - AButton', () => {
+    test('...default has <AButton> tag', () => {
+        const wrapper = mount(AButton)
+        expect(wrapper.find('AButton')).toBeTruthy()
     })
 
     test('...tag should be <a> if href is available', () => {
-        const wrapper = mount(Button, {
+        const wrapper = mount(AButton, {
             propsData: { href: 'https://lamacompta.co' }
         })
 
@@ -17,7 +17,7 @@ describe('Atom - Button', () => {
     })
 
     test('...tag should be <nuxt-link> if "to" prop is available', () => {
-        const wrapper = shallowMount(Button, {
+        const wrapper = shallowMount(AButton, {
             propsData: { to: 'contact' },
             stubs: { NuxtLink: RouterLinkStub }
         })
@@ -27,7 +27,7 @@ describe('Atom - Button', () => {
     })
 
     test('Renders the correct classes based on props passed', () => {
-        const wrapper = mount(Button, {
+        const wrapper = mount(AButton, {
             propsData: {
                 success: true,
                 warning: true,
@@ -47,7 +47,7 @@ describe('Atom - Button', () => {
     })
 
     test('Renders slots', () => {
-        const wrapper = mount(Button, {
+        const wrapper = mount(AButton, {
             slots: {
                 default: 'Choux de Bruxelles'
             }
@@ -57,7 +57,7 @@ describe('Atom - Button', () => {
     })
 
     test('Emits click event', () => {
-        const wrapper = mount(Button)
+        const wrapper = mount(AButton)
         wrapper.find('button').trigger('click')
         expect(wrapper.emitted().click).toBeTruthy()
         expect(wrapper.emitted().click.length).toBe(1)

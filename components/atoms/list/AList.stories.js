@@ -1,16 +1,16 @@
 import { storiesOf } from '@storybook/vue'
-import List from './List.vue'
+import AList from './AList.vue'
 
 const wrapper = {
-    components: { List }
+    components: { AList }
 }
 
-storiesOf('Atomes/List', module)
+storiesOf('Atomes/AList', module)
     .add(
         'Vertical avec puces (default)',
         () => ({
             ...wrapper,
-            template: '<List :items="items"></List>',
+            template: '<AList :items="items"></AList>',
             data() {
                 return {
                     items: ['coucou', 'banane', 'yeah']
@@ -24,7 +24,7 @@ storiesOf('Atomes/List', module)
         'Vertical sans puces',
         () => ({
             ...wrapper,
-            template: '<List :items="items" :withoutChips="false"></List>',
+            template: '<AList :items="items" :withoutChips="false"></AList>',
             data() {
                 return {
                     items: ['Ohohoh', 'Tu sens mauvais', 'yeah']
@@ -37,7 +37,7 @@ storiesOf('Atomes/List', module)
         'Horizontal avec puces',
         () => ({
             ...wrapper,
-            template: `<list :items="items" :horizontal="true"></List>`,
+            template: `<list :items="items" :horizontal="true"></AList>`,
             data() {
                 return {
                     items: ['Ohoho', 'Horizontal', 'avec puces']
@@ -50,7 +50,7 @@ storiesOf('Atomes/List', module)
         'horizontal sans puces',
         () => ({
             ...wrapper,
-            template: `<List :items="items" :withoutChips="false" :horizontal="true"></List>`,
+            template: `<AList :items="items" :withoutChips="false" :horizontal="true"></AList>`,
             data() {
                 return {
                     items: ['Ohoho', 'Horizontal', 'sans puces']
