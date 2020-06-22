@@ -63,12 +63,7 @@ describe('Atom - ALink', () => {
             }
         })
 
-        expect(wrapper.attributes('href')).toBe('tel:0123456789')
-        expect(wrapper.attributes('title')).toBe('Appeler le 0123456789')
-
-        wrapper.setProps({
-            href: '+33123456789'
-        })
+        expect(wrapper.html()).toBe('<a no-line="true" class="link"></a>')
     })
 
     test('...with tel valid then not valid', () => {
