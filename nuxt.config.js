@@ -46,11 +46,12 @@ export default {
      */
     plugins: [],
 
+    components: true,
+
     /*
      ** Nuxt.js dev-modules
      */
     buildModules: [
-        '@nuxt/components',
         '@nuxt/typescript-build',
         // Doc: https://github.com/nuxt-community/stylelint-module
         '@nuxtjs/stylelint-module',
