@@ -7,9 +7,8 @@
         rel="sidebar"
         no-line
     >
-        <!-- <LamaLogo class="logo-lamacompta" /> -->
         <AImage
-            src="svg/logo.svg"
+            :src="require(`@/components/molecules/logo/svg/logo.svg`)"
             title="Le super Lamalogo"
             alt="Logo Lamacompta"
         />
@@ -18,11 +17,9 @@
 
 <script lang="ts">
 import Vue from 'vue'
-// import LamaLogo from 'svg/logo.svg?inline'
 
 export default Vue.extend({
     name: 'MLogo'
-    // components: { LamaLogo }
 })
 </script>
 
