@@ -49,7 +49,7 @@ storiesOf('Atoms/Button', module)
             </AButton>`
     }))
 
-    .add('Interne Link', () => ({
+    .add('Internal Link', () => ({
         ...wrapper,
         template: `<AButton to="/contact">Contact ☎</AButton>`
     }))

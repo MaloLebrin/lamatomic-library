@@ -1,8 +1,11 @@
+import { storiesOf } from '@storybook/vue'
 import ALogo from './ALogo.vue'
 
-export default { title: 'Atomes/Logos' }
+const wrapper = {
+    components: { ALogo }
+}
 
-export const defaut = () => ({
-    components: { ALogo },
+storiesOf('Atoms/Logo', module).add('Default', () => ({
+    ...wrapper,
     template: '<ALogo />'
-})
+}))

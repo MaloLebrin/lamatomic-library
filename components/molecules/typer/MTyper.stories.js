@@ -5,7 +5,7 @@ const wrapper = {
     components: { MTyper }
 }
 
-storiesOf('Molecules/Typer', module).add('Défaut', () => ({
+storiesOf('Molecules/Typer', module).add('Default', () => ({
     ...wrapper,
     data() {
         return {
