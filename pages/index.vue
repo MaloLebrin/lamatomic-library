@@ -1,7 +1,7 @@
 <template>
     <div id="home" class="container">
         <div>
-            <Logo />
+            <MLogo />
             <div class="row">
                 <div class="col-12">
                     <h1 class="title">

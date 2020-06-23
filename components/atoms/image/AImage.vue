@@ -1,12 +1,12 @@
 <template>
-    <img class="picture" :src="src" :alt="alt" :title="title" />
+    <img class="image" :src="src" :alt="alt" :title="title" />
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 
 export default Vue.extend({
-    name: 'APicture',
+    name: 'AImage',
     props: {
         src: {
             type: String,
@@ -25,7 +25,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-.picture {
+.image {
     text-decoration: none;
     animation: 1s appear;
 }

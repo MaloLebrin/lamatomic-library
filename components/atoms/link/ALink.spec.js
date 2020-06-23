@@ -4,7 +4,9 @@ import ALink from '~/components/atoms/link/ALink.vue'
 describe('Atom - ALink', () => {
     test('...has <a> tag', () => {
         const wrapper = mount(ALink)
-        expect(wrapper.find('a')).toBeTruthy()
+        expect(wrapper.html()).toBe(
+            '<a class="link underlined underlined--thin"></a>'
+        )
     })
 
     test('...with href, then an to who pass href at null', () => {
@@ -27,6 +29,9 @@ describe('Atom - ALink', () => {
         })
 
         expect(wrapper.findComponent(RouterLinkStub)).toBeTruthy()
+        expect(wrapper.html()).toBe(
+            '<a title="Se rendre à la page contact" class="link underlined underlined--thin"></a>'
+        )
         expect(wrapper.attributes('title')).toBe('Se rendre à la page contact')
 
         wrapper.setProps({
@@ -54,6 +59,16 @@ describe('Atom - ALink', () => {
         })
 
         expect(wrapper.vm.computedHref).toBe('prout')
+    })
+
+    test('...with tel valid then not valid', () => {
+        const wrapper = mount(ALink, {
+            propsData: {
+                'no-line': true
+            }
+        })
+
+        expect(wrapper.html()).toBe('<a no-line="true" class="link"></a>')
     })
 
     test('...with tel valid then not valid', () => {

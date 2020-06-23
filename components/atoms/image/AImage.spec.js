@@ -1,15 +1,15 @@
 import { mount } from '@vue/test-utils'
-import APicture from './APicture.vue'
+import AImage from './AImage.vue'
 
-describe('Atom - APicture', () => {
+describe('Atom - AImage', () => {
     test('...has <img> tag', () => {
-        const wrapper = mount(APicture)
+        const wrapper = mount(AImage)
         expect(wrapper.find('img')).toBeTruthy()
     })
 })
 
 test('...with title', () => {
-    const wrapper = mount(APicture, {
+    const wrapper = mount(AImage, {
         propsData: {
             title: 'Lama vert'
         }
@@ -19,7 +19,7 @@ test('...with title', () => {
 })
 
 test('...with src', () => {
-    const wrapper = mount(APicture, {
+    const wrapper = mount(AImage, {
         propsData: {
             src: 'Lama rouge'
         }
@@ -29,7 +29,7 @@ test('...with src', () => {
 })
 
 test('...with alt', () => {
-    const wrapper = mount(APicture, {
+    const wrapper = mount(AImage, {
         propsData: {
             alt: 'Lama jaune'
         }
