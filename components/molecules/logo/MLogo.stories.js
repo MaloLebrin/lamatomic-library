@@ -1,5 +1,4 @@
 import { storiesOf } from '@storybook/vue'
-// import { action } from '@storybook/addon-actions'
 import MLogo from './MLogo.vue'
 
 const wrapper = {
