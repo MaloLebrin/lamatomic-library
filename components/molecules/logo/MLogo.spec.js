@@ -1,17 +1,11 @@
 import { mount } from '@vue/test-utils'
 import MLogo from '~/components/molecules/logo/MLogo.vue'
 
-describe('Atom - MLogo', () => {
+describe('Molecule - MLogo', () => {
     test('...molecule MLogo to be', () => {
         const wrapper = mount(MLogo)
-        expect(wrapper.html()).toBe(
-            `<a class="link no-line="true">
-                <img
-                    :src="/_nuxt/components/molecules/logo/svg/logo.svg"
-                    title="Le super Lamalogo"
-                    alt="Logo Lamacompta"
-                />
-            </a>`
+        expect(wrapper.html()).toContain(
+            `<alink to="accueil" title="Logo Lamacompta" external="" rel="sidebar" no-line="" class="logo-lamacompta">`
         )
     })
 })
