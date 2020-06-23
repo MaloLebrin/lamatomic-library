@@ -8,7 +8,7 @@
         no-line
     >
         <AImage
-            :src="require(`@/components/molecules/logo/svg/logo.svg`)"
+            :src="require(`@/components/molecules/logo/svg/Logo.svg`)"
             title="Le super Lamalogo"
             alt="Logo Lamacompta"
         />
