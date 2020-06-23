@@ -95,5 +95,5 @@ yarn.lock
 # Package-lock
 package-lock.json
 
-# Visual Studio 
+# Visual Studio
 .vscode/

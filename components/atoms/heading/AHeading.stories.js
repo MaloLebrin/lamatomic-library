@@ -5,7 +5,7 @@ const wrapper = {
     components: { AHeading }
 }
 
-storiesOf('Atomes/Heading', module)
+storiesOf('Atoms/Heading', module)
     .add('H1', () => ({
         ...wrapper,
         template: '<AHeading level="1">Hello h1</AHeading>'
