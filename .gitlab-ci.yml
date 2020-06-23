@@ -7,7 +7,7 @@ unit test:
 
 # Official framework image. Look for the different tagged releases at:
 # https://hub.docker.com/r/library/node/tags/
-image: node:10.18.0-slim
+image: node:12.16.3
 
 # This folder is cached between builds
 # http://docs.gitlab.com/ce/ci/yaml/README.html#cache
@@ -20,8 +20,8 @@ pages:
     stage: deploy
     # Export storybook as a static site (to public)
     script:
-      - npm install
-      - npm run build-storybook -- -o public
+      - yarn install
+      - yarn build-storybook -o public
     # Required artifact for GitLab Pages
     artifacts:
         paths:

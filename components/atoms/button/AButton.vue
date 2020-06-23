@@ -2,15 +2,8 @@
     <component
         :is="tag"
         :id="id"
-        :class="{
-            button: 1,
-            disabled: disabled,
-            success: success,
-            error: error,
-            warning: warning,
-            white: white,
-            black: black
-        }"
+        class="button"
+        :class="[{ disabled: disabled }, getState, getStyles]"
         :href="href"
         :to="to"
         :target="computedTarget"
@@ -35,63 +28,77 @@ export default Vue.extend({
             type: String,
             default: null
         },
-        /** "href" for link - renders an <a> component */
+
+        /** Href HTML attribute for link as button - renders an <a> component */
         href: {
             type: String,
             default: null
         },
-        /** Type attribute for button - ie type="submit" */
-        type: {
-            type: String,
-            default: null
-        },
+
         /** "to" prop for vue-router - renders a <nuxt-link> */
         to: {
             type: [Object, String],
             default: null
         },
-        /** target attrbitue for the <a> tag */
+
+        /** Type HTML attribute - button, reset, submit */
+        type: {
+            type: String,
+            default: null,
+            required: false,
+            validator(value) {
+                return ['button', 'reset', 'submit'].includes(value)
+            }
+        },
+
+        /** Target HTML attribute - _blank, _self, _top */
         target: {
             type: String,
-            default: null
+            default: null,
+            validator(value) {
+                return ['_blank', '_self', '_top'].includes(value)
+            }
         },
+
+        /** Title HTML attribute */
         title: {
             type: String,
             default: null
         },
-        /** Success mode */
-        success: {
-            type: Boolean,
-            default: false
+
+        /** "state" prop - success, warning or error */
+        state: {
+            type: String,
+            default: null,
+            required: false,
+            validator(value) {
+                return ['success', 'warning', 'error'].includes(value)
+            }
         },
-        /** Warning mode */
-        warning: {
-            type: Boolean,
-            default: false
+
+        /** "styles" prop - dark or light */
+        styles: {
+            type: String,
+            default: null,
+            required: false,
+            validator(value) {
+                return ['light', 'dark'].includes(value)
+            }
         },
-        /** Error mode */
-        error: {
-            type: Boolean,
-            default: false
-        },
+
         /** Disabled mode */
         disabled: {
             type: Boolean,
             default: false
-        },
-        /** Disabled mode */
-        white: {
-            type: Boolean,
-            default: false
-        },
-        /** Disabled mode */
-        black: {
-            type: Boolean,
-            default: false
         }
     },
+
     computed: {
         computedTarget(): String | null {
+            if (this.to) {
+                return null
+            }
+
             return this.target || (this.href ? '_blank' : null)
         },
 
@@ -106,6 +113,10 @@ export default Vue.extend({
                 title = 'Se rendre à la page ' + this.to
             }
 
+            if (this.type === 'submit') {
+                title = 'Envoyer le formulaire'
+            }
+
             return title
         },
 
@@ -113,8 +124,17 @@ export default Vue.extend({
             if (this.href) return 'a'
             if (this.to) return 'nuxt-link'
             return 'button'
+        },
+
+        getState(): String | null {
+            return this.state
+        },
+
+        getStyles(): String | null {
+            return this.styles
         }
     },
+
     methods: {
         handleClick(event: Event) {
             /**
@@ -176,7 +196,7 @@ button,
         }
     }
 
-    &.white {
+    &.light {
         background-color: $white;
         color: $primary;
         border-color: $white;
@@ -188,7 +208,7 @@ button,
         }
     }
 
-    &.black {
+    &.dark {
         background-color: $black;
         color: $white;
         border-color: $black;
