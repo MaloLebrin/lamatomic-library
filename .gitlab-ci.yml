@@ -1,3 +1,4 @@
+# Launch unit tests on all feature branches
 unit test:
   image: node:12.16.3
   stage: test
