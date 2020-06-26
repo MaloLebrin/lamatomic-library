@@ -1,5 +1,5 @@
-import { shallowMount } from '@vue/test-utils'
-import MLogo from './MLogo.vue'
+// import { shallowMount } from '@vue/test-utils'
+// import MLogo from './MLogo.vue'
 
 describe('Molecule - MLogo', () => {
     test('...molecule MLogo to be', () => {
