@@ -2,12 +2,10 @@ const path = require('path')
 
 // Export a function. Accept the base config as the only param.
 module.exports = {
-    stories: ['../components/**/*.stories.js'],
+    stories: ['../src/lib-components/**/*.stories.js'],
     addons: [
         '@storybook/addon-actions',
-        '@storybook/addon-actions/register',
         '@storybook/addon-links',
-        '@storybook/addon-links/register',
         '@storybook/preset-typescript',
         '@storybook/addon-a11y/register'
     ],
@@ -24,14 +22,14 @@ module.exports = {
                 'style-loader',
                 'css-loader',
                 'sass-loader',
-                {
-                    loader: 'sass-resources-loader',
-                    options: {
-                        resources: [
-                            path.resolve(__dirname, '../assets/scss/main.scss')
-                        ]
-                    }
-                }
+                // {
+                //     loader: 'sass-resources-loader',
+                //     options: {
+                //         resources: [
+                //             path.resolve(__dirname, '../assets/scss/main.scss')
+                //         ]
+                //     }
+                // }
             ]
         })
 
