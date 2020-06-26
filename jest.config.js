@@ -1,7 +1,7 @@
 module.exports = {
     moduleNameMapper: {
         '^@/(.*)$': '<rootDir>/$1',
-        '^~/(.*)$': '<rootDir>/src/lib-components/$1',
+        '^~/(.*)$': '<rootDir>/src/components/$1',
         '^vue$': 'vue/dist/vue.common.js'
     },
     moduleFileExtensions: ['ts', 'js', 'vue', 'json'],
