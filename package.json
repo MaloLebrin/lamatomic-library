@@ -24,6 +24,8 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "glob": "^7.1.6",
+    "path": "^0.12.7",
     "vue-typed-js": "^0.1.2"
   },
   "devDependencies": {

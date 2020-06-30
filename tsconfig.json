@@ -16,6 +16,7 @@
         "baseUrl": ".",
         "types": [
             "node",
+            "webpack-env",
             "vue"
         ],
         "paths": {
