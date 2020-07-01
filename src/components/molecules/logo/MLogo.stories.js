@@ -6,12 +6,22 @@ const wrapper = {
 }
 
 storiesOf('Molecules/Logo', module)
-    // .addDecorator(withInfo)
-    .add(
-        'Default',
-        () => ({
-            ...wrapper,
-            template: '<MLogo/>'
-        }),
-        { info: true }
-    )
+    .add('Default', () => ({
+        ...wrapper,
+        template: '<MLogo />'
+    }))
+
+    .add('Default Inline', () => ({
+        ...wrapper,
+        template: '<MLogo type="default-inline" />'
+    }))
+
+    .add('White', () => ({
+        ...wrapper,
+        template: '<MLogo type="white" />'
+    }))
+
+    .add('White Inline', () => ({
+        ...wrapper,
+        template: '<MLogo type="white-inline" />'
+    }))
