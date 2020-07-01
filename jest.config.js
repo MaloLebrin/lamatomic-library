@@ -8,12 +8,13 @@ module.exports = {
     transform: {
         '^.+\\.ts$': 'ts-jest',
         '^.+\\.js$': 'babel-jest',
-        '.*\\.(vue)$': 'vue-jest'
+        '.*\\.(vue)$': 'vue-jest',
+        '^.+\\.tsx?$': '<rootDir>/node_modules/ts-jest/preprocessor.js',
+        '^.+\\.svg$': '<rootDir>/.jest/svgTransform.js'
     },
     collectCoverage: true,
     collectCoverageFrom: [
-        '<rootDir>/components/**/*.vue',
-        '<rootDir>/pages/**/*.vue'
+        '<rootDir>/src/components/**/*.vue'
     ],
     testMatch: [
         '**/__tests__/**/*+(spec|test).[jt]s?(x)',
