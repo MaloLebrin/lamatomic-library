@@ -28,7 +28,8 @@
   },
   "lint-staged": {
     "*.{js,vue}": "yarn lint",
-    "*.{css,vue}": "stylelint"
+    "*.{css,vue}": "stylelint",
+    "src/*.spec.js": "yarn test"
   },
   "husky": {
     "hooks": {
