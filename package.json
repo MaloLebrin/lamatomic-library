@@ -28,12 +28,11 @@
   },
   "lint-staged": {
     "*.{js,vue}": "yarn lint",
-    "*.{css,vue}": "stylelint",
-    "src/*.spec.js": "yarn test"
+    "*.{css,vue}": "stylelint"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged && yarn test"
     }
   },
   "dependencies": {
