@@ -60,14 +60,14 @@ describe('Atom - ALink', () => {
         expect(wrapper.vm.computedHref).toBe('prout')
     })
 
-    test('...with tel valid then not valid', () => {
+    test('...without "underlined" class when "no-line" prop is true', () => {
         const wrapper = mount(ALink, {
             propsData: {
                 'no-line': true
             }
         })
 
-        expect(wrapper.html()).toBe('<a no-line="true" class="link"></a>')
+        expect(wrapper.html()).toBe('<a class="link"></a>')
     })
 
     test('...with tel valid then not valid', () => {
@@ -135,7 +135,7 @@ describe('Atom - ALink', () => {
             }
         })
 
-        expect(wrapper.attributes('external')).toBe('true')
+        expect(wrapper.html()).toBe('<a class="link external underlined underlined--thin"></a>')
     })
 
     test('...with target', () => {
