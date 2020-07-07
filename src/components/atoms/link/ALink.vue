@@ -13,11 +13,7 @@
         :to="to"
         :target="computedTarget"
         :title="computedTitle"
-        :tel="tel"
-        :mail="mail"
         :rel="rel"
-        :external="external"
-        :no-line="noLine"
     >
         <slot />
     </a>
