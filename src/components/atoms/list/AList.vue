@@ -1,9 +1,9 @@
 <template>
     <component
         :is="type"
+        class="list"
         :class="{
-            list: 1,
-            withoutChips: withoutChips,
+            'without-chips': withoutChips,
             horizontal: horizontal
         }"
     >
@@ -40,17 +40,21 @@ export default Vue.extend({
 <style lang="scss">
 .list {
     padding-left: 2rem;
-    &:not(.withoutChips) {
+
+    &:not(.without-chips) {
         list-style: none;
     }
+
     &.horizontal {
         display: flex;
         flex-wrap: wrap;
-        & li {
+
+        > li {
             margin: 2rem;
-        }
-        &:last-child {
-            margin-right: 0;
+
+            &:last-child {
+                margin-right: 0;
+            }
         }
     }
 }

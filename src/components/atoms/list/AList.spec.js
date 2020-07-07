@@ -25,14 +25,16 @@ describe('Atom - AList', () => {
         expect(wrapper.html()).toContain('<li>héhé</li>')
         expect(wrapper.html()).toContain('<li>hihi</li>')
     })
-    test('Renders the correct classes based on props passed', () => {
+
+    test('...renders the correct classes based on props passed', () => {
         const wrapper = mount(AList, {
             propsData: {
                 withoutChips: true,
                 horizontal: true
             }
         })
-        expect(wrapper.attributes().class).toContain('withoutChips')
+
+        expect(wrapper.attributes().class).toContain('without-chips')
         expect(wrapper.attributes().class).toContain('horizontal')
     })
 })
