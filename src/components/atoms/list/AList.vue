@@ -1,3 +1,4 @@
+        // eslint-disable-next-line vue/no-v-html
 <template>
     <component
         :is="type"
