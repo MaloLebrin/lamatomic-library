@@ -15,7 +15,7 @@ describe('Molecule - MCard', () => {
             }
         })
 
-        expect(wrapper.html()).toBe(`<div class="m-card is-link"><a no-line="true" class="link"></a></div>`)
+        expect(wrapper.html()).toBe(`<div class="m-card is-link"><a class="link"></a></div>`)
     })
 
     test('...without anim', () => {
@@ -34,6 +34,6 @@ describe('Molecule - MCard', () => {
             }
         })
 
-        expect(wrapper.html()).toBe(`<div class="m-card is-link no-anim"><a no-line="true" class="link"></a></div>`)
+        expect(wrapper.html()).toBe(`<div class="m-card is-link no-anim"><a class="link"></a></div>`)
     })
 })
