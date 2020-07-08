@@ -7,7 +7,7 @@
             horizontal: horizontal
         }"
     >
-        <li v-for="item in items" :key="item">{{ item }}</li>
+        <li v-for="item in items" :key="item" v-html="item"></li>
     </component>
 </template>
 
@@ -41,7 +41,7 @@ export default Vue.extend({
 .list {
     padding-left: 2rem;
 
-    &:not(.without-chips) {
+    &.without-chips {
         list-style: none;
     }
 

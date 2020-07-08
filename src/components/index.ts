@@ -8,3 +8,4 @@ export { default as AList } from './atoms/list/AList.vue';
 // Molecules
 export { default as MLogo } from './molecules/logo/MLogo.vue'
 export { default as MTyper } from './molecules/typer/MTyper.vue'
+export { default as MNavbar } from './molecules/navbar/MNavbar.vue'
