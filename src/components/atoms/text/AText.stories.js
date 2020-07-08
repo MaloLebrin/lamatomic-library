@@ -18,7 +18,8 @@ storiesOf('Atoms/Text', module)
 
     .add('Italic', () => ({
         ...wrapper,
-        template: '<AText italic>Mon super texte en italic (ça swingue !)</AText>'
+        template:
+            '<AText italic>Mon super texte en italic (ça swingue !)</AText>'
     }))
 
 storiesOf('Atoms/Text/Align', module)
