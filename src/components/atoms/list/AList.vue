@@ -49,6 +49,7 @@ export default Vue.extend({
     &.horizontal {
         display: flex;
         flex-wrap: wrap;
+        align-items: center;
 
         > li {
             margin: 2rem;
