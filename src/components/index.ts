@@ -20,6 +20,8 @@ export { default as AInputSearch } from './atoms/form/input/input-search/AInputS
 export { default as AInputTextArea } from './atoms/form/input/input-textarea/AInputTextArea.vue'
 export { default as AInputUrl } from './atoms/form/input/input-url/AInputUrl.vue'
 export { default as AInput } from './atoms/form/input/AInput.vue'
+export { default as ASelect } from './atoms/form/select/ASelect.vue';
+
 
 // Molecules
 export { default as MLogo } from './molecules/logo/MLogo.vue'
