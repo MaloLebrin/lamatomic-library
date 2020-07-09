@@ -6,6 +6,7 @@ export { default as AImage } from './atoms/image/AImage.vue';
 export { default as ALink } from './atoms/link/ALink.vue';
 export { default as AList } from './atoms/list/AList.vue';
 export { default as AText } from './atoms/text/AText.vue';
+export { default as ASelect } from './atoms/form/select/ASelect.vue';
 // Molecules
 export { default as MLogo } from './molecules/logo/MLogo.vue'
 export { default as MTyper } from './molecules/typer/MTyper.vue'
