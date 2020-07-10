@@ -9,3 +9,4 @@ export { default as AText } from './atoms/text/AText.vue';
 // Molecules
 export { default as MLogo } from './molecules/logo/MLogo.vue'
 export { default as MTyper } from './molecules/typer/MTyper.vue'
+export { default as MScrollToTop } from './molecules/scroll-to-top/MScrollToTop.vue'
