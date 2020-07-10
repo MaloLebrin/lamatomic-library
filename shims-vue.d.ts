@@ -3,4 +3,5 @@ declare module '*.vue' {
   export default Vue
 }
 
-declare module 'v-calendar';
+declare module 'v-calendar'
+declare module 'vue-carousel'
