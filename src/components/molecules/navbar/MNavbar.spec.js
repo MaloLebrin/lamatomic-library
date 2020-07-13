@@ -1,6 +1,8 @@
 import { mount } from '@vue/test-utils'
+import MNavbar from './MNavbar.vue'
+import AButton from '@/components/atoms/button/AButton.vue'
+import ALink from '@/components/atoms/link/ALink.vue'
 import { getMountedComponent } from '@/utils'
-import { MNavbar, AButton, ALink } from '@/entry'
 
 describe('Molecule - MNavbar', () => {
     test('...as default has nav wrapper, a list component and horizontal props is true', () => {
