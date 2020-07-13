@@ -1,34 +1,50 @@
 import { mount } from '@vue/test-utils'
-import MNavbar from './MNavbar.vue'
+import { getMountedComponent } from '@/utils'
+import { MNavbar, AButton, ALink } from '@/entry'
 
 describe('Molecule - MNavbar', () => {
-    test('...has a list <ul> of <alink> & <abutton> component', () => {
+    test('...as default has nav wrapper, a list component and horizontal props is true', () => {
         const wrapper = mount(MNavbar)
+
         expect(wrapper.html()).toContain('<nav class="navbar"')
-        expect(wrapper.html()).toContain('<ul class="without-chips horizontal">')
-        expect(wrapper.html()).toContain('<li class="nav-item">')
-        expect(wrapper.html()).toContain('<a class="link underlined underlined--thin">')
-        expect(wrapper.html()).toContain('<button class="button">')
+        expect(wrapper.html()).toContain('<ul class="list without-chips horizontal">')
+        expect(wrapper.props().horizontal).toBeTruthy()
     })
-    test('... default value props', () => {
+
+    test('...items injected are correctly rendered', () => {
+        const link1 = getMountedComponent(
+            ALink,
+            { href: 'https://bananas.com/' },
+            { default: 'Super lien' }
+        )
+        const btn1 = getMountedComponent(
+            AButton,
+            { state: 'success' },
+            { default: 'Ohohoh' }
+        )
+        const btn2 = getMountedComponent(
+            AButton,
+            { state: 'error' },
+            { default: 'Yes!' }
+        )
+
+        const items = [link1, btn1, btn2]
+
         const wrapper = mount(MNavbar, {
             propsData: {
-                withoutChips: true,
-                horizontal: true,
-                footer: false
+                items,
+                horizontal: false
             }
         })
-        expect(wrapper.props().withoutChips).toBeTruthy()
-        expect(wrapper.props().horizontal).toBeTruthy()
-        expect(wrapper.props().footer).toBeFalsy()
 
-    })
-    test('.... if footer = true then button are replace by link', () => {
-        const wrapper = mount(MNavbar, {
-            propsData: { 
-                footer:true
-            }
-        })
-        expect(wrapper.html()).not.toContain('<button class="button">')
+        expect(wrapper.props().horizontal).toBeFalsy()
+        expect(wrapper.html()).toContain('<ul class="list without-chips">')
+        expect(wrapper.html()).toContain('<li class="list-item"')
+        expect(wrapper.html()).toContain('href="https://bananas.com/')
+        expect(wrapper.html()).toContain('<a ')
+        expect(wrapper.html()).toContain('Super lien')
+        expect(wrapper.html()).toContain('<button ')
+        expect(wrapper.html()).toContain('Ohohoh')
+        expect(wrapper.html()).toContain('Yes!')
     })
 })

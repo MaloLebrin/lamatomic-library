@@ -1,18 +1,38 @@
 import { storiesOf } from '@storybook/vue'
-import MNavbar from './MNavbar.vue'
+import { getMountedComponent } from '@/utils'
+import { MNavbar, AButton, ALink } from '@/entry'
+
 const wrapper = {
     components: { MNavbar }
 }
 
+const link1 = getMountedComponent(
+    ALink,
+    { href: 'https://bananas.com/' },
+    { default: 'Our Bananas' }
+)
+const btn1 = getMountedComponent(AButton, { state: 'success' }, { default: 'Buy now!'})
+const btn2 = getMountedComponent(AButton, { state: 'warning' }, { default: 'Join ours bananas 🍌'})
+
+const items = [link1, btn1, btn2]
 
 storiesOf('Molecules/Navbar', module)
-
-    .add(' default hozizontal sans puces', () => ({
+    .add('Default', () => ({
         ...wrapper,
-        template: '<MNavbar />',
-
+        data() {
+            return {
+                items
+            }
+        },
+        template: '<MNavbar :items="items" />'
     }))
-    .add(' Navbar footer lama compta', () => ({
+
+    .add('Vertical', () => ({
         ...wrapper,
-        template: '<MNavbar :horizontal="false" :footer="true" />',
+        data() {
+            return {
+                items
+            }
+        },
+        template: '<MNavbar :items="items" :horizontal="false" />'
     }))
