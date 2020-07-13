@@ -1,28 +1,26 @@
 <template>
-    <carousel :per-page="1" :mouse-drag="false">
-        <slide>
-            <slot></slot>
-        </slide>
-        <slide>
-            <AImage/>
-        </slide>
-  </carousel>
+    <Carousel :per-page="1" :mouse-drag="false">
+        <Slide v-for="slide in slides" :key="slide" v-html="slide">
+        </Slide>
+    </Carousel>
 </template>
 
 <script lang="ts">
 
 import Vue from 'vue'
 import { Carousel, Slide } from 'vue-carousel'
-import AImage from '@/components/atoms/image/AImage.vue'
 
 export default Vue.extend({
     name: 'Mcarousel',
     components: {
         Carousel,
         Slide,
-        AImage
     },
     props: {
+        slides: {
+            type: Array,
+            default: (): Array<any> => []
+        },
         navigationEnabled: {
             type: Boolean,
             default: false
