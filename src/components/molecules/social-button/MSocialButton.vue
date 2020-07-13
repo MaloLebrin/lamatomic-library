@@ -67,7 +67,7 @@ export default Vue.extend({
     }
 })
 
-const getLogoFileName = function(type: String): String {
+export const getLogoFileName = function(type: String): String {
     switch (type) {
         case 'facebook':
             return 'facebook-brands.svg'
@@ -82,7 +82,7 @@ const getLogoFileName = function(type: String): String {
     }
 }
 
-const getTitles = function (type: String, name: String): String {
+export const getTitles = function (type: String, name: String): String {
     switch (type) {
         case 'new':
             return name

@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils'
-import MSocialButton from './MSocialButton.vue'
+import MSocialButton, { getLogoFileName, getTitles } from './MSocialButton.vue'
 
 describe('Molecule - MSocialButton', () => {
     let stubs
@@ -43,5 +43,39 @@ describe('Molecule - MSocialButton', () => {
         })
 
         expect(wrapper.html()).toContain(`title="Accéder à la page facebook"`)
+    })
+
+    test("...function getLogoFileName", () => {
+        let logoFileName = getLogoFileName('facebook')
+        expect(logoFileName).toBe('facebook-brands.svg')
+
+        logoFileName = getLogoFileName('instagram')
+        expect(logoFileName).toBe('instagram-brands.svg')
+
+        logoFileName = getLogoFileName('linkedin')
+        expect(logoFileName).toBe('linkedin-brands.svg')
+
+        logoFileName = getLogoFileName('twitter')
+        expect(logoFileName).toBe('twitter-brands.svg')
+
+        logoFileName = getLogoFileName('')
+        expect(logoFileName).toBe('')
+    })
+
+    test("...function getTitles", () => {
+        let titles = getTitles('facebook')
+        expect(titles).toBe('facebook')
+
+        titles = getTitles('instagram')
+        expect(titles).toBe('instagram')
+
+        titles = getTitles('linkedin')
+        expect(titles).toBe('linkedin')
+
+        titles = getTitles('twitter')
+        expect(titles).toBe('twitter')
+
+        titles = getTitles('', 'lamacompta')
+        expect(titles).toBe('lamacompta')
     })
 })
