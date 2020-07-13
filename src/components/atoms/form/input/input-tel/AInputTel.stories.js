@@ -4,7 +4,7 @@ const wrapper = {
     components: { AInputTel }
 }
 
-storiesOf('Atoms/Inputs', module).add('Phone default', () => ({
+storiesOf('Atoms/Form/Inputs', module).add('Phone default', () => ({
     ...wrapper,
     template:
         '<AInputTel default />'
