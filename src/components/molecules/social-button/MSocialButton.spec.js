@@ -1,5 +1,13 @@
 import { shallowMount } from '@vue/test-utils'
-import MSocialButton, { getLogoFileName, getTitles } from './MSocialButton.vue'
+import MSocialButton from './MSocialButton.vue'
+import MSocialButtonFacebook from './MSocialButton/MSocialButtonFacebook.vue'
+import MSocialButtonInstagram from './MSocialButton/MSocialButtonInstagram.vue'
+import MSocialButtonTwitter from './MSocialButton/MSocialButtonTwitter.vue'
+import MSocialButtonLinkedin from './MSocialButton/MSocialButtonLinkedin.vue'
+
+
+
+
 
 describe('Molecule - MSocialButton', () => {
     let stubs
@@ -14,68 +22,33 @@ describe('Molecule - MSocialButton', () => {
         const wrapper = shallowMount(MSocialButton, { stubs })
 
         expect(wrapper.html()).toContain(`<abutton-stub`)
-
-        expect(wrapper.html()).toContain(`title="Accéder à la page "`)
-
         expect(wrapper.html()).toContain(`class="m-social-button"`)
     })
-
-    test("...type not in [new, facebook, instagram, linkedin, twitter] doesn't work", () => {
-        const wrapper = shallowMount(MSocialButton, { stubs })
-        const type = wrapper.vm.$options.props.type
-
-        expect(type.validator).toBeInstanceOf(Function)
-        expect(type.validator('new')).toBeTruthy()
-        expect(type.validator('facebook')).toBeTruthy()
-        expect(type.validator('instagram')).toBeTruthy()
-        expect(type.validator('linkedin')).toBeTruthy()
-        expect(type.validator('twitter')).toBeTruthy()
-        expect(type.validator('banana')).toBeFalsy()
-        expect(type.validator(8)).toBeFalsy()
-    })
-
-    test('...default has <button> tag', () => {
-        const wrapper = shallowMount(MSocialButton, {
-            stubs,
-            propsData: {
-                type: 'facebook'
-            }
+    test('.. social button Facebook', () => {
+        const wrapper = shallowMount(MSocialButtonFacebook, { stubs }, { 
+            href: 'https://www.facebook.com'
         })
-
-        expect(wrapper.html()).toContain(`title="Accéder à la page facebook"`)
+        expect(wrapper.attributes().href).toBe('https://www.facebook.com')
+    })
+    test('.. social button Instagram', () => {
+        const wrapper = shallowMount(MSocialButtonInstagram, { stubs }, { 
+            href: 'https://www.Instagram.com'
+        })
+        expect(wrapper.attributes().href).toBe('https://www.Instagram.com')
+    })
+    test('.. social button Twitter', () => {
+        const wrapper = shallowMount(MSocialButtonTwitter, { stubs }, { 
+            href: 'https://www.Twitter.com'
+        })
+        expect(wrapper.attributes().href).toBe('https://www.Twitter.com')
+    })
+    test('.. social button Linkedin', () => {
+        const wrapper = shallowMount(MSocialButtonLinkedin, { stubs }, { 
+            href: 'https://www.Linkedin.com'
+        })
+        expect(wrapper.attributes().href).toBe('https://www.Linkedin.com')
     })
 
-    test("...function getLogoFileName", () => {
-        let logoFileName = getLogoFileName('facebook')
-        expect(logoFileName).toBe('facebook-brands.svg')
+    
 
-        logoFileName = getLogoFileName('instagram')
-        expect(logoFileName).toBe('instagram-brands.svg')
-
-        logoFileName = getLogoFileName('linkedin')
-        expect(logoFileName).toBe('linkedin-brands.svg')
-
-        logoFileName = getLogoFileName('twitter')
-        expect(logoFileName).toBe('twitter-brands.svg')
-
-        logoFileName = getLogoFileName('')
-        expect(logoFileName).toBe('')
-    })
-
-    test("...function getTitles", () => {
-        let titles = getTitles('facebook')
-        expect(titles).toBe('facebook')
-
-        titles = getTitles('instagram')
-        expect(titles).toBe('instagram')
-
-        titles = getTitles('linkedin')
-        expect(titles).toBe('linkedin')
-
-        titles = getTitles('twitter')
-        expect(titles).toBe('twitter')
-
-        titles = getTitles('', 'lamacompta')
-        expect(titles).toBe('lamacompta')
-    })
 })

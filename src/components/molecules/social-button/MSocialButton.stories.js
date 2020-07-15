@@ -1,32 +1,40 @@
 import { storiesOf } from '@storybook/vue'
-import MSocialButton from './MSocialButton.vue'
+import MSocialButtonFacebook from './MSocialButton/MSocialButtonFacebook.vue'
+import MSocialButtonTwitter from './MSocialButton/MSocialButtonTwitter.vue'
+import MSocialButtonInstagram from './MSocialButton/MSocialButtonInstagram.vue'
+import MSocialButtonLinkedin from './MSocialButton/MSocialButtonLinkedin.vue'
 
-const wrapper = {
-    components: { MSocialButton }
+
+const wrapperFB = {
+    components: { MSocialButtonFacebook }
+}
+const wrapperTwitter = {
+    components: { MSocialButtonTwitter }
+}
+const wrapperInsta = {
+    components: {  MSocialButtonInstagram }
+}
+const wrapperLinkedin = {
+    components: {  MSocialButtonLinkedin }
 }
 
 storiesOf('Molecules/SocialButton', module)
-    .add('facebook social button', () => ({
-        ...wrapper,
-        template: '<MSocialButton type="facebook"/>'
+    .add('Facebook', () => ({
+        ...wrapperFB,
+        template: '<MSocialButtonFacebook/>'
     }))
 
-    .add('twitter social button', () => ({
-        ...wrapper,
-        template: '<MSocialButton type="twitter"/>'
+    .add('Twitter', () => ({
+        ...wrapperTwitter,
+        template: '<MSocialButtonTwitter />'
     }))
 
-    .add('instagram social button', () => ({
-        ...wrapper,
-        template: '<MSocialButton type="instagram"/>'
+    .add('Instagram', () => ({
+        ...wrapperInsta,
+        template: '<MSocialButtonInstagram/>'
     }))
 
-    .add('linkedin social button', () => ({
-        ...wrapper,
-        template: '<MSocialButton type="linkedin"/>'
-    }))
-
-    .add('personalise social button', () => ({
-        ...wrapper,
-        template: '<MSocialButton name="socialMedia" src="svg/instagram-brands.svg"/>'
+    .add('Linkedin', () => ({
+        ...wrapperLinkedin,
+        template: '<MSocialButtonLinkedin/>'
     }))

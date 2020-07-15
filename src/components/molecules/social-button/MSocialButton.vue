@@ -1,11 +1,13 @@
 <template>
     <AButton
         class="m-social-button"
-        :title="computedTitle"
+        :title="title"
+        :href="href"
+        target="_blank"
     >
         <AImage
-            :src="require('./' + computedSrc)"
-            alt="social button"
+            :src="src"
+            :alt="title"
         />
     </AButton>
 </template>
@@ -16,7 +18,7 @@ import AImage from '../../atoms/image/AImage.vue'
 import AButton from '../../atoms/button/AButton.vue'
 
 export default Vue.extend({
-    name: 'MLogo',
+    name: 'MSocialButton',
     components: {
         AImage,
         AButton
@@ -26,9 +28,6 @@ export default Vue.extend({
         type: {
             type: String,
             default: 'new',
-            validator(value) {
-                return ['new', 'facebook', 'twitter', 'instagram', 'linkedin'].includes(value)
-            }
         },
         title: {
             type: String,
@@ -41,72 +40,29 @@ export default Vue.extend({
         src: {
             type: String,
             default: '../logo/svg/logo-default.svg'
-        }
-    },
-
-    data() {
-        return {
-            logoFileName: getLogoFileName(this.type),
-            titles: getTitles(this.type, this.name)
-        }
-    },
-
-    computed: {
-        computedSrc(): String {
-            switch (this.type) {
-                case 'new':
-                    return this.src
-                default:
-                    return 'svg/' + this.logoFileName
-            }
         },
-
-        computedTitle(): String {
-            return 'Accéder à la page ' + this.titles
+        href:{
+            type: String,
+            default: null
         }
-    }
+    },
+
 })
 
-export const getLogoFileName = function(type: String): String {
-    switch (type) {
-        case 'facebook':
-            return 'facebook-brands.svg'
-        case 'twitter':
-            return 'twitter-brands.svg'
-        case 'instagram':
-            return 'instagram-brands.svg'
-        case 'linkedin':
-            return 'linkedin-brands.svg'
-        default:
-            return ''
-    }
-}
-
-export const getTitles = function (type: String, name: String): String {
-    switch (type) {
-        case 'new':
-            return name
-        case 'facebook':
-            return 'facebook'
-        case 'twitter':
-            return 'twitter'
-        case 'instagram':
-            return 'instagram'
-        case 'linkedin':
-            return 'linkedin'
-        default:
-            return name
-    }
-}
 </script>
 
 <style lang="scss">
 
 .m-social-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: auto;
     animation: 1s appear;
-    border-radius: 50%;
-    padding: 1%;
+    border-radius: 100%;
+    padding: 13px;
+    width: 30px;
+    height: 30px;
 
     &:hover {
         .image {
@@ -115,8 +71,8 @@ export const getTitles = function (type: String, name: String): String {
     }
 
     .image {
-        width: 40px;
-        height: 40px;
+        width: 100%;
+        height: 100%;
     }
 }
 
