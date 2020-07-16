@@ -6,7 +6,7 @@ export { default as AImage } from './atoms/image/AImage.vue'
 export { default as ALink } from './atoms/link/ALink.vue'
 export { default as AList } from './atoms/list/AList.vue'
 export { default as AText } from './atoms/text/AText.vue'
-export { default as ATextArea } from './atoms/form/textarea/ATextArea.vue'
+export { default as ATextArea } from './atoms/form/textarea/ATextarea.vue'
 export { default as AInputText } from './atoms/form/input/input-text/AInputText.vue'
 export { default as AInputCheckbox } from './atoms/form/input/input-checkbox/AInputCheckbox.vue'
 export { default as AInputDate } from './atoms/form/input/input-date/AInputDate.vue'
@@ -20,6 +20,7 @@ export { default as AInputSearch } from './atoms/form/input/input-search/AInputS
 export { default as AInputUrl } from './atoms/form/input/input-url/AInputUrl.vue'
 export { default as AInput } from './atoms/form/input/AInput.vue'
 export { default as ASelect } from './atoms/form/select/ASelect.vue'
+export { default as AHamburger } from './atoms/hamburger-button/AHamburger.vue'
 
 
 // Molecules
