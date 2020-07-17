@@ -19,7 +19,6 @@ export default Vue.extend({
     <AText align="right" weight="bold" italic>Oh yeah!</AText>
     <AButton>Yeah</AButton>
     <AHeading>Gros titre de fou</AHeading>
-    <MLogo />
-    <MScrollToTop timing="ease"/>
+    <AInputDate />
   </div>
 </template>
