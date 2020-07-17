@@ -7,7 +7,8 @@
             horizontal: horizontal
         }"
     >
-        <li v-for="item in items" :key="item">{{ item }}</li>
+        <!-- eslint-disable-next-line vue/no-v-html -->
+        <li v-for="item in items" :key="item" class="list-item" v-html="item"></li>
     </component>
 </template>
 
@@ -21,14 +22,17 @@ export default Vue.extend({
             type: String,
             default: 'ul'
         },
+
         items: {
             type: Array,
             default: (): Array<any> => []
         },
+
         withoutChips: {
             type: Boolean,
             default: true
         },
+
         horizontal: {
             type: Boolean,
             default: false
@@ -41,15 +45,16 @@ export default Vue.extend({
 .list {
     padding-left: 2rem;
 
-    &:not(.without-chips) {
+    &.without-chips {
         list-style: none;
     }
 
     &.horizontal {
         display: flex;
         flex-wrap: wrap;
+        align-items: center;
 
-        > li {
+        > .list-item {
             margin: 2rem;
 
             &:last-child {
