@@ -33,3 +33,7 @@ export { default as MSocialButtonFacebook } from './molecules/social-button/MSoc
 export { default as MSocialButtonTwitter } from './molecules/social-button/MSocialButtonTwitter.vue'
 export { default as MSocialButtonInstagram } from './molecules/social-button/MSocialButtonInstagram.vue'
 export { default as MSocialButtonLinkedin } from './molecules/social-button/MSocialButtonLinkedin.vue'
+export { default as MPartner } from './molecules/partner/MPartner.vue'
+
+//  Organisms
+export { default as OPartners } from './organisms/partners/OPartners.vue'
