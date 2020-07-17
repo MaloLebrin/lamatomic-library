@@ -13,10 +13,10 @@ describe('Molecule - MPartner', () => {
           })
         });
       });
-    test('...has <alink> component and partner class', () => {
+    test('...has <a> component and partner class', () => {
         const wrapper = mount(MPartner)
         expect(wrapper.html()).toContain(
-            `<a title="Partner s logo" class="link m-partner">`
+            `<a title="Partner's logo" class="link m-partner">`
         )
     })
 })

@@ -15,7 +15,9 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { ALink, AImage } from '@/entry'
+import  AImage  from '@/components/atoms/image/AImage.vue'
+import ALink from '@/components/atoms/link/ALink.vue'
+
 
 export default Vue.extend({
     name: 'MPartner',
@@ -35,7 +37,7 @@ export default Vue.extend({
         },
         alt: {
             type: String,
-            default: 'Partner s logo'
+            default: "Partner's logo"
         },
         href: {
             type: String,
@@ -43,7 +45,7 @@ export default Vue.extend({
         },
         title: {
             type: String,
-            default: 'Partner s logo'
+            default: "Partner's logo"
         }
     },
 
@@ -52,7 +54,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-.partner {
+.m-partner {
     margin: auto;
     animation: 1s appear;
 }

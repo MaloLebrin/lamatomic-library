@@ -1,5 +1,6 @@
 import { mount } from '@vue/test-utils'
-import OPartners from './OPartners.vue'
+import { OPartners, MPartner } from '@/entry'
+import { getMountedComponent } from '@/utils'
 
 
 describe('Organism - OPartners', () => {
@@ -14,9 +15,22 @@ describe('Organism - OPartners', () => {
           })
         });
       });
-
-    test('... as default', () => {
+      test('...as default', () => {
         const wrapper = mount( OPartners )
         expect(wrapper.html()).toContain(`<div class="o-partners">`)
     })
+
+const img1 = getMountedComponent(MPartner, { src:'https://placehold.it/350x150' }, { title: 'Bge'})
+const img2 = getMountedComponent(MPartner, { src:'https://placehold.it/350x150' }, { title: 'france active 🍌'})
+
+const items = [img1, img2]
+test('... OPartners contain MPartner', () => {
+    const wrapper = mount(OPartners, {
+        propsData: {
+            items,
+        }
+    })
+    expect(wrapper.html()).toContain(`<li class="list-item"><a title="Partner's logo" class="link m-partner"><img src="https://placehold.it/350x150" alt="Partner's logo" class="image img-partner"></a></li>`)
+
+})
 })

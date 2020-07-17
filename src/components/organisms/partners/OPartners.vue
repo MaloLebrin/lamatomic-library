@@ -1,5 +1,5 @@
 <template>
-    <div class="o-partners" :class="{ 'is-link': isLink }">
+    <div class="o-partners">
         <AList :items="items" :horizontal="horizontal" without-chips />
     </div>
 </template>
@@ -7,7 +7,6 @@
 <script lang="ts">
 import Vue from 'vue'
 import AList from '@/components/atoms/list/AList.vue'
-
 
 export default Vue.extend({
     name: 'OPartners',
@@ -22,12 +21,7 @@ export default Vue.extend({
         horizontal: {
             type: Boolean,
             default: true
-        },
-        isLink: {
-            type: Boolean,
-            default: false
-        },
-
+        }
     },
 })
 
@@ -38,19 +32,22 @@ export default Vue.extend({
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-}
-.list {
-    flex-basis: auto;
-}
-.list-item {
-    height: 200px;
-    width: 300px;
-    padding: 1rem;
-    box-shadow: 0 3px 6px 0 rgba(140,152,164,.25);
-    vertical-align: middle;
-}
-.img-partner {
-    height: 210px;
-    width: 290px;
+
+    .list {
+        flex-basis: auto;
+
+        .list-item {
+            height: 100%;
+            width: 100%;
+            padding: 1rem;
+            box-shadow: 0 3px 6px 0 rgba(140,152,164,.25);
+            vertical-align: middle;
+
+            .img-partner {
+                height: 210px;
+                width: 290px;
+             }
+        }
+    }
 }
 </style>
