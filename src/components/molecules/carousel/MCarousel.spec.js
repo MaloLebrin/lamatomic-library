@@ -11,7 +11,7 @@ describe('Molecule - MCarousel', () => {
     })
     test('... array of component in slides', () => {
         const image1 = getMountedComponent(AImage,
-            { src: require("../logo/svg/logo-white-inline.svg")}, 
+            { src:require("../logo/svg/logo-white-inline.svg")},
             { alt: "logodefault"}
        )
        const slides = [image1]
@@ -21,6 +21,7 @@ describe('Molecule - MCarousel', () => {
                 slides
             }
        })
-       expect(wrapper.html()).toContain('<div data-v-438fd353="" role="tablist" class="VueCarousel-dot-container" style="margin-top: 20px;"></div>')
+       expect(wrapper.html()).toContain('<div class="VueCarousel-wrapper">')
+       expect(wrapper.html()).toContain('<div class="VueCarousel-inner" style="transform: translate(0px, 0); transition: 0.5s ease transform; flex-basis: 0px; visibility: hidden; height: auto;">')
     })
 })
