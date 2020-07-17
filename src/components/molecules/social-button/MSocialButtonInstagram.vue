@@ -1,5 +1,5 @@
 <template>
-    <MSocialButton class="m-social-button-instagram" :src="require('../svg/instagram.svg')" :href="href" :title="title"/>
+    <MSocialButton class="m-social-button-instagram" :src="require('./svg/instagram.svg')" :href="href" :title="title"/>
 </template>
 
 <script lang="ts">

@@ -1,5 +1,5 @@
 <template>
-    <MSocialButton class="m-social-button-facebook" :src="require('../svg/facebook.svg')" :href="href" :title="title"/>
+    <MSocialButton class="m-social-button-facebook" :src="require('./svg/facebook.svg')" :href="href" :title="title"/>
 </template>
 
 <script lang="ts">
