@@ -11,7 +11,7 @@ storiesOf('Molecules/ScrollToTop', module)
         template: `<MScrollToTop/>`
     }))
 
-    .add('in dark', () => ({
+    .add('In dark', () => ({
         ...wrapper,
         template: `<MScrollToTop styles="dark"/>`
     }))

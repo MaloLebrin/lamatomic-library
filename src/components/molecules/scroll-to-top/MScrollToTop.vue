@@ -67,7 +67,6 @@ export default Vue.extend({
         styles: {
             type: String,
             default: 'light',
-            required: false,
             validator(value) {
                 return ['light', 'dark'].includes(value)
             }
@@ -95,7 +94,7 @@ $white: #fff;
         font-size: 2rem;
         padding: 1rem;
         padding-bottom: 0;
-        padding-top: .5rem;
+        padding-top: 0.5rem;
     }
 }
 </style>
