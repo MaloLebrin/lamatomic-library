@@ -8,14 +8,16 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import { AButton, AHeading, AText } from '@/entry';
+import { AButton, AHeading, MLogo, AText, MScrollToTop } from '@/entry';
 
 export default Vue.extend({
   name: 'ServeDev',
   components: {
     AButton,
     AHeading,
-    AText
+    MLogo,
+    AText,
+    MScrollToTop
   }
 });
 </script>
