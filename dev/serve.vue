@@ -6,24 +6,13 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import { AButton, AHeading, MLogo, AText } from '@/entry';
+import { MNavbar } from '@/entry';
 
 export default Vue.extend({
   name: 'ServeDev',
   components: {
-    AButton,
-    AHeading,
-    MLogo,
-    AText
+    MNavbar,
   }
 });
 </script>
 
-<template>
-  <div id="app">
-    <AText align="right" weight="bold" italic>Oh yeah!</AText>
-    <AButton>Yeah</AButton>
-    <AHeading>Gros titre de fou</AHeading>
-    <AInputDate />
-  </div>
-</template>

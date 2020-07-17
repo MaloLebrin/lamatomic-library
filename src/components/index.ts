@@ -26,4 +26,7 @@ export { default as ASelect } from './atoms/form/select/ASelect.vue'
 export { default as MLogo } from './molecules/logo/MLogo.vue'
 export { default as MTyper } from './molecules/typer/MTyper.vue'
 export { default as MNavbar } from './molecules/navbar/MNavbar.vue'
-export { default as MPartners } from './molecules/partners/MPartners.vue'
+export { default as MPartners } from './molecules/partner/MPartner.vue'
+
+//  Organisms
+export { default as OPartners } from './organisms/partners/OPartners.vue'

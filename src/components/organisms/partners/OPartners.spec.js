@@ -1,8 +1,8 @@
 import { mount } from '@vue/test-utils'
-import MPartners from './MPartners.vue'
+import OPartners from './OPartners.vue'
 
 
-describe('Molecule - MPartners', () => {
+describe('Organism - OPartners', () => {
     beforeAll(() => {
         Object.defineProperty(window, "matchMedia", {
           value: jest.fn(() => {
@@ -16,7 +16,7 @@ describe('Molecule - MPartners', () => {
       });
 
     test('... as default', () => {
-        const wrapper = mount( MPartners )
-        expect(wrapper.html()).toContain(`<div class="partners">`)
+        const wrapper = mount( OPartners )
+        expect(wrapper.html()).toContain(`<div class="o-partners">`)
     })
 })

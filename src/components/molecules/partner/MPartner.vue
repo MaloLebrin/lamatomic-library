@@ -1,7 +1,7 @@
 <template>
     <ALink
         :href="href"
-        class="partner"
+        class="m-partner"
         :title="title"
         no-line
     >
@@ -18,7 +18,7 @@ import Vue from 'vue'
 import { ALink, AImage } from '@/entry'
 
 export default Vue.extend({
-    name: 'APartner',
+    name: 'MPartner',
     components: {
         AImage,
         ALink
@@ -35,15 +35,15 @@ export default Vue.extend({
         },
         alt: {
             type: String,
-            default: 'mon logopartenaire'
+            default: 'Partner s logo'
         },
         href: {
             type: String,
             default: null
-        }, 
+        },
         title: {
             type: String,
-            default: null
+            default: 'Partner s logo'
         }
     },
 

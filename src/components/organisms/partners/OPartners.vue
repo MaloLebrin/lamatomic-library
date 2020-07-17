@@ -1,5 +1,5 @@
 <template>
-    <div class="partners" :class="{ 'is-link': isLink }">
+    <div class="o-partners" :class="{ 'is-link': isLink }">
         <AList :items="items" :horizontal="horizontal" without-chips />
     </div>
 </template>
@@ -10,7 +10,7 @@ import AList from '@/components/atoms/list/AList.vue'
 
 
 export default Vue.extend({
-    name: 'MPartners',
+    name: 'OPartners',
 
     components: { AList },
 
@@ -34,7 +34,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-.partners {
+.o-partners {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
