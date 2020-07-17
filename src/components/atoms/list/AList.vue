@@ -55,7 +55,7 @@ export default Vue.extend({
         align-items: center;
 
         > .list-item {
-            margin: 2rem;
+            margin: .5rem;
 
             &:last-child {
                 margin-right: 0;
