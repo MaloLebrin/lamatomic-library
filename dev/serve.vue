@@ -1,3 +1,9 @@
+<template>
+  <div id="app">
+    <MNavbar :footer="true" :horizontal="false" />
+  </div>
+</template>
+
 <script lang="ts">
 import Vue from 'vue';
 import { AButton, AHeading, MLogo, AText, MScrollToTop } from '@/entry';
