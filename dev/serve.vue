@@ -1,18 +1,23 @@
 <template>
   <div id="app">
-    <MNavbar :footer="true" :horizontal="false" />
+    <AText align="right" weight="bold" italic>Oh yeah!</AText>
+    <AButton>Yeah</AButton>
+    <AHeading>Gros titre de fou</AHeading>
+    <AHamburger />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import { MNavbar } from '@/entry';
+import { AButton, AHeading, AHamburger, AText } from '@/entry';
 
 export default Vue.extend({
   name: 'ServeDev',
   components: {
-    MNavbar,
+    AButton,
+    AHeading,
+    AHamburger,
+    AText
   }
 });
 </script>
-

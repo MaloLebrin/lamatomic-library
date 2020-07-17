@@ -5,7 +5,7 @@ const wrapper = {
   components: { ASelect }
 }
 
-storiesOf('Atoms/ASelect', module)
+storiesOf('Atoms/Form/Select', module)
   .add('single', () => ({
     ...wrapper,
     template: `
