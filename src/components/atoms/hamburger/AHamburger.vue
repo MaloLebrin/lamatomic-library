@@ -3,7 +3,7 @@
         class="a-hamburger" :class="{ 'hamburger--is-open': isOpen }"
         @click="$emit('click')"
     >
-        <AText :span="span" class="hamburger-bar"></AText>
+        <AText span class="hamburger-bar"></AText>
     </AButton>
 </template>
 
@@ -22,10 +22,6 @@ export default Vue.extend({
     isOpen: {
       type: Boolean,
       default: false
-    },
-    span: {
-        type: String,
-        default: null
     }
   }
 })
@@ -43,7 +39,6 @@ $hamburger-pad: 0;
 $hamburger-transistion-duration: .3s;
 
 .a-hamburger {
-  $this: &;
 
   appearance: none;
   background-color: $hamburger-background-color;
@@ -106,7 +101,7 @@ $hamburger-transistion-duration: .3s;
 
   &--is-open {
 
-    #{$this}-bar {
+    &-bar{
       background: none;
 
       &::before,
