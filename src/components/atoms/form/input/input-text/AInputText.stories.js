@@ -4,7 +4,7 @@ const wrapper = {
     components: { AInputText }
 }
 
-storiesOf('Atoms/Inputs', module).add(
+storiesOf('Atoms/Form/Inputs', module).add(
     'Text',
     () => ({
         ...wrapper,

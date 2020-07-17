@@ -4,7 +4,7 @@ const wrapper = {
     components: { AInputHidden }
 }
 
-storiesOf('Atoms/Inputs', module).add('Hidden', () => ({
+storiesOf('Atoms/Form/Inputs', module).add('Hidden', () => ({
     ...wrapper,
     template: `<AInputHidden />`
 }))

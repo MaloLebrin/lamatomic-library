@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <MNavbar :footer="true" :horizontal="false" />
+    <AText align="right" weight="bold" italic>Oh yeah!</AText>
+    <AButton>Yeah</AButton>
+    <AHeading>Gros titre de fou</AHeading>
   </div>
 </template>
 
@@ -20,11 +22,4 @@ export default Vue.extend({
 });
 </script>
 
-<template>
-  <div id="app">
-    <AText align="right" weight="bold" italic>Oh yeah!</AText>
-    <AButton>Yeah</AButton>
-    <AHeading>Gros titre de fou</AHeading>
-    <AInputDate />
-  </div>
-</template>
+

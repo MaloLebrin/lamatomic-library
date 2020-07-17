@@ -4,12 +4,12 @@ const wrapper = {
     components: { AInputTel }
 }
 
-storiesOf('Atoms/Inputs', module).add('Phone default', () => ({
+storiesOf('Atoms/Form/Inputs', module).add('Tel default', () => ({
     ...wrapper,
     template:
         '<AInputTel default />'
 }))
-.add(' Phone with alert', () => ({
+.add(' Tel with alert', () => ({
     ...wrapper,
     template: `<AInputTel  verif-validity />`,
 }))

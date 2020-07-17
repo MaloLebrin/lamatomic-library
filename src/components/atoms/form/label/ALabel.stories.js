@@ -5,7 +5,7 @@ const wrapper = {
   components: { ALabel }
 }
 
-storiesOf('Atoms/Label', module)
+storiesOf('Atoms/Form/Label', module)
   .add('default as radio input', () => ({
     ...wrapper,
     template: `
