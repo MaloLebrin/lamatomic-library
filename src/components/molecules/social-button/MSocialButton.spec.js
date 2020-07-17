@@ -1,13 +1,9 @@
 import { shallowMount } from '@vue/test-utils'
 import MSocialButton from './MSocialButton.vue'
-import MSocialButtonFacebook from './MSocialButton/MSocialButtonFacebook.vue'
-import MSocialButtonInstagram from './MSocialButton/MSocialButtonInstagram.vue'
-import MSocialButtonTwitter from './MSocialButton/MSocialButtonTwitter.vue'
-import MSocialButtonLinkedin from './MSocialButton/MSocialButtonLinkedin.vue'
-
-
-
-
+import MSocialButtonFacebook from './MSocialButtonFacebook.vue'
+import MSocialButtonInstagram from './MSocialButtonInstagram.vue'
+import MSocialButtonTwitter from './MSocialButtonTwitter.vue'
+import MSocialButtonLinkedin from './MSocialButtonLinkedin.vue'
 
 describe('Molecule - MSocialButton', () => {
     let stubs
@@ -24,31 +20,36 @@ describe('Molecule - MSocialButton', () => {
         expect(wrapper.html()).toContain(`<abutton-stub`)
         expect(wrapper.html()).toContain(`class="m-social-button"`)
     })
+
     test('.. social button Facebook', () => {
-        const wrapper = shallowMount(MSocialButtonFacebook, { stubs }, { 
+        const wrapper = shallowMount(MSocialButtonFacebook, { stubs }, {
             href: 'https://www.facebook.com'
         })
         expect(wrapper.attributes().href).toBe('https://www.facebook.com')
+        expect(wrapper.html()).toContain('href="https://www.facebook.com"')
     })
+
     test('.. social button Instagram', () => {
-        const wrapper = shallowMount(MSocialButtonInstagram, { stubs }, { 
-            href: 'https://www.Instagram.com'
+        const wrapper = shallowMount(MSocialButtonInstagram, { stubs }, {
+            href: 'https://www.instagram.com'
         })
-        expect(wrapper.attributes().href).toBe('https://www.Instagram.com')
+        expect(wrapper.attributes().href).toBe('https://www.instagram.com')
+        expect(wrapper.html()).toContain('href="https://www.instagram.com"')
     })
+
     test('.. social button Twitter', () => {
-        const wrapper = shallowMount(MSocialButtonTwitter, { stubs }, { 
-            href: 'https://www.Twitter.com'
+        const wrapper = shallowMount(MSocialButtonTwitter, { stubs }, {
+            href: 'https://www.twitter.com'
         })
-        expect(wrapper.attributes().href).toBe('https://www.Twitter.com')
+        expect(wrapper.attributes().href).toBe('https://www.twitter.com')
+        expect(wrapper.html()).toContain('href="https://www.twitter.com"')
     })
+
     test('.. social button Linkedin', () => {
-        const wrapper = shallowMount(MSocialButtonLinkedin, { stubs }, { 
-            href: 'https://www.Linkedin.com'
+        const wrapper = shallowMount(MSocialButtonLinkedin, { stubs }, {
+            href: 'https://www.linkedin.com'
         })
-        expect(wrapper.attributes().href).toBe('https://www.Linkedin.com')
+        expect(wrapper.attributes().href).toBe('https://www.linkedin.com')
+        expect(wrapper.html()).toContain('href="https://www.linkedin.com"')
     })
-
-    
-
 })

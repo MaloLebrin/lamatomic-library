@@ -1,9 +1,8 @@
 import { storiesOf } from '@storybook/vue'
-import MSocialButtonFacebook from './MSocialButton/MSocialButtonFacebook.vue'
-import MSocialButtonTwitter from './MSocialButton/MSocialButtonTwitter.vue'
-import MSocialButtonInstagram from './MSocialButton/MSocialButtonInstagram.vue'
-import MSocialButtonLinkedin from './MSocialButton/MSocialButtonLinkedin.vue'
-
+import MSocialButtonFacebook from './MSocialButtonFacebook.vue'
+import MSocialButtonTwitter from './MSocialButtonTwitter.vue'
+import MSocialButtonInstagram from './MSocialButtonInstagram.vue'
+import MSocialButtonLinkedin from './MSocialButtonLinkedin.vue'
 
 const wrapperFB = {
     components: { MSocialButtonFacebook }
@@ -12,16 +11,16 @@ const wrapperTwitter = {
     components: { MSocialButtonTwitter }
 }
 const wrapperInsta = {
-    components: {  MSocialButtonInstagram }
+    components: { MSocialButtonInstagram }
 }
 const wrapperLinkedin = {
-    components: {  MSocialButtonLinkedin }
+    components: { MSocialButtonLinkedin }
 }
 
 storiesOf('Molecules/SocialButton', module)
     .add('Facebook', () => ({
         ...wrapperFB,
-        template: '<MSocialButtonFacebook/>'
+        template: '<MSocialButtonFacebook />'
     }))
 
     .add('Twitter', () => ({
@@ -31,10 +30,10 @@ storiesOf('Molecules/SocialButton', module)
 
     .add('Instagram', () => ({
         ...wrapperInsta,
-        template: '<MSocialButtonInstagram/>'
+        template: '<MSocialButtonInstagram />'
     }))
 
     .add('Linkedin', () => ({
         ...wrapperLinkedin,
-        template: '<MSocialButtonLinkedin/>'
+        template: '<MSocialButtonLinkedin />'
     }))

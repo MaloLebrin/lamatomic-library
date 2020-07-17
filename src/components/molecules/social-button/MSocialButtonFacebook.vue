@@ -1,10 +1,10 @@
 <template>
-    <MSocialButton :src="require('../svg/facebook.svg')" :href="href" :title="title"/>
+    <MSocialButton class="m-social-button-facebook" :src="require('../svg/facebook.svg')" :href="href" :title="title"/>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import MSocialButton from '../../social-button/MSocialButton.vue'
+import MSocialButton from './MSocialButton.vue'
 
 export default Vue.extend({
     name: 'MSocialButtonFacebook',
@@ -16,6 +16,10 @@ export default Vue.extend({
         href: {
             type: String,
             default: 'https://www.facebook.com'
+        },
+        title: {
+            type: String,
+            default: 'Accéder à la page Facebook'
         }
     },
 })

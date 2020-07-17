@@ -25,23 +25,15 @@ export default Vue.extend({
     },
 
     props: {
-        type: {
-            type: String,
-            default: 'new',
-        },
         title: {
             type: String,
             default: 'Accéder à cette page'
         },
-        name: {
-            type: String,
-            default: ''
-        },
         src: {
             type: String,
-            default: '../logo/svg/logo-default.svg'
+            default: null
         },
-        href:{
+        href: {
             type: String,
             default: null
         }
