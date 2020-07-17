@@ -20,7 +20,7 @@ export { default as AInputSearch } from './atoms/form/input/input-search/AInputS
 export { default as AInputUrl } from './atoms/form/input/input-url/AInputUrl.vue'
 export { default as AInput } from './atoms/form/input/AInput.vue'
 export { default as ASelect } from './atoms/form/select/ASelect.vue'
-export { default as AHamburger } from './atoms/hamburger-button/AHamburger.vue'
+export { default as AHamburger } from './atoms/hamburger/AHamburger.vue'
 
 
 // Molecules

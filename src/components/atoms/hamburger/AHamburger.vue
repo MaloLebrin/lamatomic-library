@@ -1,31 +1,31 @@
 <template>
     <AButton
-        :class="{
-        'hamburger': 1,
-        'hamburger--is-open': isOpen
-        }"
+        class="a-hamburger" :class="{ 'hamburger--is-open': isOpen }"
         @click="$emit('click')"
     >
-        <AText class="hamburger__bar"></AText>
+        <AText :span="span" class="hamburger-bar"></AText>
     </AButton>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-// import { AButton, AText } from '@/entry'
 import AButton from '../button/AButton.vue'
 import AText from '../text/AText.vue'
 
 export default Vue.extend({
   name: 'AHamburger',
   components: {
-      AButton, 
+      AButton,
       AText
   },
   props: {
     isOpen: {
       type: Boolean,
       default: false
+    },
+    span: {
+        type: String,
+        default: null
     }
   }
 })
@@ -42,7 +42,7 @@ $hamburger-bar-border-radius: 1rem;
 $hamburger-pad: 0;
 $hamburger-transistion-duration: .3s;
 
-.hamburger {
+.a-hamburger {
   $this: &;
 
   appearance: none;
@@ -66,7 +66,7 @@ $hamburger-transistion-duration: .3s;
     outline: none;
   }
 
-  &__bar {
+  &-bar {
     background: $hamburger-color;
     display: block;
     height: $hamburger-bar-thickness;
@@ -106,7 +106,7 @@ $hamburger-transistion-duration: .3s;
 
   &--is-open {
 
-    #{$this}__bar {
+    #{$this}-bar {
       background: none;
 
       &::before,
