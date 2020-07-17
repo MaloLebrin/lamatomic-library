@@ -4,7 +4,7 @@ const wrapper = {
     components: { ATextarea }
 }
 
-storiesOf('Atoms/ATextarea', module).add('ATextarea', () => ({
+storiesOf('Atoms/Form/Textarea', module).add('ATextarea', () => ({
     ...wrapper,
     template: '<ATextarea />'
 }))
