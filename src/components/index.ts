@@ -25,4 +25,5 @@ export { default as ASelect } from './atoms/form/select/ASelect.vue'
 // Molecules
 export { default as MLogo } from './molecules/logo/MLogo.vue'
 export { default as MTyper } from './molecules/typer/MTyper.vue'
+export { default as MScrollToTop } from './molecules/scroll-to-top/MScrollToTop.vue'
 export { default as MNavbar } from './molecules/navbar/MNavbar.vue'
