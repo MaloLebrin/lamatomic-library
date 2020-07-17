@@ -21,9 +21,9 @@ describe('Atom - AList', () => {
         })
 
         expect(wrapper.find('ol')).toBeTruthy()
-        expect(wrapper.html()).toContain('<li>ohoh</li>')
-        expect(wrapper.html()).toContain('<li>héhé</li>')
-        expect(wrapper.html()).toContain('<li>hihi</li>')
+        expect(wrapper.html()).toContain('<li class="list-item">ohoh</li>')
+        expect(wrapper.html()).toContain('<li class="list-item">héhé</li>')
+        expect(wrapper.html()).toContain('<li class="list-item">hihi</li>')
     })
 
     test('...renders the correct classes based on props passed', () => {
