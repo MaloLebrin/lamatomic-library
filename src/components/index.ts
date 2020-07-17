@@ -19,12 +19,13 @@ export { default as AInputRadio } from './atoms/form/input/input-radio/AInputRad
 export { default as AInputSearch } from './atoms/form/input/input-search/AInputSearch.vue'
 export { default as AInputUrl } from './atoms/form/input/input-url/AInputUrl.vue'
 export { default as AInput } from './atoms/form/input/AInput.vue'
-export { default as ASelect } from './atoms/form/select/ASelect.vue';
+export { default as ASelect } from './atoms/form/select/ASelect.vue'
 
 
 // Molecules
 export { default as MLogo } from './molecules/logo/MLogo.vue'
 export { default as MTyper } from './molecules/typer/MTyper.vue'
+export { default as MNavbar } from './molecules/navbar/MNavbar.vue'
 export { default as MSocialButton } from './molecules/social-button/MSocialButton.vue'
 export { default as MSocialButtonFacebook } from './molecules/social-button/MSocialButtonFacebook.vue'
 export { default as MSocialButtonTwitter } from './molecules/social-button/MSocialButtonTwitter.vue'
