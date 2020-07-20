@@ -12,7 +12,7 @@ export { default as AInputCheckbox } from './atoms/form/input/input-checkbox/AIn
 export { default as AInputDate } from './atoms/form/input/input-date/AInputDate.vue'
 export { default as AInputFile } from './atoms/form/input/input-file/AInputFile.vue'
 export { default as AInputHidden } from './atoms/form/input/input-hidden/AInputHidden.vue'
-export { default as AInputMail } from './atoms/form/input/input-mail/AInputMail.vue'
+export { default as AInputEmail } from './atoms/form/input/input-email/AInputEmail.vue'
 export { default as AInputTel } from './atoms/form/input/input-tel/AInputTel.vue'
 export { default as AInputPassword } from './atoms/form/input/input-password/AInputPassword.vue'
 export { default as AInputRadio } from './atoms/form/input/input-radio/AInputRadio.vue'

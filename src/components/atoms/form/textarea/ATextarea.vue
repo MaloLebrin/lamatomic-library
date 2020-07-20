@@ -41,14 +41,14 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-$primary: #009CDE;
+$primary: #009cde;
 
 .textarea {
-        border: 0.1rem solid $primary;
-        width: 600px;
-        height: 120px;
-        padding: 5px;
-        resize: auto;
-        overflow: hidden;
-    }
+    border: 0.1rem solid $primary;
+    height: 120px;
+    overflow: hidden;
+    padding: 5px;
+    resize: auto;
+    width: 600px;
+}
 </style>
