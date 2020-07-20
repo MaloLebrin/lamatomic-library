@@ -52,9 +52,9 @@ export default Vue.extend({
     margin: auto;
     animation: 1s appear;
     border-radius: 100%;
-    padding: 13px;
-    width: 30px;
-    height: 30px;
+    padding: 0;
+    width: 40px;
+    height: 40px;
 
     &:hover {
         .image {
@@ -63,8 +63,8 @@ export default Vue.extend({
     }
 
     .image {
-        width: 100%;
-        height: 100%;
+        width: 60%;
+        height: 60%;
     }
 }
 
