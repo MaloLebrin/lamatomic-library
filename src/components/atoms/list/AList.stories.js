@@ -36,6 +36,16 @@ storiesOf('Atoms/List', module)
         }
     }))
 
+    .add('Vertical, no chips, no padding', () => ({
+        ...wrapper,
+        template: '<AList :items="items" withoutChips noPadding></AList>',
+        data() {
+            return {
+                items: ['Ohohoh', 'Qui es là ?', 'ton cul']
+            }
+        }
+    }))
+
     .add('Horizontal without chips', () => ({
         ...wrapper,
         template: `<AList :items="items" :withoutChips="false" :horizontal="true"></AList>`,
