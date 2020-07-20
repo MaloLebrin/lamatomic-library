@@ -1,14 +1,14 @@
 <template>
     <div class="o-footer">
-        <MScrollToTop v-if="withScrollToTop"/>
+        <MScrollToTop v-if="!withoutScrollToTop"/>
 
         <div class="cols-wrapper">
-            <!-- in <OFooter> : <template #colonne1>content colonne1 here</template> -->
-            <slot name="colonne1"></slot>
+            <!-- in <OFooter> : <template #col-1>content col-1 here</template> -->
+            <slot name="col-1"></slot>
 
-            <slot name="colonne2"></slot>
+            <slot name="col-2"></slot>
 
-            <slot name="colonne3"></slot>
+            <slot name="col-3"></slot>
         </div>
     </div>
 </template>
@@ -24,9 +24,9 @@ export default Vue.extend({
     },
 
     props: {
-        withScrollToTop: {
+        withoutScrollToTop: {
             type: Boolean,
-            default: true
+            default: false
         }
     }
 })
@@ -39,6 +39,7 @@ $black: #2B2B2B;
     margin: auto;
     padding: 3rem;
     animation: 1s appear;
+    transition: all 100ms;
     background-color: $black;
     width: 100%;
     color: $white;

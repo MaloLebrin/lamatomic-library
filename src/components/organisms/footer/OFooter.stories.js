@@ -49,13 +49,13 @@ storiesOf('Organisms/Footer', module)
         },
         template: `
         <OFooter>
-            <template #colonne1><AText>© Copyright 2020</AText></template>
-            <template #colonne2>
+            <template #col-1><AText>© Copyright 2020</AText></template>
+            <template #col-2>
                 <div>
                     <AList :items="socialButtonItems" :horizontal="true" without-chips />
                 </div>
             </template>
-            <template #colonne3>
+            <template #col-3>
                 <MNavbar :items="items" :horizontal="false" />
             </template>
         </OFooter>
@@ -72,8 +72,8 @@ storiesOf('Organisms/Footer', module)
         },
         template: `
         <OFooter>
-            <template #colonne1><AText>© Copyright 2020</AText></template>
-            <template #colonne3>
+            <template #col-1><AText>© Copyright 2020</AText></template>
+            <template #col-3>
                 <MNavbar :items="items" :horizontal="false" />
             </template>
         </OFooter>
@@ -90,7 +90,22 @@ storiesOf('Organisms/Footer', module)
         },
         template: `
         <OFooter>
-            <template #colonne1><AText>© Copyright 2020</AText></template>
+            <template #col-1><AText>© Copyright 2020</AText></template>
+        </OFooter>
+        `
+    }))
+
+    .add('1 colonne without scrollToTop button', () => ({
+        ...wrapper,
+        data() {
+            return {
+                items,
+                socialButtonItems
+            }
+        },
+        template: `
+        <OFooter withoutScrollToTop>
+            <template #col-1><AText>© Copyright 2020</AText></template>
         </OFooter>
         `
     }))
