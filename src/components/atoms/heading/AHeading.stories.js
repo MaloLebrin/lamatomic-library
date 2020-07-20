@@ -35,3 +35,125 @@ storiesOf('Atoms/Heading', module)
         ...wrapper,
         template: '<AHeading level="6">Hello h6</AHeading>'
     }))
+
+    .add('Italic', () => ({
+        ...wrapper,
+        template:
+            '<AHeading italic>Mon super titre en italic (ça claque !)</AHeading>'
+    }))
+
+storiesOf('Atoms/Heading/Align', module)
+    .add('Left', () => ({
+        ...wrapper,
+        template: `
+            <AHeading align="left">
+                Lorem ipsum dolor sit amet
+            </AHeading>`
+    }))
+
+    .add('Center', () => ({
+        ...wrapper,
+        template: `
+            <AHeading align="center">
+                Lorem ipsum dolor sit amet
+            </AHeading>`
+    }))
+
+    .add('Right', () => ({
+        ...wrapper,
+        template: `
+            <AHeading align="right">
+                Lorem ipsum dolor sit amet
+            </AHeading>`
+    }))
+
+    .add('Justify', () => ({
+        ...wrapper,
+        template: `
+            <AHeading align="justify">
+                Lorem ipsum dolor sit amet
+            </AHeading>`
+    }))
+
+storiesOf('Atoms/Heading/Weight', module)
+    .add('Thin', () => ({
+        ...wrapper,
+        template: `
+            <AHeading weight="thin">
+                Oh yeah I love bananas 💛
+            </AHeading>`
+    }))
+
+    .add('Normal', () => ({
+        ...wrapper,
+        template: `
+            <AHeading weight="normal">
+                Oh yeah I love bananas 💛
+            </AHeading>`
+    }))
+
+    .add('Bold', () => ({
+        ...wrapper,
+        template: `
+            <AHeading weight="bold">
+                Oh yeah I love bananas 💛
+            </AHeading>`
+    }))
+
+    .add('Bolder', () => ({
+        ...wrapper,
+        template: `
+            <AHeading weight="bolder">
+                Oh yeah I love bananas 💛
+            </AHeading>`
+    }))
+
+storiesOf('Atoms/Heading/Decoration', module)
+    .add('No Decoration', () => ({
+        ...wrapper,
+        template: `
+            <AHeading decoration="no-decoration">
+                Oh yeah I love bananas 💛
+            </AHeading>`
+    }))
+
+    .add('Blink', () => ({
+        ...wrapper,
+        template: `
+            <AHeading decoration="blink">
+                Oh yeah I love bananas 💛
+            </AHeading>`
+    }))
+
+    .add('Dashed', () => ({
+        ...wrapper,
+        template: `
+            <AHeading decoration="dashed">
+                Oh yeah I love bananas 💛
+            </AHeading>`
+    }))
+
+    .add('Dotted', () => ({
+        ...wrapper,
+        template: `
+            <AHeading decoration="dotted">
+                Oh yeah I love bananas 💛
+            </AHeading>`
+    }))
+
+    .add('Double', () => ({
+        ...wrapper,
+        template: `
+            <AHeading decoration="double">
+                Oh yeah I love bananas 💛
+            </AHeading>`
+    }))
+
+    .add('Underline', () => ({
+        ...wrapper,
+        template: `
+            <AHeading decoration="underline">
+                Oh yeah I love bananas 💛
+            </AHeading>`
+    }))
+
