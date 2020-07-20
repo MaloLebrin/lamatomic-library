@@ -27,12 +27,12 @@ storiesOf('Organisms/Header', module)
         template: '<OHeader :items="items" />'
     }))
 
-    .add('Vertical', () => ({
+    .add('Mobile', () => ({
         ...wrapper,
         data() {
             return {
                 items
             }
         },
-        template: '<OHeader :items="items" :horizontal="false" />'
+        template: '<OHeader :items="items" IsOpen />'
     }))
