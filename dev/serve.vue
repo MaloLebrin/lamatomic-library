@@ -27,13 +27,8 @@
 <script lang="ts">
 
 import Vue from 'vue';
-import { AButton, ALink, AText, AList, MLogo, MNavbar, MSocialButtonInstagram, MSocialButtonLinkedin, MSocialButtonTwitter, MSocialButtonFacebook, OHeader, OFooter } from '@/entry';
+import { ALink, AText, AList, MLogo, MNavbar, MSocialButtonInstagram, MSocialButtonLinkedin, MSocialButtonTwitter, MSocialButtonFacebook, OHeader, OFooter } from '@/entry';
 import { getMountedComponent } from '@/utils'
-
-const btn1 = getMountedComponent(AButton, { state: 'success' }, { default: 'Buy now!😏'})
-const btn2 = getMountedComponent(AButton, { state: 'warning' }, { default: 'Join ours bananas 🍌'})
-
-const items = [link1, btn1, btn2]
 
 const SocialButton1 = getMountedComponent(MSocialButtonInstagram, {})
 const SocialButton2 = getMountedComponent(MSocialButtonLinkedin, {})
@@ -74,7 +69,7 @@ export default Vue.extend({
         MLogo,
         MNavbar
     },
-  
+
     data() {
         return {
             items,
