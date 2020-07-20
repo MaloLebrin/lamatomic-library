@@ -37,3 +37,4 @@ export { default as MPartner } from './molecules/partner/MPartner.vue'
 
 //  Organisms
 export { default as OPartners } from './organisms/partners/OPartners.vue'
+export { default as ONewsletterForm } from './organisms/ONewsletterForm/ONewsletterForm.vue'
