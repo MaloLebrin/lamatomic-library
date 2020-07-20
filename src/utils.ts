@@ -9,8 +9,14 @@ import Vue from 'vue'
  * @param {VueComponent} component Component to mount
  * @param {Object} props Props to use for the given component
  * @param {Object} slots [Optional] Slots eventually populate -> { default: 'My slot content', 'custom-slot': "My custom slot content"}
+ *
+ * @returns {string} HTML Component rendering
  */
-export const getMountedComponent = (component: any, props: Object, slots: Object = {}) => {
+export const getMountedComponent = (
+    component: any,
+    props: Object,
+    slots: Object = {}
+): string => {
     const VueCmp = Vue.extend(component)
     const instance = new VueCmp({
         propsData: {
@@ -25,4 +31,17 @@ export const getMountedComponent = (component: any, props: Object, slots: Object
     }
 
     return instance.$mount().$el.outerHTML
+}
+
+/**
+ * Get a random string on given length
+ *
+ * @param {number} length Length of the generated string
+ *
+ * @return {string} Random generated string
+ */
+export const getRandom = (length: number = 5): string => {
+    return Math.random()
+        .toString(36)
+        .substr(2, length)
 }
