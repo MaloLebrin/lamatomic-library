@@ -46,15 +46,12 @@ export default Vue.extend({
 <style lang="scss">
 
 .m-social-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
+    display: block;
     animation: 1s appear;
     border-radius: 100%;
-    padding: 13px;
-    width: 30px;
-    height: 30px;
+    padding: 5px;
+    width: 20px;
+    height: 20px;
 
     &:hover {
         .image {
