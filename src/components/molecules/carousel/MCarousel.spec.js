@@ -8,7 +8,7 @@ describe('Molecule - MCarousel', () => {
     test('...as default', () => {
         const wrapper = mount( MCarousel )
 
-        expect(wrapper.html()).toContain('<div class="VueCarousel"')
+        expect(wrapper.html()).toContain('<div class="VueCarousel m-carousel')
     })
     test('... array of component in slides', () => {
         const image1 = getMountedComponent(AImage,
