@@ -15,7 +15,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import MScrollToTop from '../../molecules/scroll-to-top/MScrollToTop.vue'
+import MScrollToTop from '@/components/molecules/scroll-to-top/MScrollToTop.vue'
 
 export default Vue.extend({
     name: 'MLogo',
@@ -34,7 +34,7 @@ export default Vue.extend({
 
 <style lang="scss">
 $white: #fff;
-$black: #2B2B2B;
+$black: #2b2b2b;
 .o-footer {
     margin: auto;
     padding: 3rem;
@@ -66,7 +66,7 @@ $black: #2B2B2B;
     }
 }
 
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 576px) {
   .o-footer {
     .cols-wrapper {
         flex-direction: row;
