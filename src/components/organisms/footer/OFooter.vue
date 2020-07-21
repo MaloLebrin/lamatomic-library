@@ -3,7 +3,6 @@
         <MScrollToTop v-if="!withoutScrollToTop"/>
 
         <div class="cols-wrapper">
-            <!-- in <OFooter> : <template #col-1>content col-1 here</template> -->
             <slot name="col-1"></slot>
 
             <slot name="col-2"></slot>
@@ -19,6 +18,7 @@ import MScrollToTop from '@/components/molecules/scroll-to-top/MScrollToTop.vue'
 
 export default Vue.extend({
     name: 'MLogo',
+
     components: {
         MScrollToTop
     },
@@ -35,6 +35,7 @@ export default Vue.extend({
 <style lang="scss">
 $white: #fff;
 $black: #2b2b2b;
+
 .o-footer {
     margin: auto;
     padding: 3rem;
@@ -67,10 +68,10 @@ $black: #2b2b2b;
 }
 
 @media screen and (min-width: 576px) {
-  .o-footer {
-    .cols-wrapper {
-        flex-direction: row;
+    .o-footer {
+        .cols-wrapper {
+            flex-direction: row;
+        }
     }
-  }
 }
 </style>
