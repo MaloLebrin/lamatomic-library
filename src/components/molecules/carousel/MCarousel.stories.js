@@ -47,5 +47,16 @@ storiesOf('Molecules/Carousel', module)
         template: wrapCarousel(`<MCarousel :slides="slides" :navigationEnabled="true" />`)
     }))
 
+    .add('With autoplay', () => ({
+        ...wrapper,
+        data() {
+            return {
+                slides
+            }
+
+        },
+        template: wrapCarousel(`<MCarousel :slides="slides" :autoplay="true" />`)
+    }))
+
 
 

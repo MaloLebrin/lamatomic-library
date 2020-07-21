@@ -67,6 +67,14 @@ export default Vue.extend({
         navigationPrevLabel: {
             type: String,
             default: '<'
+        },
+        autoplayHoverPause: {
+            type: Boolean,
+            default: true
+        },
+        centerMode: {
+            type: Boolean,
+            default: true
         }
     }
 })
