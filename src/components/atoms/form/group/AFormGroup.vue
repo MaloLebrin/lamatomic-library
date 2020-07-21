@@ -1,8 +1,5 @@
 <template>
-    <div :id="id" class="form-group">
-        <ALabel :for="id"/>
-        <slot></slot>
-    </div>
+    <ALabel class="a-form-group"> {{ label }} <slot /> </ALabel>
 </template>
 
 <script lang="ts">
@@ -18,17 +15,8 @@ export default Vue.extend({
         id: {
             type: String,
             default: null,
-            required: true
         },
-        type: {
-            type: String,
-            default: null
-        },
-        placeholder: {
-            type: String,
-            default: null
-        },
-        name: {
+        label: {
             type: String,
             default: null
         }

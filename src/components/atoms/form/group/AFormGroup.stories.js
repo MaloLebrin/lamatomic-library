@@ -9,8 +9,5 @@ const wrapper = {
 storiesOf('Atoms/FormGroup', module)
   .add('default as FormGroup', () => ({
     ...wrapper,
-    template: `<AFormGroup :for="name" :required="true">
-    Nom De famille
-        <AInputText/>
-    </AFormGroup>`,
+    template: `<AFormGroup label="Nom"> <AInputText /> </AFormGroup>`,
   }),)
