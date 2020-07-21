@@ -4,7 +4,7 @@ const wrapper = {
     components: { AInputCheckbox }
 }
 
-storiesOf('Atoms/Inputs', module).add('Checkbox', () => ({
+storiesOf('Atoms/Form/Inputs', module).add('Checkbox', () => ({
     ...wrapper,
     template: '<AInputCheckbox />'
 }))

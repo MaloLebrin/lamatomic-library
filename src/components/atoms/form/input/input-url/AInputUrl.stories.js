@@ -4,7 +4,7 @@ const wrapper = {
     components: { AInputUrl }
 }
 
-storiesOf('Atoms/Inputs', module).add(
+storiesOf('Atoms/Form/Inputs', module).add(
     'Url',
     () => ({
         ...wrapper,

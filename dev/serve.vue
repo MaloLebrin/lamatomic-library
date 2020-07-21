@@ -1,15 +1,12 @@
 <template>
   <div id="app">
-    <AText align="right" weight="bold" italic>Oh yeah!</AText>
-    <AButton>Yeah</AButton>
-    <AHeading>Gros titre de fou</AHeading>
     <AInputDate />
 
     <MLogo />
 
     <OFooter>
-        <template #colonne1><AText>© Copyright 2020</AText></template>
-        <template #colonne2>
+        <template #col-1><AText>© Copyright 2020</AText></template>
+        <template #col-2>
             <div id="social-part">
                 <div>
                     <AText>Follow if you care</AText>
@@ -19,7 +16,7 @@
                 </div>
             </div>
         </template>
-        <template #colonne3>
+        <template #col-3>
             <MNavbar :items="items" :horizontal="false" />
         </template>
     </OFooter>
@@ -29,7 +26,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import { getMountedComponent } from '@/utils'
-import { AButton, AHeading, ALink, AText, AList, MLogo, MNavbar, MSocialButtonInstagram, MSocialButtonLinkedin, MSocialButtonTwitter, MSocialButtonFacebook, OFooter } from '@/entry';
+import { ALink, AText, AList, MLogo, MNavbar, MSocialButtonInstagram, MSocialButtonLinkedin, MSocialButtonTwitter, MSocialButtonFacebook, OFooter } from '@/entry';
 
 const SocialButton1 = getMountedComponent(MSocialButtonInstagram, {})
 const SocialButton2 = getMountedComponent(MSocialButtonLinkedin, {})
@@ -62,8 +59,6 @@ const items:String[] = [link1, link2, link3]
 export default Vue.extend({
   name: 'ServeDev',
   components: {
-    AButton,
-    AHeading,
     AText,
     AList,
     OFooter,
