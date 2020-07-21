@@ -2,16 +2,23 @@ import { storiesOf } from '@storybook/vue'
 import { getMountedComponent } from '@/utils'
 import { MCarousel, AImage } from '@/entry'
 
-
 const wrapper = {
     components: { MCarousel }
 }
-const image1 = getMountedComponent(AImage,
-     { src: require("../logo/svg/logo-white-inline.svg")}, 
-     { alt: "logodefault"}
+
+const wrapCarousel = (content) => {
+    return '<div style="width: 600px; margin-left: 2rem;">' + content + '</div>'
+}
+
+const image1 = getMountedComponent(
+    AImage,
+    { src:"https://placehold.it/400x150"},
+    { alt: "logodefault"}
 )
-const image2 = getMountedComponent(AImage, 
-    { src: require("../logo/svg/logo-white.svg")}, 
+
+const image2 = getMountedComponent(
+    AImage,
+    { src: "https://placehold.it/350x150"},
     { alt: "inline" }
 )
 
@@ -26,7 +33,19 @@ storiesOf('Molecules/Carousel', module)
             }
 
         },
-        template: 
-        `<MCarousel :slides="slides" />`
+        template: wrapCarousel(`<MCarousel :slides="slides" />`)
     }))
+
+    .add('With arrows', () => ({
+        ...wrapper,
+        data() {
+            return {
+                slides
+            }
+
+        },
+        template: wrapCarousel(`<MCarousel :slides="slides" :navigationEnabled="true" />`)
+    }))
+
+
 

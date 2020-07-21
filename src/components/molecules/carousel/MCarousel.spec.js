@@ -3,10 +3,11 @@ import MCarousel from './MCarousel.vue'
 import AImage from '@/components/atoms/image/AImage.vue'
 import { getMountedComponent } from '@/utils'
 
-
 describe('Molecule - MCarousel', () => {
-    test('... as default', () => {
+
+    test('...as default', () => {
         const wrapper = mount( MCarousel )
+
         expect(wrapper.html()).toContain('<div class="VueCarousel"')
     })
     test('... array of component in slides', () => {
@@ -21,6 +22,7 @@ describe('Molecule - MCarousel', () => {
                 slides
             }
        })
+
        expect(wrapper.html()).toContain('<div class="VueCarousel-wrapper">')
        expect(wrapper.html()).toContain('<div class="VueCarousel-inner" style="transform: translate(0px, 0); transition: 0.5s ease transform; flex-basis: 0px; visibility: hidden; height: auto;">')
     })

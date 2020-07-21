@@ -1,7 +1,14 @@
 <template>
-    <Carousel :per-page="1" :mouse-drag="false">
-        <Slide v-for="slide in slides" :key="slide" v-html="slide">
-        </Slide>
+    <Carousel
+        class="m-carousel"
+        :per-page="perPage"
+        :navigation-enabled="navigationEnabled"
+        :navigation-prev-label="navigationPrevLabel"
+        :navigation-next-label="navigationNextLabel"
+        :auto-play="autoPlay"
+        :loop="loop"
+    >
+        <Slide v-for="slide in slides" :key="slide" class=slide v-html="slide"></Slide>
     </Carousel>
 </template>
 
@@ -29,9 +36,13 @@ export default Vue.extend({
             type: Boolean,
             default: true
         },
-        autoPlay:{
+        autoPlay: {
             type: Boolean,
             default: false
+        },
+        autoplayTimeout:{
+            type: Number,
+            default: 2000
         },
         loop: {
             type: Boolean,
@@ -39,13 +50,43 @@ export default Vue.extend({
         },
         speed: {
             type: Number,
-            default:500
+            default: 500
         },
         perPage: {
             type: Number,
-            default:2
+            default:1
+        },
+        paginationColor: {
+            type: String,
+            default: '#009CDE'
+        },
+        navigationNextLabel: {
+            type: String,
+            default: '>'
+        },
+        navigationPrevLabel: {
+            type: String,
+            default: '<'
         }
     }
 })
-
 </script>
+
+<style lang="scss">
+$primary: #009cde;
+
+.m-carousel.VueCarousel {
+    .VueCarousel-slide {
+        > * {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .VueCarousel-pagination {
+        position: absolute;
+        bottom: -70px;
+    }
+}
+</style>
