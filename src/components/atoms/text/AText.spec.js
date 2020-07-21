@@ -18,6 +18,16 @@ describe('Atom - AText', () => {
         expect(wrapper.html()).toBe('<span class="a-text"></span>')
     })
 
+    test('...with custom tag', () => {
+        const wrapper = mount(AText, {
+            propsData: {
+                tag: 'h1'
+            }
+        })
+
+        expect(wrapper.html()).toBe('<h1 class="a-text"></h1>')
+    })
+
     test('...with align right', () => {
         const wrapper = mount(AText, {
             propsData: {
