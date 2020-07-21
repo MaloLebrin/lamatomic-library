@@ -1,159 +1,95 @@
 import { storiesOf } from '@storybook/vue'
 import AHeading from './AHeading.vue'
+import AText from '@/components/atoms/text/AText.vue'
 
 const wrapper = {
-    components: { AHeading }
+    components: { AHeading, AText }
 }
 
 storiesOf('Atoms/Heading', module)
-    .add('H1', () => ({
+    .add('Heading', () => ({
         ...wrapper,
-        template: '<AHeading :level="1">Hello h1</AHeading>'
-    }))
-
-    .add('H2', () => ({
-        ...wrapper,
-        template: '<AHeading level="2">Hello h2</AHeading>'
-    }))
-
-    .add('H3', () => ({
-        ...wrapper,
-        template: '<AHeading level="3">Hello h3</AHeading>'
-    }))
-
-    .add('H4', () => ({
-        ...wrapper,
-        template: '<AHeading level="4">Hello h4</AHeading>'
-    }))
-
-    .add('H5', () => ({
-        ...wrapper,
-        template: '<AHeading level="5">Hello h5</AHeading>'
-    }))
-
-    .add('H6', () => ({
-        ...wrapper,
-        template: '<AHeading level="6">Hello h6</AHeading>'
+        template: `
+            <div>
+                <AHeading level="1">Hello h1</AHeading>
+                <AHeading level="2">Hello h2</AHeading>
+                <AHeading level="3">Hello h3</AHeading>
+                <AHeading level="4">Hello h4</AHeading>
+                <AHeading level="5">Hello h5</AHeading>
+                <AHeading level="6">Hello h6</AHeading>
+            </div>
+        `
     }))
 
     .add('Italic', () => ({
         ...wrapper,
         template:
-            '<AHeading italic>Mon super titre en italic (ça claque !)</AHeading>'
+            '<AHeading italic>Title in italic</AHeading>'
     }))
 
-storiesOf('Atoms/Heading/Align', module)
-    .add('Left', () => ({
+    .add('Align', () => ({
         ...wrapper,
         template: `
-            <AHeading align="left">
-                Lorem ipsum dolor sit amet
-            </AHeading>`
+            <div>
+                <AHeading align="left">
+                    Title left align
+                </AHeading>
+                <AHeading align="center">
+                    Title center align
+                </AHeading>
+                <AHeading align="right">
+                    Title right align
+                </AHeading>
+                <AHeading align="justify">
+                    Title justify align
+                </AHeading>
+            </div>
+        `
     }))
 
-    .add('Center', () => ({
+    .add('Weight', () => ({
         ...wrapper,
         template: `
-            <AHeading align="center">
-                Lorem ipsum dolor sit amet
-            </AHeading>`
+            <div>
+                <AHeading weight="thin">
+                    Title thin weight
+                </AHeading>
+                <AHeading weight="normal">
+                    Title normal weight
+                </AHeading>
+                <AHeading weight="bold">
+                    Title bold weight
+                </AHeading>
+                <AHeading weight="bolder">
+                    Title bolder weight
+                </AHeading>
+            </div>
+        `
     }))
 
-    .add('Right', () => ({
+    .add('Decoration', () => ({
         ...wrapper,
         template: `
-            <AHeading align="right">
-                Lorem ipsum dolor sit amet
-            </AHeading>`
-    }))
-
-    .add('Justify', () => ({
-        ...wrapper,
-        template: `
-            <AHeading align="justify">
-                Lorem ipsum dolor sit amet
-            </AHeading>`
-    }))
-
-storiesOf('Atoms/Heading/Weight', module)
-    .add('Thin', () => ({
-        ...wrapper,
-        template: `
-            <AHeading weight="thin">
-                Oh yeah I love bananas 💛
-            </AHeading>`
-    }))
-
-    .add('Normal', () => ({
-        ...wrapper,
-        template: `
-            <AHeading weight="normal">
-                Oh yeah I love bananas 💛
-            </AHeading>`
-    }))
-
-    .add('Bold', () => ({
-        ...wrapper,
-        template: `
-            <AHeading weight="bold">
-                Oh yeah I love bananas 💛
-            </AHeading>`
-    }))
-
-    .add('Bolder', () => ({
-        ...wrapper,
-        template: `
-            <AHeading weight="bolder">
-                Oh yeah I love bananas 💛
-            </AHeading>`
-    }))
-
-storiesOf('Atoms/Heading/Decoration', module)
-    .add('No Decoration', () => ({
-        ...wrapper,
-        template: `
-            <AHeading decoration="no-decoration">
-                Oh yeah I love bananas 💛
-            </AHeading>`
-    }))
-
-    .add('Blink', () => ({
-        ...wrapper,
-        template: `
-            <AHeading decoration="blink">
-                Oh yeah I love bananas 💛
-            </AHeading>`
-    }))
-
-    .add('Dashed', () => ({
-        ...wrapper,
-        template: `
-            <AHeading decoration="dashed">
-                Oh yeah I love bananas 💛
-            </AHeading>`
-    }))
-
-    .add('Dotted', () => ({
-        ...wrapper,
-        template: `
-            <AHeading decoration="dotted">
-                Oh yeah I love bananas 💛
-            </AHeading>`
-    }))
-
-    .add('Double', () => ({
-        ...wrapper,
-        template: `
-            <AHeading decoration="double">
-                Oh yeah I love bananas 💛
-            </AHeading>`
-    }))
-
-    .add('Underline', () => ({
-        ...wrapper,
-        template: `
-            <AHeading decoration="underline">
-                Oh yeah I love bananas 💛
-            </AHeading>`
+            <div>
+                <AHeading decoration="no-decoration">
+                    Title no-decoration
+                </AHeading>
+                <AHeading decoration="blink">
+                    Title blink decoration
+                </AHeading>
+                <AHeading decoration="dashed">
+                    Title dashed decoration
+                </AHeading>
+                <AHeading decoration="dotted">
+                    Title dotted decoration
+                </AHeading>
+                <AHeading decoration="double">
+                    Title double decoration
+                </AHeading>
+                <AHeading decoration="underline">
+                    Title underline decoration
+                </AHeading>
+            </div>
+        `
     }))
 
