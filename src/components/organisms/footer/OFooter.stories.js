@@ -39,6 +39,8 @@ const link3 = getMountedComponent(
 const items = [link1, link2, link3]
 
 storiesOf('Organisms/Footer', module)
+    .addParameters({ component: OFooter })
+
     .add('Default, 3 columns', () => ({
         ...wrapper,
         data() {

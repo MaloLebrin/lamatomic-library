@@ -5,12 +5,13 @@ const wrapper = {
     components: { AImage }
 }
 
-storiesOf('Atoms/Image', module).add(
-    'Default',
-    () => ({
-        ...wrapper,
-        template:
-            '<AImage src="https://placehold.it/350x150" title="Une super AImage de Lama" alt="un lama super" />'
-    }),
-    { info: true }
-)
+storiesOf('Atoms/Image', module)
+    .addParameters({ component: AImage })
+
+    .add('Default',() => ({
+            ...wrapper,
+            template:
+                '<AImage src="https://placehold.it/350x150" title="Une super AImage de Lama" alt="un lama super" />'
+        }),
+        { info: true }
+    )

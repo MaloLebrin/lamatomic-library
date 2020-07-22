@@ -4,9 +4,10 @@ const wrapper = {
     components: { AInputMail }
 }
 
-storiesOf('Atoms/Form/Inputs/Mail', module).add(
-    'Mail default',
-    () => ({
+storiesOf('Atoms/Form/Inputs/Mail', module)
+.addParameters({ component: AInputMail })
+
+.add('Mail default',() => ({
         ...wrapper,
         template:
             '<AInputMail  />'

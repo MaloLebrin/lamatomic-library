@@ -6,6 +6,8 @@ const wrapper = {
 }
 
 storiesOf('Atoms/Text', module)
+    .addParameters({ component: AText })
+
     .add('Default', () => ({
         ...wrapper,
         template: '<AText>Mon super texte dans une balise p</AText>'

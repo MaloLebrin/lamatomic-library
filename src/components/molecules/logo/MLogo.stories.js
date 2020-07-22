@@ -6,6 +6,8 @@ const wrapper = {
 }
 
 storiesOf('Molecules/Logo', module)
+    .addParameters({ component: MLogo })
+
     .add('Default', () => ({
         ...wrapper,
         template: '<MLogo />'

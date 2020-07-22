@@ -5,12 +5,14 @@ const wrapper = {
     components: { AInputPassword }
 }
 
-storiesOf('Atoms/Form/Inputs/Password', module).add('Password default', () => ({
-    ...wrapper,
-    template: `<AInputPassword />`,
+storiesOf('Atoms/Form/Inputs/Password', module)
+.addParameters({ component: AInputPassword })
 
-    methods: { action: action('hidePassword') }
-}))
+    .add('Password default', () => ({
+        ...wrapper,
+        template: `<AInputPassword />`,
+        methods: { action: action('hidePassword') }
+    }))
     .add(' Password with alert', () => ({
         ...wrapper,
         template: `<AInputPassword  strong-verif />`,

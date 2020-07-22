@@ -7,6 +7,7 @@ const wrapper = {
 }
 
 storiesOf('Atoms/Button', module)
+.addParameters({ component: AButton })
     .add('Default', () => ({
         ...wrapper,
         template: `<AButton>Le LamaBouton ❤</AButton>`
