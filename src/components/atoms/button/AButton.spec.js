@@ -8,6 +8,14 @@ describe('Atom - AButton', () => {
         expect(wrapper.html()).toBe('<button class="button"></button>')
     })
 
+    test('...with custom tag', () => {
+        const wrapper = mount(AButton, {
+            propsData: { customTag: 'div' }
+        })
+
+        expect(wrapper.html()).toBe('<div class="button"></div>')
+    })
+
     test('...tag should be <a> if href is available', () => {
         const wrapper = mount(AButton, {
             propsData: { href: 'https://lamacompta.co' }
