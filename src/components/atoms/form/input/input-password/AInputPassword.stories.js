@@ -6,7 +6,7 @@ const wrapper = {
 }
 
 storiesOf('Atoms/Form/Inputs/Password', module)
-.addParameters({ component: AInputPassword })
+    .addParameters({ component: AInputPassword })
 
     .add('Password default', () => ({
         ...wrapper,
