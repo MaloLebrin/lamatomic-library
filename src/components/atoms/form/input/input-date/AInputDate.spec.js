@@ -38,14 +38,6 @@ describe('Atom - AInputDate', () => {
         expect(wrapper.html()).toContain('type="input"')
     })
 
-    test('...with isDark', () => {
-        const wrapper = mount(AInputDate, {
-            propsData: { isDark: true }
-        })
-
-        expect(wrapper.attributes().class).toContain('is-dark')
-    })
-
     test("...mode not in [single, multiple, range] doesn't work", () => {
         const wrapper = mount(AInputDate)
         const type = wrapper.vm.$options.props.mode

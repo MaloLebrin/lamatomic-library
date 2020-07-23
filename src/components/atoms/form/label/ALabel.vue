@@ -1,45 +1,50 @@
 <template>
-  <label
-    :for="htmlFor"
-    class="label"
-  >
-    <template v-if="required">*</template><slot></slot>
-  </label>
+    <label
+        :for="htmlFor"
+        class="a-label"
+    >
+        <slot></slot> <span v-if="required" class="required-indicator">*</span>
+    </label>
 </template>
 
 <script lang="ts">
-
 import Vue from 'vue'
+
 export default Vue.extend({
-  name: 'ALabel',
-  props: {
-    htmlFor: {
-        type: String,
-        default: null
-    },
-    required: {
-      type: Boolean,
-      default: false
+    name: 'ALabel',
+
+    props: {
+        htmlFor: {
+            type: String,
+            default: null
+        },
+
+        required: {
+            type: Boolean,
+            default: false
+        }
     }
-  }
 })
 </script>
 
 <style lang="scss">
 $red: #d92550;
 $green: #3ac47d;
-.label {
-  font-size: inherit;
-  user-select: none;
-  display: flex;
-  align-items: center;
 
-  &.error {
-    color: $red;
-  }
+.a-label {
+    font-size: inherit;
+    user-select: none;
 
-  &.success {
-    color: $green;
-  }
+    &.error {
+        color: $red;
+    }
+
+    &.success {
+        color: $green;
+    }
+
+    .required-indicator {
+        color: $red;
+    }
 }
 </style>

@@ -1,22 +1,24 @@
-import { shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import AInputHidden from './AInputHidden.vue'
 
 describe('Atom - AInputHidden', () => {
-    test('...default has <AInputHidden> tag', () => {
-        const wrapper = shallowMount(AInputHidden)
-        expect(wrapper.find('AInputHidden')).toBeTruthy()
+    test('...default has <input> tag', () => {
+        const wrapper = mount(AInputHidden)
+
+        expect(wrapper.find('input.a-input.a-input-checkbox[type="checkbox"]')).toBeTruthy()
     })
-    test('Renders the correct classes based on props passed', () => {
-        const wrapper = shallowMount(AInputHidden, {
+
+    test('...props are correctly setted', () => {
+        const wrapper = mount(AInputHidden, {
             propsData: {
-                hidden: true,
-                value: 'Catcat1',
-                required: false
+                id: 'id-hidden',
+                name: 'name-hidden',
+                value: 'good hidden value'
             }
         })
-        expect(wrapper.attributes().hidden).toBeTruthy()
-        expect(wrapper.attributes().value).toBe('Catcat1')
-        expect(wrapper.attributes().required).toBeFalsy()
 
+        expect(wrapper.attributes().id).toBe('id-hidden')
+        expect(wrapper.attributes().name).toBe('name-hidden')
+        expect(wrapper.attributes().value).toBe('good hidden value')
     })
 })

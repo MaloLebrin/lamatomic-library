@@ -1,5 +1,6 @@
 import { storiesOf } from '@storybook/vue'
 import AInputSearch from './AInputSearch.vue'
+
 const wrapper = {
     components: { AInputSearch }
 }

@@ -1,5 +1,6 @@
 import { storiesOf } from '@storybook/vue'
 import AInputEmail from './AInputEmail.vue'
+
 const wrapper = {
     components: { AInputEmail }
 }
@@ -7,10 +8,10 @@ const wrapper = {
 storiesOf('Atoms/Inputs/Email', module)
     .add('Default', () => ({
         ...wrapper,
-        template: '<AInputEmail  />'
+        template: '<AInputEmail name="your-email" />'
     }))
 
     .add('With email verification', () => ({
         ...wrapper,
-        template: `<AInputEmail verif-validity />`,
+        template: `<AInputEmail name="your-email" checkValidity />`,
     }))

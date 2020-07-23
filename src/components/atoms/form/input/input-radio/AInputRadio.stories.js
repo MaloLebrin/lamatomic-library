@@ -6,6 +6,31 @@ const wrapper = {
 
 storiesOf('Atoms/Form/Inputs', module).add('Radio', () => ({
     ...wrapper,
-    template:
-        '<AInputRadio class="input radio" :radio="radio" @change="onChange($event)"/>'
+    template: `
+      <div>
+        <label>
+          <AInputRadio name="fruit" v-model="selectedValue" value="banana" />
+          Banana 🍌
+        </label>
+
+        <label>
+          <AInputRadio name="fruit" v-model="selectedValue" value="strawberry" checked />
+          Strawberry 🍓
+        </label>
+
+        <label>
+          <AInputRadio name="fruit" v-model="selectedValue" value="kiwi" />
+          Kiwi 🥝
+        </label>
+
+        <br/><br/>
+
+        Value is: {{ selectedValue }}
+      </div>
+    `,
+    data() {
+        return {
+            selectedValue: null
+        }
+    }
 }))

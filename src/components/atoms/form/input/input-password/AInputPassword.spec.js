@@ -1,20 +1,32 @@
-import { shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import AInputPassword from './AInputPassword.vue'
 
+let stubs
+
+beforeEach(() => {
+    stubs = {
+        AImage: { template: '<div></div>' }
+    }
+})
+
 const factory = () => {
-    return shallowMount(AInputPassword, {
+    return mount(AInputPassword, {
         data() {
-            return { password: 'A!def9fjg' }
-        }
+            return { password: 'A!def9fjg%' }
+        },
+        stubs
     })
 }
 
 describe('Atom - AInputPassword', () => {
     test('...has <input> tag', () => {
         const wrapper = factory()
-        expect(wrapper.html()).toContain('<input')
+
+        expect(wrapper.html()).toContain('<div class="a-input-password-wrapper">')
+        expect(wrapper.find('input.a-input.a-input-password[type="password"]')).toBeTruthy()
     })
-    test('... has valid or not Password', () => {
+
+    test('...regex check correctly the given password', () => {
         const wrapper = factory()
 
         const regexPassword = wrapper.vm.REGEX_PASSWORD
@@ -25,30 +37,24 @@ describe('Atom - AInputPassword', () => {
 
         expect(wrapper.vm.password).not.toMatch(regexPassword)
     })
-    test('... password pass the validPassword', () => {
-        const wrapper = factory()
-        expect(wrapper.vm.passwordValid).toBe(false)
-        wrapper.vm.password = 'A!deff9jg'
-        wrapper.vm.validPassword()
-        expect(wrapper.vm.passwordValid).toBe(true)
-    })
 
-    test('...password fail the validPassword', () => {
+    test('...password pass the checkPassword function and correctly populate "isPasswordValid" data', () => {
         const wrapper = factory()
-        expect(wrapper.vm.passwordValid).toBe(false)
+        expect(wrapper.vm.isPasswordValid).toBeTruthy()
+
         wrapper.vm.password = 'fsffffff'
-        wrapper.vm.validPassword()
-        expect(wrapper.vm.passwordValid).toBe(false)
+
+        expect(wrapper.vm.isPasswordValid).toBeFalsy()
     })
-    test('... hidePassword pass or not ', () => {
+
+    test('...check hidePassword is correctly used and passwordType is correclty populated', () => {
         const wrapper = factory()
+
         expect(wrapper.vm.hidePassword).toBeTruthy()
-        wrapper.vm.hidePassword = true
-
         expect(wrapper.vm.passwordType).toContain('password')
+
         wrapper.vm.hidePassword = false
+
         expect(wrapper.vm.passwordType).toContain('text')
-
-
     })
 })

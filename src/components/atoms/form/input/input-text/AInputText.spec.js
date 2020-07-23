@@ -1,21 +1,29 @@
-import { mount, shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import AInputText from './AInputText.vue'
 
 describe('Atom - AInputText', () => {
-    test('...default has <AInputText> tag', () => {
+    test('...default has <input> tag', () => {
         const wrapper = mount(AInputText)
-        expect(wrapper.find('AInputText')).toBeTruthy()
+
+        expect(wrapper.find('input.a-input.a-input-text')).toBeTruthy()
     })
-    test('... text  is required, placeholder is ', () => {
-        const wrapper = shallowMount(AInputText, {
+
+    test('...props are correctly used', async () => {
+        const wrapper = mount(AInputText, {
             propsData: {
-                text: true,
-                required: true,
-                placeholder: 'Ecrivez ici'
+                placeholder: 'Ecrivez votre superbe texte ici',
             }
         })
-        expect(wrapper.attributes().class).toContain('text')
-        expect(wrapper.attributes().required).toBeTruthy()
-        expect(wrapper.attributes().placeholder).toMatch('Ecrivez ici')
+
+        expect(wrapper.attributes().placeholder).toBe(
+            'Ecrivez votre superbe texte ici'
+        )
+        expect(wrapper.attributes().contenteditable).toBe('true')
+
+        await wrapper.setProps({
+            editable: false
+        })
+
+        expect(wrapper.attributes().contenteditable).toBe('false')
     })
 })

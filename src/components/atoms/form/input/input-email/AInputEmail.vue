@@ -1,18 +1,18 @@
 <template>
     <div class="a-input-email-wrapper">
         <AInput
-            :id="id"
             v-model="email"
-            class="a-input-email"
+            v-bind="$attrs"
             type="email"
+            class="a-input-email"
+            :class="[checkValidity && email.length > 0 ? { success: isEmailValid, error: !isEmailValid } : '']"
             :placeholder="placeholder"
-            @keyup="checkEmail()"
         />
 
-        <div v-if="verifValidity && email.length > 0">
-            <AText class="email-message" :class="{ success: emailValid, error: !emailValid }">
-                <AText v-if="emailValid" span>Votre adresse email est valide.</AText>
-                <AText v-if="!emailValid" span>Votre adresse email est incorrecte.</AText>
+        <div v-if="checkValidity && email.length > 0">
+            <AText class="email-validity-message" :class="{ success: isEmailValid, error: !isEmailValid }">
+                <AText v-if="isEmailValid" span>Votre adresse email est valide.</AText>
+                <AText v-if="!isEmailValid" span>Votre adresse email est incorrecte.</AText>
             </AText>
         </div>
     </div>
@@ -26,20 +26,20 @@ import AText from '@/components/atoms/text/AText.vue'
 export default Vue.extend({
     name: 'AInputMail',
 
-    components: { AInput, AText },
+    components: {
+        AInput,
+        AText
+    },
+
+    inheritAttrs: false,
 
     props: {
-        id: {
-            type: String,
-            default: null
-        },
-
         placeholder: {
             type: String,
             default: 'lama@lamacompta.co'
         },
 
-        verifValidity: {
+        checkValidity: {
             type: Boolean,
             default: false
         }
@@ -48,42 +48,45 @@ export default Vue.extend({
     data () {
         return {
             email: '',
-            emailValid: false,
             REGEX_MAIL: new RegExp(
                 /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
             )
         }
     },
 
+    computed: {
+        isEmailValid(this: any): Boolean {
+            return this.checkEmail(this.email)
+        }
+    },
+
     methods: {
-        checkEmail() {
-            this.emailValid = this.REGEX_MAIL.test(this.email)
+        checkEmail(this: any, value: String): Boolean {
+            return this.REGEX_MAIL.test(value)
         }
     }
 })
 </script>
 
 <style lang="scss">
-.a-input.a-input-email-wrapper {
-    .a-input-email {
-        display: inline-block;
-        vertical-align: middle;
-    }
+$error-color: #d92550;
+$success-color: #3ac47d;
 
-    .email-message {
+.a-input-email-wrapper {
+    .email-validity-message {
         border-radius: 0.3rem;
         display: inline-block;
         font-size: 0.9rem;
         padding: 0.4rem;
 
         &.success {
-            background-color: #dff2bf;
-            color: #4f8a10;
+            background-color: rgba(lighten($success-color, 30%), 0.3);
+            color: $success-color;
         }
 
         &.error {
-            background-color: #ffd2d2aa;
-            color: #9f6000;
+            background-color: rgba(lighten($error-color, 30%), 0.3);
+            color: $error-color;
         }
     }
 }

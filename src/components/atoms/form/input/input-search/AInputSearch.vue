@@ -1,46 +1,33 @@
 <template>
-    <input
-        :id="id"
+    <AInput
         type="search"
-        class="search"
+        class="a-input-search"
         :placeholder="placeholder"
-        :value="value"
-        :name="name"
     />
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import AInput from '../AInput.vue'
 
 export default Vue.extend({
     name: 'AInputSearch',
+
+    components: {
+        AInput
+    },
+
     props: {
-        id: {
-            type: String,
-            default: null
-        },
         placeholder: {
             type: String,
-            default: 'votre recherche'
-        },
-        name: {
-            type: String,
-            default: null
-        },
-        value: {
-            type: String,
-            default: null
+            default: 'Votre recherche'
         }
-
     }
 })
 </script>
 
 <style lang="scss">
-input,
-.input {
-    &.search {
-        resize: horizontal;
-    }
+.a-input.a-input-search {
+    resize: horizontal;
 }
 </style>

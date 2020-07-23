@@ -33,19 +33,13 @@ describe('Atom - AInputEmail', () => {
         expect(wrapper.vm.email).not.toMatch(regexMail)
     })
 
-    test('...email pass the checkEmail function and correctly populate "emailValid" data', () => {
+    test('...email pass the checkEmail function and correctly populate "isEmailValid" data', () => {
         const wrapper = factory()
 
-        expect(wrapper.vm.emailValid).toBeFalsy()
-
-        wrapper.vm.email = 'toto@lamacompta.co'
-        wrapper.vm.checkEmail()
-
-        expect(wrapper.vm.emailValid).toBeTruthy()
+        expect(wrapper.vm.isEmailValid).toBeTruthy()
 
         wrapper.vm.email = "Ceci n'est pas un email, ni une banane d'ailleurs"
-        wrapper.vm.checkEmail()
 
-        expect(wrapper.vm.emailValid).toBeFalsy()
+        expect(wrapper.vm.isEmailValid).toBeFalsy()
     })
 })

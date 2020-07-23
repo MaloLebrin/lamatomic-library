@@ -1,87 +1,97 @@
 <template>
-    <div class="input-wrapper">
-            <input
-                :id="id"
-                v-model="phone"
-                class="input - tel"
-                :placeholder="placeholder"
-                @keyup="validTel()"
-            />
-        <div  v-if="verifValidity && phone.length > 0">
-            <p  class="phone-message" :class="{ success: phoneValid, error: !phoneValid}">
-                <span  v-if="phoneValid"> Votre téléphone est valide.</span>
-                <span  v-if="!phoneValid">Votre téléphone est invalide</span>
-            </p>
+    <div class="a-input-tel-wrapper">
+        <AInput
+            v-model="telNumber"
+            v-bind="$attrs"
+            type="tel"
+            class="a-input-tel"
+            :class="[checkValidity && telNumber.length > 0 ? { success: isTelValid, error: !isTelValid } : '']"
+            :placeholder="placeholder"
+        />
+
+        <div v-if="checkValidity && telNumber.length > 0">
+            <AText class="tel-validity-message" :class="{ success: isTelValid, error: !isTelValid }">
+                <AText v-if="isTelValid" span>
+                    Votre numéro de téléphone est valide.
+                </AText>
+
+                <AText v-if="!isTelValid" span>
+                    Votre numéro de téléphone est invalide.
+                </AText>
+            </AText>
         </div>
     </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import AInput from '../AInput.vue'
+import AText from '@/components/atoms/text/AText.vue'
 
 export default Vue.extend({
     name: 'AInputTel',
+
+    components: {
+        AInput,
+        AText
+    },
+
+    inheritAttrs: false,
+
     props: {
-        id: {
-            type: String,
-            default: null
-        },
-        value: {
-            type: String,
-            default: null
-        },
         placeholder: {
             type: String,
-            default: 'Ecrivez votre téléphone ici'
+            default: 'Votre numéro de téléphone'
         },
-        verifValidity: {
+
+        checkValidity: {
             type: Boolean,
             default: false
         }
     },
 
-    data () {
+    data() {
         return {
-            phone: '',
-            phoneValid: false,
+            telNumber: '',
             REGEX_TEL: new RegExp(/^((\+)33+ ?|0)[1-9]( ?(\d{2})){4}$/gi)
         }
     },
 
+    computed: {
+        isTelValid(this: any): Boolean {
+            return this.checkTel(this.telNumber)
+        }
+    },
+
     methods: {
-        validTel() {
-            this.phoneValid = this.REGEX_TEL.test(this.phone)
+        checkTel(this: any, value: [Number, String]): Boolean {
+            return this.REGEX_TEL.test(value)
         }
     }
 })
 </script>
 
 <style lang="scss">
-$primary: #009CDE;
+$error-color: #d92550;
+$success-color: #3ac47d;
 
-input,
-.input {
-    border: 0.1rem solid $primary;
-    &.tel {
-        vertical-align: middle;
+.a-input-tel-wrapper {
+    .tel-validity-message {
+        border-radius: 0.3rem;
         display: inline-block;
-        min-height: 2.5rem;
-    }
-}
-.phone-message {
-    display: inline-block;
-    margin-top: 0.5rem;
-    padding: 0.4rem;
-    font-size: 0.9rem;
-    border-radius: 0.3rem;
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+        padding: 0.4rem;
 
-    &.success {
-        color: #4F8A10;
-        background-color: #DFF2BF;
-    }
-    &.error {
-        background-color:#FFD2D2aa;
-        color: #9F6000;
+        &.success {
+            background-color: rgba(lighten($success-color, 30%), 0.3);
+            color: $success-color;
+        }
+
+        &.error {
+            background-color: rgba(lighten($error-color, 30%), 0.3);
+            color: $error-color;
+        }
     }
 }
 </style>
