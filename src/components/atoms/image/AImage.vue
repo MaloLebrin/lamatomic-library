@@ -26,7 +26,7 @@ export default Vue.extend({
 
 <style lang="scss">
 .image {
-    text-decoration: none;
     animation: 1s appear;
+    text-decoration: none;
 }
 </style>

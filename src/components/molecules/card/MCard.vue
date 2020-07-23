@@ -48,48 +48,48 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-$primary: #009CDE;
+$primary: #009cde;
 $grey: #333;
 $white: #fff;
 
 .m-card {
-    position: relative;
-    top: 0px;
-    bottom: 0px;
-    color: $grey;
-    text-decoration: none;
-    display: block;
-    width: 100%;
-    padding: 2rem;
-    margin: 0 auto 2rem auto;
     background-color: $white;
-    text-align: center;
-    line-height: 3rem;
-
     border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.25);
-
-    transition: all .1s ease-in-out;
+    bottom: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    color: $grey;
+    display: block;
+    line-height: 3rem;
+    margin: 0 auto 2rem;
+    padding: 2rem;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    top: 0;
+    transition: all 0.1s ease-in-out;
+    width: 100%;
 
     &.is-link {
         &:hover {
             cursor: pointer;
 
-            & a {
+            a {
                 color: $primary;
             }
         }
 
-        > .link {
+        > .link { bottom: 0;
             color: $grey;
+            left: 0;
             position: absolute;
-            top: 0; right: 0; bottom: 0; left: 0;
+            right: 0;
+            top: 0;
         }
     }
 
     &:not(.no-anim) {
         &:hover {
-            box-shadow: 0 5px 10px rgba(0,0,0,0.25);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
         }
     }
 }

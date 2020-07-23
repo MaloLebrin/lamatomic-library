@@ -59,7 +59,7 @@ const getLogoFileName = function(type: String): String {
 
 <style lang="scss">
 .logo {
-    margin: auto;
     animation: 1s appear;
+    margin: auto;
 }
 </style>

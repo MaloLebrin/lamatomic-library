@@ -47,15 +47,15 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-$minWidthXl: 1200px;
+$min-width-xl: 1200px;
 
 .a-heading {
     &.h1 {
         font-size: 2.8rem;
         font-weight: 500;
-        text-transform: none;
-        line-height: 1.4em;
         letter-spacing: 0.125rem;
+        line-height: 1.4em;
+        text-transform: none;
     }
 
     &.h2 {
@@ -78,7 +78,7 @@ $minWidthXl: 1200px;
         font-size: 0.8rem;
     }
 
-    @media screen and (min-width: $minWidthXl) {
+    @media screen and (min-width: $min-width-xl) {
         &.h1 {
             font-size: 3.5rem;
         }
