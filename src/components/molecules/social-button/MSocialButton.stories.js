@@ -18,6 +18,8 @@ const wrapperLinkedin = {
 }
 
 storiesOf('Molecules/SocialButton', module)
+    .addParameters({ components: MSocialButtonFacebook, MSocialButtonTwitter, MSocialButtonLinkedin, MSocialButtonInstagram })
+
     .add('Facebook', () => ({
         ...wrapperFB,
         template: '<MSocialButtonFacebook />'

@@ -6,6 +6,8 @@ const wrapper = {
 }
 
 storiesOf('Atoms/Link', module)
+    .addParameters({ component: ALink })
+
     .add('Internal', () => ({
         ...wrapper,
         template:

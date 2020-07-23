@@ -4,7 +4,10 @@ const wrapper = {
     components: { AInputSearch }
 }
 
-storiesOf('Atoms/Form/Inputs', module).add('Search', () => ({
-    ...wrapper,
-    template: `<AInputSearch />`
-}))
+storiesOf('Atoms/Form/Inputs', module)
+    .addParameters({ component: AInputSearch })
+
+    .add('Search', () => ({
+        ...wrapper,
+        template: `<AInputSearch />`
+    }))

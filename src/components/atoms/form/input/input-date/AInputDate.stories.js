@@ -5,6 +5,8 @@ const wrapper = {
 }
 
 storiesOf('Atoms/Form/Inputs/Date', module)
+    .addParameters({ component: AInputDate })
+
     .add('Date single', () => ({
     ...wrapper,
     template: '<AInputDate />'

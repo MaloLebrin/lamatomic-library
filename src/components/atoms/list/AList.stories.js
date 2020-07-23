@@ -6,6 +6,8 @@ const wrapper = {
 }
 
 storiesOf('Atoms/List', module)
+    .addParameters({ component: AList})
+
     .add('Vertical with chips (default)', () => ({
         ...wrapper,
         template: '<AList :items="items"></AList>',

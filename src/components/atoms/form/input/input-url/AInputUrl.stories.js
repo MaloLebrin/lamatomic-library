@@ -4,11 +4,12 @@ const wrapper = {
     components: { AInputUrl }
 }
 
-storiesOf('Atoms/Form/Inputs', module).add(
-    'Url',
-    () => ({
-        ...wrapper,
-        template: '<AInputUrl :placeholder="placeholder"/>'
-    }),
-    { info: true }
-)
+storiesOf('Atoms/Form/Inputs', module)
+    .addParameters({ component: AInputUrl })
+
+    .add('Url',() => ({
+            ...wrapper,
+            template: '<AInputUrl :placeholder="placeholder"/>'
+        }),
+        { info: true }
+    )
