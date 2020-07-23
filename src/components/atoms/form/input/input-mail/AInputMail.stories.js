@@ -4,7 +4,7 @@ const wrapper = {
     components: { AInputMail }
 }
 
-storiesOf('Atoms/Inputs', module).add(
+storiesOf('Atoms/Form/Inputs/Mail', module).add(
     'Mail default',
     () => ({
         ...wrapper,

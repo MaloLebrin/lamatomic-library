@@ -20,10 +20,25 @@ export { default as AInputSearch } from './atoms/form/input/input-search/AInputS
 export { default as AInputUrl } from './atoms/form/input/input-url/AInputUrl.vue'
 export { default as AInput } from './atoms/form/input/AInput.vue'
 export { default as ASelect } from './atoms/form/select/ASelect.vue'
+export { default as AHamburger } from './atoms/hamburger/AHamburger.vue'
 
 
 // Molecules
 export { default as MLogo } from './molecules/logo/MLogo.vue'
 export { default as MTyper } from './molecules/typer/MTyper.vue'
-export { default as MNavbar } from './molecules/navbar/MNavbar.vue'
+export { default as MScrollToTop } from './molecules/scroll-to-top/MScrollToTop.vue'
 export { default as MCarousel } from './molecules/carousel/MCarousel.vue'
+export { default as MNavbar } from './molecules/navbar/MNavbar.vue'
+export { default as MPartner } from './molecules/partner/MPartner.vue'
+export { default as MSocialButton } from './molecules/social-button/MSocialButton.vue'
+export { default as MSocialButtonFacebook } from './molecules/social-button/MSocialButtonFacebook.vue'
+export { default as MSocialButtonTwitter } from './molecules/social-button/MSocialButtonTwitter.vue'
+export { default as MSocialButtonInstagram } from './molecules/social-button/MSocialButtonInstagram.vue'
+export { default as MSocialButtonLinkedin } from './molecules/social-button/MSocialButtonLinkedin.vue'
+
+
+// Organisms
+export { default as OHeader } from './organisms/header/OHeader.vue'
+export { default as OFooter } from './organisms/footer/OFooter.vue'
+export { default as OPartners } from './organisms/partners/OPartners.vue'
+export { default as ONewsletterForm } from './organisms/ONewsletterForm/ONewsletterForm.vue'

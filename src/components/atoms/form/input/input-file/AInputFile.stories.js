@@ -4,7 +4,7 @@ const wrapper = {
     components: { AInputFile }
 }
 
-storiesOf('Atoms/Inputs', module).add(
+storiesOf('Atoms/Form/Inputs', module).add(
     'File',
     () => ({
         ...wrapper,

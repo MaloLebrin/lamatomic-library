@@ -30,11 +30,13 @@ describe('Atom - AList', () => {
         const wrapper = mount(AList, {
             propsData: {
                 withoutChips: true,
-                horizontal: true
+                horizontal: true,
+                noPadding: true
             }
         })
 
         expect(wrapper.attributes().class).toContain('without-chips')
         expect(wrapper.attributes().class).toContain('horizontal')
+        expect(wrapper.attributes().class).toContain('no-padding')
     })
 })

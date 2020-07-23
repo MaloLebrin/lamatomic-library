@@ -11,37 +11,57 @@ storiesOf('Atoms/List', module)
         template: '<AList :items="items"></AList>',
         data() {
             return {
-                items: ['coucou', 'banane', 'yeah']
+                items: ['Lapin 🐇', 'Banane 🍌', 'Papier toilette 🧻']
             }
         }
     }))
 
     .add('Vertical without chips', () => ({
         ...wrapper,
-        template: '<AList :items="items" :withoutChips="false"></AList>',
+        template: '<AList :items="items" withoutChips></AList>',
         data() {
             return {
-                items: ['Ohohoh', 'Tu sens mauvais', 'yeah']
+                items: ['Hérisson 🦔', 'Pique ♠', 'Kamoulox 💩']
+            }
+        }
+    }))
+
+    .add('Vertical, no chips, no padding', () => ({
+        ...wrapper,
+        template: '<AList :items="items" withoutChips noPadding></AList>',
+        data() {
+            return {
+                items: ['Ohohoh', 'Héhéhé', 'Hihihi']
             }
         }
     }))
 
     .add('Horizontal with chips', () => ({
         ...wrapper,
-        template: `<AList :items="items" :horizontal="true"></AList>`,
+        template: `<AList :items="items" horizontal></AList>`,
         data() {
             return {
-                items: ['Ohoho', 'Horizontal', 'avec puces']
+                items: ['Poisson 🐠', 'Rouge 🟥', 'La mer 🌊', 'Coquillage 🐚']
             }
         }
     }))
 
     .add('Horizontal without chips', () => ({
         ...wrapper,
-        template: `<AList :items="items" :withoutChips="false" :horizontal="true"></AList>`,
+        template: `<AList :items="items" horizontal withoutChips></AList>`,
         data() {
             return {
-                items: ['Ohoho', 'Horizontal', 'sans puces']
+                items: ['Evènement 📅', 'Contact 📞', 'Protection 😷']
+            }
+        }
+    }))
+
+    .add('Horizontal, no chips, no padding', () => ({
+        ...wrapper,
+        template: `<AList :items="items" horizontal withoutChips noPadding></AList>`,
+        data() {
+            return {
+                items: ['Concert 🎙', 'Evènement 📅', 'Contact 📞', 'Protection 😷']
             }
         }
     }))
