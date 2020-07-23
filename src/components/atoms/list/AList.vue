@@ -4,6 +4,7 @@
         class="list"
         :class="{
             'without-chips': withoutChips,
+            'no-padding': noPadding,
             horizontal: horizontal
         }"
     >
@@ -33,6 +34,11 @@ export default Vue.extend({
             default: true
         },
 
+        noPadding: {
+            type: Boolean,
+            default: false
+        },
+
         horizontal: {
             type: Boolean,
             default: false
@@ -45,6 +51,10 @@ export default Vue.extend({
 .list {
     padding-left: 2rem;
 
+    &.no-padding {
+        padding-left: 0;
+    }
+
     &.without-chips {
         list-style: none;
     }
@@ -56,6 +66,10 @@ export default Vue.extend({
 
         > .list-item {
             margin: .5rem;
+
+            &:first-child {
+                margin-left: 0;
+            }
 
             &:last-child {
                 margin-right: 0;

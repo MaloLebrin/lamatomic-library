@@ -160,7 +160,7 @@ button,
 .button {
     margin: auto;
     font-weight: 500;
-    font-size: .9rem;
+    font-size: 0.8rem;
     text-transform: none;
     text-decoration: none;
     letter-spacing: 1.5px;
