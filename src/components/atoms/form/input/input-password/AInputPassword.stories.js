@@ -5,7 +5,7 @@ const wrapper = {
     components: { AInputPassword }
 }
 
-storiesOf('Atoms/Inputs', module).add('Password default', () => ({
+storiesOf('Atoms/Form/Inputs/Password', module).add('Password default', () => ({
     ...wrapper,
     template: `<AInputPassword />`,
 

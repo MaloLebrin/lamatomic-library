@@ -10,7 +10,7 @@ describe('Molecule - MLogo', () => {
         }
     })
 
-    test('...has <alink> component and logo-lamacompta class', () => {
+    test('...has <alink> component and logo class', () => {
         const wrapper = shallowMount(MLogo, { stubs })
 
         expect(wrapper.html()).toContain(
@@ -18,7 +18,7 @@ describe('Molecule - MLogo', () => {
         )
 
         expect(wrapper.html()).toContain(
-            `class="logo-lamacompta"`
+            `class="logo"`
         )
     })
 

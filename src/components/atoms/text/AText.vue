@@ -1,8 +1,8 @@
 <template>
     <component
-        :is="tag"
+        :is="computedTag"
         class="a-text"
-        :class="[align, weight, decoration, {italic}]"
+        :class="[align, weight, decoration, { italic }]"
     >
         <slot />
     </component>
@@ -46,12 +46,20 @@ export default Vue.extend({
         span: {
             type: Boolean,
             default: false
+        },
+
+        tag: {
+            type: String,
+            default: null
         }
     },
 
     computed: {
-        tag(): String {
+        computedTag(): String {
+            if (this.tag) return this.tag
+
             if (this.span) return 'span'
+
             return 'p'
         }
     }

@@ -4,22 +4,23 @@ const wrapper = {
     components: { AInputDate }
 }
 
-storiesOf('Atoms/Inputs/Dates', module).add('Date single', () => ({
+storiesOf('Atoms/Form/Inputs/Date', module)
+    .add('Date single', () => ({
     ...wrapper,
     template: '<AInputDate />'
 }))
 
-storiesOf('Atoms/Inputs/Dates', module).add('Date single : dark', () => ({
+    .add('Date single : dark', () => ({
     ...wrapper,
     template: '<AInputDate isDark/>'
 }))
 
-storiesOf('Atoms/Inputs/Dates', module).add('Date multiple and red', () => ({
+    .add('Date multiple and red', () => ({
     ...wrapper,
     template: '<AInputDate mode="multiple" color="red"/>'
 }))
 
-storiesOf('Atoms/Inputs/Dates', module).add('Date range and teal', () => ({
+    .add('Date range and teal', () => ({
     ...wrapper,
     template: '<AInputDate mode="range" color="teal"/>'
 }))
