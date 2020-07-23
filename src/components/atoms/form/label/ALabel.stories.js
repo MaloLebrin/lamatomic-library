@@ -6,6 +6,8 @@ const wrapper = {
 }
 
 storiesOf('Atoms/Form/Label', module)
+    .addParameters({ component: ALabel })
+
     .add('Default as radio input', () => ({
         ...wrapper,
         template: `
@@ -29,6 +31,7 @@ storiesOf('Atoms/Form/Label', module)
                 </ALabel>
             </div>
         `,
+
         data() {
             return {
                 option: null

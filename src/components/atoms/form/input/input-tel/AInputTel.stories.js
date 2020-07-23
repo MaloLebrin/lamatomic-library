@@ -6,6 +6,8 @@ const wrapper = {
 }
 
 storiesOf('Atoms/Form/Inputs/Tel', module)
+    .addParameters({ component: AInputTel })
+
     .add('Default', () => ({
         ...wrapper,
         template: '<AInputTel name="your-tel" />'
@@ -15,4 +17,3 @@ storiesOf('Atoms/Form/Inputs/Tel', module)
         ...wrapper,
         template: `<AInputTel name="your-tel" checkValidity />`
     }))
-

@@ -6,6 +6,8 @@ const wrapper = {
 }
 
 storiesOf('Atoms/Form/Inputs/Checkbox', module)
+    .addParameters({ component: AInputCheckbox })
+
     .add('Single', () => ({
         ...wrapper,
         template: `

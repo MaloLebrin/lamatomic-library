@@ -5,7 +5,9 @@ const wrapper = {
     components: { AText }
 }
 
-storiesOf('Atoms/Text', module)
+storiesOf('Atoms/Text/Align', module)
+    .addParameters({ component: AText })
+
     .add('p, span, italic', () => ({
         ...wrapper,
         template: `

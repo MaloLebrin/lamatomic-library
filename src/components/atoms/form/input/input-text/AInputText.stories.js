@@ -5,10 +5,12 @@ const wrapper = {
     components: { AInputText }
 }
 
-storiesOf('Atoms/Form/Inputs', module).add(
-    'Text',
-    () => ({
-        ...wrapper,
-        template: '<AInputText name="my-text" />'
-    })
-)
+storiesOf('Atoms/Form/Inputs', module)
+    .addParameters({ component: AInputText })
+
+    .add('Text',
+        () => ({
+            ...wrapper,
+            template: '<AInputText name="my-text" />'
+        })
+    )

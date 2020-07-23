@@ -6,6 +6,8 @@ const wrapper = {
 }
 
 storiesOf('Molecules/Card', module)
+    .addParameters({ component: MCard })
+
     .add("Card simple", () => ({
         ...wrapper,
         template:

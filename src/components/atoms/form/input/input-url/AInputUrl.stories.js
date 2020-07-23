@@ -6,6 +6,8 @@ const wrapper = {
 }
 
 storiesOf('Atoms/Form/Inputs/Url', module)
+    .addParameters({ component: AInputUrl })
+
     .add('Default', () => ({
         ...wrapper,
         template:

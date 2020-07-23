@@ -7,7 +7,8 @@ const wrapper = {
 }
 
 storiesOf('Atoms/Heading', module)
-    .add('Heading', () => ({
+    .addParameters({ component: AHeading })
+    .add('Levels', () => ({
         ...wrapper,
         template: `
             <div>

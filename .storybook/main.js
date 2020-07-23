@@ -8,6 +8,7 @@ module.exports = {
         '@storybook/addon-links',
         '@storybook/preset-typescript',
         '@storybook/addon-a11y/register',
+        '@storybook/addon-docs/preset',
         '@storybook/addon-viewport/register',
         'storybook-addon-themes'
     ],

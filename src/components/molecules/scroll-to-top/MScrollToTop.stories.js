@@ -6,6 +6,8 @@ const wrapper = {
 }
 
 storiesOf('Molecules/ScrollToTop', module)
+    .addParameters({ component: MScrollToTop })
+
     .add('Default (light)', () => ({
         ...wrapper,
         template: `<MScrollToTop/>`

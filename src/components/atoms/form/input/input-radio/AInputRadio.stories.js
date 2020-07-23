@@ -4,33 +4,37 @@ const wrapper = {
     components: { AInputRadio }
 }
 
-storiesOf('Atoms/Form/Inputs', module).add('Radio', () => ({
-    ...wrapper,
-    template: `
-      <div>
-        <label>
-          <AInputRadio name="fruit" v-model="selectedValue" value="banana" />
-          Banana 🍌
-        </label>
+storiesOf('Atoms/Form/Inputs', module)
+    .addParameters({ component: AInputRadio })
 
-        <label>
-          <AInputRadio name="fruit" v-model="selectedValue" value="strawberry" checked />
-          Strawberry 🍓
-        </label>
+    .add('Radio', () => ({
+        ...wrapper,
+        template: `
+        <div>
+            <label>
+            <AInputRadio name="fruit" v-model="selectedValue" value="banana" />
+            Banana 🍌
+            </label>
 
-        <label>
-          <AInputRadio name="fruit" v-model="selectedValue" value="kiwi" />
-          Kiwi 🥝
-        </label>
+            <label>
+            <AInputRadio name="fruit" v-model="selectedValue" value="strawberry" checked />
+            Strawberry 🍓
+            </label>
 
-        <br/><br/>
+            <label>
+            <AInputRadio name="fruit" v-model="selectedValue" value="kiwi" />
+            Kiwi 🥝
+            </label>
 
-        Value is: {{ selectedValue }}
-      </div>
-    `,
-    data() {
-        return {
-            selectedValue: null
+            <br/><br/>
+
+            Value is: {{ selectedValue }}
+        </div>
+        `,
+
+        data() {
+            return {
+                selectedValue: null
+            }
         }
-    }
-}))
+    }))

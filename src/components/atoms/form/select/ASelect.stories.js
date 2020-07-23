@@ -6,40 +6,41 @@ const wrapper = {
 }
 
 storiesOf('Atoms/Form/Select', module)
-  .add('single', () => ({
-    ...wrapper,
-    template: `
-      <div>
-        <label>Select one of these options</label>
-        <ASelect v-model="selectedValue" :options="options"/>
+    .addParameters({ component: ASelect })
 
-        <br/><br/>
+    .add('single', () => ({
+        ...wrapper,
+        template: `
+        <div>
+            <label>Select one of these options</label>
+            <ASelect v-model="selectedValue" :options="options"/>
 
-        Value is : "{{ selectedValue }}"
-      </div>
-    `,
-    data () {
-      return {
-        selectedValue: 'b',
-        options: [
-          {
-            label: 'Option A',
-            value: 'a'
-          },
-          {
-            label: 'Option B',
-            value: 'b'
-          },
-          {
-            label: 'Option C',
-            value: 'c'
-          },
-          {
-            label: 'Option D',
-            value: 'd',
-            disabled: true
-          }
-        ]
-      }
-    }
+            <br/><br/>
+
+            Value is : "{{ selectedValue }}"
+        </div>`,
+        data () {
+        return {
+            selectedValue: 'b',
+            options: [
+            {
+                label: 'Option A',
+                value: 'a'
+            },
+            {
+                label: 'Option B',
+                value: 'b'
+            },
+            {
+                label: 'Option C',
+                value: 'c'
+            },
+            {
+                label: 'Option D',
+                value: 'd',
+                disabled: true
+            }
+            ]
+        }
+        }
   }),)
