@@ -36,7 +36,7 @@ describe('Organism - OPartners', () => {
         })
 
         expect(wrapper.html()).toContain(
-            `<li class="list-item"><a title="Partner's logo" class="link m-partner"><img src="https://placehold.it/350x150" alt="Partner's logo" class="image img-partner"></a></li>`
+            `<li class="a-list-item"><a title="Partner's logo" class="a-link m-partner"><img src="https://placehold.it/350x150" alt="Partner's logo" class="a-image img-partner"></a></li>`
         )
     })
 })

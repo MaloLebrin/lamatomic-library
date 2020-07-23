@@ -2,7 +2,7 @@
     <component
         :is="tag"
         :id="id"
-        class="button"
+        class="a-button"
         :class="[{ disabled: disabled }, getState, getStyles]"
         :href="href"
         :to="to"
@@ -169,7 +169,7 @@ $black: #2b2b2b;
 $dark-grey: #929292;
 $light-grey: #e1e1e1;
 
-.button {
+.a-button {
     animation: 1s appear;
     background-color: $primary;
     border: 2px solid $primary;

@@ -1,6 +1,6 @@
 <template>
     <ALink
-        class="logo"
+        class="m-logo"
         to="/"
         title="Me rendre à la page d'accueil"
         no-line
@@ -58,7 +58,7 @@ const getLogoFileName = function(type: String): String {
 </script>
 
 <style lang="scss">
-.logo {
+.m-logo {
     animation: 1s appear;
     margin: auto;
 }

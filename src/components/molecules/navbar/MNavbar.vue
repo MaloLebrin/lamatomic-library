@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar">
+    <nav class="m-navbar">
         <AList :items="items" :horizontal="horizontal" without-chips />
     </nav>
 </template>
@@ -29,7 +29,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-.navbar {
+.m-navbar {
     > .list {
         padding-left: 0;
     }

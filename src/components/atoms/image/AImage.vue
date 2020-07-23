@@ -1,5 +1,5 @@
 <template>
-    <img class="image" :src="src" :alt="alt" :title="title" />
+    <img class="a-image" :src="src" :alt="alt" :title="title" />
 </template>
 
 <script lang="ts">
@@ -25,7 +25,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-.image {
+.a-image {
     animation: 1s appear;
     text-decoration: none;
 }

@@ -1,7 +1,7 @@
 <template>
     <textarea
         :id="id"
-        class="textarea"
+        class="a-textarea"
         :placeholder="placeholder"
         :required="required"
         :rows="rows"
@@ -43,7 +43,7 @@ export default Vue.extend({
 <style lang="scss">
 $primary: #009cde;
 
-.textarea {
+.a-textarea {
     border: 0.1rem solid $primary;
     height: 120px;
     overflow: hidden;

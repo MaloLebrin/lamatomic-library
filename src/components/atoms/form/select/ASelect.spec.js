@@ -17,6 +17,7 @@ describe('Atoms/ASelect', () => {
         ]
       }
     })
+    expect(wrapper.html()).toContain('class="a-select"')
     expect(wrapper.findAll('option').length).toBe(3)
     expect(wrapper.findAll('option').at(1).text()).toContain('option 1')
     expect(wrapper.findAll('option').at(1).attributes().value).toBe('option1')

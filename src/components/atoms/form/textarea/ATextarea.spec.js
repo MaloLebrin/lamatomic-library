@@ -5,6 +5,7 @@ describe('Atom - ATextarea', () => {
     test('...default has <ATextarea> tag', () => {
         const wrapper = mount(ATextarea)
         expect(wrapper.find('ATextarea')).toBeTruthy()
+        expect(wrapper.html()).toContain('class="a-textarea"')
     })
     test('... text area is required, placeholder is ', () => {
         const wrapper = shallowMount(ATextarea, {

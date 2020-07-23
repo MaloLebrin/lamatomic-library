@@ -5,7 +5,7 @@ describe('Atom - ALink', () => {
     test('...has <a> tag', () => {
         const wrapper = mount(ALink)
         expect(wrapper.html()).toBe(
-            '<a class="link underlined underlined--thin"></a>'
+            '<a class="a-link underlined underlined--thin"></a>'
         )
     })
 
@@ -29,7 +29,7 @@ describe('Atom - ALink', () => {
 
         expect(wrapper.findComponent(RouterLinkStub)).toBeTruthy()
         expect(wrapper.html()).toBe(
-            '<a to="contact" title="Se rendre à la page contact" class="link underlined underlined--thin"></a>'
+            '<a to="contact" title="Se rendre à la page contact" class="a-link underlined underlined--thin"></a>'
         )
         expect(wrapper.attributes('title')).toBe('Se rendre à la page contact')
 
@@ -67,7 +67,7 @@ describe('Atom - ALink', () => {
             }
         })
 
-        expect(wrapper.html()).toBe('<a class="link"></a>')
+        expect(wrapper.html()).toBe('<a class="a-link"></a>')
     })
 
     test('...with tel valid then not valid', () => {
@@ -135,7 +135,7 @@ describe('Atom - ALink', () => {
             }
         })
 
-        expect(wrapper.html()).toBe('<a class="link external underlined underlined--thin"></a>')
+        expect(wrapper.html()).toBe('<a class="a-link external underlined underlined--thin"></a>')
     })
 
     test('...with target', () => {
