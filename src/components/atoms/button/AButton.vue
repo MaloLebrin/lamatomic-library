@@ -173,6 +173,7 @@ button,
     cursor: pointer;
     transition: 0.3s all ease;
     animation: 1s appear;
+    line-height: 1;
 
     &.success {
         background-color: $green;

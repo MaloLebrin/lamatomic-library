@@ -1,6 +1,6 @@
 <template>
     <ALink
-        class="logo-lamacompta"
+        class="logo"
         to="/"
         title="Me rendre à la page d'accueil"
         no-line
@@ -58,7 +58,7 @@ const getLogoFileName = function(type: String): String {
 </script>
 
 <style lang="scss">
-.logo-lamacompta {
+.logo {
     margin: auto;
     animation: 1s appear;
 }
