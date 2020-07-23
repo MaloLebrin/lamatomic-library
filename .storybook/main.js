@@ -9,7 +9,7 @@ module.exports = {
         '@storybook/preset-typescript',
         '@storybook/addon-a11y/register',
         '@storybook/addon-viewport/register',
-        '@storybook-addon-themes'
+        'storybook-addon-themes'
     ],
     webpackFinal: async (config, { configType }) => {
         // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'
