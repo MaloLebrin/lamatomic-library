@@ -8,7 +8,7 @@ module.exports = {
         '@storybook/addon-links',
         '@storybook/preset-typescript',
         '@storybook/addon-a11y/register',
-        '@storybook/addon-viewport/register' //https://github.com/storybookjs/storybook/tree/master/addons/viewport
+        '@storybook/addon-viewport/register'
     ],
     webpackFinal: async (config, { configType }) => {
         // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'
@@ -43,4 +43,3 @@ module.exports = {
         return config
     }
 }
-// https://github.com/storybookjs/storybook/blob/master/ADDONS_SUPPORT.md
