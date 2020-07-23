@@ -1,45 +1,68 @@
 <template>
-    <div>
-        <div class="input-wrapper">
-            <input
+    <div class="a-input-password-wrapper">
+        <div class="a-input-group">
+            <AInput
                 v-model="password"
-                class="input-password"
-                :class="{ success: passwordValid, error: !passwordValid }"
+                v-bind="$attrs"
                 :type="passwordType"
+                class="a-input-password"
+                :class="[strongVerif && password.length > 0 ? { success: isPasswordValid, error: !isPasswordValid } : '']"
                 :placeholder="placeholder"
                 :required="required"
-                @keyup="validPassword()"
             />
-            <img :src="require('./svg/' + (hidePassword ? 'eye-solid.svg' : 'eye-slash-solid.svg'))" class="icon-password" type="icon" @click="hidePassword = !hidePassword"/>
+
+            <AImage
+                :src="require('./svg/' + (hidePassword ? 'eye-solid.svg' : 'eye-slash-solid.svg'))"
+                class="icon-password"
+                type="icon"
+                :title="(hidePassword ? 'Afficher le mot de passe' : 'Masquer le mot de passe')"
+                @click.native="hidePassword = !hidePassword"
+            />
         </div>
+
         <div v-if="strongVerif && password.length > 0">
-            <p class="password-message" :class="{ success: passwordValid, error: !passwordValid }">
-                <span v-if="passwordValid">Votre mot de passe est valide.</span>
-                <span v-if="!passwordValid">Votre mot de passe est incorrect. Celui-ci doit contenir au moins 8 caractères dont : 1 majuscule, 1 minuscule, 1 chiffre et 1 caractère spécial (!, #, $, %, & ou ?)</span>
-            </p>
+            <AText class="password-validity-message" :class="{ success: isPasswordValid, error: !isPasswordValid }">
+                <AText v-if="isPasswordValid" span>
+                    Votre mot de passe est valide.
+                </AText>
+
+                <AText v-if="!isPasswordValid" span>
+                    Votre mot de passe est incorrect. Celui-ci doit contenir au moins 8 caractères dont :
+                    1 majuscule, 1 minuscule, 1 chiffre et 1 caractère spécial (!, #, $, %, & ou ?)
+                </AText>
+            </AText>
         </div>
     </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import AInput from '../AInput.vue'
+import AText from '@/components/atoms/text/AText.vue'
+import AImage from '@/components/atoms/image/AImage.vue'
 
 export default Vue.extend({
     name: 'AInputPassword',
 
-        props: {
-        id: {
-            type: String,
-            default: null
-        },
+    components: {
+        AInput,
+        AText,
+        AImage
+    },
+
+    inheritAttrs: false,
+
+    props: {
         placeholder: {
             type: String,
             default: 'Votre mot de passe'
         },
+
         required: {
             type: Boolean,
             default: true
         },
+
         strongVerif: {
             type: Boolean,
             default: false
@@ -49,7 +72,6 @@ export default Vue.extend({
     data() {
         return {
             password: '',
-            passwordValid: false,
             hidePassword: true,
             REGEX_PASSWORD: new RegExp(
                /^.*(?=.{8,})(?=.*[a-zA-Z])(?=.*\d)(?=.*[!#$%&?]).*$/g
@@ -58,68 +80,66 @@ export default Vue.extend({
     },
 
     computed: {
-        passwordType():String {
+        isPasswordValid(this: any): Boolean {
+            return this.password.length > 0 && this.checkPassword(this.password)
+        },
+
+        passwordType(): String {
             return this.hidePassword ? 'password' : 'text'
-      }
+        }
     },
 
     methods: {
-        validPassword() {
-            this.passwordValid = this.REGEX_PASSWORD.test(this.password)
-            // Minimum of 8 characters, at least 1 uppercase letter, 1 lowercase letter, , 1 spécial caracter (!#$%&?) and 1 number with no spaces.
+        checkPassword(this: any, value: String): Boolean {
+            return this.REGEX_PASSWORD.test(value)
+            // Minimum of 8 characters, at least 1 uppercase letter, 1 lowercase letter,
+            // 1 special character (!#$%&?) and 1 number without space.
        },
     }
 })
 </script>
 
 <style lang="scss">
-$primary: #009CDE;
-$red: #d92550;
-$green: #3ac47d;
+$error-color: #d92550;
+$success-color: #3ac47d;
 
-input,
-.input {
-    border: 0.1rem solid $primary;
-    &.success {
-        border: 0.1rem solid $green;
-    }
-    &.error {
-        border: 0.1rem solid $red;
-    }
+.a-input-password-wrapper {
+    .a-input-group {
+        display: inline-block;
+        position: relative;
 
-}
-
-.input-wrapper {
-    display: inline-block;
-    position: relative;
-}
-
-.icon-password {
-    position: absolute;
-    right: 1px;
-    width: 20px;
-    border-radius: 50px;
-    padding: 3px 6px;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    opacity: 35%;
-}
-.password-message {
-    display: inline-block;
-    margin-top: 0.5rem;
-    padding: 0.4rem;
-    font-size: 0.9rem;
-    border-radius: 0.3rem;
-
-    &.success {
-        color: #4F8A10;
-        background-color: #DFF2BF;
+        .a-input.a-input-password {
+            + .icon-password {
+                border-radius: 50px;
+                bottom: 0;
+                cursor: pointer;
+                margin: auto;
+                opacity: 35%;
+                padding: 3px 6px;
+                position: absolute;
+                right: 1px;
+                top: 0;
+                width: 20px;
+            }
+        }
     }
 
-    &.error {
-        background-color:#FFD2D2aa;
-        color: #9F6000;
+    .password-validity-message {
+        border-radius: 0.3rem;
+        display: inline-block;
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+        padding: 0.4rem;
+
+        &.success {
+            background-color: rgba(lighten($success-color, 30%), 0.3);
+            color: $success-color;
+        }
+
+        &.error {
+            background-color: rgba(lighten($error-color, 30%), 0.3);
+            color: $error-color;
+        }
     }
 }
 </style>

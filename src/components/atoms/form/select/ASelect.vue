@@ -69,40 +69,42 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-$light-grey: #E1E1E1;
-$black: #2B2B2B;
+$light-grey: #e1e1e1;
+$black: #2b2b2b;
+
 .select {
-  $arrow-color: $light-grey;
-  $background: $light-grey;
-  position: relative;
-  display: inline-flex;
-  border: .1rem solid $light-grey;
-  border-radius: .3rem;
+    $arrow-color: $light-grey;
+    $background: $light-grey;
 
-  &.input {
-    border: 0;
-    padding: .8rem 1.2rem;
-    display: block;
-    font-size: inherit;
-    padding-right: 5rem;
-    background: inherit;
-    width: 100%;
-    color: inherit;
+    border: 0.1rem solid $light-grey;
+    border-radius: 0.3rem;
+    display: inline-flex;
+    position: relative;
 
-    &:focus {
-      box-shadow: 0 0 .6rem rgba($black, .4)
+    &.input {
+        background: inherit;
+        border: 0;
+        color: inherit;
+        display: block;
+        font-size: inherit;
+        padding: 0.8rem 1.2rem;
+        padding-right: 5rem;
+        width: 100%;
+
+        &:focus {
+            box-shadow: 0 0 0.6rem rgba($black, 0.4);
+        }
     }
-  }
 
-  &.arrow {
-    width: 1.5rem;
-    height: 1.5rem;
-    position: absolute;
-    right: 1rem;
-    fill: $light-grey;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-  }
+    &.arrow {
+        bottom: 0;
+        fill: $light-grey;
+        height: 1.5rem;
+        margin: auto;
+        position: absolute;
+        right: 1rem;
+        top: 0;
+        width: 1.5rem;
+    }
 }
 </style>

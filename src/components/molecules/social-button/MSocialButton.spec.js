@@ -21,34 +21,38 @@ describe('Molecule - MSocialButton', () => {
         expect(wrapper.html()).toContain(`class="m-social-button"`)
     })
 
-    test('.. social button Facebook', () => {
+    test('...social button Facebook', () => {
         const wrapper = shallowMount(MSocialButtonFacebook, { stubs }, {
             href: 'https://www.facebook.com'
         })
+
         expect(wrapper.attributes().href).toBe('https://www.facebook.com')
         expect(wrapper.html()).toContain('href="https://www.facebook.com"')
     })
 
-    test('.. social button Instagram', () => {
+    test('...social button Instagram', () => {
         const wrapper = shallowMount(MSocialButtonInstagram, { stubs }, {
             href: 'https://www.instagram.com'
         })
+
         expect(wrapper.attributes().href).toBe('https://www.instagram.com')
         expect(wrapper.html()).toContain('href="https://www.instagram.com"')
     })
 
-    test('.. social button Twitter', () => {
+    test('...social button Twitter', () => {
         const wrapper = shallowMount(MSocialButtonTwitter, { stubs }, {
             href: 'https://www.twitter.com'
         })
+
         expect(wrapper.attributes().href).toBe('https://www.twitter.com')
         expect(wrapper.html()).toContain('href="https://www.twitter.com"')
     })
 
-    test('.. social button Linkedin', () => {
+    test('...social button Linkedin', () => {
         const wrapper = shallowMount(MSocialButtonLinkedin, { stubs }, {
             href: 'https://www.linkedin.com'
         })
+
         expect(wrapper.attributes().href).toBe('https://www.linkedin.com')
         expect(wrapper.html()).toContain('href="https://www.linkedin.com"')
     })

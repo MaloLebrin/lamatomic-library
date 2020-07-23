@@ -55,7 +55,7 @@ export default Vue.extend({
 
 <style lang="scss">
 .m-partner {
-    margin: auto;
     animation: 1s appear;
+    margin: auto;
 }
 </style>

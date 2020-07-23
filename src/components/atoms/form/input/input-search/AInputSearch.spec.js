@@ -1,21 +1,21 @@
-import { mount, shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import AInputSearch from './AInputSearch.vue'
 
 describe('Atom - AInputSearch', () => {
-    test('...default has <AInputSearch> tag', () => {
+    test('...default has <input> tag', () => {
         const wrapper = mount(AInputSearch)
-        expect(wrapper.find('AInputSearch')).toBeTruthy()
+        const input = wrapper.find('input.a-input.a-input-search[type="search"]')
+
+        expect(input).toBeTruthy()
     })
-    test('... Search  is required, placeholder is ', () => {
-        const wrapper = shallowMount(AInputSearch, {
+
+    test('...given props are correctly used', () => {
+        const wrapper = mount(AInputSearch, {
             propsData: {
-                search: true,
-                required: true,
-                placeholder: 'Ecrivez ici'
+                placeholder: 'Votre recherche fruitée'
             }
         })
-        expect(wrapper.attributes().class).toContain('search')
-        expect(wrapper.attributes().required).toBeTruthy()
-        expect(wrapper.attributes().placeholder).toMatch('Ecrivez ici')
+
+        expect(wrapper.attributes().placeholder).toBe('Votre recherche fruitée')
     })
 })

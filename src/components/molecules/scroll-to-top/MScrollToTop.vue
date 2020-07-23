@@ -84,17 +84,17 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-$primary: #009CDE;
+$primary: #009cde;
 $grey: #333;
 $white: #fff;
 
-.m-scroll-to-top{
+.m-scroll-to-top {
     &.button {
-        text-align: center;
         font-size: 2rem;
         padding: 1rem;
         padding-bottom: 0;
         padding-top: 0.5rem;
+        text-align: center;
     }
 }
 </style>

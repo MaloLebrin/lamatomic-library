@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <OHeader :items="items" />
     <AInputDate />
 
     <MLogo />
@@ -24,9 +25,10 @@
 </template>
 
 <script lang="ts">
+
 import Vue from 'vue';
+import { ALink, AText, AList, MLogo, MNavbar, MSocialButtonInstagram, MSocialButtonLinkedin, MSocialButtonTwitter, MSocialButtonFacebook, OHeader, OFooter } from '@/entry';
 import { getMountedComponent } from '@/utils'
-import { ALink, AText, AList, MLogo, MNavbar, MSocialButtonInstagram, MSocialButtonLinkedin, MSocialButtonTwitter, MSocialButtonFacebook, OFooter } from '@/entry';
 
 const SocialButton1 = getMountedComponent(MSocialButtonInstagram, {})
 const SocialButton2 = getMountedComponent(MSocialButtonLinkedin, {})
@@ -57,26 +59,32 @@ const items:String[] = [link1, link2, link3]
 
 
 export default Vue.extend({
-  name: 'ServeDev',
-  components: {
-    AText,
-    AList,
-    OFooter,
-    MLogo,
-    MNavbar
-  },
-  data() {
-      return {
-          items,
+    name: 'ServeDev',
+
+    components: {
+        OHeader,
+        AText,
+        AList,
+        OFooter,
+        MLogo,
+        MNavbar
+    },
+
+    data() {
+        return {
+            items,
           socialButtonItems
-      }
-  }
+        }
+    },
+
 });
+
 </script>
 
 <style lang="scss">
 $white: #fff;
-$black: #2B2B2B;
+$black: #2b2b2b;
+
 #social-part {
     flex-direction: column;
 

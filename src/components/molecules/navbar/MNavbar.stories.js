@@ -17,6 +17,8 @@ const btn2 = getMountedComponent(AButton, { state: 'warning' }, { default: 'Join
 const items = [link1, btn1, btn2]
 
 storiesOf('Molecules/Navbar', module)
+    .addParameters({ component: MNavbar })
+
     .add('Default', () => ({
         ...wrapper,
         data() {

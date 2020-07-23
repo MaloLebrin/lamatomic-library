@@ -1,10 +1,10 @@
 <template>
     <v-date-picker
         v-model="date"
-        class="input-date"
-        :class="{'is-dark': isDark}"
+        class="a-input a-input-date"
         :mode="mode"
         :color="color"
+        :is-dark="isDark"
     />
 </template>
 
@@ -12,9 +12,11 @@
 import Vue from 'vue'
 import VCalendar from 'v-calendar' // https://vcalendar.io/
 
-Vue.use(VCalendar);
+Vue.use(VCalendar)
+
 export default Vue.extend({
     name: 'AInputDate',
+
     props: {
         mode: {
             type: String,
@@ -47,17 +49,12 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-$primary: #009CDE;
-$darkGray: #444444;
+$primary: #009cde;
+$dark-gray: #444;
 
-input,
-.input {
+.a-input.a-input-date {
     &-date {
         position: absolute;
-    }
-
-    &.is-dark {
-        background-color: $darkGray;
     }
 }
 </style>

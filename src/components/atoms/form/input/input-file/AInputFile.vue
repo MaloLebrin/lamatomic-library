@@ -1,13 +1,14 @@
 <template>
-    <label class="file-select">
-        <div class="select-button">
-            <span v-if="value">Fichier sélectionné: {{ value.name }}</span>
-            <span v-else class="select-button">Choisir un fichier</span>
-        </div>
-        <input
+    <ALabel :html-for="id" class="a-input-file-wrapper">
+        <AButton custom-tag="div" class="select-button">
+            <AText v-if="value && value.name" span>Fichier sélectionné : {{ value.name }}</AText>
+            <AText v-else span>Choisir un fichier</AText>
+        </AButton>
+
+        <AInput
             :id="id"
             type="file"
-            class="file"
+            class="a-input-file"
             :value="value"
             :name="name"
             :disabled="disabled"
@@ -15,76 +16,67 @@
             tabindex="-1"
             @change="handleFileChange"
         />
-    </label>
+    </ALabel>
 </template>
+
 <script lang="ts">
 import Vue from 'vue'
+import AInput from '../AInput.vue'
+import ALabel from '../../label/ALabel.vue'
+import AButton from '../../../button/AButton.vue'
+import AText from '../../../text/AText.vue'
 
 export default Vue.extend({
     name: 'AInputFile',
+
+    components: {
+        AInput, ALabel, AButton, AText
+    },
+
     props: {
         id: {
             type: String,
             default: null
         },
+
+        name: {
+            type: String,
+            default: null
+        },
+
         disabled: {
             type: Boolean,
             default: false
         },
+
         multiple: {
             type: Boolean,
-            default: true
+            default: false
         },
-        value: File
     },
+
+    data() {
+        return {
+            value: {
+                type: File,
+                default: null
+            }
+        }
+    },
+
     methods: {
         handleFileChange(e: any) {
             this.$emit('input', e.target.files[0])
+            this.value = e.target.files[0]
         }
     }
 })
 </script>
 
 <style lang="scss">
-$primary: #009CDE;
-$red: #d92550;
-$yellow: #FFCE00;
-$green: #3ac47d;
-$white: #fff;
-$black: #2B2B2B;
-$dark-grey: #929292;
-$light-grey: #E1E1E1;
-
-input,
-.input {
-    &.file {
-        width: 100px;
-        height: 20px;
-        border: 3px solid $primary;
+.a-input-file-wrapper {
+    .a-input.a-input-file {
         display: none;
-
     }
-}
-.file-select > .select-button {
-    display: inline-block;
-    margin: auto;
-    font-weight: 300;
-    font-size: 1.0rem;
-    letter-spacing: 1.5px;
-    fill: $white;
-    color: $white;
-    background-color: $primary;
-    border: 2px solid $primary;
-    border-radius: 5px;
-    padding: 8px 20px 8px 20px;
-    cursor: pointer;
-
-    &:hover,
-    &:focus {
-        background-color: $white;
-        color: $primary;
-        text-decoration: none;
-    }
-
 }
 </style>

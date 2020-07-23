@@ -7,14 +7,17 @@ const wrapper = {
 }
 
 storiesOf('Atoms/Hamburger', module)
-  .add('Default', () => ({
-    ...wrapper,
-    template: '<AHamburger :onClick="action" />',
-    methods: {
-      action: action('hamburger clicked')
-    }
-  }))
-  .add('Open', () => ({
-    ...wrapper,
-    template: '<AHamburger isOpen />'
-  }))
+    .addParameters({ component: AHamburger })
+
+    .add('Default', () => ({
+        ...wrapper,
+        template: '<AHamburger :onClick="action" />',
+        methods: {
+            action: action('hamburger clicked')
+        }
+    }))
+
+    .add('Open', () => ({
+        ...wrapper,
+        template: '<AHamburger isOpen />'
+    }))

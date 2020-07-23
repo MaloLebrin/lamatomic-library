@@ -90,6 +90,14 @@ export default Vue.extend({
         disabled: {
             type: Boolean,
             default: false
+        },
+
+        customTag: {
+            type: String,
+            default: null,
+            validator(value) {
+                return ['button', 'a', 'div', 'span', 'i'].includes(value)
+            }
         }
     },
 
@@ -121,7 +129,12 @@ export default Vue.extend({
         },
 
         tag() {
-            if (this.href || this.to) return 'a'
+            if (this.customTag)
+                return this.customTag
+
+            if (this.href || this.to)
+                return 'a'
+
             return 'button'
         },
 
@@ -147,32 +160,35 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-$primary: #009CDE;
+$primary: #009cde;
 $red: #d92550;
-$yellow: #FFCE00;
+$yellow: #ffce00;
 $green: #3ac47d;
 $white: #fff;
-$black: #2B2B2B;
+$black: #2b2b2b;
 $dark-grey: #929292;
-$light-grey: #E1E1E1;
+$light-grey: #e1e1e1;
 
-button,
 .button {
-    margin: auto;
-    font-weight: 500;
-    font-size: 1.2rem;
-    text-transform: none;
-    text-decoration: none;
-    letter-spacing: 1.5px;
-    fill: $white;
-    color: $white;
+    animation: 1s appear;
     background-color: $primary;
     border: 2px solid $primary;
     border-radius: 5px;
-    padding: 10px 30px 10px 30px;
+    color: $white;
     cursor: pointer;
+    display: inline-block;
+    fill: $white;
+    font-size: 0.8rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    line-height: 1;
+    margin: auto;
+    padding: 10px;
+    padding: 10px 30px;
+    text-decoration: none;
+    text-transform: none;
     transition: 0.3s all ease;
-    animation: 1s appear;
 
     &.success {
         background-color: $green;
@@ -206,8 +222,8 @@ button,
 
     &.light {
         background-color: $white;
-        color: $primary;
         border-color: $white;
+        color: $primary;
 
         &:hover,
         &:focus {
@@ -218,8 +234,8 @@ button,
 
     &.dark {
         background-color: $black;
-        color: $white;
         border-color: $black;
+        color: $white;
 
         &:hover,
         &:focus {
@@ -243,7 +259,7 @@ button,
     }
 
     &.no-border {
-        border: none;
+        border: 0;
     }
 
     &.border-black {
@@ -258,18 +274,18 @@ button,
     }
 
     &.bg-dark-grey {
-        border: none;
+        border: 0;
     }
 
     &.disabled,
     &.disabled:hover,
     &.disabled:focus {
-        display: inline-block; // For IE
-        color: $light-grey;
-        cursor: not-allowed;
-        text-decoration: none;
         background-color: $dark-grey;
         border-color: $dark-grey;
+        color: $light-grey;
+        cursor: not-allowed;
+        display: inline-block; // For IE
+        text-decoration: none;
     }
 }
 </style>

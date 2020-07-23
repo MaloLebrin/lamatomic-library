@@ -1,23 +1,42 @@
-import { mount, shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import AInputUrl from './AInputUrl.vue'
 
-describe('Atom - AInputUrl', () => {
-    test('...default has <AInputUrl> tag', () => {
-        const wrapper = mount(AInputUrl)
-        expect(wrapper.find('AInputUrl')).toBeTruthy()
-    })
-    test('Renders the correct type based on props passed', () => {
-        const wrapper = shallowMount(AInputUrl, {
-            propsData: {
-                id: 'id',
-                url: 'url',
-                placeholder: 'placeholder'
+const factory = () => {
+    return mount(AInputUrl, {
+        data() {
+            return {
+                url: 'https://lamacompta.co'
             }
-        })
-        expect(wrapper.attributes().id).toBe('id')
+        }
     })
-    test('...URL default', () => {
-        const wrapper = mount(AInputUrl)
-        expect(wrapper.find('tapez votre URL ici')).toBeTruthy()
+}
+
+describe('Atom - AInputUrl', () => {
+    test('...has <input> tag', () => {
+        const wrapper = factory()
+
+        expect(wrapper.html()).toContain('<div class="a-input-url-wrapper">')
+        expect(wrapper.find('input.a-input-url')).toBeTruthy()
+    })
+
+    test('...regex check correctly the given url', () => {
+        const wrapper = factory()
+
+        const regexUrl = wrapper.vm.REGEX_URL
+
+        expect('https://lamacompta.co').toMatch(regexUrl)
+        expect('autruche.').not.toMatch(regexUrl)
+        expect('autruche.fr').not.toMatch(regexUrl)
+        expect('https://frite').not.toMatch(regexUrl)
+    })
+
+    test('...url pass the checkEmail function and correctly populate "isUrlValid" data', () => {
+        const wrapper = factory()
+
+        expect(wrapper.vm.isUrlValid).toBeTruthy()
+
+        wrapper.vm.url = "Ceci n'est pas un url, ni une banane d'ailleurs"
+
+        expect(wrapper.vm.isUrlValid).toBeFalsy()
     })
 })

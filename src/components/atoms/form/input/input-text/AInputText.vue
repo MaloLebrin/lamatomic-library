@@ -1,10 +1,9 @@
 <template>
     <AInput
-        :id="id"
         type="text"
-        class="text"
+        class="a-input-text"
         :placeholder="placeholder"
-        :contenteditable="true"
+        :contenteditable="editable"
     />
 </template>
 
@@ -14,19 +13,18 @@ import AInput from '../AInput.vue'
 
 export default Vue.extend({
     name: 'AInputText',
+
     components: {
         AInput
     },
+
     props: {
-        id: {
-            type: String,
-            default: null
-        },
         placeholder: {
             type: String,
             default: 'Ecrivez ici'
         },
-        contenteditable: {
+
+        editable: {
             type: Boolean,
             default: true
         }
@@ -35,13 +33,10 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-$primary: #009CDE;
-input,
-.input {
-    &.text {
-        border: 3px solid #009cd2;
-        overflow: hidden;
-        resize: auto;
-    }
+$primary: #009cde;
+
+.a-input.a-input-text {
+    overflow: hidden;
+    resize: auto;
 }
 </style>

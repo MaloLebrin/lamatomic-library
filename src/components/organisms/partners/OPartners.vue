@@ -30,23 +30,23 @@ export default Vue.extend({
 <style lang="scss">
 .o-partners {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: row;
+    flex-wrap: wrap;
 
     .list {
         flex-basis: auto;
 
         .list-item {
+            box-shadow: 0 3px 6px 0 rgba(140, 152, 164, 0.25);
             height: 100%;
-            width: 100%;
             padding: 1rem;
-            box-shadow: 0 3px 6px 0 rgba(140,152,164,.25);
             vertical-align: middle;
+            width: 100%;
 
             .img-partner {
                 height: 210px;
                 width: 290px;
-             }
+            }
         }
     }
 }

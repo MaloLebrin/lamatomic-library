@@ -1,5 +1,5 @@
 <template>
-    <MSocialButton class="m-social-button-linkedin" :src="require('./svg/linkedin.svg')" :href="href" :title="title"/>
+    <MSocialButton class="m-social-button-linkedin" src="./svg/linkedin.svg" :href="href" :title="title"/>
 </template>
 
 <script lang="ts">
@@ -8,6 +8,7 @@ import MSocialButton from './MSocialButton.vue'
 
 export default Vue.extend({
     name: 'MSocialButtonLinkedin',
+
     components: {
         MSocialButton,
     },
@@ -17,10 +18,11 @@ export default Vue.extend({
             type: String,
             default: 'https://www.linkedin.com'
         },
+
         title: {
             type: String,
             default: 'Accéder à la page LinkedIn'
         }
-    },
+    }
 })
 </script>

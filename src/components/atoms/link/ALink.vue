@@ -146,25 +146,25 @@ const ValidMail = function(emailTest: string) {
 </script>
 
 <style lang="scss">
-$primary: #009CDE;
+$primary: #009cde;
 $secondary: #002252;
-$yellow: #FFCE00;
+$yellow: #ffce00;
 $white: #fff;
 
 .link {
+    animation: 1s appear;
     color: $primary;
+    cursor: pointer;
     font-weight: bold;
     text-decoration: none;
-    cursor: pointer;
-    animation: 1s appear;
 
     &.underlined {
-        text-decoration: none;
         background-image: linear-gradient(to right, $yellow 0, $yellow 100%);
         background-position: 0 1.2em;
-        background-size: 0 100%;
         background-repeat: no-repeat;
-        transition: background .5s;
+        background-size: 0 100%;
+        text-decoration: none;
+        transition: background 0.5s;
 
         &:hover,
         &:focus {
@@ -182,18 +182,18 @@ $white: #fff;
 
         &--offset {
             background-position: 0 0.2em;
-            box-shadow: inset 0 -.5em 0 0 $white;
+            box-shadow: inset 0 -0.5em 0 0 $white;
         }
 
         &--gradient {
-            background-position: 0 -0.1em;
             background-image: linear-gradient(to right, $yellow 0, $secondary 100%);
+            background-position: 0 -0.1em;
         }
 
         &--reverse {
+            background-image: linear-gradient(to right, $yellow 0, $yellow 100%);
             background-position: 100% -0.1em;
             transition: background 1s; //yep, that's a long link
-            background-image: linear-gradient(to right, $yellow 0, $yellow 100%);
         }
     }
 }

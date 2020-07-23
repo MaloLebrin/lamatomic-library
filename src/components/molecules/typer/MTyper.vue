@@ -31,15 +31,15 @@ export default {
 
 <style lang="scss">
 .typed-element {
-    display: flex;
     align-items: center;
+    display: flex;
 
     .typed-cursor {
-        position: relative;
-        top: -1px;
+        animation: typerBlink 0.7s infinite;
         margin-left: 3px;
         opacity: 1;
-        animation: typerBlink 0.7s infinite;
+        position: relative;
+        top: -1px;
     }
 }
 

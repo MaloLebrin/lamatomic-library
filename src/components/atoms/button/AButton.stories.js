@@ -5,14 +5,18 @@ import { action } from '@storybook/addon-actions'
 import AButton from './AButton.vue'
 
 storiesOf('Atoms/Button', module)
-    .addDecorator (withKnobs)
+    .addDecorator(withKnobs)
+    .addParameters({ component: AButton })
+
     .add('Default', () => ({
         components: { AButton },
+
         props: {
             message: {
                 type: String,
                 default: text('Message', 'Le LamaBouton ❤')
             },
+
             state: {
                 type: String,
                 default: options(
@@ -22,6 +26,7 @@ storiesOf('Atoms/Button', module)
                     { display: 'radio' }
                 )
             },
+
             styles: {
                 type: String,
                 default: options(
@@ -31,11 +36,13 @@ storiesOf('Atoms/Button', module)
                     { display: 'radio' }
                 )
             },
+
             disabled: {
                 type: Boolean,
                 default: boolean('Disabled', false)
             }
         },
+
         template: `
             <AButton
                 :state="state"
@@ -46,5 +53,6 @@ storiesOf('Atoms/Button', module)
                 {{ message }}
             </AButton>
         `,
+
         methods: { action: action('AButton clicked') }
     }))

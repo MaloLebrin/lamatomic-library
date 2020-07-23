@@ -60,12 +60,12 @@ export default Vue.extend({
     }
 
     &.horizontal {
+        align-items: center;
         display: flex;
         flex-wrap: wrap;
-        align-items: center;
 
         > .list-item {
-            margin: 2rem;
+            margin: 0.5rem;
 
             &:first-child {
                 margin-left: 0;

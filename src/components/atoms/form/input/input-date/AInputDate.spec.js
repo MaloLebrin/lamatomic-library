@@ -16,34 +16,10 @@ Object.defineProperty(window, 'matchMedia', {
 })
 
 describe('Atom - AInputDate', () => {
-    beforeAll(() => {
-        Object.defineProperty(window, 'matchMedia', {
-            writable: true,
-            value: jest.fn().mockImplementation((query) => ({
-                matches: false,
-                media: query,
-                onchange: null,
-                addListener: jest.fn(), // deprecated
-                removeListener: jest.fn(), // deprecated
-                addEventListener: jest.fn(),
-                removeEventListener: jest.fn(),
-                dispatchEvent: jest.fn()
-            }))
-        })
-    })
-
     test('...default has <button> tag', () => {
         const wrapper = mount(AInputDate)
 
         expect(wrapper.html()).toContain('type="input"')
-    })
-
-    test('...with isDark', () => {
-        const wrapper = mount(AInputDate, {
-            propsData: { isDark: true }
-        })
-
-        expect(wrapper.attributes().class).toContain('is-dark')
     })
 
     test("...mode not in [single, multiple, range] doesn't work", () => {
