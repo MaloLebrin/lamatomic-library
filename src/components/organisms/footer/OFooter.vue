@@ -1,13 +1,19 @@
 <template>
     <div class="o-footer">
-        <MScrollToTop v-if="!withoutScrollToTop"/>
+        <MScrollToTop v-if="!withoutScrollToTop" />
 
         <div class="cols-wrapper">
-            <slot name="col-1"></slot>
+            <div class="col col-1">
+                <slot name="col-1"></slot>
+            </div>
 
-            <slot name="col-2"></slot>
+            <div class="col col-2">
+                <slot name="col-2"></slot>
+            </div>
 
-            <slot name="col-3"></slot>
+            <div class="col col-3">
+                <slot name="col-3"></slot>
+            </div>
         </div>
     </div>
 </template>
@@ -55,7 +61,7 @@ $black: #2b2b2b;
         flex: 1 1 auto;
         flex-direction: column;
 
-        > * {
+        > .col {
             margin: auto;
             text-align: center;
         }
@@ -65,10 +71,8 @@ $black: #2b2b2b;
         flex-wrap: nowrap;
         justify-content: space-around;
     }
-}
 
-@media screen and (min-width: 576px) {
-    .o-footer {
+    @media screen and (min-width: 576px) {
         .cols-wrapper {
             flex-direction: row;
         }

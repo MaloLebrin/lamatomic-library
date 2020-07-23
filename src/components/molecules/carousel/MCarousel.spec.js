@@ -4,17 +4,18 @@ import AImage from '@/components/atoms/image/AImage.vue'
 import { getMountedComponent } from '@/utils'
 
 describe('Molecule - MCarousel', () => {
-
-    test('...as default', () => {
+    test('...has default <div>', () => {
         const wrapper = mount( MCarousel )
 
         expect(wrapper.html()).toContain('<div class="VueCarousel m-carousel')
     })
-    test('... array of component in slides', () => {
+
+    test('...array of component in slides', () => {
         const image1 = getMountedComponent(AImage,
-            { src:require("../logo/svg/logo-white-inline.svg")},
-            { alt: "logodefault"}
-       )
+            { src: '../logo/svg/logo-white-inline.svg' },
+            { alt: 'logodefault' }
+        )
+
        const slides = [image1]
 
        const wrapper = mount( MCarousel, {

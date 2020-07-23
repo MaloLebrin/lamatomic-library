@@ -19,6 +19,7 @@ import AButton from '../../atoms/button/AButton.vue'
 
 export default Vue.extend({
     name: 'MSocialButton',
+
     components: {
         AImage,
         AButton
@@ -29,10 +30,12 @@ export default Vue.extend({
             type: String,
             default: 'Accéder à cette page'
         },
+
         src: {
             type: String,
             default: null
         },
+
         href: {
             type: String,
             default: null

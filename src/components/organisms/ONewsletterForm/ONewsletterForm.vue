@@ -1,13 +1,16 @@
 <template>
     <div class="o-form-newsletter">
-        <AHeading level="2" :class="{'without-title': withoutTitle}" align="center"> {{ NewsletterHeading }}</AHeading>
+        <AHeading level="2" :class="{'without-title': withoutTitle}" align="center"> {{ heading }}</AHeading>
+
         <div class="newletter-2-col row">
-                <AImage :class="{'without-image': withoutImage}"/>
+            <AImage :class="{ 'without-image': withoutImage }"/>
+
             <div class="newsletter-content">
-                <Atext :align="left">{{ NewsletterText }}</Atext>
+                <AText :align="left">{{ text }}</AText>
+
                 <div class="newsletter-form">
                     <AInputEmail verif-validity />
-                    <AButton type="submit" @click="submit">Envoyer</AButton>
+                    <AButton type="submit">Envoyer</AButton>
                 </div>
             </div>
         </div>
@@ -20,10 +23,9 @@ import AInputEmail from '@/components/atoms/form/input/input-email/AInputEmail.v
 import AImage from '@/components/atoms/image/AImage.vue'
 import AHeading from '@/components/atoms/heading/AHeading.vue'
 import AButton from '@/components/atoms/button/AButton.vue'
-import Atext from '@/components/atoms/text/AText.vue'
+import AText from '@/components/atoms/text/AText.vue'
 
 export default Vue.extend({
-
     name: 'ONewsletterForm',
 
     components: {
@@ -31,28 +33,31 @@ export default Vue.extend({
         AImage,
         AHeading,
         AButton,
-        Atext
+        AText
     },
+
     props: {
         withoutImage: {
             type: Boolean,
             default: false
         },
+
         withoutTitle: {
             type: Boolean,
             default: false
         }
     },
-    data () {
+
+    data() {
         return {
-            NewsletterHeading: "Cassez les codes de la compta avec nous",
-            NewsletterText: "Inscrivez-vous à la newsletter et recevez nos offres d’emploi et actus 💪"
+            heading: "Cassez les codes de la compta avec nous",
+            text: "Inscrivez-vous à la newsletter et recevez nos offres d’emploi et actus 💪"
         }
     },
 })
 </script>
-<style lang="scss">
 
+<style lang="scss">
 .o-form-newsletter {
     display: block;
 
