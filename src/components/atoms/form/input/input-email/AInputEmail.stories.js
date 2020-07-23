@@ -5,7 +5,7 @@ const wrapper = {
     components: { AInputEmail }
 }
 
-storiesOf('Atoms/Inputs/Email', module)
+storiesOf('Atoms/Form/Inputs/Email', module)
     .add('Default', () => ({
         ...wrapper,
         template: '<AInputEmail name="your-email" />'

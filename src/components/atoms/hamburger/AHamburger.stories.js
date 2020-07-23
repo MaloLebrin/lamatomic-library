@@ -9,7 +9,7 @@ const wrapper = {
 storiesOf('Atoms/Hamburger', module)
   .add('Default', () => ({
     ...wrapper,
-    template: '<AHamburger :onClick="action" />',
+    template: '<AHamburger @click="action" />',
     methods: {
       action: action('hamburger clicked')
     }

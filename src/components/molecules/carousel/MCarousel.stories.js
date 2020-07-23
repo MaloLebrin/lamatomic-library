@@ -12,17 +12,23 @@ const wrapCarousel = (content) => {
 
 const image1 = getMountedComponent(
     AImage,
-    { src:"https://placehold.it/400x150"},
-    { alt: "logodefault"}
+    { src: "https://placehold.it/400x150" },
+    { alt: "logodefault" }
 )
 
 const image2 = getMountedComponent(
     AImage,
-    { src: "https://placehold.it/350x150"},
+    { src: "https://placehold.it/350x150" },
     { alt: "inline" }
 )
 
-const slides = [image1, image2]
+const image3 = getMountedComponent(
+    AImage,
+    { src: "https://placehold.it/350x200" },
+    { alt: "inline" }
+)
+
+const slides = [image1, image2, image3]
 
 storiesOf('Molecules/Carousel', module)
     .add('Default', () => ({
@@ -44,7 +50,7 @@ storiesOf('Molecules/Carousel', module)
             }
 
         },
-        template: wrapCarousel(`<MCarousel :slides="slides" :navigationEnabled="true" />`)
+        template: wrapCarousel(`<MCarousel :slides="slides" navigationEnabled />`)
     }))
 
     .add('With autoplay', () => ({
@@ -55,7 +61,7 @@ storiesOf('Molecules/Carousel', module)
             }
 
         },
-        template: wrapCarousel(`<MCarousel :slides="slides" :autoplay="true" />`)
+        template: wrapCarousel(`<MCarousel :slides="slides" autoplay />`)
     }))
 
 

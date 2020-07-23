@@ -6,7 +6,7 @@ const wrapper = {
   components: { AFormGroup, AInputText }
 }
 
-storiesOf('Atoms/FormGroup', module)
+storiesOf('Atoms/Form/FormGroup', module)
   .add('default as FormGroup', () => ({
     ...wrapper,
     template: `<AFormGroup label="Nom"> <AInputText /> </AFormGroup>`,

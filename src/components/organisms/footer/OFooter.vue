@@ -37,13 +37,13 @@ $white: #fff;
 $black: #2b2b2b;
 
 .o-footer {
+    animation: 1s appear;
+    background-color: $black;
+    color: $white;
     margin: auto;
     padding: 3rem;
-    animation: 1s appear;
     transition: all 100ms;
-    background-color: $black;
     width: 100%;
-    color: $white;
 
     .m-scroll-to-top {
         display: block;
@@ -52,8 +52,8 @@ $black: #2b2b2b;
 
     .cols-wrapper {
         display: flex;
-        flex-direction: column;
         flex: 1 1 auto;
+        flex-direction: column;
 
         > * {
             margin: auto;

@@ -65,7 +65,7 @@ export default Vue.extend({
         flex-wrap: wrap;
 
         > .list-item {
-            margin: .5rem;
+            margin: 0.5rem;
 
             &:first-child {
                 margin-left: 0;

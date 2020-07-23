@@ -6,7 +6,7 @@
             <div class="newsletter-content">
                 <Atext :align="left">{{ NewsletterText }}</Atext>
                 <div class="newsletter-form">
-                    <AInputMail verif-validity />
+                    <AInputEmail verif-validity />
                     <AButton type="submit" @click="submit">Envoyer</AButton>
                 </div>
             </div>
@@ -16,7 +16,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import AInputMail from '@/components/atoms/form/input/input-mail/AInputMail.vue'
+import AInputEmail from '@/components/atoms/form/input/input-email/AInputEmail.vue'
 import AImage from '@/components/atoms/image/AImage.vue'
 import AHeading from '@/components/atoms/heading/AHeading.vue'
 import AButton from '@/components/atoms/button/AButton.vue'
@@ -27,7 +27,7 @@ export default Vue.extend({
     name: 'ONewsletterForm',
 
     components: {
-        AInputMail,
+        AInputEmail,
         AImage,
         AHeading,
         AButton,
@@ -58,27 +58,32 @@ export default Vue.extend({
 
     .row {
         display: flex;
-        flex-wrap: wrap;
         flex-direction: row;
+        flex-wrap: wrap;
         margin: auto;
 
     }
+
     .image {
         margin: auto;
+
         &.without-image {
             display: none;
         }
     }
+
     .newsletter-content {
         margin: auto;
         padding-left: 15px;
     }
+
     .button {
         margin-left: 10px;
     }
+
     .heading {
         &.without-title {
-            display:none;
+            display: none;
         }
     }
 }

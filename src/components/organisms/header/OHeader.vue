@@ -46,31 +46,33 @@
 </script>
 
 <style lang="scss">
-$primary: #009CDE;
+$primary: #009cde;
 $red: #d92550;
-$yellow: #FFCE00;
+$yellow: #ffce00;
 $green: #3ac47d;
 $white: #fff;
-$black: #2B2B2B;
+$black: #2b2b2b;
 $dark-grey: #929292;
-$light-grey: #E1E1E1;
+$light-grey: #e1e1e1;
 
 .o-header {
+
+    $this: &;
+    $animation-speed: 0.8s;
+    $animation-easing: cubic-bezier(0.37, 0.96, 0.22, 1.01);
+
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+
     .inner {
-        padding: 0px 15px;
+        padding: 0 15px;
     }
 
     .navbar-desktop {
         display: none;
     }
-
-    $this: &;
-    $animation-speed: .8s;
-    $animation-easing: cubic-bezier(0.37, 0.96, 0.22, 1.01);
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
 
     .logo {
         flex-basis: 10%;
@@ -90,16 +92,16 @@ $light-grey: #E1E1E1;
         flex-direction: column;
         left: 100%;
         min-height: 100vh;
-        position: absolute;
+        opacity: 0;
+        padding-left: 20px;
         padding-top: 5rem;
+        position: absolute;
         top: 0;
         transition: all $animation-speed ease-in-out;
         transition-timing-function: $animation-easing;
         visibility: hidden;
         width: 20rem;
         z-index: 1;
-        padding-left: 20px;
-        opacity: 0;
 
         &.menu-open {
             opacity: 1;
@@ -109,26 +111,25 @@ $light-grey: #E1E1E1;
 
     &--is-open {
         #{$this}-menu {
-        transform: translate3d(-100%, 0, 0);
-        visibility: visible;
-        background-color: $primary;
+            background-color: $primary;
+            transform: translate3d(-100%, 0, 0);
+            visibility: visible;
         }
     }
 
     &-hamburger {
+        margin-right: 25px;
         position: relative;
         z-index: 2;
-        margin-right: 25px;
     }
 
     @media screen and (min-width: 992px) {
-
         .logo {
-
-        .image {
-            width: 120px;
+            .image {
+                width: 120px;
+            }
         }
-    }
+
         .navbar-desktop {
             display: block;
         }
