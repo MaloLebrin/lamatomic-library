@@ -25,4 +25,44 @@ describe('Atom - AHeading', () => {
         expect(level.validator(-1)).toBeFalsy()
         expect(level.validator('banana')).toBeFalsy()
     })
+
+    test('...with align right', () => {
+        const wrapper = mount(AHeading, {
+            propsData: {
+                align: 'right'
+            }
+        })
+
+        expect(wrapper.attributes().class).toContain('right')
+    })
+
+    test('...with weight bold', () => {
+        const wrapper = mount(AHeading, {
+            propsData: {
+                weight: 'bold'
+            }
+        })
+
+        expect(wrapper.attributes().class).toContain('bold')
+    })
+
+    test('...with decoration underline', () => {
+        const wrapper = mount(AHeading, {
+            propsData: {
+                decoration: 'underline'
+            }
+        })
+
+        expect(wrapper.attributes().class).toContain('underline')
+    })
+
+    test('...with italic style', () => {
+        const wrapper = mount(AHeading, {
+            propsData: {
+                italic: true
+            }
+        })
+
+        expect(wrapper.attributes().class).toContain('italic')
+    })
 })
