@@ -10,5 +10,6 @@ module.exports = {
         indentation: 4,
         'max-nesting-depth': 20,
         'selector-max-id': 5,
+        'selector-max-compound-selectors': 20
     },
 }
