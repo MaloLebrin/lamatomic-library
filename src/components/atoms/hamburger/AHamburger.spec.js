@@ -5,7 +5,7 @@ describe('Atom - Hamburger', () => {
     test(' default tag button and span', () => {
         const wrapper = shallowMount(AHamburger)
         expect(wrapper.html()).toContain('button')
-        expect(wrapper.html()).toContain('text')
+        expect(wrapper.attributes().class).toContain('a-hamburger')
     })
       test('renders correctly with the right props', () => {
     const wrapper = shallowMount(AHamburger, {
@@ -14,6 +14,7 @@ describe('Atom - Hamburger', () => {
       }
     })
 
-    expect(wrapper.attributes().class).toContain('open')
+    expect(wrapper.attributes().class).toContain('a-hamburger a-hamburger--is-open')
   })
 })
+

@@ -1,33 +1,39 @@
 <template>
     <AButton
-        class="a-hamburger" :class="{ 'hamburger--is-open': isOpen }"
-        @click="$emit('click')"
+        :class="{
+      'a-hamburger': 1,
+      'a-hamburger--is-open': isOpen
+    }"
+    @click="$emit('click')"
     >
-        <AText span class="hamburger-bar"></AText>
+        <span class="a-hamburger-bar"></span>
     </AButton>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import AButton from '../button/AButton.vue'
-import AText from '../text/AText.vue'
+import AButton from '@/components/atoms/button/AButton.vue'
 
 export default Vue.extend({
   name: 'AHamburger',
   components: {
       AButton,
-      AText
   },
   props: {
     isOpen: {
       type: Boolean,
       default: false
     }
-  }
+  },
 })
 </script>
 
 <style lang="scss">
+
+
+
+.a-hamburger {
+
 $hamburger-color: black;
 $hamburger-background-color: transparent;
 $hamburger-width: 2.8rem;
@@ -37,26 +43,25 @@ $hamburger-bar-space: .4rem;
 $hamburger-bar-border-radius: 1rem;
 $hamburger-pad: 0;
 $hamburger-transistion-duration: .3s;
+$this: &;
 
-.a-hamburger {
+    &.button {
+        background-color:$hamburger-background-color;
+    }
+    border: 0;
+    box-shadow: none;
+    cursor: pointer;
+    display: block;
+    font-size: 0;
+    height: $hamburger-height;
+    overflow: hidden;
+    position: relative;
+    transition: background $hamburger-transistion-duration;
+    width: $hamburger-width;
 
-  appearance: none;
-  background-color: $hamburger-background-color;
-  border: 0;
-  border-radius: none;
-  box-shadow: none;
-  cursor: pointer;
-  display: block;
-  font-size: 0;
-  height: $hamburger-height;
-  margin: 0;
-  overflow: hidden;
-  padding: 0;
-  position: relative;
-  text-indent: -9999px;
-  transition: background $hamburger-transistion-duration;
-  width: $hamburger-width;
-
+    &:hover{
+        background-color: $hamburger-background-color;
+    }
   &:focus {
     outline: none;
   }
@@ -101,7 +106,7 @@ $hamburger-transistion-duration: .3s;
 
   &--is-open {
 
-    &-bar{
+    #{$this}-bar {
       background: none;
 
       &::before,
@@ -124,3 +129,4 @@ $hamburger-transistion-duration: .3s;
   }
 }
 </style>
+

@@ -160,7 +160,7 @@ button,
 .button {
     margin: auto;
     font-weight: 500;
-    font-size: 1.2rem;
+    font-size: 0.8rem;
     text-transform: none;
     text-decoration: none;
     letter-spacing: 1.5px;
@@ -169,10 +169,11 @@ button,
     background-color: $primary;
     border: 2px solid $primary;
     border-radius: 5px;
-    padding: 10px 30px 10px 30px;
+    padding: 10px;
     cursor: pointer;
     transition: 0.3s all ease;
     animation: 1s appear;
+    line-height: 1;
 
     &.success {
         background-color: $green;

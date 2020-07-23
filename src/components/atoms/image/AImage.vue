@@ -10,7 +10,7 @@ export default Vue.extend({
     props: {
         src: {
             type: String,
-            default: null
+            default: "https://placehold.it/350x150"
         },
         alt: {
             type: String,
