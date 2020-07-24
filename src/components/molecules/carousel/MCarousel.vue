@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/no-parsing-error -->
 <template>
-    <div class="m-carousel" :class="{'yeah': navButtons}">
+    <div class="m-carousel">
         <VueAgile
             v-bind="$attrs"
             :nav-buttons="navButtons"
@@ -52,6 +52,11 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
+$button-color: #fff;
+$button-hover: #888;
+$dots-color: #eee;
+$dots-size: 0.5rem;
+
 .m-carousel {
     .agile {
         &__actions {
@@ -61,17 +66,19 @@ export default Vue.extend({
         &__nav-button {
             background: transparent;
             border: 0;
-            color: rgba(#fff, 0.8);
+            color: rgba($button-color, 0.8);
             cursor: pointer;
-            font-size: 24px;
+            font-size: 2.4rem;
             height: 100%;
             position: absolute;
+            text-shadow: 0 2px 3px rgba(#000, 0.25);
             top: 0;
             transition-duration: 0.3s;
-            width: 40px;
+            width: 4rem;
 
             &:hover {
-                color: #888;
+                color: $button-hover;
+                text-shadow: 0 2px 5px rgba(#000, 0.25);
             }
 
             &--prev {
@@ -84,27 +91,27 @@ export default Vue.extend({
         }
 
         &__dot {
-            margin: 0 10px;
+            margin: 0 1rem;
 
             button {
-                background-color: #eee;
+                background-color: $dots-color;
                 border: 0;
                 border-radius: 50%;
                 cursor: pointer;
                 display: block;
                 font-size: 0;
-                height: 10px;
+                height: $dots-size;
                 line-height: 0;
                 margin: 0;
                 padding: 0;
                 transition-duration: 0.3s;
-                width: 10px;
+                width: $dots-size;
             }
 
             &--current,
             &:hover {
                 button {
-                    background-color: #888;
+                    background-color: $button-hover;
                 }
             }
         }
@@ -114,14 +121,16 @@ export default Vue.extend({
             align-items: center;
             display: flex;
             justify-content: center;
+            min-height: 400px;
 
-            .image {
+            .a-image {
                 height: 100%;
                 object-fit: cover;
+                position: absolute;
                 width: 100%;
             }
 
-            h3 {
+            .caption {
                 font-size: 3.2rem;
                 font-weight: 300;
             }

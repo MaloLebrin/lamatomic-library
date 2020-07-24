@@ -7,7 +7,7 @@ const wrapper = {
 }
 
 const wrapCarousel = (content) => {
-    return '<div style="width: 600px">' + content + '</div>'
+    return '<div style="width: 750px">' + content + '</div>'
 }
 
 const image1 = getMountedComponent(

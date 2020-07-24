@@ -20,9 +20,9 @@ describe('Molecule - MCarousel', () => {
         const slides = [image1]
 
         const wrapper = mount( MCarousel, {
-                propsData: {
-                    slides
-                }
+            propsData: {
+                slides
+            }
         })
 
         expect(wrapper.html()).toContain('<div class="agile__list">')
