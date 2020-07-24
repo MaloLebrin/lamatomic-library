@@ -4,11 +4,11 @@ import { action } from '@storybook/addon-actions'
 
 import AButton from './AButton.vue'
 
-storiesOf('Atoms/Button', module)
+storiesOf('Atoms', module)
     .addDecorator(withKnobs)
     .addParameters({ component: AButton })
 
-    .add('Default', () => ({
+    .add('Button', () => ({
         components: { AButton },
 
         props: {
@@ -21,8 +21,8 @@ storiesOf('Atoms/Button', module)
                 type: String,
                 default: options(
                     'State',
-                    { 'No state': 'null', Success:'success', Warning: 'warning', Error: 'error' },
-                    'null',
+                    { 'No state': null, Success: 'success', Warning: 'warning', Error: 'error' },
+                    null,
                     { display: 'radio' }
                 )
             },
@@ -31,8 +31,8 @@ storiesOf('Atoms/Button', module)
                 type: String,
                 default: options(
                     'Styles',
-                    {'No styles': 'null', Light: 'light', Dark: 'dark'},
-                    'null',
+                    { 'No styles': null, Light: 'light', Dark: 'dark' },
+                    null,
                     { display: 'radio' }
                 )
             },
