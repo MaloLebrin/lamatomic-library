@@ -52,9 +52,8 @@ export default Vue.extend({
 $primary: #009cde;
 $dark-gray: #444;
 
-.a-input.a-input-date {
-    &-date {
-        position: absolute;
-    }
+.a-input-date {
+    border-style: none;
+    position: absolute;
 }
 </style>

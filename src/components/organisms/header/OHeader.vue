@@ -2,9 +2,9 @@
     <div class="inner">
         <header class="o-header" :class="{'o-header--is-open': menuIsOpen }">
             <MLogo />
-            <MNavbar class="navbar-desktop" :items="items" @click="toggleMenu" />
+            <MNavbar class="m-navbar-desktop" :items="items" @click="toggleMenu" />
             <AHamburger  class="o-header-hamburger" :class="{'a-hamburger--is-open': menuIsOpen}" @click="toggleMenu"/>
-            <MNavbar class="o-header-menu navbar-mobile" :class="{ 'menu-open': menuIsOpen }" :items="items" :horizontal="horizontal" @click="toggleMenu" />
+            <MNavbar class="o-header-menu m-navbar-mobile" :class="{ 'menu-open': menuIsOpen }" :items="items" :horizontal="horizontal" @click="toggleMenu" />
         </header>
     </div>
 </template>
@@ -70,20 +70,20 @@ $light-grey: #e1e1e1;
         padding: 0 15px;
     }
 
-    .navbar-desktop {
+    .m-navbar-desktop {
         display: none;
     }
 
-    .logo {
+    .m-logo {
         flex-basis: 10%;
         margin-left: 15px;
 
-        .image {
+        .a-simage {
             width: 80px;
         }
     }
 
-    .navbar {
+    .m-navbar {
         margin-right: 15px;
     }
 
@@ -124,17 +124,17 @@ $light-grey: #e1e1e1;
     }
 
     @media screen and (min-width: 992px) {
-        .logo {
-            .image {
+        .m-logo {
+            .a-image {
                 width: 120px;
             }
         }
 
-        .navbar-desktop {
+        .m-navbar-desktop {
             display: block;
         }
 
-        .navbar-mobile,
+        .m-navbar-mobile,
         .o-header-hamburger {
             display: none;
         }

@@ -5,6 +5,7 @@ describe('Molecules - MTyper', () => {
     test('...has tag <vue-typed-js>', () => {
         const wrapper = mount(MTyper)
         expect(wrapper.find('vue-typed-js')).toBeTruthy()
+        expect(wrapper.html()).toContain('m-typer')
     })
 
     test('...has strings given', () => {

@@ -67,7 +67,7 @@ $black: #2b2b2b;
         }
     }
 
-    .list {
+    .a-list {
         flex-wrap: nowrap;
         justify-content: space-around;
     }

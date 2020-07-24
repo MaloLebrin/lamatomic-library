@@ -81,7 +81,7 @@ $black: #2b2b2b;
     display: inline-flex;
     position: relative;
 
-    &.input {
+    &-input {
         background: inherit;
         border: 0;
         color: inherit;
@@ -96,7 +96,7 @@ $black: #2b2b2b;
         }
     }
 
-    &.arrow {
+    &-arrow {
         bottom: 0;
         fill: $light-grey;
         height: 1.5rem;

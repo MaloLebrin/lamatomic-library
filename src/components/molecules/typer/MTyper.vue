@@ -1,5 +1,5 @@
 <template>
-    <vue-typed-js :strings="strings" :loop="loop" :back-speed="backSpeed">
+    <vue-typed-js class="m-typer" :strings="strings" :loop="loop" :back-speed="backSpeed">
         <span class="typing"></span>
     </vue-typed-js>
 </template>

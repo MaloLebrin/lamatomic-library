@@ -30,11 +30,11 @@ export default Vue.extend({
 
 <style lang="scss">
 .m-navbar {
-    > .list {
+    > .a-list {
         padding-left: 0;
     }
 
-    .list-item {
+    .a-list-item {
         margin-bottom: 1.5rem;
     }
 }

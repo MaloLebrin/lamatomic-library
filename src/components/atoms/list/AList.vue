@@ -31,7 +31,7 @@ export default Vue.extend({
 
         withoutChips: {
             type: Boolean,
-            default: true
+            default: false
         },
 
         noPadding: {

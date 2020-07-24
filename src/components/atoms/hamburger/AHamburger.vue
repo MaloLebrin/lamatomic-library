@@ -52,7 +52,7 @@ export default Vue.extend({
     transition: background $hamburger-transistion-duration;
     width: $hamburger-width;
 
-    &.button {
+    &.a-button {
         background-color: $hamburger-background-color;
     }
 
