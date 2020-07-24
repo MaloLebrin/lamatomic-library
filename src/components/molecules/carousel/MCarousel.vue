@@ -4,6 +4,7 @@
         v-bind="$attrs"
         :per-page="perPage"
     >
+        <!-- eslint-disable-next-line vue/no-v-html -->
         <Slide v-for="slide in slides" :key="slide" class="slide" v-html="slide"></Slide>
     </Carousel>
 </template>

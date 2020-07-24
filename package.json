@@ -1,6 +1,6 @@
 {
   "name": "lamatomic",
-  "version": "2.0.0",
+  "version": "2.0.00",
   "description": "VueJS UI Components under Atomic Design Methodology",
   "author": "Lamacompta",
   "license": "Lamacompta Copyright",
@@ -29,8 +29,8 @@
     "build-storybook": "build-storybook"
   },
   "lint-staged": {
-    "*.{js,vue}": "yarn lint",
-    "*.{css,vue}": "stylelint"
+    "*.{js,vue}": "yarn lint:js",
+    "*.{css,vue}": "yarn lint:style"
   },
   "husky": {
     "hooks": {

@@ -54,7 +54,10 @@ const baseConfig = {
 const external = [
     // list external dependencies, exactly the way it is written in the import statement.
     // eg. 'jquery'
-    'vue'
+    'vue',
+    'v-calendar',
+    'vue-carousel',
+    'vue-typed-js'
 ]
 
 // UMD/IIFE shared settings: output.globals
@@ -62,7 +65,10 @@ const external = [
 const globals = {
     // Provide global variable names to replace your external imports
     // eg. jquery: '$'
-    vue: 'Vue'
+    vue: 'Vue',
+    'v-calendar': 'VCalendar',
+    'vue-carousel': 'VueCarousel',
+    'vue-typed-js': 'vue-typed-js'
 }
 
 // Customize configs for individual targets

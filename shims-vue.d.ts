@@ -5,3 +5,4 @@ declare module '*.vue' {
 
 declare module 'v-calendar'
 declare module 'vue-carousel'
+declare module 'vue-typed-js'
