@@ -7,24 +7,28 @@ describe('Molecule - MCarousel', () => {
     test('...has default <div>', () => {
         const wrapper = mount( MCarousel )
 
-        expect(wrapper.html()).toContain('<div class="VueCarousel m-carousel')
+        expect(wrapper.html()).toContain('<div class="m-carousel">')
+        expect(wrapper.html()).toContain('<div class="agile agile--no-nav-buttons"')
     })
 
-    test('...array of component in slides', () => {
+    test('...with slides', () => {
         const image1 = getMountedComponent(AImage,
             { src: '../logo/svg/logo-white-inline.svg' },
             { alt: 'logodefault' }
         )
 
-       const slides = [image1]
+        const slides = [image1]
 
-       const wrapper = mount( MCarousel, {
-            propsData: {
-                slides
-            }
-       })
+        const wrapper = mount( MCarousel, {
+                propsData: {
+                    slides
+                }
+        })
 
-       expect(wrapper.html()).toContain('<div class="VueCarousel-wrapper">')
-       expect(wrapper.html()).toContain('<div class="VueCarousel-inner" style="transform: translate(0px, 0); transition: 0.5s ease transform; flex-basis: 0px; visibility: hidden; height: auto;">')
+        expect(wrapper.html()).toContain('<div class="agile__list">')
+        expect(wrapper.html()).toContain('<div class="agile__track"')
+        expect(wrapper.html()).toContain('<div class="agile__slides')
+        expect(wrapper.html()).toContain('<div class="slide agile__slide"')
+        expect(wrapper.html()).toContain('logo-white-inline.svg')
     })
 })

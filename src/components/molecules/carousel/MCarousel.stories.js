@@ -7,7 +7,7 @@ const wrapper = {
 }
 
 const wrapCarousel = (content) => {
-    return '<div style="width: 600px; margin-left: 2rem;">' + content + '</div>'
+    return '<div style="width: 600px">' + content + '</div>'
 }
 
 const image1 = getMountedComponent(
@@ -31,26 +31,36 @@ const image3 = getMountedComponent(
 const slides = [image1, image2, image3]
 
 storiesOf('Molecules/Carousel', module)
+    .addParameters({ component: MCarousel })
+
     .add('Default', () => ({
         ...wrapper,
         data() {
             return {
                 slides
             }
-
         },
         template: wrapCarousel(`<MCarousel :slides="slides" />`)
     }))
 
-    .add('With arrows', () => ({
+    .add('With nav buttons', () => ({
         ...wrapper,
         data() {
             return {
                 slides
             }
-
         },
-        template: wrapCarousel(`<MCarousel :slides="slides" navigationEnabled />`)
+        template: wrapCarousel(`<MCarousel :slides="slides" nav-buttons />`)
+    }))
+
+    .add('With dots', () => ({
+        ...wrapper,
+        data() {
+            return {
+                slides
+            }
+        },
+        template: wrapCarousel(`<MCarousel :slides="slides" dots />`)
     }))
 
     .add('With autoplay', () => ({
@@ -59,10 +69,6 @@ storiesOf('Molecules/Carousel', module)
             return {
                 slides
             }
-
         },
         template: wrapCarousel(`<MCarousel :slides="slides" autoplay />`)
     }))
-
-
-
