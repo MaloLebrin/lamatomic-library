@@ -55,13 +55,13 @@ export default Vue.extend({
     padding: 5px;
     width: 20px;
 
-    .image {
+    .a-image {
         height: 100%;
         width: 100%;
     }
 
     &:hover {
-        .image {
+        .a-image {
             filter: invert(47%) sepia(95%) saturate(2181%) hue-rotate(166deg) brightness(91%) contrast(104%);
         }
     }

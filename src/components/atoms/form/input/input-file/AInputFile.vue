@@ -1,6 +1,6 @@
 <template>
     <ALabel :html-for="id" class="a-input-file-wrapper">
-        <AButton custom-tag="div" class="select-button">
+        <AButton custom-tag="div" class="a-select-button">
             <AText v-if="value && value.name" span>Fichier sélectionné : {{ value.name }}</AText>
             <AText v-else span>Choisir un fichier</AText>
         </AButton>
@@ -9,7 +9,6 @@
             :id="id"
             type="file"
             class="a-input-file"
-            :value="value"
             :name="name"
             :disabled="disabled"
             :multiple="multiple"
@@ -58,7 +57,7 @@ export default Vue.extend({
     data() {
         return {
             value: {
-                type: File,
+                type: Object,
                 default: null
             }
         }

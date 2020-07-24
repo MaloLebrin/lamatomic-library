@@ -8,8 +8,8 @@ describe('Molecule - MNavbar', () => {
     test('...as default has nav wrapper, a list component and horizontal props is true', () => {
         const wrapper = mount(MNavbar)
 
-        expect(wrapper.html()).toContain('<nav class="navbar"')
-        expect(wrapper.html()).toContain('<ul class="list without-chips horizontal">')
+        expect(wrapper.html()).toContain('<nav class="m-navbar"')
+        expect(wrapper.html()).toContain('<ul class="a-list without-chips horizontal">')
         expect(wrapper.props().horizontal).toBeTruthy()
     })
 
@@ -40,8 +40,8 @@ describe('Molecule - MNavbar', () => {
         })
 
         expect(wrapper.props().horizontal).toBeFalsy()
-        expect(wrapper.html()).toContain('<ul class="list without-chips">')
-        expect(wrapper.html()).toContain('<li class="list-item"')
+        expect(wrapper.html()).toContain('<ul class="a-list without-chips">')
+        expect(wrapper.html()).toContain('<li class="a-list-item"')
         expect(wrapper.html()).toContain('href="https://bananas.com/')
         expect(wrapper.html()).toContain('<a ')
         expect(wrapper.html()).toContain('Super lien')

@@ -5,7 +5,7 @@ describe('Atom - AButton', () => {
     test('...default has <button> tag', () => {
         const wrapper = mount(AButton)
 
-        expect(wrapper.html()).toBe('<button class="button"></button>')
+        expect(wrapper.html()).toBe('<button class="a-button"></button>')
     })
 
     test('...with custom tag', () => {
@@ -13,7 +13,7 @@ describe('Atom - AButton', () => {
             propsData: { customTag: 'div' }
         })
 
-        expect(wrapper.html()).toBe('<div class="button"></div>')
+        expect(wrapper.html()).toBe('<div class="a-button"></div>')
     })
 
     test('...tag should be <a> if href is available', () => {

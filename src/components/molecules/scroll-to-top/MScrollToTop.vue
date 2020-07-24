@@ -89,7 +89,7 @@ $grey: #333;
 $white: #fff;
 
 .m-scroll-to-top {
-    &.button {
+    &.a-button {
         font-size: 2rem;
         padding: 1rem;
         padding-bottom: 0;

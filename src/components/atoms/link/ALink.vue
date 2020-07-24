@@ -1,6 +1,6 @@
 <template>
     <a
-        class="link"
+        class="a-link"
         :class="{
             tel: tel,
             mail: mail,
@@ -151,7 +151,7 @@ $secondary: #002252;
 $yellow: #ffce00;
 $white: #fff;
 
-.link {
+.a-link {
     animation: 1s appear;
     color: $primary;
     cursor: pointer;

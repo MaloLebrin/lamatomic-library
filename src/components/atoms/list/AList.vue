@@ -1,7 +1,7 @@
 <template>
     <component
         :is="type"
-        class="list"
+        class="a-list"
         :class="{
             'without-chips': withoutChips,
             'no-padding': noPadding,
@@ -9,7 +9,7 @@
         }"
     >
         <!-- eslint-disable-next-line vue/no-v-html -->
-        <li v-for="item in items" :key="item" class="list-item" v-html="item"></li>
+        <li v-for="item in items" :key="item" class="a-list-item" v-html="item"></li>
     </component>
 </template>
 
@@ -31,7 +31,7 @@ export default Vue.extend({
 
         withoutChips: {
             type: Boolean,
-            default: true
+            default: false
         },
 
         noPadding: {
@@ -48,7 +48,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-.list {
+.a-list {
     padding-left: 2rem;
 
     &.no-padding {
@@ -64,7 +64,7 @@ export default Vue.extend({
         display: flex;
         flex-wrap: wrap;
 
-        > .list-item {
+        > .a-list-item {
             margin: 0.5rem;
 
             &:first-child {

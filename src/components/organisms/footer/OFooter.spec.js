@@ -19,7 +19,7 @@ describe('Organisms - OFooter', () => {
         )
 
         expect(wrapper.html()).toContain(
-            '<button title="Revenir en haut de la page" class="button m-scroll-to-top light">'
+            '<button title="Revenir en haut de la page" class="a-button m-scroll-to-top light">'
         )
     })
 
@@ -31,7 +31,7 @@ describe('Organisms - OFooter', () => {
         })
 
         expect(wrapper.html()).not.toContain(
-            '<button title="Revenir en haut de la page" class="button m-scroll-to-top light">'
+            '<button title="Revenir en haut de la page" class="a-button m-scroll-to-top light">'
         )
     })
 

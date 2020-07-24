@@ -1,9 +1,9 @@
 <template>
-  <div class="select">
+  <div class="a-select">
     <select
       :id="id"
       v-model="localValue"
-      class="select-input"
+      class="a-select-input"
       :name="name"
       :disabled="disabled"
       @change="$emit('change', $event.target.value)"
@@ -18,7 +18,7 @@
       >{{ option.label }}</option>
     </select>
 
-    <svg class="select-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 284.929 284.929">
+    <svg class="a-select-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 284.929 284.929">
       <path d="M282.082 76.511l-14.274-14.273c-1.902-1.906-4.093-2.856-6.57-2.856-2.471 0-4.661.95-6.563 2.856L142.466 174.441 30.262 62.241c-1.903-1.906-4.093-2.856-6.567-2.856-2.475 0-4.665.95-6.567 2.856L2.856 76.515C.95 78.417 0 80.607 0 83.082c0 2.473.953 4.663 2.856 6.565l133.043 133.046c1.902 1.903 4.093 2.854 6.567 2.854s4.661-.951 6.562-2.854L282.082 89.647c1.902-1.903 2.847-4.093 2.847-6.565 0-2.475-.945-4.665-2.847-6.571z"/>
     </svg>
   </div>
@@ -72,7 +72,7 @@ export default Vue.extend({
 $light-grey: #e1e1e1;
 $black: #2b2b2b;
 
-.select {
+.a-select {
     $arrow-color: $light-grey;
     $background: $light-grey;
 
@@ -81,7 +81,7 @@ $black: #2b2b2b;
     display: inline-flex;
     position: relative;
 
-    &.input {
+    &-input {
         background: inherit;
         border: 0;
         color: inherit;
@@ -96,7 +96,7 @@ $black: #2b2b2b;
         }
     }
 
-    &.arrow {
+    &-arrow {
         bottom: 0;
         fill: $light-grey;
         height: 1.5rem;

@@ -5,6 +5,7 @@ describe('Atom - AList', () => {
     test('...default has <ul> tag', () => {
         const wrapper = mount(AList)
         expect(wrapper.find('ul')).toBeTruthy()
+        expect(wrapper.html()).toContain(' class="a-list')
     })
 
     test('...tag should be <ol> if type is ol', () => {
@@ -21,9 +22,9 @@ describe('Atom - AList', () => {
         })
 
         expect(wrapper.find('ol')).toBeTruthy()
-        expect(wrapper.html()).toContain('<li class="list-item">ohoh</li>')
-        expect(wrapper.html()).toContain('<li class="list-item">héhé</li>')
-        expect(wrapper.html()).toContain('<li class="list-item">hihi</li>')
+        expect(wrapper.html()).toContain('<li class="a-list-item">ohoh</li>')
+        expect(wrapper.html()).toContain('<li class="a-list-item">héhé</li>')
+        expect(wrapper.html()).toContain('<li class="a-list-item">hihi</li>')
     })
 
     test('...renders the correct classes based on props passed', () => {

@@ -69,7 +69,7 @@ export default Vue.extend({
 
     }
 
-    .image {
+    .a-image {
         margin: auto;
 
         &.without-image {
@@ -82,11 +82,11 @@ export default Vue.extend({
         padding-left: 15px;
     }
 
-    .button {
+    .a-button {
         margin-left: 10px;
     }
 
-    .heading {
+    .a-heading {
         &.without-title {
             display: none;
         }

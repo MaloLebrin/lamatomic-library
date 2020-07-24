@@ -33,10 +33,10 @@ export default Vue.extend({
     flex-direction: row;
     flex-wrap: wrap;
 
-    .list {
+    .a-list {
         flex-basis: auto;
 
-        .list-item {
+        .a-list-item {
             box-shadow: 0 3px 6px 0 rgba(140, 152, 164, 0.25);
             height: 100%;
             padding: 1rem;

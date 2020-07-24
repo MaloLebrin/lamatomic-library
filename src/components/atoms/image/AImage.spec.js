@@ -5,35 +5,36 @@ describe('Atom - AImage', () => {
     test('...has <img> tag', () => {
         const wrapper = mount(AImage)
         expect(wrapper.find('img')).toBeTruthy()
-    })
-})
-
-test('...with title', () => {
-    const wrapper = mount(AImage, {
-        propsData: {
-            title: 'Lama vert'
-        }
+        expect(wrapper.html()).toContain('class="a-image')
     })
 
-    expect(wrapper.attributes('title')).toBe('Lama vert')
-})
+    test('...with title', () => {
+        const wrapper = mount(AImage, {
+            propsData: {
+                title: 'Lama vert'
+            }
+        })
 
-test('...with src', () => {
-    const wrapper = mount(AImage, {
-        propsData: {
-            src: 'Lama rouge'
-        }
+        expect(wrapper.attributes('title')).toBe('Lama vert')
     })
 
-    expect(wrapper.attributes('src')).toBe('Lama rouge')
-})
+    test('...with src', () => {
+        const wrapper = mount(AImage, {
+            propsData: {
+                src: 'Lama rouge'
+            }
+        })
 
-test('...with alt', () => {
-    const wrapper = mount(AImage, {
-        propsData: {
-            alt: 'Lama jaune'
-        }
+        expect(wrapper.attributes('src')).toBe('Lama rouge')
     })
 
-    expect(wrapper.attributes('alt')).toBe('Lama jaune')
+    test('...with alt', () => {
+        const wrapper = mount(AImage, {
+            propsData: {
+                alt: 'Lama jaune'
+            }
+        })
+
+        expect(wrapper.attributes('alt')).toBe('Lama jaune')
+    })
 })

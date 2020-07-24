@@ -18,7 +18,7 @@ describe('Molecule - MLogo', () => {
         )
 
         expect(wrapper.html()).toContain(
-            `class="logo"`
+            `class="m-logo"`
         )
     })
 
