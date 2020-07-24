@@ -6,6 +6,7 @@
             :nav-buttons="navButtons"
             :dots="dots"
         >
+            <!-- eslint-disable-next-line vue/no-v-html -->
             <div v-for="slide in slides" :key="slide" class="slide" v-html="slide"></div>
 
             <template slot="prevButton">
