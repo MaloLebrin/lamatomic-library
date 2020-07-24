@@ -78,7 +78,7 @@ $light-grey: #e1e1e1;
         flex-basis: 10%;
         margin-left: 15px;
 
-        .a-simage {
+        .a-image {
             width: 80px;
         }
     }
