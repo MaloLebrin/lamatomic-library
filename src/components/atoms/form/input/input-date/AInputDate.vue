@@ -49,10 +49,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-$primary: #009cde;
-$dark-gray: #444;
-
-.a-input-date {
+.a-input.a-input-date {
     border-style: none;
     position: absolute;
 }
