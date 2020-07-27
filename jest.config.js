@@ -8,10 +8,11 @@ module.exports = {
     transform: {
         '^.+\\.ts$': 'ts-jest',
         '^.+\\.js$': 'babel-jest',
-        '.*\\.(vue)$': 'vue-jest',
+        '^.+\\.vue$': 'vue-jest',
         '^.+\\.tsx?$': '<rootDir>/node_modules/ts-jest/preprocessor.js',
         '^.+\\.svg$': '<rootDir>/.jest/svgTransform.js'
     },
+    transformIgnorePatterns: ["/node_modules/(?!vue-agile)"],
     collectCoverage: true,
     collectCoverageFrom: [
         '<rootDir>/src/components/**/*.vue'
