@@ -56,7 +56,7 @@ const external = [
     // eg. 'jquery'
     'vue',
     'v-calendar',
-    'vue-carousel',
+    'vue-agile',
     'vue-typed-js'
 ]
 
@@ -67,7 +67,7 @@ const globals = {
     // eg. jquery: '$'
     vue: 'Vue',
     'v-calendar': 'VCalendar',
-    'vue-carousel': 'VueCarousel',
+    'vue-agile': 'VueAgile',
     'vue-typed-js': 'vue-typed-js'
 }
 
