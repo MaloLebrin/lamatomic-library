@@ -2353,39 +2353,12 @@ var __vue_component__$m = /*#__PURE__*/normalizeComponent({
     ALink: __vue_component__$4
   },
   props: {
-    type: {
+    src: {
       type: String,
-      default: 'default',
-      validator: function validator(value) {
-        return ['default', 'default-inline', 'white', 'white-inline'].includes(value);
-      }
+      default: "http://www.institutfrance.si/modules/uploader/uploads/news/pictures_news/AF_Slovenie_Logo_site_2.jpg"
     }
-  },
-  data: function data() {
-    return {
-      logoFileName: getLogoFileName(this.type)
-    };
   }
-});
-
-var getLogoFileName = function getLogoFileName(type) {
-  switch (type) {
-    case 'default':
-      return 'logo-default.svg';
-
-    case 'default-inline':
-      return 'logo-default-inline.svg';
-
-    case 'white':
-      return 'logo-white.svg';
-
-    case 'white-inline':
-      return 'logo-white-inline.svg';
-
-    default:
-      return 'logo-default.svg';
-  }
-};/* script */
+});/* script */
 var __vue_script__$n = script$n;
 /* template */
 
@@ -2405,8 +2378,7 @@ var __vue_render__$n = function __vue_render__() {
     }
   }, [_c('AImage', {
     attrs: {
-      "src": require('./svg/' + _vm.logoFileName),
-      "alt": "Logo Lamacompta"
+      "src": _vm.src
     }
   })], 1);
 };
@@ -2416,7 +2388,7 @@ var __vue_staticRenderFns__$n = [];
 
 var __vue_inject_styles__$n = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-12b71780_0", {
+  inject("data-v-bb8ae842_0", {
     source: ".m-logo{animation:1s appear;margin:auto}",
     map: undefined,
     media: undefined
@@ -2428,7 +2400,7 @@ var __vue_inject_styles__$n = function __vue_inject_styles__(inject) {
 var __vue_scope_id__$n = undefined;
 /* module identifier */
 
-var __vue_module_identifier__$n = "data-v-12b71780";
+var __vue_module_identifier__$n = "data-v-bb8ae842";
 /* functional template */
 
 var __vue_is_functional_template__$n = false;

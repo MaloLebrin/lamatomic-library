@@ -2531,43 +2531,12 @@ var script$n = Vue.extend({
     ALink: __vue_component__$4
   },
   props: {
-    type: {
+    src: {
       type: String,
-      default: 'default',
-
-      validator(value) {
-        return ['default', 'default-inline', 'white', 'white-inline'].includes(value);
-      }
-
+      default: "http://www.institutfrance.si/modules/uploader/uploads/news/pictures_news/AF_Slovenie_Logo_site_2.jpg"
     }
-  },
-
-  data() {
-    return {
-      logoFileName: getLogoFileName(this.type)
-    };
   }
-
 });
-
-const getLogoFileName = function (type) {
-  switch (type) {
-    case 'default':
-      return 'logo-default.svg';
-
-    case 'default-inline':
-      return 'logo-default-inline.svg';
-
-    case 'white':
-      return 'logo-white.svg';
-
-    case 'white-inline':
-      return 'logo-white-inline.svg';
-
-    default:
-      return 'logo-default.svg';
-  }
-};
 
 /* script */
 const __vue_script__$n = script$n;
@@ -2589,8 +2558,7 @@ var __vue_render__$n = function () {
     }
   }, [_c('AImage', {
     attrs: {
-      "src": require('./svg/' + _vm.logoFileName),
-      "alt": "Logo Lamacompta"
+      "src": _vm.src
     }
   })], 1);
 };
@@ -2600,7 +2568,7 @@ var __vue_staticRenderFns__$n = [];
 
 const __vue_inject_styles__$n = function (inject) {
   if (!inject) return;
-  inject("data-v-12b71780_0", {
+  inject("data-v-bb8ae842_0", {
     source: ".m-logo{animation:1s appear;margin:auto}",
     map: undefined,
     media: undefined
