@@ -6,8 +6,7 @@
         no-line
     >
         <AImage
-            :src="require('./svg/' + logoFileName)"
-            alt="Logo Lamacompta"
+            :src="src"
         />
     </ALink>
 </template>
@@ -25,36 +24,13 @@ export default Vue.extend({
     },
 
     props: {
-        type: {
+        src: {
             type: String,
-            default: 'default',
-            validator(value) {
-                return ['default', 'default-inline', 'white', 'white-inline'].includes(value)
-            }
-        }
+            default: "http://www.institutfrance.si/modules/uploader/uploads/news/pictures_news/AF_Slovenie_Logo_site_2.jpg"
+        },
+
     },
-
-    data() {
-        return {
-            logoFileName: getLogoFileName(this.type)
-        }
-    }
 })
-
-const getLogoFileName = function(type: String): String {
-    switch (type) {
-        case 'default':
-            return 'logo-default.svg'
-        case 'default-inline':
-            return 'logo-default-inline.svg'
-        case 'white':
-            return 'logo-white.svg'
-        case 'white-inline':
-            return 'logo-white-inline.svg'
-        default:
-            return 'logo-default.svg'
-    }
-}
 </script>
 
 <style lang="scss">
