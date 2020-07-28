@@ -45,3 +45,37 @@ export const getRandom = (length: number = 5): string => {
         .toString(36)
         .substr(2, length)
 }
+
+/**
+ * Check if given URL is valid
+ *
+ * @param {string} url URL to check
+ *
+ * @return {Boolean} True if URL is valid, else false
+ */
+export const isValidUrl = (url: string): Boolean => {
+    const pattern = new RegExp(
+        '^(https?:\\/\\/)?' + // protocol
+        '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // domain name
+        '((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
+        '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
+        '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
+        '(\\#[-a-z\\d_]*)?$', // fragment locator
+        'i'
+    )
+
+    return !!pattern.test(url)
+}
+
+/**
+ * Check if given Image Path is valid
+ *
+ * @param {string} imagePath Image Path to check
+ *
+ * @return {Boolean} True if image path is valid, else false
+ */
+export const isValidImagePath = (imagePath: string): Boolean => {
+    const pattern = new RegExp(/[/.](gif|jpg|jpeg|tiff|png|svg)$/, 'i')
+
+    return !!pattern.test(imagePath)
+}
