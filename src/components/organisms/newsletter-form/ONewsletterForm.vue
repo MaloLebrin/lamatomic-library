@@ -19,7 +19,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import AInputEmail from '@/components/atoms/form/input/input-email/AInputEmail.vue'
+import AInputEmail from '@/components/atoms/form/inputs/input-email/AInputEmail.vue'
 import AImage from '@/components/atoms/image/AImage.vue'
 import AHeading from '@/components/atoms/heading/AHeading.vue'
 import AButton from '@/components/atoms/button/AButton.vue'

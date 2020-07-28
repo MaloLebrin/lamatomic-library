@@ -20,8 +20,8 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import AInput from '../AInput.vue'
 import AText from '@/components/atoms/text/AText.vue'
+import AInput from '../AInput.vue'
 
 export default Vue.extend({
     name: 'AInputMail',

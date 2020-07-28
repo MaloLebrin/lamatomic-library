@@ -1,18 +1,23 @@
 <template>
-    <div class="a-input-url-wrapper">
+    <div class="a-input-tel-wrapper">
         <AInput
-            v-model="url"
+            v-model="telNumber"
             v-bind="$attrs"
-            type="url"
-            class="a-input-url"
-            :class="[checkValidity && url.length > 0 ? { success: isUrlValid, error: !isUrlValid } : '']"
+            type="tel"
+            class="a-input-tel"
+            :class="[checkValidity && telNumber.length > 0 ? { success: isTelValid, error: !isTelValid } : '']"
             :placeholder="placeholder"
         />
 
-        <div v-if="checkValidity && url.length > 0">
-            <AText class="url-validity-message" :class="{ success: isUrlValid, error: !isUrlValid }">
-                <AText v-if="isUrlValid" span>Votre URL est valide.</AText>
-                <AText v-if="!isUrlValid" span>Votre URL est invalide.</AText>
+        <div v-if="checkValidity && telNumber.length > 0">
+            <AText class="tel-validity-message" :class="{ success: isTelValid, error: !isTelValid }">
+                <AText v-if="isTelValid" span>
+                    Votre numéro de téléphone est valide.
+                </AText>
+
+                <AText v-if="!isTelValid" span>
+                    Votre numéro de téléphone est invalide.
+                </AText>
             </AText>
         </div>
     </div>
@@ -20,11 +25,11 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import AInput from '../AInput.vue'
 import AText from '@/components/atoms/text/AText.vue'
+import AInput from '../AInput.vue'
 
 export default Vue.extend({
-    name: 'AInputUrl',
+    name: 'AInputTel',
 
     components: {
         AInput,
@@ -36,7 +41,7 @@ export default Vue.extend({
     props: {
         placeholder: {
             type: String,
-            default: 'Entrez votre URL'
+            default: 'Votre numéro de téléphone'
         },
 
         checkValidity: {
@@ -47,22 +52,20 @@ export default Vue.extend({
 
     data() {
         return {
-            url: '',
-            REGEX_URL: new RegExp(
-                /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)/gi
-            )
+            telNumber: '',
+            REGEX_TEL: new RegExp(/^((\+)33+ ?|0)[1-9]( ?(\d{2})){4}$/gi)
         }
     },
 
     computed: {
-        isUrlValid(this: any): Boolean {
-            return this.checkUrl(this.url)
+        isTelValid(this: any): Boolean {
+            return this.checkTel(this.telNumber)
         }
     },
 
     methods: {
-        checkUrl(this: any, value: String): Boolean {
-            return this.REGEX_URL.test(value)
+        checkTel(this: any, value: [Number, String]): Boolean {
+            return this.REGEX_TEL.test(value)
         }
     }
 })
@@ -72,8 +75,8 @@ export default Vue.extend({
 $error-color: #d92550;
 $success-color: #3ac47d;
 
-.a-input-url-wrapper {
-    .url-validity-message {
+.a-input-tel-wrapper {
+    .tel-validity-message {
         border-radius: 0.3rem;
         display: inline-block;
         font-size: 0.9rem;
