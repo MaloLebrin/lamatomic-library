@@ -1,46 +1,50 @@
-import _Vue, { PluginFunction } from 'vue';
+import _Vue, { PluginFunction } from 'vue'
 
 // Import vue components
-import * as components from '@/components/index';
+import * as components from '@/components/index.ts'
 
 // Define typescript interfaces for autoinstaller
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 interface InstallFunction extends PluginFunction<any> {
-  installed?: boolean;
+    installed?: boolean
 }
 
 // install function executed by Vue.use()
 const install: InstallFunction = function installLamatomic(Vue: typeof _Vue) {
-  if (install.installed) return;
-  install.installed = true;
-  Object.entries(components).forEach(([componentName, component]) => {
-    Vue.component(componentName, component);
-  });
+    if (install.installed) return
+
+    install.installed = true
+
+    Object.entries(components).forEach(([componentName, component]) => {
+        Vue.component(componentName, component)
+    })
 };
 
 // Create module definition for Vue.use()
 const plugin = {
-  install,
+    install
 };
 
 // To auto-install on non-es builds, when vue is found
 // eslint-disable-next-line no-redeclare
 /* global window, global */
 if (process.env.ES_BUILD === 'false') {
-  let GlobalVue = null;
-  if (typeof window !== 'undefined') {
-    GlobalVue = window.Vue;
-  } else if (typeof global !== 'undefined') {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    GlobalVue = (global as any).Vue;
-  }
-  if (GlobalVue) {
-    (GlobalVue as typeof _Vue).use(plugin);
-  }
+    let GlobalVue = null
+
+    if (typeof window !== 'undefined') {
+        GlobalVue = window.Vue
+    } else if (typeof global !== 'undefined') {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        GlobalVue = (global as any).Vue
+    }
+
+    if (GlobalVue) {
+        (GlobalVue as typeof _Vue).use(plugin)
+    }
 }
 // Default export is library as a whole, registered via Vue.use()
-export default plugin;
+export default plugin
 
 // To allow individual component use, export components
 // each can be registered via Vue.component()
-export * from '@/components/index';
+export * from '@/components/index.ts'

@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils'
-import MCarousel from './MCarousel.vue'
 import AImage from '@/components/atoms/image/AImage.vue'
 import { getMountedComponent } from '@/utils'
+import MCarousel from './MCarousel.vue'
 
 describe('Molecule - MCarousel', () => {
     test('...has default <div>', () => {

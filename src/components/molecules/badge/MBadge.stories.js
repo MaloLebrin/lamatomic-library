@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/vue'
-import MBadge from './MBadge.vue'
 import AImage from '@/components/atoms/image/AImage.vue'
+import MBadge from './MBadge.vue'
 
 const wrapper = {
     components: { MBadge, AImage }

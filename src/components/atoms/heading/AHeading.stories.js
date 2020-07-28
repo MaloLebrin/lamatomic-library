@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/vue'
-import AHeading from './AHeading.vue'
 import AText from '@/components/atoms/text/AText.vue'
+import AHeading from './AHeading.vue'
 
 const wrapper = {
     components: { AHeading, AText }
