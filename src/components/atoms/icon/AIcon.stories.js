@@ -34,9 +34,6 @@ storiesOf('Atoms', module)
                     }
                 )
             }
-
-
-
         },
 
         template:
