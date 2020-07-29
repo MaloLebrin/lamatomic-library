@@ -22,6 +22,7 @@ export { default as AInput } from './atoms/form/inputs/AInput.vue'
 export { default as ASelect } from './atoms/form/select/ASelect.vue'
 export { default as AFormGroup } from './atoms/form/group/AFormGroup.vue'
 export { default as AHamburger } from './atoms/hamburger/AHamburger.vue'
+export { default as AIcon } from './atoms/icon/AIcon.vue'
 
 
 // Molecules
