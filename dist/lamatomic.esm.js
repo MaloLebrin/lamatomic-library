@@ -1677,7 +1677,7 @@ var __vue_staticRenderFns__$e = [];
 
 const __vue_inject_styles__$e = function (inject) {
   if (!inject) return;
-  inject("data-v-6895e45e_0", {
+  inject("data-v-9026d7c4_0", {
     source: ".a-input-email-wrapper .email-validity-message{border-radius:.3rem;display:inline-block;font-size:.9rem;padding:.4rem}.a-input-email-wrapper .email-validity-message.success{background-color:rgba(176,231,203,.3);color:#3ac47d}.a-input-email-wrapper .email-validity-message.error{background-color:rgba(240,167,184,.3);color:#d92550}",
     map: undefined,
     media: undefined
@@ -1793,7 +1793,7 @@ var __vue_staticRenderFns__$f = [];
 
 const __vue_inject_styles__$f = function (inject) {
   if (!inject) return;
-  inject("data-v-e98d437e_0", {
+  inject("data-v-3828ce01_0", {
     source: ".a-input-tel-wrapper .tel-validity-message{border-radius:.3rem;display:inline-block;font-size:.9rem;margin-top:.5rem;padding:.4rem}.a-input-tel-wrapper .tel-validity-message.success{background-color:rgba(176,231,203,.3);color:#3ac47d}.a-input-tel-wrapper .tel-validity-message.error{background-color:rgba(240,167,184,.3);color:#d92550}",
     map: undefined,
     media: undefined
@@ -1818,6 +1818,8 @@ const __vue_component__$f = /*#__PURE__*/normalizeComponent({
   staticRenderFns: __vue_staticRenderFns__$f
 }, __vue_inject_styles__$f, __vue_script__$f, __vue_scope_id__$f, __vue_is_functional_template__$f, __vue_module_identifier__$f, false, createInjector, undefined, undefined);
 
+const visibleIcon = 'data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgZm9jdXNhYmxlPSJmYWxzZSIgZGF0YS1wcmVmaXg9ImZhcyIgZGF0YS1pY29uPSJleWUiIGNsYXNzPSJzdmctaW5saW5lLS1mYSBmYS1leWUgZmEtdy0xOCIgcm9sZT0iaW1nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NzYgNTEyIj48cGF0aCBmaWxsPSJjdXJyZW50Q29sb3IiIGQ9Ik01NzIuNTIgMjQxLjRDNTE4LjI5IDEzNS41OSA0MTAuOTMgNjQgMjg4IDY0UzU3LjY4IDEzNS42NCAzLjQ4IDI0MS40MWEzMi4zNSAzMi4zNSAwIDAgMCAwIDI5LjE5QzU3LjcxIDM3Ni40MSAxNjUuMDcgNDQ4IDI4OCA0NDhzMjMwLjMyLTcxLjY0IDI4NC41Mi0xNzcuNDFhMzIuMzUgMzIuMzUgMCAwIDAgMC0yOS4xOXpNMjg4IDQwMGExNDQgMTQ0IDAgMSAxIDE0NC0xNDQgMTQzLjkzIDE0My45MyAwIDAgMS0xNDQgMTQ0em0wLTI0MGE5NS4zMSA5NS4zMSAwIDAgMC0yNS4zMSAzLjc5IDQ3Ljg1IDQ3Ljg1IDAgMCAxLTY2LjkgNjYuOUE5NS43OCA5NS43OCAwIDEgMCAyODggMTYweiI+PC9wYXRoPjwvc3ZnPg==';
+const invisibleIcon = 'data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgZm9jdXNhYmxlPSJmYWxzZSIgZGF0YS1wcmVmaXg9ImZhcyIgZGF0YS1pY29uPSJleWUtc2xhc2giIGNsYXNzPSJzdmctaW5saW5lLS1mYSBmYS1leWUtc2xhc2ggZmEtdy0yMCIgcm9sZT0iaW1nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNTEyIj48cGF0aCBmaWxsPSJjdXJyZW50Q29sb3IiIGQ9Ik0zMjAgNDAwYy03NS44NSAwLTEzNy4yNS01OC43MS0xNDIuOS0xMzMuMTFMNzIuMiAxODUuODJjLTEzLjc5IDE3LjMtMjYuNDggMzUuNTktMzYuNzIgNTUuNTlhMzIuMzUgMzIuMzUgMCAwIDAgMCAyOS4xOUM4OS43MSAzNzYuNDEgMTk3LjA3IDQ0OCAzMjAgNDQ4YzI2LjkxIDAgNTIuODctNCA3Ny44OS0xMC40NkwzNDYgMzk3LjM5YTE0NC4xMyAxNDQuMTMgMCAwIDEtMjYgMi42MXptMzEzLjgyIDU4LjFsLTExMC41NS04NS40NGEzMzEuMjUgMzMxLjI1IDAgMCAwIDgxLjI1LTEwMi4wNyAzMi4zNSAzMi4zNSAwIDAgMCAwLTI5LjE5QzU1MC4yOSAxMzUuNTkgNDQyLjkzIDY0IDMyMCA2NGEzMDguMTUgMzA4LjE1IDAgMCAwLTE0Ny4zMiAzNy43TDQ1LjQ2IDMuMzdBMTYgMTYgMCAwIDAgMjMgNi4xOEwzLjM3IDMxLjQ1QTE2IDE2IDAgMCAwIDYuMTggNTMuOWw1ODguMzYgNDU0LjczYTE2IDE2IDAgMCAwIDIyLjQ2LTIuODFsMTkuNjQtMjUuMjdhMTYgMTYgMCAwIDAtMi44Mi0yMi40NXptLTE4My43Mi0xNDJsLTM5LjMtMzAuMzhBOTQuNzUgOTQuNzUgMCAwIDAgNDE2IDI1NmE5NC43NiA5NC43NiAwIDAgMC0xMjEuMzEtOTIuMjFBNDcuNjUgNDcuNjUgMCAwIDEgMzA0IDE5MmE0Ni42NCA0Ni42NCAwIDAgMS0xLjU0IDEwbC03My42MS01Ni44OUExNDIuMzEgMTQyLjMxIDAgMCAxIDMyMCAxMTJhMTQzLjkyIDE0My45MiAwIDAgMSAxNDQgMTQ0YzAgMjEuNjMtNS4yOSA0MS43OS0xMy45IDYwLjExeiI+PC9wYXRoPjwvc3ZnPg==';
 var script$g = Vue.extend({
   name: 'AInputPassword',
   components: {
@@ -1856,6 +1858,10 @@ var script$g = Vue.extend({
 
     passwordType() {
       return this.hidePassword ? 'password' : 'text';
+    },
+
+    hiddenIcon() {
+      return this.hidePassword ? visibleIcon : invisibleIcon;
     }
 
   },
@@ -1904,7 +1910,7 @@ var __vue_render__$g = function () {
   }, 'AInput', _vm.$attrs, false)), _vm._v(" "), _c('AImage', {
     staticClass: "icon-password",
     attrs: {
-      "src": require('./svg/' + (_vm.hidePassword ? 'eye-solid.svg' : 'eye-slash-solid.svg')),
+      "src": _vm.hiddenIcon,
       "type": "icon",
       "title": _vm.hidePassword ? 'Afficher le mot de passe' : 'Masquer le mot de passe'
     },
@@ -1935,7 +1941,7 @@ var __vue_staticRenderFns__$g = [];
 
 const __vue_inject_styles__$g = function (inject) {
   if (!inject) return;
-  inject("data-v-5cd399a0_0", {
+  inject("data-v-01d7836c_0", {
     source: ".a-input-password-wrapper .a-input-group{display:inline-block;position:relative}.a-input-password-wrapper .a-input-group .a-input.a-input-password+.icon-password{border-radius:50px;bottom:0;cursor:pointer;margin:auto;opacity:35%;padding:3px 6px;position:absolute;right:1px;top:0;width:20px}.a-input-password-wrapper .password-validity-message{border-radius:.3rem;display:inline-block;font-size:.9rem;margin-top:.5rem;padding:.4rem}.a-input-password-wrapper .password-validity-message.success{background-color:rgba(176,231,203,.3);color:#3ac47d}.a-input-password-wrapper .password-validity-message.error{background-color:rgba(240,167,184,.3);color:#d92550}",
     map: undefined,
     media: undefined
@@ -2233,7 +2239,7 @@ var __vue_staticRenderFns__$j = [];
 
 const __vue_inject_styles__$j = function (inject) {
   if (!inject) return;
-  inject("data-v-3fb6cb3a_0", {
+  inject("data-v-49483afa_0", {
     source: ".a-input-url-wrapper .url-validity-message{border-radius:.3rem;display:inline-block;font-size:.9rem;margin-top:.5rem;padding:.4rem}.a-input-url-wrapper .url-validity-message.success{background-color:rgba(176,231,203,.3);color:#3ac47d}.a-input-url-wrapper .url-validity-message.error{background-color:rgba(240,167,184,.3);color:#d92550}",
     map: undefined,
     media: undefined
@@ -3045,7 +3051,7 @@ var script$t = Vue.extend({
       default: 'Accéder à cette page'
     },
     src: {
-      type: String,
+      type: [String, Object],
       default: null
     },
     href: {
@@ -3086,7 +3092,7 @@ var __vue_staticRenderFns__$t = [];
 
 const __vue_inject_styles__$t = function (inject) {
   if (!inject) return;
-  inject("data-v-b348e742_0", {
+  inject("data-v-0ec2854c_0", {
     source: ".m-social-button{animation:1s appear;border-radius:100%;display:block;height:20px;padding:5px;width:20px}.m-social-button .a-image{height:100%;width:100%}.m-social-button:hover .a-image{filter:invert(47%) sepia(95%) saturate(2181%) hue-rotate(166deg) brightness(91%) contrast(104%)}",
     map: undefined,
     media: undefined
@@ -3128,9 +3134,10 @@ var script$u = Vue.extend({
   }
 });
 
+const img = "data:image/svg+xml,%3csvg aria-hidden='true' focusable='false' data-prefix='fab' data-icon='facebook' class='svg-inline--fa fa-facebook fa-w-10' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3e %3cg color='white'%3e %3cpath fill='currentColor' d='M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z'%3e %3c/path%3e %3c/g%3e%3c/svg%3e";
+
 /* script */
 const __vue_script__$u = script$u;
-/* template */
 
 var __vue_render__$u = function () {
   var _vm = this;
@@ -3142,7 +3149,7 @@ var __vue_render__$u = function () {
   return _c('MSocialButton', {
     staticClass: "m-social-button-facebook",
     attrs: {
-      "src": "./svg/facebook.svg",
+      "src": img,
       "href": _vm.href,
       "title": _vm.title
     }
@@ -3190,9 +3197,10 @@ var script$v = Vue.extend({
   }
 });
 
+const img$1 = "data:image/svg+xml,%3csvg aria-hidden='true' focusable='false' data-prefix='fab' data-icon='twitter' class='svg-inline--fa fa-twitter fa-w-16' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3e %3cg color='white'%3e %3cpath fill='currentColor' d='M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z'%3e %3c/path%3e %3c/g%3e%3c/svg%3e";
+
 /* script */
 const __vue_script__$v = script$v;
-/* template */
 
 var __vue_render__$v = function () {
   var _vm = this;
@@ -3204,7 +3212,7 @@ var __vue_render__$v = function () {
   return _c('MSocialButton', {
     staticClass: "m-social-button-twitter",
     attrs: {
-      "src": "./svg/twitter.svg",
+      "src": img$1,
       "href": _vm.href,
       "title": _vm.title
     }
@@ -3252,9 +3260,10 @@ var script$w = Vue.extend({
   }
 });
 
+const img$2 = "data:image/svg+xml,%3csvg aria-hidden='true' focusable='false' data-prefix='fab' data-icon='instagram' class='svg-inline--fa fa-instagram fa-w-14' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3e %3cg color='white'%3e %3cpath fill='currentColor' d='M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z'%3e %3c/path%3e %3c/g%3e%3c/svg%3e";
+
 /* script */
 const __vue_script__$w = script$w;
-/* template */
 
 var __vue_render__$w = function () {
   var _vm = this;
@@ -3266,7 +3275,7 @@ var __vue_render__$w = function () {
   return _c('MSocialButton', {
     staticClass: "m-social-button-instagram",
     attrs: {
-      "src": "./svg/instagram.svg",
+      "src": img$2,
       "href": _vm.href,
       "title": _vm.title
     }
@@ -3314,9 +3323,10 @@ var script$x = Vue.extend({
   }
 });
 
+const img$3 = "data:image/svg+xml,%3csvg aria-hidden='true' focusable='false' data-prefix='fab' data-icon='linkedin' class='svg-inline--fa fa-linkedin fa-w-14' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3e %3cg color='white'%3e %3cpath fill='currentColor' d='M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z'%3e %3c/path%3e %3c/g%3e%3c/svg%3e";
+
 /* script */
 const __vue_script__$x = script$x;
-/* template */
 
 var __vue_render__$x = function () {
   var _vm = this;
@@ -3328,7 +3338,7 @@ var __vue_render__$x = function () {
   return _c('MSocialButton', {
     staticClass: "m-social-button-linkedin",
     attrs: {
-      "src": "./svg/linkedin.svg",
+      "src": img$3,
       "href": _vm.href,
       "title": _vm.title
     }
@@ -3773,7 +3783,7 @@ var __vue_staticRenderFns__$C = [];
 
 const __vue_inject_styles__$C = function (inject) {
   if (!inject) return;
-  inject("data-v-13a6e12c_0", {
+  inject("data-v-0da4cf90_0", {
     source: ".o-form-newsletter{display:block}.o-form-newsletter .row{display:flex;flex-direction:row;flex-wrap:wrap;margin:auto}.o-form-newsletter .a-image{margin:auto}.o-form-newsletter .a-image.without-image{display:none}.o-form-newsletter .newsletter-content{margin:auto;padding-left:15px}.o-form-newsletter .a-button{margin-left:10px}.o-form-newsletter .a-heading.without-title{display:none}",
     map: undefined,
     media: undefined
