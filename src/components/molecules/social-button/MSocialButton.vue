@@ -32,7 +32,7 @@ export default Vue.extend({
         },
 
         src: {
-            type: String,
+            type: [String, Object],
             default: null
         },
 
