@@ -1,5 +1,5 @@
 <template>
-    <MSocialButton class="m-social-button-linkedin" src="./svg/linkedin.svg" :href="href" :title="title"/>
+    <MSocialButton class="m-social-button-linkedin" :src="require('./svg/linkedin.svg')" :href="href" :title="title"/>
 </template>
 
 <script lang="ts">
