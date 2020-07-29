@@ -2531,16 +2531,38 @@ const __vue_component__$m = /*#__PURE__*/normalizeComponent({
 }, __vue_inject_styles__$m, __vue_script__$m, __vue_scope_id__$m, __vue_is_functional_template__$m, __vue_module_identifier__$m, false, createInjector, undefined, undefined);
 
 var script$n = Vue.extend({
-  name: 'MLogo',
-  components: {
-    AImage: __vue_component__$3,
-    ALink: __vue_component__$4
-  },
+  name: 'AIcon',
   props: {
-    src: {
+    iconName: {
       type: String,
-      default: "http://www.institutfrance.si/modules/uploader/uploads/news/pictures_news/AF_Slovenie_Logo_site_2.jpg"
+      default: 'lama'
+    },
+    width: {
+      type: [Number, String],
+      default: 18
+    },
+    height: {
+      type: [Number, String],
+      default: 18
+    },
+    iconColor: {
+      type: String,
+      default: 'currentColor'
+    },
+    sizeX: {
+      type: Number,
+      default: 512
+    },
+    sizeY: {
+      type: Number,
+      default: 512
     }
+  },
+  computed: {
+    getViewBox() {
+      return "0 0 " + this.sizeX + " " + this.sizeY;
+    }
+
   }
 });
 
@@ -2555,18 +2577,26 @@ var __vue_render__$n = function () {
 
   var _c = _vm._self._c || _h;
 
-  return _c('ALink', {
-    staticClass: "m-logo",
+  return _c('svg', {
+    staticClass: "a-icon",
     attrs: {
-      "to": "/",
-      "title": "Me rendre à la page d'accueil",
-      "no-line": ""
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": _vm.width,
+      "height": _vm.height,
+      "viewBox": _vm.getViewBox,
+      "aria-labelledby": _vm.iconName,
+      "role": "presentation"
     }
-  }, [_c('AImage', {
+  }, [_c('title', {
     attrs: {
-      "src": _vm.src
+      "id": _vm.iconName,
+      "lang": "en"
     }
-  })], 1);
+  }, [_vm._v("\n        " + _vm._s(_vm.iconName) + " icon\n    ")]), _vm._v(" "), _c('g', {
+    attrs: {
+      "fill": _vm.iconColor
+    }
+  }, [_vm._t("default")], 2)]);
 };
 
 var __vue_staticRenderFns__$n = [];
@@ -2574,8 +2604,8 @@ var __vue_staticRenderFns__$n = [];
 
 const __vue_inject_styles__$n = function (inject) {
   if (!inject) return;
-  inject("data-v-bb8ae842_0", {
-    source: ".m-logo{animation:1s appear;margin:auto}",
+  inject("data-v-e7a16734_0", {
+    source: ".a-icon{animation:1s appear;text-decoration:none}",
     map: undefined,
     media: undefined
   });
@@ -2599,25 +2629,19 @@ const __vue_component__$n = /*#__PURE__*/normalizeComponent({
   staticRenderFns: __vue_staticRenderFns__$n
 }, __vue_inject_styles__$n, __vue_script__$n, __vue_scope_id__$n, __vue_is_functional_template__$n, __vue_module_identifier__$n, false, createInjector, undefined, undefined);
 
-//
-Vue.use(VueTypedJs);
-var script$o = {
-  name: 'MTyper',
+var script$o = Vue.extend({
+  name: 'MLogo',
+  components: {
+    AImage: __vue_component__$3,
+    ALink: __vue_component__$4
+  },
   props: {
-    loop: {
-      type: Boolean,
-      default: true
-    },
-    backSpeed: {
-      type: Number,
-      default: 10
-    },
-    strings: {
-      type: Array,
-      default: () => []
+    src: {
+      type: String,
+      default: "http://www.institutfrance.si/modules/uploader/uploads/news/pictures_news/AF_Slovenie_Logo_site_2.jpg"
     }
   }
-};
+});
 
 /* script */
 const __vue_script__$o = script$o;
@@ -2630,16 +2654,18 @@ var __vue_render__$o = function () {
 
   var _c = _vm._self._c || _h;
 
-  return _c('vue-typed-js', {
-    staticClass: "m-typer",
+  return _c('ALink', {
+    staticClass: "m-logo",
     attrs: {
-      "strings": _vm.strings,
-      "loop": _vm.loop,
-      "back-speed": _vm.backSpeed
+      "to": "/",
+      "title": "Me rendre à la page d'accueil",
+      "no-line": ""
     }
-  }, [_c('span', {
-    staticClass: "typing"
-  })]);
+  }, [_c('AImage', {
+    attrs: {
+      "src": _vm.src
+    }
+  })], 1);
 };
 
 var __vue_staticRenderFns__$o = [];
@@ -2647,8 +2673,8 @@ var __vue_staticRenderFns__$o = [];
 
 const __vue_inject_styles__$o = function (inject) {
   if (!inject) return;
-  inject("data-v-191bad6d_0", {
-    source: ".typed-element{align-items:center;display:flex}.typed-element .typed-cursor{animation:typerBlink .7s infinite;margin-left:3px;opacity:1;position:relative;top:-1px}@keyframes typerBlink{50%{opacity:0}}",
+  inject("data-v-bb8ae842_0", {
+    source: ".m-logo{animation:1s appear;margin:auto}",
     map: undefined,
     media: undefined
   });
@@ -2671,6 +2697,79 @@ const __vue_component__$o = /*#__PURE__*/normalizeComponent({
   render: __vue_render__$o,
   staticRenderFns: __vue_staticRenderFns__$o
 }, __vue_inject_styles__$o, __vue_script__$o, __vue_scope_id__$o, __vue_is_functional_template__$o, __vue_module_identifier__$o, false, createInjector, undefined, undefined);
+
+//
+Vue.use(VueTypedJs);
+var script$p = {
+  name: 'MTyper',
+  props: {
+    loop: {
+      type: Boolean,
+      default: true
+    },
+    backSpeed: {
+      type: Number,
+      default: 10
+    },
+    strings: {
+      type: Array,
+      default: () => []
+    }
+  }
+};
+
+/* script */
+const __vue_script__$p = script$p;
+/* template */
+
+var __vue_render__$p = function () {
+  var _vm = this;
+
+  var _h = _vm.$createElement;
+
+  var _c = _vm._self._c || _h;
+
+  return _c('vue-typed-js', {
+    staticClass: "m-typer",
+    attrs: {
+      "strings": _vm.strings,
+      "loop": _vm.loop,
+      "back-speed": _vm.backSpeed
+    }
+  }, [_c('span', {
+    staticClass: "typing"
+  })]);
+};
+
+var __vue_staticRenderFns__$p = [];
+/* style */
+
+const __vue_inject_styles__$p = function (inject) {
+  if (!inject) return;
+  inject("data-v-191bad6d_0", {
+    source: ".typed-element{align-items:center;display:flex}.typed-element .typed-cursor{animation:typerBlink .7s infinite;margin-left:3px;opacity:1;position:relative;top:-1px}@keyframes typerBlink{50%{opacity:0}}",
+    map: undefined,
+    media: undefined
+  });
+};
+/* scoped */
+
+
+const __vue_scope_id__$p = undefined;
+/* module identifier */
+
+const __vue_module_identifier__$p = undefined;
+/* functional template */
+
+const __vue_is_functional_template__$p = false;
+/* style inject SSR */
+
+/* style inject shadow dom */
+
+const __vue_component__$p = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__$p,
+  staticRenderFns: __vue_staticRenderFns__$p
+}, __vue_inject_styles__$p, __vue_script__$p, __vue_scope_id__$p, __vue_is_functional_template__$p, __vue_module_identifier__$p, false, createInjector, undefined, undefined);
 
 const scrollTop = (el, from = 0, to, duration = 500) => {
   if (!window.requestAnimationFrame) {
@@ -2702,7 +2801,7 @@ const scrollTop = (el, from = 0, to, duration = 500) => {
 
   scrollEase(from, to);
 };
-var script$p = Vue.extend({
+var script$q = Vue.extend({
   name: 'MScrollToTop',
   components: {
     AButton: __vue_component__
@@ -2738,10 +2837,10 @@ var script$p = Vue.extend({
 });
 
 /* script */
-const __vue_script__$p = script$p;
+const __vue_script__$q = script$q;
 /* template */
 
-var __vue_render__$p = function () {
+var __vue_render__$q = function () {
   var _vm = this;
 
   var _h = _vm.$createElement;
@@ -2760,10 +2859,10 @@ var __vue_render__$p = function () {
   }, [_vm._v("\n    ^\n")]);
 };
 
-var __vue_staticRenderFns__$p = [];
+var __vue_staticRenderFns__$q = [];
 /* style */
 
-const __vue_inject_styles__$p = function (inject) {
+const __vue_inject_styles__$q = function (inject) {
   if (!inject) return;
   inject("data-v-e3356b68_0", {
     source: ".m-scroll-to-top.a-button{font-size:2rem;padding:1rem;padding-bottom:0;padding-top:.5rem;text-align:center}",
@@ -2774,23 +2873,23 @@ const __vue_inject_styles__$p = function (inject) {
 /* scoped */
 
 
-const __vue_scope_id__$p = undefined;
+const __vue_scope_id__$q = undefined;
 /* module identifier */
 
-const __vue_module_identifier__$p = undefined;
+const __vue_module_identifier__$q = undefined;
 /* functional template */
 
-const __vue_is_functional_template__$p = false;
+const __vue_is_functional_template__$q = false;
 /* style inject SSR */
 
 /* style inject shadow dom */
 
-const __vue_component__$p = /*#__PURE__*/normalizeComponent({
-  render: __vue_render__$p,
-  staticRenderFns: __vue_staticRenderFns__$p
-}, __vue_inject_styles__$p, __vue_script__$p, __vue_scope_id__$p, __vue_is_functional_template__$p, __vue_module_identifier__$p, false, createInjector, undefined, undefined);
+const __vue_component__$q = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__$q,
+  staticRenderFns: __vue_staticRenderFns__$q
+}, __vue_inject_styles__$q, __vue_script__$q, __vue_scope_id__$q, __vue_is_functional_template__$q, __vue_module_identifier__$q, false, createInjector, undefined, undefined);
 
-var script$q = Vue.extend({
+var script$r = Vue.extend({
   name: 'MCarousel',
   components: {
     VueAgile
@@ -2813,10 +2912,10 @@ var script$q = Vue.extend({
 });
 
 /* script */
-const __vue_script__$q = script$q;
+const __vue_script__$r = script$r;
 /* template */
 
-var __vue_render__$q = function () {
+var __vue_render__$r = function () {
   var _vm = this;
 
   var _h = _vm.$createElement;
@@ -2853,82 +2952,13 @@ var __vue_render__$q = function () {
   }, [_vm._v(">")])])], 2)], 1);
 };
 
-var __vue_staticRenderFns__$q = [];
-/* style */
-
-const __vue_inject_styles__$q = function (inject) {
-  if (!inject) return;
-  inject("data-v-3194d958_0", {
-    source: ".m-carousel .agile__actions{margin-top:1rem}.m-carousel .agile__nav-button{background:0 0;border:0;color:rgba(255,255,255,.8);cursor:pointer;font-size:2.4rem;height:100%;position:absolute;text-shadow:0 2px 3px rgba(0,0,0,.25);top:0;transition-duration:.3s;width:4rem}.m-carousel .agile__nav-button:hover{color:#888;text-shadow:0 2px 5px rgba(0,0,0,.25)}.m-carousel .agile__nav-button--prev{left:0}.m-carousel .agile__nav-button--next{right:0}.m-carousel .agile__dot{margin:0 1rem}.m-carousel .agile__dot button{background-color:#eee;border:0;border-radius:50%;cursor:pointer;display:block;font-size:0;height:.5rem;line-height:0;margin:0;padding:0;transition-duration:.3s;width:.5rem}.m-carousel .agile__dot--current button,.m-carousel .agile__dot:hover button{background-color:#888}.m-carousel .agile .slide{align-items:center;display:flex;justify-content:center;min-height:400px}.m-carousel .agile .slide .a-image{height:100%;object-fit:cover;position:absolute;width:100%}.m-carousel .agile .slide .caption{font-size:3.2rem;font-weight:300}",
-    map: undefined,
-    media: undefined
-  });
-};
-/* scoped */
-
-
-const __vue_scope_id__$q = undefined;
-/* module identifier */
-
-const __vue_module_identifier__$q = undefined;
-/* functional template */
-
-const __vue_is_functional_template__$q = false;
-/* style inject SSR */
-
-/* style inject shadow dom */
-
-const __vue_component__$q = /*#__PURE__*/normalizeComponent({
-  render: __vue_render__$q,
-  staticRenderFns: __vue_staticRenderFns__$q
-}, __vue_inject_styles__$q, __vue_script__$q, __vue_scope_id__$q, __vue_is_functional_template__$q, __vue_module_identifier__$q, false, createInjector, undefined, undefined);
-
-var script$r = Vue.extend({
-  name: 'MNavbar',
-  components: {
-    AList: __vue_component__$5
-  },
-  props: {
-    items: {
-      type: Array,
-      default: null
-    },
-    horizontal: {
-      type: Boolean,
-      default: true
-    }
-  }
-});
-
-/* script */
-const __vue_script__$r = script$r;
-/* template */
-
-var __vue_render__$r = function () {
-  var _vm = this;
-
-  var _h = _vm.$createElement;
-
-  var _c = _vm._self._c || _h;
-
-  return _c('nav', {
-    staticClass: "m-navbar"
-  }, [_c('AList', {
-    attrs: {
-      "items": _vm.items,
-      "horizontal": _vm.horizontal,
-      "without-chips": ""
-    }
-  })], 1);
-};
-
 var __vue_staticRenderFns__$r = [];
 /* style */
 
 const __vue_inject_styles__$r = function (inject) {
   if (!inject) return;
-  inject("data-v-28d52706_0", {
-    source: ".m-navbar>.a-list{padding-left:0}.m-navbar .a-list-item{margin-bottom:1.5rem}",
+  inject("data-v-3194d958_0", {
+    source: ".m-carousel .agile__actions{margin-top:1rem}.m-carousel .agile__nav-button{background:0 0;border:0;color:rgba(255,255,255,.8);cursor:pointer;font-size:2.4rem;height:100%;position:absolute;text-shadow:0 2px 3px rgba(0,0,0,.25);top:0;transition-duration:.3s;width:4rem}.m-carousel .agile__nav-button:hover{color:#888;text-shadow:0 2px 5px rgba(0,0,0,.25)}.m-carousel .agile__nav-button--prev{left:0}.m-carousel .agile__nav-button--next{right:0}.m-carousel .agile__dot{margin:0 1rem}.m-carousel .agile__dot button{background-color:#eee;border:0;border-radius:50%;cursor:pointer;display:block;font-size:0;height:.5rem;line-height:0;margin:0;padding:0;transition-duration:.3s;width:.5rem}.m-carousel .agile__dot--current button,.m-carousel .agile__dot:hover button{background-color:#888}.m-carousel .agile .slide{align-items:center;display:flex;justify-content:center;min-height:400px}.m-carousel .agile .slide .a-image{height:100%;object-fit:cover;position:absolute;width:100%}.m-carousel .agile .slide .caption{font-size:3.2rem;font-weight:300}",
     map: undefined,
     media: undefined
   });
@@ -2953,6 +2983,75 @@ const __vue_component__$r = /*#__PURE__*/normalizeComponent({
 }, __vue_inject_styles__$r, __vue_script__$r, __vue_scope_id__$r, __vue_is_functional_template__$r, __vue_module_identifier__$r, false, createInjector, undefined, undefined);
 
 var script$s = Vue.extend({
+  name: 'MNavbar',
+  components: {
+    AList: __vue_component__$5
+  },
+  props: {
+    items: {
+      type: Array,
+      default: null
+    },
+    horizontal: {
+      type: Boolean,
+      default: true
+    }
+  }
+});
+
+/* script */
+const __vue_script__$s = script$s;
+/* template */
+
+var __vue_render__$s = function () {
+  var _vm = this;
+
+  var _h = _vm.$createElement;
+
+  var _c = _vm._self._c || _h;
+
+  return _c('nav', {
+    staticClass: "m-navbar"
+  }, [_c('AList', {
+    attrs: {
+      "items": _vm.items,
+      "horizontal": _vm.horizontal,
+      "without-chips": ""
+    }
+  })], 1);
+};
+
+var __vue_staticRenderFns__$s = [];
+/* style */
+
+const __vue_inject_styles__$s = function (inject) {
+  if (!inject) return;
+  inject("data-v-28d52706_0", {
+    source: ".m-navbar>.a-list{padding-left:0}.m-navbar .a-list-item{margin-bottom:1.5rem}",
+    map: undefined,
+    media: undefined
+  });
+};
+/* scoped */
+
+
+const __vue_scope_id__$s = undefined;
+/* module identifier */
+
+const __vue_module_identifier__$s = undefined;
+/* functional template */
+
+const __vue_is_functional_template__$s = false;
+/* style inject SSR */
+
+/* style inject shadow dom */
+
+const __vue_component__$s = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__$s,
+  staticRenderFns: __vue_staticRenderFns__$s
+}, __vue_inject_styles__$s, __vue_script__$s, __vue_scope_id__$s, __vue_is_functional_template__$s, __vue_module_identifier__$s, false, createInjector, undefined, undefined);
+
+var script$t = Vue.extend({
   name: 'MPartner',
   components: {
     AImage: __vue_component__$3,
@@ -2983,10 +3082,10 @@ var script$s = Vue.extend({
 });
 
 /* script */
-const __vue_script__$s = script$s;
+const __vue_script__$t = script$t;
 /* template */
 
-var __vue_render__$s = function () {
+var __vue_render__$t = function () {
   var _vm = this;
 
   var _h = _vm.$createElement;
@@ -3009,91 +3108,13 @@ var __vue_render__$s = function () {
   })], 1);
 };
 
-var __vue_staticRenderFns__$s = [];
-/* style */
-
-const __vue_inject_styles__$s = function (inject) {
-  if (!inject) return;
-  inject("data-v-2e2d916f_0", {
-    source: ".m-partner{animation:1s appear;margin:auto}",
-    map: undefined,
-    media: undefined
-  });
-};
-/* scoped */
-
-
-const __vue_scope_id__$s = undefined;
-/* module identifier */
-
-const __vue_module_identifier__$s = undefined;
-/* functional template */
-
-const __vue_is_functional_template__$s = false;
-/* style inject SSR */
-
-/* style inject shadow dom */
-
-const __vue_component__$s = /*#__PURE__*/normalizeComponent({
-  render: __vue_render__$s,
-  staticRenderFns: __vue_staticRenderFns__$s
-}, __vue_inject_styles__$s, __vue_script__$s, __vue_scope_id__$s, __vue_is_functional_template__$s, __vue_module_identifier__$s, false, createInjector, undefined, undefined);
-
-var script$t = Vue.extend({
-  name: 'MSocialButton',
-  components: {
-    AImage: __vue_component__$3,
-    AButton: __vue_component__
-  },
-  props: {
-    title: {
-      type: String,
-      default: 'Accéder à cette page'
-    },
-    src: {
-      type: [String, Object],
-      default: null
-    },
-    href: {
-      type: String,
-      default: null
-    }
-  }
-});
-
-/* script */
-const __vue_script__$t = script$t;
-/* template */
-
-var __vue_render__$t = function () {
-  var _vm = this;
-
-  var _h = _vm.$createElement;
-
-  var _c = _vm._self._c || _h;
-
-  return _c('AButton', {
-    staticClass: "m-social-button",
-    attrs: {
-      "title": _vm.title,
-      "href": _vm.href,
-      "target": "_blank"
-    }
-  }, [_c('AImage', {
-    attrs: {
-      "src": _vm.src,
-      "alt": _vm.title
-    }
-  })], 1);
-};
-
 var __vue_staticRenderFns__$t = [];
 /* style */
 
 const __vue_inject_styles__$t = function (inject) {
   if (!inject) return;
-  inject("data-v-0ec2854c_0", {
-    source: ".m-social-button{animation:1s appear;border-radius:100%;display:block;height:20px;padding:5px;width:20px}.m-social-button .a-image{height:100%;width:100%}.m-social-button:hover .a-image{filter:invert(47%) sepia(95%) saturate(2181%) hue-rotate(166deg) brightness(91%) contrast(104%)}",
+  inject("data-v-2e2d916f_0", {
+    source: ".m-partner{animation:1s appear;margin:auto}",
     map: undefined,
     media: undefined
   });
@@ -3118,9 +3139,87 @@ const __vue_component__$t = /*#__PURE__*/normalizeComponent({
 }, __vue_inject_styles__$t, __vue_script__$t, __vue_scope_id__$t, __vue_is_functional_template__$t, __vue_module_identifier__$t, false, createInjector, undefined, undefined);
 
 var script$u = Vue.extend({
+  name: 'MSocialButton',
+  components: {
+    AImage: __vue_component__$3,
+    AButton: __vue_component__
+  },
+  props: {
+    title: {
+      type: String,
+      default: 'Accéder à cette page'
+    },
+    src: {
+      type: [String, Object],
+      default: null
+    },
+    href: {
+      type: String,
+      default: null
+    }
+  }
+});
+
+/* script */
+const __vue_script__$u = script$u;
+/* template */
+
+var __vue_render__$u = function () {
+  var _vm = this;
+
+  var _h = _vm.$createElement;
+
+  var _c = _vm._self._c || _h;
+
+  return _c('AButton', {
+    staticClass: "m-social-button",
+    attrs: {
+      "title": _vm.title,
+      "href": _vm.href,
+      "target": "_blank"
+    }
+  }, [_c('AImage', {
+    attrs: {
+      "src": _vm.src,
+      "alt": _vm.title
+    }
+  })], 1);
+};
+
+var __vue_staticRenderFns__$u = [];
+/* style */
+
+const __vue_inject_styles__$u = function (inject) {
+  if (!inject) return;
+  inject("data-v-0ec2854c_0", {
+    source: ".m-social-button{animation:1s appear;border-radius:100%;display:block;height:20px;padding:5px;width:20px}.m-social-button .a-image{height:100%;width:100%}.m-social-button:hover .a-image{filter:invert(47%) sepia(95%) saturate(2181%) hue-rotate(166deg) brightness(91%) contrast(104%)}",
+    map: undefined,
+    media: undefined
+  });
+};
+/* scoped */
+
+
+const __vue_scope_id__$u = undefined;
+/* module identifier */
+
+const __vue_module_identifier__$u = undefined;
+/* functional template */
+
+const __vue_is_functional_template__$u = false;
+/* style inject SSR */
+
+/* style inject shadow dom */
+
+const __vue_component__$u = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__$u,
+  staticRenderFns: __vue_staticRenderFns__$u
+}, __vue_inject_styles__$u, __vue_script__$u, __vue_scope_id__$u, __vue_is_functional_template__$u, __vue_module_identifier__$u, false, createInjector, undefined, undefined);
+
+var script$v = Vue.extend({
   name: 'MSocialButtonFacebook',
   components: {
-    MSocialButton: __vue_component__$t
+    MSocialButton: __vue_component__$u
   },
   props: {
     href: {
@@ -3137,69 +3236,6 @@ var script$u = Vue.extend({
 const img = "data:image/svg+xml,%3csvg aria-hidden='true' focusable='false' data-prefix='fab' data-icon='facebook' class='svg-inline--fa fa-facebook fa-w-10' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3e %3cg color='white'%3e %3cpath fill='currentColor' d='M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z'%3e %3c/path%3e %3c/g%3e%3c/svg%3e";
 
 /* script */
-const __vue_script__$u = script$u;
-
-var __vue_render__$u = function () {
-  var _vm = this;
-
-  var _h = _vm.$createElement;
-
-  var _c = _vm._self._c || _h;
-
-  return _c('MSocialButton', {
-    staticClass: "m-social-button-facebook",
-    attrs: {
-      "src": img,
-      "href": _vm.href,
-      "title": _vm.title
-    }
-  });
-};
-
-var __vue_staticRenderFns__$u = [];
-/* style */
-
-const __vue_inject_styles__$u = undefined;
-/* scoped */
-
-const __vue_scope_id__$u = undefined;
-/* module identifier */
-
-const __vue_module_identifier__$u = undefined;
-/* functional template */
-
-const __vue_is_functional_template__$u = false;
-/* style inject */
-
-/* style inject SSR */
-
-/* style inject shadow dom */
-
-const __vue_component__$u = /*#__PURE__*/normalizeComponent({
-  render: __vue_render__$u,
-  staticRenderFns: __vue_staticRenderFns__$u
-}, __vue_inject_styles__$u, __vue_script__$u, __vue_scope_id__$u, __vue_is_functional_template__$u, __vue_module_identifier__$u, false, undefined, undefined, undefined);
-
-var script$v = Vue.extend({
-  name: 'MSocialButtonTwitter',
-  components: {
-    MSocialButton: __vue_component__$t
-  },
-  props: {
-    href: {
-      type: String,
-      default: 'https://www.twitter.com'
-    },
-    title: {
-      type: String,
-      default: 'Accéder à la page Twitter'
-    }
-  }
-});
-
-const img$1 = "data:image/svg+xml,%3csvg aria-hidden='true' focusable='false' data-prefix='fab' data-icon='twitter' class='svg-inline--fa fa-twitter fa-w-16' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3e %3cg color='white'%3e %3cpath fill='currentColor' d='M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z'%3e %3c/path%3e %3c/g%3e%3c/svg%3e";
-
-/* script */
 const __vue_script__$v = script$v;
 
 var __vue_render__$v = function () {
@@ -3210,9 +3246,9 @@ var __vue_render__$v = function () {
   var _c = _vm._self._c || _h;
 
   return _c('MSocialButton', {
-    staticClass: "m-social-button-twitter",
+    staticClass: "m-social-button-facebook",
     attrs: {
-      "src": img$1,
+      "src": img,
       "href": _vm.href,
       "title": _vm.title
     }
@@ -3244,23 +3280,23 @@ const __vue_component__$v = /*#__PURE__*/normalizeComponent({
 }, __vue_inject_styles__$v, __vue_script__$v, __vue_scope_id__$v, __vue_is_functional_template__$v, __vue_module_identifier__$v, false, undefined, undefined, undefined);
 
 var script$w = Vue.extend({
-  name: 'MSocialButtonInstagram',
+  name: 'MSocialButtonTwitter',
   components: {
-    MSocialButton: __vue_component__$t
+    MSocialButton: __vue_component__$u
   },
   props: {
     href: {
       type: String,
-      default: 'https://www.instagram.com'
+      default: 'https://www.twitter.com'
     },
     title: {
       type: String,
-      default: 'Accéder à la page Instagram'
+      default: 'Accéder à la page Twitter'
     }
   }
 });
 
-const img$2 = "data:image/svg+xml,%3csvg aria-hidden='true' focusable='false' data-prefix='fab' data-icon='instagram' class='svg-inline--fa fa-instagram fa-w-14' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3e %3cg color='white'%3e %3cpath fill='currentColor' d='M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z'%3e %3c/path%3e %3c/g%3e%3c/svg%3e";
+const img$1 = "data:image/svg+xml,%3csvg aria-hidden='true' focusable='false' data-prefix='fab' data-icon='twitter' class='svg-inline--fa fa-twitter fa-w-16' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3e %3cg color='white'%3e %3cpath fill='currentColor' d='M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z'%3e %3c/path%3e %3c/g%3e%3c/svg%3e";
 
 /* script */
 const __vue_script__$w = script$w;
@@ -3273,9 +3309,9 @@ var __vue_render__$w = function () {
   var _c = _vm._self._c || _h;
 
   return _c('MSocialButton', {
-    staticClass: "m-social-button-instagram",
+    staticClass: "m-social-button-twitter",
     attrs: {
-      "src": img$2,
+      "src": img$1,
       "href": _vm.href,
       "title": _vm.title
     }
@@ -3307,23 +3343,23 @@ const __vue_component__$w = /*#__PURE__*/normalizeComponent({
 }, __vue_inject_styles__$w, __vue_script__$w, __vue_scope_id__$w, __vue_is_functional_template__$w, __vue_module_identifier__$w, false, undefined, undefined, undefined);
 
 var script$x = Vue.extend({
-  name: 'MSocialButtonLinkedin',
+  name: 'MSocialButtonInstagram',
   components: {
-    MSocialButton: __vue_component__$t
+    MSocialButton: __vue_component__$u
   },
   props: {
     href: {
       type: String,
-      default: 'https://www.linkedin.com'
+      default: 'https://www.instagram.com'
     },
     title: {
       type: String,
-      default: 'Accéder à la page LinkedIn'
+      default: 'Accéder à la page Instagram'
     }
   }
 });
 
-const img$3 = "data:image/svg+xml,%3csvg aria-hidden='true' focusable='false' data-prefix='fab' data-icon='linkedin' class='svg-inline--fa fa-linkedin fa-w-14' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3e %3cg color='white'%3e %3cpath fill='currentColor' d='M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z'%3e %3c/path%3e %3c/g%3e%3c/svg%3e";
+const img$2 = "data:image/svg+xml,%3csvg aria-hidden='true' focusable='false' data-prefix='fab' data-icon='instagram' class='svg-inline--fa fa-instagram fa-w-14' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3e %3cg color='white'%3e %3cpath fill='currentColor' d='M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z'%3e %3c/path%3e %3c/g%3e%3c/svg%3e";
 
 /* script */
 const __vue_script__$x = script$x;
@@ -3336,9 +3372,9 @@ var __vue_render__$x = function () {
   var _c = _vm._self._c || _h;
 
   return _c('MSocialButton', {
-    staticClass: "m-social-button-linkedin",
+    staticClass: "m-social-button-instagram",
     attrs: {
-      "src": img$3,
+      "src": img$2,
       "href": _vm.href,
       "title": _vm.title
     }
@@ -3370,6 +3406,69 @@ const __vue_component__$x = /*#__PURE__*/normalizeComponent({
 }, __vue_inject_styles__$x, __vue_script__$x, __vue_scope_id__$x, __vue_is_functional_template__$x, __vue_module_identifier__$x, false, undefined, undefined, undefined);
 
 var script$y = Vue.extend({
+  name: 'MSocialButtonLinkedin',
+  components: {
+    MSocialButton: __vue_component__$u
+  },
+  props: {
+    href: {
+      type: String,
+      default: 'https://www.linkedin.com'
+    },
+    title: {
+      type: String,
+      default: 'Accéder à la page LinkedIn'
+    }
+  }
+});
+
+const img$3 = "data:image/svg+xml,%3csvg aria-hidden='true' focusable='false' data-prefix='fab' data-icon='linkedin' class='svg-inline--fa fa-linkedin fa-w-14' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3e %3cg color='white'%3e %3cpath fill='currentColor' d='M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z'%3e %3c/path%3e %3c/g%3e%3c/svg%3e";
+
+/* script */
+const __vue_script__$y = script$y;
+
+var __vue_render__$y = function () {
+  var _vm = this;
+
+  var _h = _vm.$createElement;
+
+  var _c = _vm._self._c || _h;
+
+  return _c('MSocialButton', {
+    staticClass: "m-social-button-linkedin",
+    attrs: {
+      "src": img$3,
+      "href": _vm.href,
+      "title": _vm.title
+    }
+  });
+};
+
+var __vue_staticRenderFns__$y = [];
+/* style */
+
+const __vue_inject_styles__$y = undefined;
+/* scoped */
+
+const __vue_scope_id__$y = undefined;
+/* module identifier */
+
+const __vue_module_identifier__$y = undefined;
+/* functional template */
+
+const __vue_is_functional_template__$y = false;
+/* style inject */
+
+/* style inject SSR */
+
+/* style inject shadow dom */
+
+const __vue_component__$y = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__$y,
+  staticRenderFns: __vue_staticRenderFns__$y
+}, __vue_inject_styles__$y, __vue_script__$y, __vue_scope_id__$y, __vue_is_functional_template__$y, __vue_module_identifier__$y, false, undefined, undefined, undefined);
+
+var script$z = Vue.extend({
   name: "MBadge",
   components: {
     AText: __vue_component__$1,
@@ -3396,10 +3495,10 @@ var script$y = Vue.extend({
 });
 
 /* script */
-const __vue_script__$y = script$y;
+const __vue_script__$z = script$z;
 /* template */
 
-var __vue_render__$y = function () {
+var __vue_render__$z = function () {
   var _vm = this;
 
   var _h = _vm.$createElement;
@@ -3426,10 +3525,10 @@ var __vue_render__$y = function () {
   }, [_vm._v(_vm._s(_vm.label))])], 1);
 };
 
-var __vue_staticRenderFns__$y = [];
+var __vue_staticRenderFns__$z = [];
 /* style */
 
-const __vue_inject_styles__$y = function (inject) {
+const __vue_inject_styles__$z = function (inject) {
   if (!inject) return;
   inject("data-v-da71a174_0", {
     source: ".m-badge{display:inline-block;position:relative;text-align:center}.m-badge .a-image{animation:1s appear;border:.5px solid #000;border-radius:100%;display:block;padding:5px;width:4rem}.m-badge .a-text.without-text{display:none}.m-badge .a-text.horizontal{margin-left:1rem}.m-badge.horizontal{align-items:center;display:flex;flex-direction:row}.m-badge.horizontal.a-image{width:20rem}",
@@ -3440,27 +3539,27 @@ const __vue_inject_styles__$y = function (inject) {
 /* scoped */
 
 
-const __vue_scope_id__$y = undefined;
+const __vue_scope_id__$z = undefined;
 /* module identifier */
 
-const __vue_module_identifier__$y = undefined;
+const __vue_module_identifier__$z = undefined;
 /* functional template */
 
-const __vue_is_functional_template__$y = false;
+const __vue_is_functional_template__$z = false;
 /* style inject SSR */
 
 /* style inject shadow dom */
 
-const __vue_component__$y = /*#__PURE__*/normalizeComponent({
-  render: __vue_render__$y,
-  staticRenderFns: __vue_staticRenderFns__$y
-}, __vue_inject_styles__$y, __vue_script__$y, __vue_scope_id__$y, __vue_is_functional_template__$y, __vue_module_identifier__$y, false, createInjector, undefined, undefined);
+const __vue_component__$z = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__$z,
+  staticRenderFns: __vue_staticRenderFns__$z
+}, __vue_inject_styles__$z, __vue_script__$z, __vue_scope_id__$z, __vue_is_functional_template__$z, __vue_module_identifier__$z, false, createInjector, undefined, undefined);
 
-var script$z = Vue.extend({
+var script$A = Vue.extend({
   name: 'OHeader',
   components: {
-    MLogo: __vue_component__$n,
-    MNavbar: __vue_component__$r,
+    MLogo: __vue_component__$o,
+    MNavbar: __vue_component__$s,
     AHamburger: __vue_component__$m
   },
   props: {
@@ -3489,10 +3588,10 @@ var script$z = Vue.extend({
 });
 
 /* script */
-const __vue_script__$z = script$z;
+const __vue_script__$A = script$A;
 /* template */
 
-var __vue_render__$z = function () {
+var __vue_render__$A = function () {
   var _vm = this;
 
   var _h = _vm.$createElement;
@@ -3537,80 +3636,13 @@ var __vue_render__$z = function () {
   })], 1)]);
 };
 
-var __vue_staticRenderFns__$z = [];
-/* style */
-
-const __vue_inject_styles__$z = function (inject) {
-  if (!inject) return;
-  inject("data-v-54f245eb_0", {
-    source: ".o-header{align-items:center;display:flex;flex-direction:row;position:relative}.o-header .inner{padding:0 15px}.o-header .m-navbar-desktop{display:none}.o-header .m-logo{flex-basis:10%;margin-left:15px}.o-header .m-logo .a-image{width:80px}.o-header .m-navbar{margin-right:15px}.o-header-menu{display:flex;flex-direction:column;left:100%;min-height:100vh;opacity:0;padding-left:20px;padding-top:5rem;position:absolute;top:0;transition:all .8s ease-in-out;transition-timing-function:cubic-bezier(.37,.96,.22,1.01);visibility:hidden;width:20rem;z-index:1}.o-header-menu.menu-open{opacity:1;right:0}.o-header--is-open .o-header-menu{background-color:#009cde;transform:translate3d(-100%,0,0);visibility:visible}.o-header-hamburger{margin-right:25px;position:relative;z-index:2}@media screen and (min-width:992px){.o-header .m-logo .a-image{width:120px}.o-header .m-navbar-desktop{display:block}.o-header .m-navbar-mobile,.o-header .o-header-hamburger{display:none}}",
-    map: undefined,
-    media: undefined
-  });
-};
-/* scoped */
-
-
-const __vue_scope_id__$z = undefined;
-/* module identifier */
-
-const __vue_module_identifier__$z = undefined;
-/* functional template */
-
-const __vue_is_functional_template__$z = false;
-/* style inject SSR */
-
-/* style inject shadow dom */
-
-const __vue_component__$z = /*#__PURE__*/normalizeComponent({
-  render: __vue_render__$z,
-  staticRenderFns: __vue_staticRenderFns__$z
-}, __vue_inject_styles__$z, __vue_script__$z, __vue_scope_id__$z, __vue_is_functional_template__$z, __vue_module_identifier__$z, false, createInjector, undefined, undefined);
-
-var script$A = Vue.extend({
-  name: 'MLogo',
-  components: {
-    MScrollToTop: __vue_component__$p
-  },
-  props: {
-    withoutScrollToTop: {
-      type: Boolean,
-      default: false
-    }
-  }
-});
-
-/* script */
-const __vue_script__$A = script$A;
-/* template */
-
-var __vue_render__$A = function () {
-  var _vm = this;
-
-  var _h = _vm.$createElement;
-
-  var _c = _vm._self._c || _h;
-
-  return _c('div', {
-    staticClass: "o-footer"
-  }, [!_vm.withoutScrollToTop ? _c('MScrollToTop') : _vm._e(), _vm._v(" "), _c('div', {
-    staticClass: "cols-wrapper"
-  }, [_c('div', {
-    staticClass: "col col-1"
-  }, [_vm._t("col-1")], 2), _vm._v(" "), _c('div', {
-    staticClass: "col col-2"
-  }, [_vm._t("col-2")], 2), _vm._v(" "), _c('div', {
-    staticClass: "col col-3"
-  }, [_vm._t("col-3")], 2)])], 1);
-};
-
 var __vue_staticRenderFns__$A = [];
 /* style */
 
 const __vue_inject_styles__$A = function (inject) {
   if (!inject) return;
-  inject("data-v-5e791b44_0", {
-    source: ".o-footer{animation:1s appear;background-color:#2b2b2b;color:#fff;margin:auto;padding:3rem;transition:all .1s;width:100%}.o-footer .m-scroll-to-top{display:block;margin:auto}.o-footer .cols-wrapper{display:flex;flex:1 1 auto;flex-direction:column}.o-footer .cols-wrapper>.col{margin:auto;text-align:center}.o-footer .a-list{flex-wrap:nowrap;justify-content:space-around}@media screen and (min-width:576px){.o-footer .cols-wrapper{flex-direction:row}}",
+  inject("data-v-54f245eb_0", {
+    source: ".o-header{align-items:center;display:flex;flex-direction:row;position:relative}.o-header .inner{padding:0 15px}.o-header .m-navbar-desktop{display:none}.o-header .m-logo{flex-basis:10%;margin-left:15px}.o-header .m-logo .a-image{width:80px}.o-header .m-navbar{margin-right:15px}.o-header-menu{display:flex;flex-direction:column;left:100%;min-height:100vh;opacity:0;padding-left:20px;padding-top:5rem;position:absolute;top:0;transition:all .8s ease-in-out;transition-timing-function:cubic-bezier(.37,.96,.22,1.01);visibility:hidden;width:20rem;z-index:1}.o-header-menu.menu-open{opacity:1;right:0}.o-header--is-open .o-header-menu{background-color:#009cde;transform:translate3d(-100%,0,0);visibility:visible}.o-header-hamburger{margin-right:25px;position:relative;z-index:2}@media screen and (min-width:992px){.o-header .m-logo .a-image{width:120px}.o-header .m-navbar-desktop{display:block}.o-header .m-navbar-mobile,.o-header .o-header-hamburger{display:none}}",
     map: undefined,
     media: undefined
   });
@@ -3635,18 +3667,14 @@ const __vue_component__$A = /*#__PURE__*/normalizeComponent({
 }, __vue_inject_styles__$A, __vue_script__$A, __vue_scope_id__$A, __vue_is_functional_template__$A, __vue_module_identifier__$A, false, createInjector, undefined, undefined);
 
 var script$B = Vue.extend({
-  name: 'OPartners',
+  name: 'MLogo',
   components: {
-    AList: __vue_component__$5
+    MScrollToTop: __vue_component__$q
   },
   props: {
-    items: {
-      type: Array,
-      default: null
-    },
-    horizontal: {
+    withoutScrollToTop: {
       type: Boolean,
-      default: true
+      default: false
     }
   }
 });
@@ -3663,14 +3691,16 @@ var __vue_render__$B = function () {
   var _c = _vm._self._c || _h;
 
   return _c('div', {
-    staticClass: "o-partners"
-  }, [_c('AList', {
-    attrs: {
-      "items": _vm.items,
-      "horizontal": _vm.horizontal,
-      "without-chips": ""
-    }
-  })], 1);
+    staticClass: "o-footer"
+  }, [!_vm.withoutScrollToTop ? _c('MScrollToTop') : _vm._e(), _vm._v(" "), _c('div', {
+    staticClass: "cols-wrapper"
+  }, [_c('div', {
+    staticClass: "col col-1"
+  }, [_vm._t("col-1")], 2), _vm._v(" "), _c('div', {
+    staticClass: "col col-2"
+  }, [_vm._t("col-2")], 2), _vm._v(" "), _c('div', {
+    staticClass: "col col-3"
+  }, [_vm._t("col-3")], 2)])], 1);
 };
 
 var __vue_staticRenderFns__$B = [];
@@ -3678,8 +3708,8 @@ var __vue_staticRenderFns__$B = [];
 
 const __vue_inject_styles__$B = function (inject) {
   if (!inject) return;
-  inject("data-v-daa75d34_0", {
-    source: ".o-partners{display:flex;flex-direction:row;flex-wrap:wrap}.o-partners .a-list{flex-basis:auto}.o-partners .a-list .a-list-item{box-shadow:0 3px 6px 0 rgba(140,152,164,.25);height:100%;padding:1rem;vertical-align:middle;width:100%}.o-partners .a-list .a-list-item .img-partner{height:210px;width:290px}",
+  inject("data-v-5e791b44_0", {
+    source: ".o-footer{animation:1s appear;background-color:#2b2b2b;color:#fff;margin:auto;padding:3rem;transition:all .1s;width:100%}.o-footer .m-scroll-to-top{display:block;margin:auto}.o-footer .cols-wrapper{display:flex;flex:1 1 auto;flex-direction:column}.o-footer .cols-wrapper>.col{margin:auto;text-align:center}.o-footer .a-list{flex-wrap:nowrap;justify-content:space-around}@media screen and (min-width:576px){.o-footer .cols-wrapper{flex-direction:row}}",
     map: undefined,
     media: undefined
   });
@@ -3704,6 +3734,75 @@ const __vue_component__$B = /*#__PURE__*/normalizeComponent({
 }, __vue_inject_styles__$B, __vue_script__$B, __vue_scope_id__$B, __vue_is_functional_template__$B, __vue_module_identifier__$B, false, createInjector, undefined, undefined);
 
 var script$C = Vue.extend({
+  name: 'OPartners',
+  components: {
+    AList: __vue_component__$5
+  },
+  props: {
+    items: {
+      type: Array,
+      default: null
+    },
+    horizontal: {
+      type: Boolean,
+      default: true
+    }
+  }
+});
+
+/* script */
+const __vue_script__$C = script$C;
+/* template */
+
+var __vue_render__$C = function () {
+  var _vm = this;
+
+  var _h = _vm.$createElement;
+
+  var _c = _vm._self._c || _h;
+
+  return _c('div', {
+    staticClass: "o-partners"
+  }, [_c('AList', {
+    attrs: {
+      "items": _vm.items,
+      "horizontal": _vm.horizontal,
+      "without-chips": ""
+    }
+  })], 1);
+};
+
+var __vue_staticRenderFns__$C = [];
+/* style */
+
+const __vue_inject_styles__$C = function (inject) {
+  if (!inject) return;
+  inject("data-v-daa75d34_0", {
+    source: ".o-partners{display:flex;flex-direction:row;flex-wrap:wrap}.o-partners .a-list{flex-basis:auto}.o-partners .a-list .a-list-item{box-shadow:0 3px 6px 0 rgba(140,152,164,.25);height:100%;padding:1rem;vertical-align:middle;width:100%}.o-partners .a-list .a-list-item .img-partner{height:210px;width:290px}",
+    map: undefined,
+    media: undefined
+  });
+};
+/* scoped */
+
+
+const __vue_scope_id__$C = undefined;
+/* module identifier */
+
+const __vue_module_identifier__$C = undefined;
+/* functional template */
+
+const __vue_is_functional_template__$C = false;
+/* style inject SSR */
+
+/* style inject shadow dom */
+
+const __vue_component__$C = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__$C,
+  staticRenderFns: __vue_staticRenderFns__$C
+}, __vue_inject_styles__$C, __vue_script__$C, __vue_scope_id__$C, __vue_is_functional_template__$C, __vue_module_identifier__$C, false, createInjector, undefined, undefined);
+
+var script$D = Vue.extend({
   name: 'ONewsletterForm',
   components: {
     AInputEmail: __vue_component__$e,
@@ -3733,10 +3832,10 @@ var script$C = Vue.extend({
 });
 
 /* script */
-const __vue_script__$C = script$C;
+const __vue_script__$D = script$D;
 /* template */
 
-var __vue_render__$C = function () {
+var __vue_render__$D = function () {
   var _vm = this;
 
   var _h = _vm.$createElement;
@@ -3778,10 +3877,10 @@ var __vue_render__$C = function () {
   }, [_vm._v("Envoyer")])], 1)], 1)], 1)], 1);
 };
 
-var __vue_staticRenderFns__$C = [];
+var __vue_staticRenderFns__$D = [];
 /* style */
 
-const __vue_inject_styles__$C = function (inject) {
+const __vue_inject_styles__$D = function (inject) {
   if (!inject) return;
   inject("data-v-0da4cf90_0", {
     source: ".o-form-newsletter{display:block}.o-form-newsletter .row{display:flex;flex-direction:row;flex-wrap:wrap;margin:auto}.o-form-newsletter .a-image{margin:auto}.o-form-newsletter .a-image.without-image{display:none}.o-form-newsletter .newsletter-content{margin:auto;padding-left:15px}.o-form-newsletter .a-button{margin-left:10px}.o-form-newsletter .a-heading.without-title{display:none}",
@@ -3792,21 +3891,21 @@ const __vue_inject_styles__$C = function (inject) {
 /* scoped */
 
 
-const __vue_scope_id__$C = undefined;
+const __vue_scope_id__$D = undefined;
 /* module identifier */
 
-const __vue_module_identifier__$C = undefined;
+const __vue_module_identifier__$D = undefined;
 /* functional template */
 
-const __vue_is_functional_template__$C = false;
+const __vue_is_functional_template__$D = false;
 /* style inject SSR */
 
 /* style inject shadow dom */
 
-const __vue_component__$C = /*#__PURE__*/normalizeComponent({
-  render: __vue_render__$C,
-  staticRenderFns: __vue_staticRenderFns__$C
-}, __vue_inject_styles__$C, __vue_script__$C, __vue_scope_id__$C, __vue_is_functional_template__$C, __vue_module_identifier__$C, false, createInjector, undefined, undefined);
+const __vue_component__$D = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__$D,
+  staticRenderFns: __vue_staticRenderFns__$D
+}, __vue_inject_styles__$D, __vue_script__$D, __vue_scope_id__$D, __vue_is_functional_template__$D, __vue_module_identifier__$D, false, createInjector, undefined, undefined);
 
 /* eslint-disable import/prefer-default-export */
 
@@ -3834,22 +3933,23 @@ var components = /*#__PURE__*/Object.freeze({
     ASelect: __vue_component__$k,
     AFormGroup: __vue_component__$l,
     AHamburger: __vue_component__$m,
-    MLogo: __vue_component__$n,
-    MTyper: __vue_component__$o,
-    MScrollToTop: __vue_component__$p,
-    MCarousel: __vue_component__$q,
-    MNavbar: __vue_component__$r,
-    MPartner: __vue_component__$s,
-    MSocialButton: __vue_component__$t,
-    MSocialButtonFacebook: __vue_component__$u,
-    MSocialButtonTwitter: __vue_component__$v,
-    MSocialButtonInstagram: __vue_component__$w,
-    MSocialButtonLinkedin: __vue_component__$x,
-    MBadge: __vue_component__$y,
-    OHeader: __vue_component__$z,
-    OFooter: __vue_component__$A,
-    OPartners: __vue_component__$B,
-    ONewsletterForm: __vue_component__$C
+    AIcon: __vue_component__$n,
+    MLogo: __vue_component__$o,
+    MTyper: __vue_component__$p,
+    MScrollToTop: __vue_component__$q,
+    MCarousel: __vue_component__$r,
+    MNavbar: __vue_component__$s,
+    MPartner: __vue_component__$t,
+    MSocialButton: __vue_component__$u,
+    MSocialButtonFacebook: __vue_component__$v,
+    MSocialButtonTwitter: __vue_component__$w,
+    MSocialButtonInstagram: __vue_component__$x,
+    MSocialButtonLinkedin: __vue_component__$y,
+    MBadge: __vue_component__$z,
+    OHeader: __vue_component__$A,
+    OFooter: __vue_component__$B,
+    OPartners: __vue_component__$C,
+    ONewsletterForm: __vue_component__$D
 });
 
 // Import vue components
@@ -3870,4 +3970,4 @@ const plugin = {
 }; // To auto-install on non-es builds, when vue is found
 
 export default plugin;
-export { __vue_component__ as AButton, __vue_component__$l as AFormGroup, __vue_component__$m as AHamburger, __vue_component__$2 as AHeading, __vue_component__$3 as AImage, __vue_component__$7 as AInput, __vue_component__$9 as AInputCheckbox, __vue_component__$a as AInputDate, __vue_component__$e as AInputEmail, __vue_component__$c as AInputFile, __vue_component__$d as AInputHidden, __vue_component__$g as AInputPassword, __vue_component__$h as AInputRadio, __vue_component__$i as AInputSearch, __vue_component__$f as AInputTel, __vue_component__$8 as AInputText, __vue_component__$j as AInputUrl, __vue_component__$4 as ALink, __vue_component__$5 as AList, __vue_component__$k as ASelect, __vue_component__$1 as AText, __vue_component__$6 as ATextarea, __vue_component__$y as MBadge, __vue_component__$q as MCarousel, __vue_component__$n as MLogo, __vue_component__$r as MNavbar, __vue_component__$s as MPartner, __vue_component__$p as MScrollToTop, __vue_component__$t as MSocialButton, __vue_component__$u as MSocialButtonFacebook, __vue_component__$w as MSocialButtonInstagram, __vue_component__$x as MSocialButtonLinkedin, __vue_component__$v as MSocialButtonTwitter, __vue_component__$o as MTyper, __vue_component__$A as OFooter, __vue_component__$z as OHeader, __vue_component__$C as ONewsletterForm, __vue_component__$B as OPartners };
+export { __vue_component__ as AButton, __vue_component__$l as AFormGroup, __vue_component__$m as AHamburger, __vue_component__$2 as AHeading, __vue_component__$n as AIcon, __vue_component__$3 as AImage, __vue_component__$7 as AInput, __vue_component__$9 as AInputCheckbox, __vue_component__$a as AInputDate, __vue_component__$e as AInputEmail, __vue_component__$c as AInputFile, __vue_component__$d as AInputHidden, __vue_component__$g as AInputPassword, __vue_component__$h as AInputRadio, __vue_component__$i as AInputSearch, __vue_component__$f as AInputTel, __vue_component__$8 as AInputText, __vue_component__$j as AInputUrl, __vue_component__$4 as ALink, __vue_component__$5 as AList, __vue_component__$k as ASelect, __vue_component__$1 as AText, __vue_component__$6 as ATextarea, __vue_component__$z as MBadge, __vue_component__$r as MCarousel, __vue_component__$o as MLogo, __vue_component__$s as MNavbar, __vue_component__$t as MPartner, __vue_component__$q as MScrollToTop, __vue_component__$u as MSocialButton, __vue_component__$v as MSocialButtonFacebook, __vue_component__$x as MSocialButtonInstagram, __vue_component__$y as MSocialButtonLinkedin, __vue_component__$w as MSocialButtonTwitter, __vue_component__$p as MTyper, __vue_component__$B as OFooter, __vue_component__$A as OHeader, __vue_component__$D as ONewsletterForm, __vue_component__$C as OPartners };
