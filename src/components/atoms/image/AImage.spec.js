@@ -18,7 +18,7 @@ describe('Atom - AImage', () => {
         expect(wrapper.attributes('title')).toBe('Lama vert')
     })
 
-    test('...with src', () => {
+    test('...with wrong file path for src', () => {
         const wrapper = mount(AImage, {
             propsData: {
                 src: 'Lama rouge'
@@ -26,6 +26,17 @@ describe('Atom - AImage', () => {
         })
 
         expect(wrapper.attributes('src')).toBe('Lama rouge')
+    })
+
+
+    test('...with correct src', () => {
+        const wrapper = mount(AImage, {
+            propsData: {
+                src: 'http://www.institutfrance.si/modules/uploader/uploads/news/pictures_news/AF_Slovenie_Logo_site_2.jpg'
+            }
+        })
+
+        expect(wrapper.attributes('src')).toBe('http://www.institutfrance.si/modules/uploader/uploads/news/pictures_news/AF_Slovenie_Logo_site_2.jpg')
     })
 
     test('...with alt', () => {

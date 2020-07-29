@@ -1,5 +1,5 @@
 import { storiesOf } from '@storybook/vue'
-import AInputText from '../inputs/input-text/AInputText.vue'
+import AInputText from '../inputs/text/AInputText.vue'
 import AFormGroup from './AFormGroup.vue'
 
 const wrapper = {

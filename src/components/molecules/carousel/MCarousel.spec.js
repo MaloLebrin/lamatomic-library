@@ -13,7 +13,7 @@ describe('Molecule - MCarousel', () => {
 
     test('...with slides', () => {
         const image1 = getMountedComponent(AImage,
-            { src: '../logo/svg/logo-white-inline.svg' },
+            { src: 'http://www.institutfrance.si/modules/uploader/uploads/news/pictures_news/AF_Slovenie_Logo_site_2.jpg' },
             { alt: 'logodefault' }
         )
 
@@ -29,6 +29,6 @@ describe('Molecule - MCarousel', () => {
         expect(wrapper.html()).toContain('<div class="agile__track"')
         expect(wrapper.html()).toContain('<div class="agile__slides')
         expect(wrapper.html()).toContain('<div class="slide agile__slide"')
-        expect(wrapper.html()).toContain('logo-white-inline.svg')
+        expect(wrapper.html()).toContain('http://www.institutfrance.si/modules/uploader/uploads/news/pictures_news/AF_Slovenie_Logo_site_2.jpg')
     })
 })
