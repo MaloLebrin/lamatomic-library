@@ -53,21 +53,12 @@ $grey: #333;
 $white: #fff;
 
 .m-card {
-    background-color: $white;
-    border-radius: 5px;
-    bottom: 0;
+    border-radius: 1rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
-    color: $grey;
-    display: block;
-    line-height: 3rem;
-    margin: 0 auto 2rem;
+    margin-bottom: 2rem;
+    overflow: hidden;
     padding: 2rem;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    top: 0;
-    transition: all 0.1s ease-in-out;
-    width: 100%;
+    transition: all 0.3s ease-in-out;
 
     &.is-link {
         &:hover {
@@ -78,7 +69,8 @@ $white: #fff;
             }
         }
 
-        > .link { bottom: 0;
+        > .link {
+            bottom: 0;
             color: $grey;
             left: 0;
             position: absolute;
@@ -89,7 +81,7 @@ $white: #fff;
 
     &:not(.no-anim) {
         &:hover {
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
         }
     }
 }
