@@ -47,13 +47,12 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-.m-social-button {
-    animation: 1s appear;
+.m-social-button.a-button {
     border-radius: 100%;
     display: block;
-    height: 20px;
+    height: 30px;
     padding: 5px;
-    width: 20px;
+    width: 30px;
 
     .a-image {
         height: 100%;
