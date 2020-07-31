@@ -29,7 +29,7 @@ export { default as AInputUrl } from './atoms/form/inputs/url/AInputUrl.vue'
 // Molecules
 export { default as MBadge } from './molecules/badge/MBadge.vue'
 export { default as MCard } from './molecules/card/MCard.vue'
-// export { default as MCarousel } from './molecules/carousel/MCarousel.vue'
+export { default as MCarousel } from './molecules/carousel/MCarousel.vue'
 export { default as MLogo } from './molecules/logo/MLogo.vue'
 export { default as MNavbar } from './molecules/navbar/MNavbar.vue'
 export { default as MPartner } from './molecules/partner/MPartner.vue'

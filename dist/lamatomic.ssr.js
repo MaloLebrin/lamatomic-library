@@ -1,4 +1,4 @@
-'use strict';Object.defineProperty(exports,'__esModule',{value:true});function _interopDefault(e){return(e&&(typeof e==='object')&&'default'in e)?e['default']:e}var Vue=_interopDefault(require('vue')),VCalendar=_interopDefault(require('v-calendar')),VueTypedJs=_interopDefault(require('vue-typed-js'));function _slicedToArray(arr, i) {
+'use strict';Object.defineProperty(exports,'__esModule',{value:true});function _interopDefault(e){return(e&&(typeof e==='object')&&'default'in e)?e['default']:e}var Vue=_interopDefault(require('vue')),VCalendar=_interopDefault(require('v-calendar')),vueAgile=require('vue-agile'),VueTypedJs=_interopDefault(require('vue-typed-js'));function _slicedToArray(arr, i) {
   return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
 }
 
@@ -2592,6 +2592,95 @@ var __vue_component__$p = /*#__PURE__*/normalizeComponent({
   render: __vue_render__$p,
   staticRenderFns: __vue_staticRenderFns__$p
 }, __vue_inject_styles__$p, __vue_script__$p, __vue_scope_id__$p, __vue_is_functional_template__$p, __vue_module_identifier__$p, false, undefined, createInjectorSSR, undefined);var script$q = Vue.extend({
+  name: 'MCarousel',
+  components: {
+    VueAgile: vueAgile.VueAgile
+  },
+  inheritAttrs: false,
+  props: {
+    slides: {
+      type: Array,
+      default: function _default() {
+        return [];
+      }
+    },
+    navButtons: {
+      type: Boolean,
+      default: false
+    },
+    dots: {
+      type: Boolean,
+      default: false
+    }
+  }
+});/* script */
+var __vue_script__$q = script$q;
+/* template */
+
+var __vue_render__$q = function __vue_render__() {
+  var _vm = this;
+
+  var _h = _vm.$createElement;
+
+  var _c = _vm._self._c || _h;
+
+  return _c('div', {
+    staticClass: "m-carousel"
+  }, [_c('VueAgile', _vm._b({
+    attrs: {
+      "nav-buttons": _vm.navButtons,
+      "dots": _vm.dots
+    }
+  }, 'VueAgile', _vm.$attrs, false), [_vm._l(_vm.slides, function (slide) {
+    return _c('div', {
+      key: slide,
+      staticClass: "slide",
+      domProps: {
+        "innerHTML": _vm._s(slide)
+      }
+    });
+  }), _vm._v(" "), _c('template', {
+    slot: "prevButton"
+  }, [_c('span', {
+    attrs: {
+      "title": "Précédent"
+    }
+  }, [_vm._v("<")])]), _vm._v(" "), _c('template', {
+    slot: "nextButton"
+  }, [_c('span', {
+    attrs: {
+      "title": "Suivant"
+    }
+  }, [_vm._v(">")])])], 2)], 1);
+};
+
+var __vue_staticRenderFns__$q = [];
+/* style */
+
+var __vue_inject_styles__$q = function __vue_inject_styles__(inject) {
+  if (!inject) return;
+  inject("data-v-3194d958_0", {
+    source: ".m-carousel .agile__actions{margin-top:1rem}.m-carousel .agile__nav-button{background:0 0;border:0;color:rgba(255,255,255,.8);cursor:pointer;font-size:2.4rem;height:100%;position:absolute;text-shadow:0 2px 3px rgba(0,0,0,.25);top:0;transition-duration:.3s;width:4rem}.m-carousel .agile__nav-button:hover{color:#888;text-shadow:0 2px 5px rgba(0,0,0,.25)}.m-carousel .agile__nav-button--prev{left:0}.m-carousel .agile__nav-button--next{right:0}.m-carousel .agile__dot{margin:0 1rem}.m-carousel .agile__dot button{background-color:#eee;border:0;border-radius:50%;cursor:pointer;display:block;font-size:0;height:.5rem;line-height:0;margin:0;padding:0;transition-duration:.3s;width:.5rem}.m-carousel .agile__dot--current button,.m-carousel .agile__dot:hover button{background-color:#888}.m-carousel .agile .slide{align-items:center;display:flex;justify-content:center;min-height:400px}.m-carousel .agile .slide .a-image{height:100%;object-fit:cover;position:absolute;width:100%}.m-carousel .agile .slide .caption{font-size:3.2rem;font-weight:300}",
+    map: undefined,
+    media: undefined
+  });
+};
+/* scoped */
+
+
+var __vue_scope_id__$q = undefined;
+/* module identifier */
+
+var __vue_module_identifier__$q = "data-v-3194d958";
+/* functional template */
+
+var __vue_is_functional_template__$q = false;
+/* style inject shadow dom */
+
+var __vue_component__$q = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__$q,
+  staticRenderFns: __vue_staticRenderFns__$q
+}, __vue_inject_styles__$q, __vue_script__$q, __vue_scope_id__$q, __vue_is_functional_template__$q, __vue_module_identifier__$q, false, undefined, createInjectorSSR, undefined);var script$r = Vue.extend({
   name: 'MLogo',
   components: {
     AImage: __vue_component__$5,
@@ -2604,10 +2693,10 @@ var __vue_component__$p = /*#__PURE__*/normalizeComponent({
     }
   }
 });/* script */
-var __vue_script__$q = script$q;
+var __vue_script__$r = script$r;
 /* template */
 
-var __vue_render__$q = function __vue_render__() {
+var __vue_render__$r = function __vue_render__() {
   var _vm = this;
 
   var _h = _vm.$createElement;
@@ -2628,10 +2717,10 @@ var __vue_render__$q = function __vue_render__() {
   })], 1);
 };
 
-var __vue_staticRenderFns__$q = [];
+var __vue_staticRenderFns__$r = [];
 /* style */
 
-var __vue_inject_styles__$q = function __vue_inject_styles__(inject) {
+var __vue_inject_styles__$r = function __vue_inject_styles__(inject) {
   if (!inject) return;
   inject("data-v-bb8ae842_0", {
     source: ".m-logo{animation:1s appear;margin:auto}",
@@ -2642,19 +2731,19 @@ var __vue_inject_styles__$q = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__$q = undefined;
+var __vue_scope_id__$r = undefined;
 /* module identifier */
 
-var __vue_module_identifier__$q = "data-v-bb8ae842";
+var __vue_module_identifier__$r = "data-v-bb8ae842";
 /* functional template */
 
-var __vue_is_functional_template__$q = false;
+var __vue_is_functional_template__$r = false;
 /* style inject shadow dom */
 
-var __vue_component__$q = /*#__PURE__*/normalizeComponent({
-  render: __vue_render__$q,
-  staticRenderFns: __vue_staticRenderFns__$q
-}, __vue_inject_styles__$q, __vue_script__$q, __vue_scope_id__$q, __vue_is_functional_template__$q, __vue_module_identifier__$q, false, undefined, createInjectorSSR, undefined);var script$r = Vue.extend({
+var __vue_component__$r = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__$r,
+  staticRenderFns: __vue_staticRenderFns__$r
+}, __vue_inject_styles__$r, __vue_script__$r, __vue_scope_id__$r, __vue_is_functional_template__$r, __vue_module_identifier__$r, false, undefined, createInjectorSSR, undefined);var script$s = Vue.extend({
   name: 'MNavbar',
   components: {
     AList: __vue_component__$7
@@ -2670,10 +2759,10 @@ var __vue_component__$q = /*#__PURE__*/normalizeComponent({
     }
   }
 });/* script */
-var __vue_script__$r = script$r;
+var __vue_script__$s = script$s;
 /* template */
 
-var __vue_render__$r = function __vue_render__() {
+var __vue_render__$s = function __vue_render__() {
   var _vm = this;
 
   var _h = _vm.$createElement;
@@ -2691,10 +2780,10 @@ var __vue_render__$r = function __vue_render__() {
   })], 1);
 };
 
-var __vue_staticRenderFns__$r = [];
+var __vue_staticRenderFns__$s = [];
 /* style */
 
-var __vue_inject_styles__$r = function __vue_inject_styles__(inject) {
+var __vue_inject_styles__$s = function __vue_inject_styles__(inject) {
   if (!inject) return;
   inject("data-v-28d52706_0", {
     source: ".m-navbar>.a-list{padding-left:0}.m-navbar .a-list-item{margin-bottom:1.5rem}",
@@ -2705,19 +2794,19 @@ var __vue_inject_styles__$r = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__$r = undefined;
+var __vue_scope_id__$s = undefined;
 /* module identifier */
 
-var __vue_module_identifier__$r = "data-v-28d52706";
+var __vue_module_identifier__$s = "data-v-28d52706";
 /* functional template */
 
-var __vue_is_functional_template__$r = false;
+var __vue_is_functional_template__$s = false;
 /* style inject shadow dom */
 
-var __vue_component__$r = /*#__PURE__*/normalizeComponent({
-  render: __vue_render__$r,
-  staticRenderFns: __vue_staticRenderFns__$r
-}, __vue_inject_styles__$r, __vue_script__$r, __vue_scope_id__$r, __vue_is_functional_template__$r, __vue_module_identifier__$r, false, undefined, createInjectorSSR, undefined);var script$s = Vue.extend({
+var __vue_component__$s = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__$s,
+  staticRenderFns: __vue_staticRenderFns__$s
+}, __vue_inject_styles__$s, __vue_script__$s, __vue_scope_id__$s, __vue_is_functional_template__$s, __vue_module_identifier__$s, false, undefined, createInjectorSSR, undefined);var script$t = Vue.extend({
   name: 'MPartner',
   components: {
     AImage: __vue_component__$5,
@@ -2746,10 +2835,10 @@ var __vue_component__$r = /*#__PURE__*/normalizeComponent({
     }
   }
 });/* script */
-var __vue_script__$s = script$s;
+var __vue_script__$t = script$t;
 /* template */
 
-var __vue_render__$s = function __vue_render__() {
+var __vue_render__$t = function __vue_render__() {
   var _vm = this;
 
   var _h = _vm.$createElement;
@@ -2772,10 +2861,10 @@ var __vue_render__$s = function __vue_render__() {
   })], 1);
 };
 
-var __vue_staticRenderFns__$s = [];
+var __vue_staticRenderFns__$t = [];
 /* style */
 
-var __vue_inject_styles__$s = function __vue_inject_styles__(inject) {
+var __vue_inject_styles__$t = function __vue_inject_styles__(inject) {
   if (!inject) return;
   inject("data-v-2e2d916f_0", {
     source: ".m-partner{animation:1s appear;margin:auto}",
@@ -2786,19 +2875,19 @@ var __vue_inject_styles__$s = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__$s = undefined;
+var __vue_scope_id__$t = undefined;
 /* module identifier */
 
-var __vue_module_identifier__$s = "data-v-2e2d916f";
+var __vue_module_identifier__$t = "data-v-2e2d916f";
 /* functional template */
 
-var __vue_is_functional_template__$s = false;
+var __vue_is_functional_template__$t = false;
 /* style inject shadow dom */
 
-var __vue_component__$s = /*#__PURE__*/normalizeComponent({
-  render: __vue_render__$s,
-  staticRenderFns: __vue_staticRenderFns__$s
-}, __vue_inject_styles__$s, __vue_script__$s, __vue_scope_id__$s, __vue_is_functional_template__$s, __vue_module_identifier__$s, false, undefined, createInjectorSSR, undefined);var scrollTop = function scrollTop(el) {
+var __vue_component__$t = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__$t,
+  staticRenderFns: __vue_staticRenderFns__$t
+}, __vue_inject_styles__$t, __vue_script__$t, __vue_scope_id__$t, __vue_is_functional_template__$t, __vue_module_identifier__$t, false, undefined, createInjectorSSR, undefined);var scrollTop = function scrollTop(el) {
   var from = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
   var to = arguments.length > 2 ? arguments[2] : undefined;
   var duration = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 500;
@@ -2834,7 +2923,7 @@ var __vue_component__$s = /*#__PURE__*/normalizeComponent({
 
   scrollEase(from, to);
 };
-var script$t = Vue.extend({
+var script$u = Vue.extend({
   name: 'MScrollToTop',
   components: {
     AButton: __vue_component__
@@ -2865,10 +2954,10 @@ var script$t = Vue.extend({
     }
   }
 });/* script */
-var __vue_script__$t = script$t;
+var __vue_script__$u = script$u;
 /* template */
 
-var __vue_render__$t = function __vue_render__() {
+var __vue_render__$u = function __vue_render__() {
   var _vm = this;
 
   var _h = _vm.$createElement;
@@ -2887,10 +2976,10 @@ var __vue_render__$t = function __vue_render__() {
   }, [_vm._v("\n    ^\n")]);
 };
 
-var __vue_staticRenderFns__$t = [];
+var __vue_staticRenderFns__$u = [];
 /* style */
 
-var __vue_inject_styles__$t = function __vue_inject_styles__(inject) {
+var __vue_inject_styles__$u = function __vue_inject_styles__(inject) {
   if (!inject) return;
   inject("data-v-e3356b68_0", {
     source: ".m-scroll-to-top.a-button{font-size:2rem;padding:1rem;padding-bottom:0;padding-top:.5rem;text-align:center}",
@@ -2901,19 +2990,19 @@ var __vue_inject_styles__$t = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__$t = undefined;
+var __vue_scope_id__$u = undefined;
 /* module identifier */
 
-var __vue_module_identifier__$t = "data-v-e3356b68";
+var __vue_module_identifier__$u = "data-v-e3356b68";
 /* functional template */
 
-var __vue_is_functional_template__$t = false;
+var __vue_is_functional_template__$u = false;
 /* style inject shadow dom */
 
-var __vue_component__$t = /*#__PURE__*/normalizeComponent({
-  render: __vue_render__$t,
-  staticRenderFns: __vue_staticRenderFns__$t
-}, __vue_inject_styles__$t, __vue_script__$t, __vue_scope_id__$t, __vue_is_functional_template__$t, __vue_module_identifier__$t, false, undefined, createInjectorSSR, undefined);var script$u = Vue.extend({
+var __vue_component__$u = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__$u,
+  staticRenderFns: __vue_staticRenderFns__$u
+}, __vue_inject_styles__$u, __vue_script__$u, __vue_scope_id__$u, __vue_is_functional_template__$u, __vue_module_identifier__$u, false, undefined, createInjectorSSR, undefined);var script$v = Vue.extend({
   name: 'MSocialButton',
   components: {
     AImage: __vue_component__$5,
@@ -2934,10 +3023,10 @@ var __vue_component__$t = /*#__PURE__*/normalizeComponent({
     }
   }
 });/* script */
-var __vue_script__$u = script$u;
+var __vue_script__$v = script$v;
 /* template */
 
-var __vue_render__$u = function __vue_render__() {
+var __vue_render__$v = function __vue_render__() {
   var _vm = this;
 
   var _h = _vm.$createElement;
@@ -2959,10 +3048,10 @@ var __vue_render__$u = function __vue_render__() {
   })], 1);
 };
 
-var __vue_staticRenderFns__$u = [];
+var __vue_staticRenderFns__$v = [];
 /* style */
 
-var __vue_inject_styles__$u = function __vue_inject_styles__(inject) {
+var __vue_inject_styles__$v = function __vue_inject_styles__(inject) {
   if (!inject) return;
   inject("data-v-2ef47120_0", {
     source: ".m-social-button.a-button{border-radius:100%;display:block;height:30px;padding:5px;width:30px}.m-social-button.a-button .a-image{height:100%;width:100%}.m-social-button.a-button:hover .a-image{filter:invert(47%) sepia(95%) saturate(2181%) hue-rotate(166deg) brightness(91%) contrast(104%)}",
@@ -2973,22 +3062,22 @@ var __vue_inject_styles__$u = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__$u = undefined;
+var __vue_scope_id__$v = undefined;
 /* module identifier */
 
-var __vue_module_identifier__$u = "data-v-2ef47120";
+var __vue_module_identifier__$v = "data-v-2ef47120";
 /* functional template */
 
-var __vue_is_functional_template__$u = false;
+var __vue_is_functional_template__$v = false;
 /* style inject shadow dom */
 
-var __vue_component__$u = /*#__PURE__*/normalizeComponent({
-  render: __vue_render__$u,
-  staticRenderFns: __vue_staticRenderFns__$u
-}, __vue_inject_styles__$u, __vue_script__$u, __vue_scope_id__$u, __vue_is_functional_template__$u, __vue_module_identifier__$u, false, undefined, createInjectorSSR, undefined);var script$v = Vue.extend({
+var __vue_component__$v = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__$v,
+  staticRenderFns: __vue_staticRenderFns__$v
+}, __vue_inject_styles__$v, __vue_script__$v, __vue_scope_id__$v, __vue_is_functional_template__$v, __vue_module_identifier__$v, false, undefined, createInjectorSSR, undefined);var script$w = Vue.extend({
   name: 'MSocialButtonFacebook',
   components: {
-    MSocialButton: __vue_component__$u
+    MSocialButton: __vue_component__$v
   },
   props: {
     href: {
@@ -3002,9 +3091,9 @@ var __vue_component__$u = /*#__PURE__*/normalizeComponent({
   }
 });const img = "data:image/svg+xml,%3csvg aria-hidden='true' focusable='false' data-prefix='fab' data-icon='facebook' class='svg-inline--fa fa-facebook fa-w-10' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3e %3cg color='white'%3e %3cpath fill='currentColor' d='M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z'%3e %3c/path%3e %3c/g%3e%3c/svg%3e";
 /* script */
-var __vue_script__$v = script$v;
+var __vue_script__$w = script$w;
 
-var __vue_render__$v = function __vue_render__() {
+var __vue_render__$w = function __vue_render__() {
   var _vm = this;
 
   var _h = _vm.$createElement;
@@ -3021,32 +3110,32 @@ var __vue_render__$v = function __vue_render__() {
   });
 };
 
-var __vue_staticRenderFns__$v = [];
+var __vue_staticRenderFns__$w = [];
 /* style */
 
-var __vue_inject_styles__$v = undefined;
+var __vue_inject_styles__$w = undefined;
 /* scoped */
 
-var __vue_scope_id__$v = undefined;
+var __vue_scope_id__$w = undefined;
 /* module identifier */
 
-var __vue_module_identifier__$v = "data-v-164de182";
+var __vue_module_identifier__$w = "data-v-164de182";
 /* functional template */
 
-var __vue_is_functional_template__$v = false;
+var __vue_is_functional_template__$w = false;
 /* style inject */
 
 /* style inject SSR */
 
 /* style inject shadow dom */
 
-var __vue_component__$v = /*#__PURE__*/normalizeComponent({
-  render: __vue_render__$v,
-  staticRenderFns: __vue_staticRenderFns__$v
-}, __vue_inject_styles__$v, __vue_script__$v, __vue_scope_id__$v, __vue_is_functional_template__$v, __vue_module_identifier__$v, false, undefined, undefined, undefined);var script$w = Vue.extend({
+var __vue_component__$w = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__$w,
+  staticRenderFns: __vue_staticRenderFns__$w
+}, __vue_inject_styles__$w, __vue_script__$w, __vue_scope_id__$w, __vue_is_functional_template__$w, __vue_module_identifier__$w, false, undefined, undefined, undefined);var script$x = Vue.extend({
   name: 'MSocialButtonTwitter',
   components: {
-    MSocialButton: __vue_component__$u
+    MSocialButton: __vue_component__$v
   },
   props: {
     href: {
@@ -3060,9 +3149,9 @@ var __vue_component__$v = /*#__PURE__*/normalizeComponent({
   }
 });const img$1 = "data:image/svg+xml,%3csvg aria-hidden='true' focusable='false' data-prefix='fab' data-icon='twitter' class='svg-inline--fa fa-twitter fa-w-16' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3e %3cg color='white'%3e %3cpath fill='currentColor' d='M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z'%3e %3c/path%3e %3c/g%3e%3c/svg%3e";
 /* script */
-var __vue_script__$w = script$w;
+var __vue_script__$x = script$x;
 
-var __vue_render__$w = function __vue_render__() {
+var __vue_render__$x = function __vue_render__() {
   var _vm = this;
 
   var _h = _vm.$createElement;
@@ -3079,32 +3168,32 @@ var __vue_render__$w = function __vue_render__() {
   });
 };
 
-var __vue_staticRenderFns__$w = [];
+var __vue_staticRenderFns__$x = [];
 /* style */
 
-var __vue_inject_styles__$w = undefined;
+var __vue_inject_styles__$x = undefined;
 /* scoped */
 
-var __vue_scope_id__$w = undefined;
+var __vue_scope_id__$x = undefined;
 /* module identifier */
 
-var __vue_module_identifier__$w = "data-v-c7f534a6";
+var __vue_module_identifier__$x = "data-v-c7f534a6";
 /* functional template */
 
-var __vue_is_functional_template__$w = false;
+var __vue_is_functional_template__$x = false;
 /* style inject */
 
 /* style inject SSR */
 
 /* style inject shadow dom */
 
-var __vue_component__$w = /*#__PURE__*/normalizeComponent({
-  render: __vue_render__$w,
-  staticRenderFns: __vue_staticRenderFns__$w
-}, __vue_inject_styles__$w, __vue_script__$w, __vue_scope_id__$w, __vue_is_functional_template__$w, __vue_module_identifier__$w, false, undefined, undefined, undefined);var script$x = Vue.extend({
+var __vue_component__$x = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__$x,
+  staticRenderFns: __vue_staticRenderFns__$x
+}, __vue_inject_styles__$x, __vue_script__$x, __vue_scope_id__$x, __vue_is_functional_template__$x, __vue_module_identifier__$x, false, undefined, undefined, undefined);var script$y = Vue.extend({
   name: 'MSocialButtonInstagram',
   components: {
-    MSocialButton: __vue_component__$u
+    MSocialButton: __vue_component__$v
   },
   props: {
     href: {
@@ -3118,9 +3207,9 @@ var __vue_component__$w = /*#__PURE__*/normalizeComponent({
   }
 });const img$2 = "data:image/svg+xml,%3csvg aria-hidden='true' focusable='false' data-prefix='fab' data-icon='instagram' class='svg-inline--fa fa-instagram fa-w-14' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3e %3cg color='white'%3e %3cpath fill='currentColor' d='M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z'%3e %3c/path%3e %3c/g%3e%3c/svg%3e";
 /* script */
-var __vue_script__$x = script$x;
+var __vue_script__$y = script$y;
 
-var __vue_render__$x = function __vue_render__() {
+var __vue_render__$y = function __vue_render__() {
   var _vm = this;
 
   var _h = _vm.$createElement;
@@ -3137,32 +3226,32 @@ var __vue_render__$x = function __vue_render__() {
   });
 };
 
-var __vue_staticRenderFns__$x = [];
+var __vue_staticRenderFns__$y = [];
 /* style */
 
-var __vue_inject_styles__$x = undefined;
+var __vue_inject_styles__$y = undefined;
 /* scoped */
 
-var __vue_scope_id__$x = undefined;
+var __vue_scope_id__$y = undefined;
 /* module identifier */
 
-var __vue_module_identifier__$x = "data-v-7233fe6b";
+var __vue_module_identifier__$y = "data-v-7233fe6b";
 /* functional template */
 
-var __vue_is_functional_template__$x = false;
+var __vue_is_functional_template__$y = false;
 /* style inject */
 
 /* style inject SSR */
 
 /* style inject shadow dom */
 
-var __vue_component__$x = /*#__PURE__*/normalizeComponent({
-  render: __vue_render__$x,
-  staticRenderFns: __vue_staticRenderFns__$x
-}, __vue_inject_styles__$x, __vue_script__$x, __vue_scope_id__$x, __vue_is_functional_template__$x, __vue_module_identifier__$x, false, undefined, undefined, undefined);var script$y = Vue.extend({
+var __vue_component__$y = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__$y,
+  staticRenderFns: __vue_staticRenderFns__$y
+}, __vue_inject_styles__$y, __vue_script__$y, __vue_scope_id__$y, __vue_is_functional_template__$y, __vue_module_identifier__$y, false, undefined, undefined, undefined);var script$z = Vue.extend({
   name: 'MSocialButtonLinkedin',
   components: {
-    MSocialButton: __vue_component__$u
+    MSocialButton: __vue_component__$v
   },
   props: {
     href: {
@@ -3176,9 +3265,9 @@ var __vue_component__$x = /*#__PURE__*/normalizeComponent({
   }
 });const img$3 = "data:image/svg+xml,%3csvg aria-hidden='true' focusable='false' data-prefix='fab' data-icon='linkedin' class='svg-inline--fa fa-linkedin fa-w-14' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3e %3cg color='white'%3e %3cpath fill='currentColor' d='M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z'%3e %3c/path%3e %3c/g%3e%3c/svg%3e";
 /* script */
-var __vue_script__$y = script$y;
+var __vue_script__$z = script$z;
 
-var __vue_render__$y = function __vue_render__() {
+var __vue_render__$z = function __vue_render__() {
   var _vm = this;
 
   var _h = _vm.$createElement;
@@ -3195,31 +3284,31 @@ var __vue_render__$y = function __vue_render__() {
   });
 };
 
-var __vue_staticRenderFns__$y = [];
+var __vue_staticRenderFns__$z = [];
 /* style */
 
-var __vue_inject_styles__$y = undefined;
+var __vue_inject_styles__$z = undefined;
 /* scoped */
 
-var __vue_scope_id__$y = undefined;
+var __vue_scope_id__$z = undefined;
 /* module identifier */
 
-var __vue_module_identifier__$y = "data-v-446c7a1f";
+var __vue_module_identifier__$z = "data-v-446c7a1f";
 /* functional template */
 
-var __vue_is_functional_template__$y = false;
+var __vue_is_functional_template__$z = false;
 /* style inject */
 
 /* style inject SSR */
 
 /* style inject shadow dom */
 
-var __vue_component__$y = /*#__PURE__*/normalizeComponent({
-  render: __vue_render__$y,
-  staticRenderFns: __vue_staticRenderFns__$y
-}, __vue_inject_styles__$y, __vue_script__$y, __vue_scope_id__$y, __vue_is_functional_template__$y, __vue_module_identifier__$y, false, undefined, undefined, undefined);//
+var __vue_component__$z = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__$z,
+  staticRenderFns: __vue_staticRenderFns__$z
+}, __vue_inject_styles__$z, __vue_script__$z, __vue_scope_id__$z, __vue_is_functional_template__$z, __vue_module_identifier__$z, false, undefined, undefined, undefined);//
 Vue.use(VueTypedJs);
-var script$z = {
+var script$A = {
   name: 'MTyper',
   props: {
     loop: {
@@ -3238,10 +3327,10 @@ var script$z = {
     }
   }
 };/* script */
-var __vue_script__$z = script$z;
+var __vue_script__$A = script$A;
 /* template */
 
-var __vue_render__$z = function __vue_render__() {
+var __vue_render__$A = function __vue_render__() {
   var _vm = this;
 
   var _h = _vm.$createElement;
@@ -3260,10 +3349,10 @@ var __vue_render__$z = function __vue_render__() {
   })]);
 };
 
-var __vue_staticRenderFns__$z = [];
+var __vue_staticRenderFns__$A = [];
 /* style */
 
-var __vue_inject_styles__$z = function __vue_inject_styles__(inject) {
+var __vue_inject_styles__$A = function __vue_inject_styles__(inject) {
   if (!inject) return;
   inject("data-v-191bad6d_0", {
     source: ".typed-element{align-items:center;display:flex}.typed-element .typed-cursor{animation:typerBlink .7s infinite;margin-left:3px;opacity:1;position:relative;top:-1px}@keyframes typerBlink{50%{opacity:0}}",
@@ -3274,22 +3363,22 @@ var __vue_inject_styles__$z = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__$z = undefined;
+var __vue_scope_id__$A = undefined;
 /* module identifier */
 
-var __vue_module_identifier__$z = "data-v-191bad6d";
+var __vue_module_identifier__$A = "data-v-191bad6d";
 /* functional template */
 
-var __vue_is_functional_template__$z = false;
+var __vue_is_functional_template__$A = false;
 /* style inject shadow dom */
 
-var __vue_component__$z = /*#__PURE__*/normalizeComponent({
-  render: __vue_render__$z,
-  staticRenderFns: __vue_staticRenderFns__$z
-}, __vue_inject_styles__$z, __vue_script__$z, __vue_scope_id__$z, __vue_is_functional_template__$z, __vue_module_identifier__$z, false, undefined, createInjectorSSR, undefined);var script$A = Vue.extend({
+var __vue_component__$A = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__$A,
+  staticRenderFns: __vue_staticRenderFns__$A
+}, __vue_inject_styles__$A, __vue_script__$A, __vue_scope_id__$A, __vue_is_functional_template__$A, __vue_module_identifier__$A, false, undefined, createInjectorSSR, undefined);var script$B = Vue.extend({
   name: 'MLogo',
   components: {
-    MScrollToTop: __vue_component__$t
+    MScrollToTop: __vue_component__$u
   },
   props: {
     withoutScrollToTop: {
@@ -3298,10 +3387,10 @@ var __vue_component__$z = /*#__PURE__*/normalizeComponent({
     }
   }
 });/* script */
-var __vue_script__$A = script$A;
+var __vue_script__$B = script$B;
 /* template */
 
-var __vue_render__$A = function __vue_render__() {
+var __vue_render__$B = function __vue_render__() {
   var _vm = this;
 
   var _h = _vm.$createElement;
@@ -3313,10 +3402,10 @@ var __vue_render__$A = function __vue_render__() {
   }, [!_vm.withoutScrollToTop ? _c('MScrollToTop') : _vm._e(), _vm._ssrNode(" "), _vm._ssrNode("<div class=\"cols-wrapper\">", "</div>", [_vm._ssrNode("<div class=\"col col-1\">", "</div>", [_vm._t("col-1")], 2), _vm._ssrNode(" "), _vm._ssrNode("<div class=\"col col-2\">", "</div>", [_vm._t("col-2")], 2), _vm._ssrNode(" "), _vm._ssrNode("<div class=\"col col-3\">", "</div>", [_vm._t("col-3")], 2)], 2)], 2);
 };
 
-var __vue_staticRenderFns__$A = [];
+var __vue_staticRenderFns__$B = [];
 /* style */
 
-var __vue_inject_styles__$A = function __vue_inject_styles__(inject) {
+var __vue_inject_styles__$B = function __vue_inject_styles__(inject) {
   if (!inject) return;
   inject("data-v-5e791b44_0", {
     source: ".o-footer{animation:1s appear;background-color:#2b2b2b;color:#fff;margin:auto;padding:3rem;transition:all .1s;width:100%}.o-footer .m-scroll-to-top{display:block;margin:auto}.o-footer .cols-wrapper{display:flex;flex:1 1 auto;flex-direction:column}.o-footer .cols-wrapper>.col{margin:auto;text-align:center}.o-footer .a-list{flex-wrap:nowrap;justify-content:space-around}@media screen and (min-width:576px){.o-footer .cols-wrapper{flex-direction:row}}",
@@ -3327,23 +3416,23 @@ var __vue_inject_styles__$A = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__$A = undefined;
+var __vue_scope_id__$B = undefined;
 /* module identifier */
 
-var __vue_module_identifier__$A = "data-v-5e791b44";
+var __vue_module_identifier__$B = "data-v-5e791b44";
 /* functional template */
 
-var __vue_is_functional_template__$A = false;
+var __vue_is_functional_template__$B = false;
 /* style inject shadow dom */
 
-var __vue_component__$A = /*#__PURE__*/normalizeComponent({
-  render: __vue_render__$A,
-  staticRenderFns: __vue_staticRenderFns__$A
-}, __vue_inject_styles__$A, __vue_script__$A, __vue_scope_id__$A, __vue_is_functional_template__$A, __vue_module_identifier__$A, false, undefined, createInjectorSSR, undefined);var script$B = Vue.extend({
+var __vue_component__$B = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__$B,
+  staticRenderFns: __vue_staticRenderFns__$B
+}, __vue_inject_styles__$B, __vue_script__$B, __vue_scope_id__$B, __vue_is_functional_template__$B, __vue_module_identifier__$B, false, undefined, createInjectorSSR, undefined);var script$C = Vue.extend({
   name: 'OHeader',
   components: {
-    MLogo: __vue_component__$q,
-    MNavbar: __vue_component__$r,
+    MLogo: __vue_component__$r,
+    MNavbar: __vue_component__$s,
     AHamburger: __vue_component__$1
   },
   props: {
@@ -3367,10 +3456,10 @@ var __vue_component__$A = /*#__PURE__*/normalizeComponent({
     }
   }
 });/* script */
-var __vue_script__$B = script$B;
+var __vue_script__$C = script$C;
 /* template */
 
-var __vue_render__$B = function __vue_render__() {
+var __vue_render__$C = function __vue_render__() {
   var _vm = this;
 
   var _h = _vm.$createElement;
@@ -3412,10 +3501,10 @@ var __vue_render__$B = function __vue_render__() {
   })], 2)]);
 };
 
-var __vue_staticRenderFns__$B = [];
+var __vue_staticRenderFns__$C = [];
 /* style */
 
-var __vue_inject_styles__$B = function __vue_inject_styles__(inject) {
+var __vue_inject_styles__$C = function __vue_inject_styles__(inject) {
   if (!inject) return;
   inject("data-v-54f245eb_0", {
     source: ".o-header{align-items:center;display:flex;flex-direction:row;position:relative}.o-header .inner{padding:0 15px}.o-header .m-navbar-desktop{display:none}.o-header .m-logo{flex-basis:10%;margin-left:15px}.o-header .m-logo .a-image{width:80px}.o-header .m-navbar{margin-right:15px}.o-header-menu{display:flex;flex-direction:column;left:100%;min-height:100vh;opacity:0;padding-left:20px;padding-top:5rem;position:absolute;top:0;transition:all .8s ease-in-out;transition-timing-function:cubic-bezier(.37,.96,.22,1.01);visibility:hidden;width:20rem;z-index:1}.o-header-menu.menu-open{opacity:1;right:0}.o-header--is-open .o-header-menu{background-color:#009cde;transform:translate3d(-100%,0,0);visibility:visible}.o-header-hamburger{margin-right:25px;position:relative;z-index:2}@media screen and (min-width:992px){.o-header .m-logo .a-image{width:120px}.o-header .m-navbar-desktop{display:block}.o-header .m-navbar-mobile,.o-header .o-header-hamburger{display:none}}",
@@ -3426,19 +3515,19 @@ var __vue_inject_styles__$B = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__$B = undefined;
+var __vue_scope_id__$C = undefined;
 /* module identifier */
 
-var __vue_module_identifier__$B = "data-v-54f245eb";
+var __vue_module_identifier__$C = "data-v-54f245eb";
 /* functional template */
 
-var __vue_is_functional_template__$B = false;
+var __vue_is_functional_template__$C = false;
 /* style inject shadow dom */
 
-var __vue_component__$B = /*#__PURE__*/normalizeComponent({
-  render: __vue_render__$B,
-  staticRenderFns: __vue_staticRenderFns__$B
-}, __vue_inject_styles__$B, __vue_script__$B, __vue_scope_id__$B, __vue_is_functional_template__$B, __vue_module_identifier__$B, false, undefined, createInjectorSSR, undefined);var script$C = Vue.extend({
+var __vue_component__$C = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__$C,
+  staticRenderFns: __vue_staticRenderFns__$C
+}, __vue_inject_styles__$C, __vue_script__$C, __vue_scope_id__$C, __vue_is_functional_template__$C, __vue_module_identifier__$C, false, undefined, createInjectorSSR, undefined);var script$D = Vue.extend({
   name: 'ONewsletterForm',
   components: {
     AInputEmail: __vue_component__$f,
@@ -3464,10 +3553,10 @@ var __vue_component__$B = /*#__PURE__*/normalizeComponent({
     };
   }
 });/* script */
-var __vue_script__$C = script$C;
+var __vue_script__$D = script$D;
 /* template */
 
-var __vue_render__$C = function __vue_render__() {
+var __vue_render__$D = function __vue_render__() {
   var _vm = this;
 
   var _h = _vm.$createElement;
@@ -3503,10 +3592,10 @@ var __vue_render__$C = function __vue_render__() {
   }, [_vm._v("Envoyer")])], 2)], 2)], 2)], 2);
 };
 
-var __vue_staticRenderFns__$C = [];
+var __vue_staticRenderFns__$D = [];
 /* style */
 
-var __vue_inject_styles__$C = function __vue_inject_styles__(inject) {
+var __vue_inject_styles__$D = function __vue_inject_styles__(inject) {
   if (!inject) return;
   inject("data-v-0da4cf90_0", {
     source: ".o-form-newsletter{display:block}.o-form-newsletter .row{display:flex;flex-direction:row;flex-wrap:wrap;margin:auto}.o-form-newsletter .a-image{margin:auto}.o-form-newsletter .a-image.without-image{display:none}.o-form-newsletter .newsletter-content{margin:auto;padding-left:15px}.o-form-newsletter .a-button{margin-left:10px}.o-form-newsletter .a-heading.without-title{display:none}",
@@ -3517,19 +3606,19 @@ var __vue_inject_styles__$C = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__$C = undefined;
+var __vue_scope_id__$D = undefined;
 /* module identifier */
 
-var __vue_module_identifier__$C = "data-v-0da4cf90";
+var __vue_module_identifier__$D = "data-v-0da4cf90";
 /* functional template */
 
-var __vue_is_functional_template__$C = false;
+var __vue_is_functional_template__$D = false;
 /* style inject shadow dom */
 
-var __vue_component__$C = /*#__PURE__*/normalizeComponent({
-  render: __vue_render__$C,
-  staticRenderFns: __vue_staticRenderFns__$C
-}, __vue_inject_styles__$C, __vue_script__$C, __vue_scope_id__$C, __vue_is_functional_template__$C, __vue_module_identifier__$C, false, undefined, createInjectorSSR, undefined);var script$D = Vue.extend({
+var __vue_component__$D = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__$D,
+  staticRenderFns: __vue_staticRenderFns__$D
+}, __vue_inject_styles__$D, __vue_script__$D, __vue_scope_id__$D, __vue_is_functional_template__$D, __vue_module_identifier__$D, false, undefined, createInjectorSSR, undefined);var script$E = Vue.extend({
   name: 'OPartners',
   components: {
     AList: __vue_component__$7
@@ -3545,10 +3634,10 @@ var __vue_component__$C = /*#__PURE__*/normalizeComponent({
     }
   }
 });/* script */
-var __vue_script__$D = script$D;
+var __vue_script__$E = script$E;
 /* template */
 
-var __vue_render__$D = function __vue_render__() {
+var __vue_render__$E = function __vue_render__() {
   var _vm = this;
 
   var _h = _vm.$createElement;
@@ -3566,10 +3655,10 @@ var __vue_render__$D = function __vue_render__() {
   })], 1);
 };
 
-var __vue_staticRenderFns__$D = [];
+var __vue_staticRenderFns__$E = [];
 /* style */
 
-var __vue_inject_styles__$D = function __vue_inject_styles__(inject) {
+var __vue_inject_styles__$E = function __vue_inject_styles__(inject) {
   if (!inject) return;
   inject("data-v-daa75d34_0", {
     source: ".o-partners{display:flex;flex-direction:row;flex-wrap:wrap}.o-partners .a-list{flex-basis:auto}.o-partners .a-list .a-list-item{box-shadow:0 3px 6px 0 rgba(140,152,164,.25);height:100%;padding:1rem;vertical-align:middle;width:100%}.o-partners .a-list .a-list-item .img-partner{height:210px;width:290px}",
@@ -3580,19 +3669,19 @@ var __vue_inject_styles__$D = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__$D = undefined;
+var __vue_scope_id__$E = undefined;
 /* module identifier */
 
-var __vue_module_identifier__$D = "data-v-daa75d34";
+var __vue_module_identifier__$E = "data-v-daa75d34";
 /* functional template */
 
-var __vue_is_functional_template__$D = false;
+var __vue_is_functional_template__$E = false;
 /* style inject shadow dom */
 
-var __vue_component__$D = /*#__PURE__*/normalizeComponent({
-  render: __vue_render__$D,
-  staticRenderFns: __vue_staticRenderFns__$D
-}, __vue_inject_styles__$D, __vue_script__$D, __vue_scope_id__$D, __vue_is_functional_template__$D, __vue_module_identifier__$D, false, undefined, createInjectorSSR, undefined);/* eslint-disable import/prefer-default-export */var components=/*#__PURE__*/Object.freeze({__proto__:null,AButton: __vue_component__,AHamburger: __vue_component__$1,AHeading: __vue_component__$3,AIcon: __vue_component__$4,AImage: __vue_component__$5,ALink: __vue_component__$6,AList: __vue_component__$7,AText: __vue_component__$2,AFormGroup: __vue_component__$9,ALabel: __vue_component__$8,ASelect: __vue_component__$a,ATextarea: __vue_component__$b,AInputCheckbox: __vue_component__$d,AInputDate: __vue_component__$e,AInputEmail: __vue_component__$f,AInputFile: __vue_component__$g,AInputHidden: __vue_component__$h,AInputPassword: __vue_component__$i,AInputRadio: __vue_component__$j,AInputSearch: __vue_component__$k,AInputTel: __vue_component__$l,AInputText: __vue_component__$m,AInputUrl: __vue_component__$n,MBadge: __vue_component__$o,MCard: __vue_component__$p,MLogo: __vue_component__$q,MNavbar: __vue_component__$r,MPartner: __vue_component__$s,MScrollToTop: __vue_component__$t,MSocialButton: __vue_component__$u,MSocialButtonFacebook: __vue_component__$v,MSocialButtonTwitter: __vue_component__$w,MSocialButtonInstagram: __vue_component__$x,MSocialButtonLinkedin: __vue_component__$y,MTyper: __vue_component__$z,OFooter: __vue_component__$A,OHeader: __vue_component__$B,ONewsletterForm: __vue_component__$C,OPartners: __vue_component__$D});// eslint-disable-next-line @typescript-eslint/no-explicit-any
+var __vue_component__$E = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__$E,
+  staticRenderFns: __vue_staticRenderFns__$E
+}, __vue_inject_styles__$E, __vue_script__$E, __vue_scope_id__$E, __vue_is_functional_template__$E, __vue_module_identifier__$E, false, undefined, createInjectorSSR, undefined);/* eslint-disable import/prefer-default-export */var components=/*#__PURE__*/Object.freeze({__proto__:null,AButton: __vue_component__,AHamburger: __vue_component__$1,AHeading: __vue_component__$3,AIcon: __vue_component__$4,AImage: __vue_component__$5,ALink: __vue_component__$6,AList: __vue_component__$7,AText: __vue_component__$2,AFormGroup: __vue_component__$9,ALabel: __vue_component__$8,ASelect: __vue_component__$a,ATextarea: __vue_component__$b,AInputCheckbox: __vue_component__$d,AInputDate: __vue_component__$e,AInputEmail: __vue_component__$f,AInputFile: __vue_component__$g,AInputHidden: __vue_component__$h,AInputPassword: __vue_component__$i,AInputRadio: __vue_component__$j,AInputSearch: __vue_component__$k,AInputTel: __vue_component__$l,AInputText: __vue_component__$m,AInputUrl: __vue_component__$n,MBadge: __vue_component__$o,MCard: __vue_component__$p,MCarousel: __vue_component__$q,MLogo: __vue_component__$r,MNavbar: __vue_component__$s,MPartner: __vue_component__$t,MScrollToTop: __vue_component__$u,MSocialButton: __vue_component__$v,MSocialButtonFacebook: __vue_component__$w,MSocialButtonTwitter: __vue_component__$x,MSocialButtonInstagram: __vue_component__$y,MSocialButtonLinkedin: __vue_component__$z,MTyper: __vue_component__$A,OFooter: __vue_component__$B,OHeader: __vue_component__$C,ONewsletterForm: __vue_component__$D,OPartners: __vue_component__$E});// eslint-disable-next-line @typescript-eslint/no-explicit-any
 
 // install function executed by Vue.use()
 var install = function installLamatomic(Vue) {
@@ -3629,4 +3718,4 @@ var plugin = {
     GlobalVue.use(plugin);
   }
 } // Default export is library as a whole, registered via Vue.use()
-exports.AButton=__vue_component__;exports.AFormGroup=__vue_component__$9;exports.AHamburger=__vue_component__$1;exports.AHeading=__vue_component__$3;exports.AIcon=__vue_component__$4;exports.AImage=__vue_component__$5;exports.AInputCheckbox=__vue_component__$d;exports.AInputDate=__vue_component__$e;exports.AInputEmail=__vue_component__$f;exports.AInputFile=__vue_component__$g;exports.AInputHidden=__vue_component__$h;exports.AInputPassword=__vue_component__$i;exports.AInputRadio=__vue_component__$j;exports.AInputSearch=__vue_component__$k;exports.AInputTel=__vue_component__$l;exports.AInputText=__vue_component__$m;exports.AInputUrl=__vue_component__$n;exports.ALabel=__vue_component__$8;exports.ALink=__vue_component__$6;exports.AList=__vue_component__$7;exports.ASelect=__vue_component__$a;exports.AText=__vue_component__$2;exports.ATextarea=__vue_component__$b;exports.MBadge=__vue_component__$o;exports.MCard=__vue_component__$p;exports.MLogo=__vue_component__$q;exports.MNavbar=__vue_component__$r;exports.MPartner=__vue_component__$s;exports.MScrollToTop=__vue_component__$t;exports.MSocialButton=__vue_component__$u;exports.MSocialButtonFacebook=__vue_component__$v;exports.MSocialButtonInstagram=__vue_component__$x;exports.MSocialButtonLinkedin=__vue_component__$y;exports.MSocialButtonTwitter=__vue_component__$w;exports.MTyper=__vue_component__$z;exports.OFooter=__vue_component__$A;exports.OHeader=__vue_component__$B;exports.ONewsletterForm=__vue_component__$C;exports.OPartners=__vue_component__$D;exports.default=plugin;
+exports.AButton=__vue_component__;exports.AFormGroup=__vue_component__$9;exports.AHamburger=__vue_component__$1;exports.AHeading=__vue_component__$3;exports.AIcon=__vue_component__$4;exports.AImage=__vue_component__$5;exports.AInputCheckbox=__vue_component__$d;exports.AInputDate=__vue_component__$e;exports.AInputEmail=__vue_component__$f;exports.AInputFile=__vue_component__$g;exports.AInputHidden=__vue_component__$h;exports.AInputPassword=__vue_component__$i;exports.AInputRadio=__vue_component__$j;exports.AInputSearch=__vue_component__$k;exports.AInputTel=__vue_component__$l;exports.AInputText=__vue_component__$m;exports.AInputUrl=__vue_component__$n;exports.ALabel=__vue_component__$8;exports.ALink=__vue_component__$6;exports.AList=__vue_component__$7;exports.ASelect=__vue_component__$a;exports.AText=__vue_component__$2;exports.ATextarea=__vue_component__$b;exports.MBadge=__vue_component__$o;exports.MCard=__vue_component__$p;exports.MCarousel=__vue_component__$q;exports.MLogo=__vue_component__$r;exports.MNavbar=__vue_component__$s;exports.MPartner=__vue_component__$t;exports.MScrollToTop=__vue_component__$u;exports.MSocialButton=__vue_component__$v;exports.MSocialButtonFacebook=__vue_component__$w;exports.MSocialButtonInstagram=__vue_component__$y;exports.MSocialButtonLinkedin=__vue_component__$z;exports.MSocialButtonTwitter=__vue_component__$x;exports.MTyper=__vue_component__$A;exports.OFooter=__vue_component__$B;exports.OHeader=__vue_component__$C;exports.ONewsletterForm=__vue_component__$D;exports.OPartners=__vue_component__$E;exports.default=plugin;
