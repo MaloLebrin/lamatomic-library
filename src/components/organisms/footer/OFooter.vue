@@ -1,6 +1,6 @@
 <template>
     <div class="o-footer">
-        <MScrollToTop v-if="!withoutScrollToTop" />
+        <MScrollToTop v-if="!withoutScrollToTop" :styles="stylesScrollToTop" />
 
         <div class="cols-wrapper">
             <div class="col col-1">
@@ -33,6 +33,13 @@ export default Vue.extend({
         withoutScrollToTop: {
             type: Boolean,
             default: false
+        },
+        stylesScrollToTop: {
+            type: String,
+            default: 'light',
+            validator(value) {
+                return ['light', 'dark'].includes(value)
+            }
         }
     }
 })

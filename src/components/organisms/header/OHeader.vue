@@ -1,12 +1,10 @@
 <template>
-    <div class="inner">
         <header class="o-header" :class="{'o-header--is-open': menuIsOpen }">
-            <MLogo />
+            <MLogo :src="srcLogo"/>
             <MNavbar class="m-navbar-desktop" :items="items" @click="toggleMenu" />
             <AHamburger  class="o-header-hamburger" :class="{'a-hamburger--is-open': menuIsOpen}" @click="toggleMenu"/>
             <MNavbar class="o-header-menu m-navbar-mobile" :class="{ 'menu-open': menuIsOpen }" :items="items" :horizontal="horizontal" @click="toggleMenu" />
         </header>
-    </div>
 </template>
 
 <script lang="ts">
@@ -31,6 +29,10 @@
                 type: Boolean,
                 default: false
             },
+            srcLogo: {
+                type: String,
+                default: "http://www.institutfrance.si/modules/uploader/uploads/news/pictures_news/AF_Slovenie_Logo_site_2.jpg"
+            }
         },
         data() {
             return {
