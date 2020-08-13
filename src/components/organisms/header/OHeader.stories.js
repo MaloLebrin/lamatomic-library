@@ -16,23 +16,17 @@ const btn2 = getMountedComponent(AButton, { state: 'warning' }, { default: 'Join
 
 const items = [link1, btn1, btn2]
 
-storiesOf('Organisms/Header', module)
-    .add('Default', () => ({
+const mobileItems= [link1, link1, link1]
+
+storiesOf('Organisms', module)
+    .add('Header', () => ({
         ...wrapper,
         data() {
             return {
-                items
+                items,
+                mobileItems
             }
         },
-        template: '<OHeader :items="items" />'
+        template: '<OHeader :items="items" :mobileItems="mobileItems" />'
     }))
 
-    .add('Mobile', () => ({
-        ...wrapper,
-        data() {
-            return {
-                items
-            }
-        },
-        template: '<OHeader :items="items" IsOpen />'
-    }))

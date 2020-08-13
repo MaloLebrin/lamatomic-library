@@ -1,10 +1,10 @@
 <template>
-        <header class="o-header" :class="{'o-header--is-open': menuIsOpen }">
-            <MLogo :src="srcLogo"/>
-            <MNavbar class="m-navbar-desktop" :items="items" @click="toggleMenu" />
-            <AHamburger  class="o-header-hamburger" :class="{'a-hamburger--is-open': menuIsOpen}" @click="toggleMenu"/>
-            <MNavbar class="o-header-menu m-navbar-mobile" :class="{ 'menu-open': menuIsOpen }" :items="items" :horizontal="horizontal" @click="toggleMenu" />
-        </header>
+    <header class="o-header" :class="{'o-header--is-open': menuIsOpen }">
+        <MLogo />
+        <MNavbar class="m-navbar-desktop" :items="items" @click="toggleMenu" />
+        <AHamburger  class="o-header-hamburger" :class="{'a-hamburger--is-open': menuIsOpen}" @click="toggleMenu"/>
+        <MNavbar class="o-header-menu m-navbar-mobile" :class="{ 'menu-open': menuIsOpen }" :items="computedMobileItems" :horizontal="horizontal" @click="toggleMenu" />
+    </header>
 </template>
 
 <script lang="ts">
@@ -29,21 +29,33 @@
                 type: Boolean,
                 default: false
             },
-            srcLogo: {
-                type: String,
-                default: "http://www.institutfrance.si/modules/uploader/uploads/news/pictures_news/AF_Slovenie_Logo_site_2.jpg"
-            }
+            mobileItems: {
+                type: Array,
+                default: null
+            },
         },
+
         data() {
             return {
                 menuIsOpen: false
             }
         },
-        methods: {
-            toggleMenu() {
-                this.menuIsOpen = !this.menuIsOpen
+
+        computed: {
+            computedMobileItems() {
+                if (Array.isArray(this.mobileItems)) {
+                    return this.mobileItems
+                }
+
+                return this.items
             }
-        }
+        },
+
+        methods: {
+            toggleMenu(this: any) {
+                this.menuIsOpen = !this.menuIsOpen
+            },
+        },
     })
 </script>
 
@@ -58,7 +70,6 @@ $dark-grey: #929292;
 $light-grey: #e1e1e1;
 
 .o-header {
-
     $this: &;
     $animation-speed: 0.8s;
     $animation-easing: cubic-bezier(0.37, 0.96, 0.22, 1.01);
@@ -67,10 +78,6 @@ $light-grey: #e1e1e1;
     display: flex;
     flex-direction: row;
     position: relative;
-
-    .inner {
-        padding: 0 15px;
-    }
 
     .m-navbar-desktop {
         display: none;
@@ -86,7 +93,8 @@ $light-grey: #e1e1e1;
     }
 
     .m-navbar {
-        margin-right: 15px;
+        max-width: calc(100vw - 40px);
+        overflow: hidden;
     }
 
     &-menu {
@@ -113,7 +121,7 @@ $light-grey: #e1e1e1;
 
     &--is-open {
         #{$this}-menu {
-            background-color: $primary;
+            background-color: #f8f8f8;
             transform: translate3d(-100%, 0, 0);
             visibility: visible;
         }
@@ -143,3 +151,4 @@ $light-grey: #e1e1e1;
     }
 }
 </style>
+

@@ -1,17 +1,17 @@
 <template>
     <div class="o-footer">
-        <MScrollToTop v-if="!withoutScrollToTop" :styles="stylesScrollToTop" />
+        <MScrollToTop v-if="!withoutScrollToTop" />
 
-        <div class="cols-wrapper">
-            <div class="col col-1">
+        <div class="o-footer-cols">
+            <div class="o-footer-col o-footer-col-1">
                 <slot name="col-1"></slot>
             </div>
 
-            <div class="col col-2">
+            <div class="o-footer-col o-footer-col-2">
                 <slot name="col-2"></slot>
             </div>
 
-            <div class="col col-3">
+            <div class="o-footer-col o-footer-col-3">
                 <slot name="col-3"></slot>
             </div>
         </div>
@@ -33,13 +33,6 @@ export default Vue.extend({
         withoutScrollToTop: {
             type: Boolean,
             default: false
-        },
-        stylesScrollToTop: {
-            type: String,
-            default: 'light',
-            validator(value) {
-                return ['light', 'dark'].includes(value)
-            }
         }
     }
 })
@@ -86,3 +79,4 @@ $black: #2b2b2b;
     }
 }
 </style>
+
