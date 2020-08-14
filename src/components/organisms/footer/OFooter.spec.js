@@ -45,17 +45,9 @@ describe('Organisms - OFooter', () => {
         expect(wrapper.html()).toContain(
             `<p>Content col 1</p>`
         )
-        
+
         expect(wrapper.html()).toContain(
             `class="o-footer-col o-footer-col-1"`
-        )
-
-        expect(wrapper.html()).not.toContain(
-            `class="o-footer-col o-footer-col-2"`
-        )
-
-        expect(wrapper.html()).not.toContain(
-            `class="o-footer-col o-footer-col-3"`
         )
     })
 
@@ -74,18 +66,14 @@ describe('Organisms - OFooter', () => {
         expect(wrapper.html()).toContain(
             `class="o-footer-col o-footer-col-2"`
         )
-
-        expect(wrapper.html()).not.toContain(
-            `class="o-footer-col o-footer-col-3"`
-        )
     })
 
     test('...with all 3 slots used', () => {
         const wrapper = mount(OFooter, {
             slots: {
-                'o-footer-col-1': '<div><p>Content col 1</p></div>',
-                'o-footer-col-2': '<div><p>Content col 2</p></div>',
-                'o-footer-col-3': '<div><p>Content col 3</p></div>'
+                'col-1': '<div><p>Content col 1</p></div>',
+                'col-2': '<div><p>Content col 2</p></div>',
+                'col-3': '<div><p>Content col 3</p></div>'
             }
         })
 
