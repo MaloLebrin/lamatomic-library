@@ -273,10 +273,6 @@ $light-grey: #e1e1e1;
         text-decoration: none;
     }
 
-    &.bg-dark-grey {
-        border: 0;
-    }
-
     &.disabled,
     &.disabled:hover,
     &.disabled:focus {

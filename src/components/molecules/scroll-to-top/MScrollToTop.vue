@@ -90,6 +90,7 @@ $white: #fff;
 
 .m-scroll-to-top {
     &.a-button {
+        box-shadow: 0 -1px 5px #fff;
         font-size: 2rem;
         padding: 1rem;
         padding-bottom: 0;

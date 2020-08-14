@@ -15,11 +15,11 @@ describe('Organisms - OFooter', () => {
         )
 
         expect(wrapper.html()).toContain(
-            `<div class="cols-wrapper">`
+            `<div class="o-footer-cols">`
         )
 
         expect(wrapper.html()).toContain(
-            '<button title="Revenir en haut de la page" class="a-button m-scroll-to-top light">'
+            '<button title="Revenir en haut de la page" class="a-button m-scroll-to-top'
         )
     })
 
@@ -31,55 +31,75 @@ describe('Organisms - OFooter', () => {
         })
 
         expect(wrapper.html()).not.toContain(
-            '<button title="Revenir en haut de la page" class="a-button m-scroll-to-top light">'
+            '<button title="Revenir en haut de la page" class="a-button m-scroll-to-top'
         )
     })
 
     test('...with just 1 slot used', () => {
         const wrapper = mount(OFooter, {
             slots: {
-                'col-1': '<div><p>col-1</p></div>'
+                'col-1': '<div><p>Content col 1</p></div>'
             }
         })
 
         expect(wrapper.html()).toContain(
-            `<p>col-1</p>`
+            `<p>Content col 1</p>`
+        )
+
+        expect(wrapper.html()).toContain(
+            `class="o-footer-col o-footer-col-1"`
         )
     })
 
     test('...with just 2 slots used', () => {
         const wrapper = mount(OFooter, {
             slots: {
-                'col-1': '<div><p>col-1</p></div>',
-                'col-2': '<div><p>prout</p></div>'
+                'col-1': '<div><p>Content col 1</p></div>',
+                'col-2': '<div><p>Content col 2</p></div>'
             }
         })
 
         expect(wrapper.html()).toContain(
-            `<p>col-1</p>`
+            `class="o-footer-col o-footer-col-1"`
         )
+
         expect(wrapper.html()).toContain(
-            `<p>prout</p>`
+            `class="o-footer-col o-footer-col-2"`
         )
     })
 
     test('...with all 3 slots used', () => {
         const wrapper = mount(OFooter, {
             slots: {
-                'col-1': '<div><p>col-1</p></div>',
-                'col-2': '<div><p>col-2 prout</p></div>',
-                'col-3': '<div><p>col-3</p></div>'
+                'col-1': '<div><p>Content col 1</p></div>',
+                'col-2': '<div><p>Content col 2</p></div>',
+                'col-3': '<div><p>Content col 3</p></div>'
             }
         })
 
         expect(wrapper.html()).toContain(
-            `<p>col-1</p>`
+            `class="o-footer-col o-footer-col-1"`
         )
+
         expect(wrapper.html()).toContain(
-            `<p>col-2 prout</p>`
+            `Content col 1`
         )
+
         expect(wrapper.html()).toContain(
-            `<p>col-3</p>`
+            `class="o-footer-col o-footer-col-2"`
+        )
+
+        expect(wrapper.html()).toContain(
+            `Content col 2`
+        )
+
+        expect(wrapper.html()).toContain(
+            `class="o-footer-col o-footer-col-3"`
+        )
+
+        expect(wrapper.html()).toContain(
+            `Content col 3`
         )
     })
 })
+
