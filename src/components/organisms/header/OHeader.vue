@@ -1,6 +1,6 @@
 <template>
     <header class="o-header" :class="{'o-header--is-open': menuIsOpen }">
-        <MLogo />
+        <MLogo :src="srcLogo" />
         <MNavbar class="m-navbar-desktop" :items="items" @click="toggleMenu" />
         <AHamburger  class="o-header-hamburger" :class="{'a-hamburger--is-open': menuIsOpen}" @click="toggleMenu"/>
         <MNavbar class="o-header-menu m-navbar-mobile" :class="{ 'menu-open': menuIsOpen }" :items="computedMobileItems" :horizontal="horizontal" @click="toggleMenu" />
@@ -33,6 +33,10 @@
                 type: Array,
                 default: null
             },
+            srcLogo: {
+                type: String,
+                default: null
+            }
         },
 
         data() {

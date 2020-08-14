@@ -75,7 +75,7 @@ storiesOf('Organisms/Footer', module)
         template: `
             <OFooter>
                 <template #ccol-1><AText>© Copyright 2020</AText></template>
-                <template #ccol-3>
+                <template #col-3>
                     <MNavbar :items="items" :horizontal="false" />
                 </template>
             </OFooter>

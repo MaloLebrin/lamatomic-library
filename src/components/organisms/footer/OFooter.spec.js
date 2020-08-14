@@ -72,12 +72,6 @@ describe('Organisms - OFooter', () => {
         expect(wrapper.html()).toContain(
             `class="o-footer-col o-footer-col-1"`
         )
-        // expect(wrapper.html()).toContain(
-        //     `o-footer-col-2 prout`
-        // )
-        // expect(wrapper.html()).toContain(
-        //     `o-footer-col-3`
-        // )
     })
 })
 
