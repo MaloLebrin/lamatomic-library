@@ -74,10 +74,8 @@ describe('Organisms - OFooter', () => {
         )
     })
     test(' computed ', () => {
-        const wrapper = mount(OFooter, {
-            propsData: { class: 'custom'}
-        })
-        expect(wrapper.attributes().class).toBe('custom')
+        const wrapper = mount(OFooter)
+
         expect(wrapper.vm.computedColsClasses).toBe('default')
         expect(wrapper.vm.computedColClasses).toBe('default')
 
