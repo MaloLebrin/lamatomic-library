@@ -15,11 +15,11 @@ describe('Organisms - OFooter', () => {
         )
 
         expect(wrapper.html()).toContain(
-            `<div class="o-footer-cols">`
+            `<div class="o-footer-cols default">`
         )
 
         expect(wrapper.html()).toContain(
-            '<button title="Revenir en haut de la page" class="a-button m-scroll-to-top'
+            '<button title="Revenir en haut de la page" class="a-button m-scroll-to-top dark">'
         )
     })
 
@@ -60,7 +60,7 @@ describe('Organisms - OFooter', () => {
         })
 
         expect(wrapper.html()).toContain(
-            `class="o-footer-col o-footer-col-1"`
+            `class="o-footer-col o-footer-col-1 default"`
         )
 
         expect(wrapper.html()).toContain(
@@ -78,7 +78,7 @@ describe('Organisms - OFooter', () => {
         })
 
         expect(wrapper.html()).toContain(
-            `class="o-footer-col o-footer-col-1"`
+            `class="o-footer-col o-footer-col-1 default"`
         )
 
         expect(wrapper.html()).toContain(
@@ -100,6 +100,23 @@ describe('Organisms - OFooter', () => {
         expect(wrapper.html()).toContain(
             `Content col 3`
         )
+    })
+    test(' computed ', () => {
+        const wrapper = mount(OFooter)
+
+        expect(wrapper.vm.computedColsClasses).toBe('default')
+        expect(wrapper.vm.computedColClasses).toBe('default')
+
+        wrapper.setProps({
+            customColClasses: 'custom'
+        })
+        expect(wrapper.vm.computedColClasses).toBe('custom')
+
+        wrapper.setProps({
+            customColsClasses: 'custom'
+        })
+        expect(wrapper.vm.computedColsClasses).toBe('custom')
+
     })
 })
 

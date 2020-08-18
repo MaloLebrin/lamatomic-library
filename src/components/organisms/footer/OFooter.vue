@@ -1,17 +1,17 @@
 <template>
     <div class="o-footer">
-        <MScrollToTop v-if="!withoutScrollToTop" />
+        <MScrollToTop v-if="!withoutScrollToTop" :styles="styleScrollToTop" />
 
-        <div class="o-footer-cols">
-            <div class="o-footer-col o-footer-col-1">
+        <div class="o-footer-cols" :class="computedColsClasses">
+            <div class="o-footer-col o-footer-col-1" :class="computedColClasses">
                 <slot name="col-1"></slot>
             </div>
 
-            <div class="o-footer-col o-footer-col-2">
+            <div class="o-footer-col o-footer-col-2" :class="computedColClasses">
                 <slot name="col-2"></slot>
             </div>
 
-            <div class="o-footer-col o-footer-col-3">
+            <div class="o-footer-col o-footer-col-3" :class="computedColClasses">
                 <slot name="col-3"></slot>
             </div>
         </div>
@@ -33,6 +33,26 @@ export default Vue.extend({
         withoutScrollToTop: {
             type: Boolean,
             default: false
+        },
+        styleScrollToTop: {
+            type: String,
+            default: 'dark'
+        },
+        customColsClasses: {
+            type: String,
+            default: null
+        },
+        customColClasses: {
+            type: String,
+            default: null
+        }
+    },
+    computed: {
+        computedColsClasses(): String {
+            return (this.customColsClasses ? this.customColsClasses : 'default')
+        },
+        computedColClasses(): String {
+            return (this.customColClasses ? this.customColClasses : 'default')
         }
     }
 })
@@ -56,26 +76,29 @@ $black: #2b2b2b;
         margin: auto;
     }
 
-    .cols-wrapper {
-        display: flex;
-        flex: 1 1 auto;
-        flex-direction: column;
+    .o-footer-cols {
+        &.default {
+            display: flex;
+            flex: 1 1 auto;
+            flex-direction: column;
 
-        > .col {
-            margin: auto;
-            text-align: center;
+
+            @media screen and (min-width: 576px) {
+                flex-direction: row;
+            }
+        }
+
+        > .o-footer-col {
+            &.default {
+                margin: auto;
+                text-align: center;
+            }
         }
     }
 
     .a-list {
         flex-wrap: nowrap;
         justify-content: space-around;
-    }
-
-    @media screen and (min-width: 576px) {
-        .cols-wrapper {
-            flex-direction: row;
-        }
     }
 }
 </style>
