@@ -3384,6 +3384,26 @@ var __vue_component__$A = /*#__PURE__*/normalizeComponent({
     withoutScrollToTop: {
       type: Boolean,
       default: false
+    },
+    styleScrollToTop: {
+      type: String,
+      default: 'dark'
+    },
+    customColsClasses: {
+      type: String,
+      default: null
+    },
+    customColClasses: {
+      type: String,
+      default: null
+    }
+  },
+  computed: {
+    computedColsClasses: function computedColsClasses() {
+      return this.customColsClasses ? this.customColsClasses : 'default';
+    },
+    computedColClasses: function computedColClasses() {
+      return this.customColClasses ? this.customColClasses : 'default';
     }
   }
 });/* script */
@@ -3399,7 +3419,11 @@ var __vue_render__$B = function __vue_render__() {
 
   return _c('div', {
     staticClass: "o-footer"
-  }, [!_vm.withoutScrollToTop ? _c('MScrollToTop') : _vm._e(), _vm._ssrNode(" "), _vm._ssrNode("<div class=\"o-footer-cols\">", "</div>", [_vm._ssrNode("<div class=\"o-footer-col o-footer-col-1\">", "</div>", [_vm._t("col-1")], 2), _vm._ssrNode(" "), _vm._ssrNode("<div class=\"o-footer-col o-footer-col-2\">", "</div>", [_vm._t("col-2")], 2), _vm._ssrNode(" "), _vm._ssrNode("<div class=\"o-footer-col o-footer-col-3\">", "</div>", [_vm._t("col-3")], 2)], 2)], 2);
+  }, [!_vm.withoutScrollToTop ? _c('MScrollToTop', {
+    attrs: {
+      "styles": _vm.styleScrollToTop
+    }
+  }) : _vm._e(), _vm._ssrNode(" "), _vm._ssrNode("<div" + _vm._ssrClass("o-footer-cols", _vm.computedColsClasses) + ">", "</div>", [_vm._ssrNode("<div" + _vm._ssrClass("o-footer-col o-footer-col-1", _vm.computedColClasses) + ">", "</div>", [_vm._t("col-1")], 2), _vm._ssrNode(" "), _vm._ssrNode("<div" + _vm._ssrClass("o-footer-col o-footer-col-2", _vm.computedColClasses) + ">", "</div>", [_vm._t("col-2")], 2), _vm._ssrNode(" "), _vm._ssrNode("<div" + _vm._ssrClass("o-footer-col o-footer-col-3", _vm.computedColClasses) + ">", "</div>", [_vm._t("col-3")], 2)], 2)], 2);
 };
 
 var __vue_staticRenderFns__$B = [];
@@ -3407,8 +3431,8 @@ var __vue_staticRenderFns__$B = [];
 
 var __vue_inject_styles__$B = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-3c090074_0", {
-    source: ".o-footer{animation:1s appear;background-color:#2b2b2b;color:#fff;margin:auto;padding:3rem;transition:all .1s;width:100%}.o-footer .m-scroll-to-top{display:block;margin:auto}.o-footer .cols-wrapper{display:flex;flex:1 1 auto;flex-direction:column}.o-footer .cols-wrapper>.col{margin:auto;text-align:center}.o-footer .a-list{flex-wrap:nowrap;justify-content:space-around}@media screen and (min-width:576px){.o-footer .cols-wrapper{flex-direction:row}}",
+  inject("data-v-16b1c438_0", {
+    source: ".o-footer{animation:1s appear;background-color:#2b2b2b;color:#fff;margin:auto;padding:3rem;transition:all .1s;width:100%}.o-footer .m-scroll-to-top{display:block;margin:auto}.o-footer .o-footer-cols.default{display:flex;flex:1 1 auto;flex-direction:column}@media screen and (min-width:576px){.o-footer .o-footer-cols.default{flex-direction:row}}.o-footer .o-footer-cols>.o-footer-col.default{margin:auto;text-align:center}.o-footer .a-list{flex-wrap:nowrap;justify-content:space-around}",
     map: undefined,
     media: undefined
   });
@@ -3419,7 +3443,7 @@ var __vue_inject_styles__$B = function __vue_inject_styles__(inject) {
 var __vue_scope_id__$B = undefined;
 /* module identifier */
 
-var __vue_module_identifier__$B = "data-v-3c090074";
+var __vue_module_identifier__$B = "data-v-16b1c438";
 /* functional template */
 
 var __vue_is_functional_template__$B = false;

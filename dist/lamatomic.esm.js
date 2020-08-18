@@ -3646,7 +3646,29 @@ var script$B = Vue.extend({
     withoutScrollToTop: {
       type: Boolean,
       default: false
+    },
+    styleScrollToTop: {
+      type: String,
+      default: 'dark'
+    },
+    customColsClasses: {
+      type: String,
+      default: null
+    },
+    customColClasses: {
+      type: String,
+      default: null
     }
+  },
+  computed: {
+    computedColsClasses() {
+      return this.customColsClasses ? this.customColsClasses : 'default';
+    },
+
+    computedColClasses() {
+      return this.customColClasses ? this.customColClasses : 'default';
+    }
+
   }
 });
 
@@ -3663,14 +3685,22 @@ var __vue_render__$B = function () {
 
   return _c('div', {
     staticClass: "o-footer"
-  }, [!_vm.withoutScrollToTop ? _c('MScrollToTop') : _vm._e(), _vm._v(" "), _c('div', {
-    staticClass: "o-footer-cols"
+  }, [!_vm.withoutScrollToTop ? _c('MScrollToTop', {
+    attrs: {
+      "styles": _vm.styleScrollToTop
+    }
+  }) : _vm._e(), _vm._v(" "), _c('div', {
+    staticClass: "o-footer-cols",
+    class: _vm.computedColsClasses
   }, [_c('div', {
-    staticClass: "o-footer-col o-footer-col-1"
+    staticClass: "o-footer-col o-footer-col-1",
+    class: _vm.computedColClasses
   }, [_vm._t("col-1")], 2), _vm._v(" "), _c('div', {
-    staticClass: "o-footer-col o-footer-col-2"
+    staticClass: "o-footer-col o-footer-col-2",
+    class: _vm.computedColClasses
   }, [_vm._t("col-2")], 2), _vm._v(" "), _c('div', {
-    staticClass: "o-footer-col o-footer-col-3"
+    staticClass: "o-footer-col o-footer-col-3",
+    class: _vm.computedColClasses
   }, [_vm._t("col-3")], 2)])], 1);
 };
 
@@ -3679,8 +3709,8 @@ var __vue_staticRenderFns__$B = [];
 
 const __vue_inject_styles__$B = function (inject) {
   if (!inject) return;
-  inject("data-v-3c090074_0", {
-    source: ".o-footer{animation:1s appear;background-color:#2b2b2b;color:#fff;margin:auto;padding:3rem;transition:all .1s;width:100%}.o-footer .m-scroll-to-top{display:block;margin:auto}.o-footer .cols-wrapper{display:flex;flex:1 1 auto;flex-direction:column}.o-footer .cols-wrapper>.col{margin:auto;text-align:center}.o-footer .a-list{flex-wrap:nowrap;justify-content:space-around}@media screen and (min-width:576px){.o-footer .cols-wrapper{flex-direction:row}}",
+  inject("data-v-16b1c438_0", {
+    source: ".o-footer{animation:1s appear;background-color:#2b2b2b;color:#fff;margin:auto;padding:3rem;transition:all .1s;width:100%}.o-footer .m-scroll-to-top{display:block;margin:auto}.o-footer .o-footer-cols.default{display:flex;flex:1 1 auto;flex-direction:column}@media screen and (min-width:576px){.o-footer .o-footer-cols.default{flex-direction:row}}.o-footer .o-footer-cols>.o-footer-col.default{margin:auto;text-align:center}.o-footer .a-list{flex-wrap:nowrap;justify-content:space-around}",
     map: undefined,
     media: undefined
   });
