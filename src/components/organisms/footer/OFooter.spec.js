@@ -2,7 +2,6 @@ import { mount } from '@vue/test-utils'
 import OFooter from './OFooter.vue'
 
 describe('Organisms - OFooter', () => {
-
     test('...has <div> component, o-footer class and render of ScrollToTop button', () => {
         const wrapper = mount(OFooter)
 
@@ -47,7 +46,7 @@ describe('Organisms - OFooter', () => {
         )
 
         expect(wrapper.html()).toContain(
-            `class="o-footer-col o-footer-col-1"`
+            `class="o-footer-col o-footer-col-1 default"`
         )
     })
 
@@ -64,7 +63,7 @@ describe('Organisms - OFooter', () => {
         )
 
         expect(wrapper.html()).toContain(
-            `class="o-footer-col o-footer-col-2"`
+            `class="o-footer-col o-footer-col-2 default"`
         )
     })
 
@@ -86,7 +85,7 @@ describe('Organisms - OFooter', () => {
         )
 
         expect(wrapper.html()).toContain(
-            `class="o-footer-col o-footer-col-2"`
+            `class="o-footer-col o-footer-col-2 default"`
         )
 
         expect(wrapper.html()).toContain(
@@ -94,29 +93,28 @@ describe('Organisms - OFooter', () => {
         )
 
         expect(wrapper.html()).toContain(
-            `class="o-footer-col o-footer-col-3"`
+            `class="o-footer-col o-footer-col-3 default"`
         )
 
         expect(wrapper.html()).toContain(
             `Content col 3`
         )
     })
-    test(' computed ', () => {
+
+    test('...custom classes change correctly computed', () => {
         const wrapper = mount(OFooter)
 
         expect(wrapper.vm.computedColsClasses).toBe('default')
         expect(wrapper.vm.computedColClasses).toBe('default')
 
         wrapper.setProps({
-            customColClasses: 'custom'
+            customColsClasses: 'row'
         })
-        expect(wrapper.vm.computedColClasses).toBe('custom')
+        expect(wrapper.vm.computedColsClasses).toBe('row')
 
         wrapper.setProps({
-            customColsClasses: 'custom'
+            customColClasses: 'col-12 col-lg-4'
         })
-        expect(wrapper.vm.computedColsClasses).toBe('custom')
-
+        expect(wrapper.vm.computedColClasses).toBe('col-12 col-lg-4')
     })
 })
-
