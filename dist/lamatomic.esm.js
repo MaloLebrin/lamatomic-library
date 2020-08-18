@@ -311,8 +311,8 @@ var __vue_staticRenderFns__ = [];
 
 const __vue_inject_styles__ = function (inject) {
   if (!inject) return;
-  inject("data-v-1218d570_0", {
-    source: ".a-button{animation:1s appear;background-color:#009cde;border:2px solid #009cde;border-radius:5px;color:#fff;cursor:pointer;display:inline-block;fill:#fff;font-size:.8rem;font-size:1.2rem;font-weight:500;letter-spacing:1.5px;line-height:1;margin:auto;padding:10px;padding:10px 30px;text-decoration:none;text-transform:none;transition:.3s all ease}.a-button.success{background-color:#3ac47d;border-color:#3ac47d}.a-button.success:focus,.a-button.success:hover{color:#3ac47d}.a-button.error{background-color:#d92550;border-color:#d92550}.a-button.error:focus,.a-button.error:hover{color:#d92550}.a-button.warning{background-color:#ffce00;border-color:#ffce00}.a-button.warning:focus,.a-button.warning:hover{color:#ffce00}.a-button.light{background-color:#fff;border-color:#fff;color:#009cde}.a-button.light:focus,.a-button.light:hover{background-color:#009cde;color:#fff}.a-button.dark{background-color:#2b2b2b;border-color:#2b2b2b;color:#fff}.a-button.dark:focus,.a-button.dark:hover{background-color:#fff;color:#2b2b2b}.a-button.color-black{color:#2b2b2b}.a-button.color-black:focus,.a-button.color-black:hover{background-color:#2b2b2b;color:#fff}.a-button.color-white{color:#fff}.a-button.no-border{border:0}.a-button.border-black{border:solid 1px #2b2b2b}.a-button:focus,.a-button:hover{background-color:#fff;color:#009cde;text-decoration:none}.a-button.bg-dark-grey{border:0}.a-button.disabled,.a-button.disabled:focus,.a-button.disabled:hover{background-color:#929292;border-color:#929292;color:#e1e1e1;cursor:not-allowed;display:inline-block;text-decoration:none}",
+  inject("data-v-6399f3c3_0", {
+    source: ".a-button{animation:1s appear;background-color:#009cde;border:2px solid #009cde;border-radius:5px;color:#fff;cursor:pointer;display:inline-block;fill:#fff;font-size:.8rem;font-size:1.2rem;font-weight:500;letter-spacing:1.5px;line-height:1;margin:auto;padding:10px;padding:10px 30px;text-decoration:none;text-transform:none;transition:.3s all ease}.a-button.success{background-color:#3ac47d;border-color:#3ac47d}.a-button.success:focus,.a-button.success:hover{color:#3ac47d}.a-button.error{background-color:#d92550;border-color:#d92550}.a-button.error:focus,.a-button.error:hover{color:#d92550}.a-button.warning{background-color:#ffce00;border-color:#ffce00}.a-button.warning:focus,.a-button.warning:hover{color:#ffce00}.a-button.light{background-color:#fff;border-color:#fff;color:#009cde}.a-button.light:focus,.a-button.light:hover{background-color:#009cde;color:#fff}.a-button.dark{background-color:#2b2b2b;border-color:#2b2b2b;color:#fff}.a-button.dark:focus,.a-button.dark:hover{background-color:#fff;color:#2b2b2b}.a-button.color-black{color:#2b2b2b}.a-button.color-black:focus,.a-button.color-black:hover{background-color:#2b2b2b;color:#fff}.a-button.color-white{color:#fff}.a-button.no-border{border:0}.a-button.border-black{border:solid 1px #2b2b2b}.a-button:focus,.a-button:hover{background-color:#fff;color:#009cde;text-decoration:none}.a-button.disabled,.a-button.disabled:focus,.a-button.disabled:hover{background-color:#929292;border-color:#929292;color:#e1e1e1;cursor:not-allowed;display:inline-block;text-decoration:none}",
     map: undefined,
     media: undefined
   });
@@ -3209,8 +3209,8 @@ var __vue_staticRenderFns__$u = [];
 
 const __vue_inject_styles__$u = function (inject) {
   if (!inject) return;
-  inject("data-v-e3356b68_0", {
-    source: ".m-scroll-to-top.a-button{font-size:2rem;padding:1rem;padding-bottom:0;padding-top:.5rem;text-align:center}",
+  inject("data-v-5d246d7e_0", {
+    source: ".m-scroll-to-top.a-button{box-shadow:0 -1px 5px #fff;font-size:2rem;padding:1rem;padding-bottom:0;padding-top:.5rem;text-align:center}",
     map: undefined,
     media: undefined
   });
@@ -3664,13 +3664,13 @@ var __vue_render__$B = function () {
   return _c('div', {
     staticClass: "o-footer"
   }, [!_vm.withoutScrollToTop ? _c('MScrollToTop') : _vm._e(), _vm._v(" "), _c('div', {
-    staticClass: "cols-wrapper"
+    staticClass: "o-footer-cols"
   }, [_c('div', {
-    staticClass: "col col-1"
+    staticClass: "o-footer-col o-footer-col-1"
   }, [_vm._t("col-1")], 2), _vm._v(" "), _c('div', {
-    staticClass: "col col-2"
+    staticClass: "o-footer-col o-footer-col-2"
   }, [_vm._t("col-2")], 2), _vm._v(" "), _c('div', {
-    staticClass: "col col-3"
+    staticClass: "o-footer-col o-footer-col-3"
   }, [_vm._t("col-3")], 2)])], 1);
 };
 
@@ -3679,7 +3679,7 @@ var __vue_staticRenderFns__$B = [];
 
 const __vue_inject_styles__$B = function (inject) {
   if (!inject) return;
-  inject("data-v-5e791b44_0", {
+  inject("data-v-3c090074_0", {
     source: ".o-footer{animation:1s appear;background-color:#2b2b2b;color:#fff;margin:auto;padding:3rem;transition:all .1s;width:100%}.o-footer .m-scroll-to-top{display:block;margin:auto}.o-footer .cols-wrapper{display:flex;flex:1 1 auto;flex-direction:column}.o-footer .cols-wrapper>.col{margin:auto;text-align:center}.o-footer .a-list{flex-wrap:nowrap;justify-content:space-around}@media screen and (min-width:576px){.o-footer .cols-wrapper{flex-direction:row}}",
     map: undefined,
     media: undefined
@@ -3719,6 +3719,14 @@ var script$C = Vue.extend({
     horizontal: {
       type: Boolean,
       default: false
+    },
+    mobileItems: {
+      type: Array,
+      default: null
+    },
+    srcLogo: {
+      type: String,
+      default: null
     }
   },
 
@@ -3728,6 +3736,16 @@ var script$C = Vue.extend({
     };
   },
 
+  computed: {
+    computedMobileItems() {
+      if (Array.isArray(this.mobileItems)) {
+        return this.mobileItems;
+      }
+
+      return this.items;
+    }
+
+  },
   methods: {
     toggleMenu() {
       this.menuIsOpen = !this.menuIsOpen;
@@ -3747,14 +3765,16 @@ var __vue_render__$C = function () {
 
   var _c = _vm._self._c || _h;
 
-  return _c('div', {
-    staticClass: "inner"
-  }, [_c('header', {
+  return _c('header', {
     staticClass: "o-header",
     class: {
       'o-header--is-open': _vm.menuIsOpen
     }
-  }, [_c('MLogo'), _vm._v(" "), _c('MNavbar', {
+  }, [_c('MLogo', {
+    attrs: {
+      "src": _vm.srcLogo
+    }
+  }), _vm._v(" "), _c('MNavbar', {
     staticClass: "m-navbar-desktop",
     attrs: {
       "items": _vm.items
@@ -3776,13 +3796,13 @@ var __vue_render__$C = function () {
       'menu-open': _vm.menuIsOpen
     },
     attrs: {
-      "items": _vm.items,
+      "items": _vm.computedMobileItems,
       "horizontal": _vm.horizontal
     },
     on: {
       "click": _vm.toggleMenu
     }
-  })], 1)]);
+  })], 1);
 };
 
 var __vue_staticRenderFns__$C = [];
@@ -3790,8 +3810,8 @@ var __vue_staticRenderFns__$C = [];
 
 const __vue_inject_styles__$C = function (inject) {
   if (!inject) return;
-  inject("data-v-54f245eb_0", {
-    source: ".o-header{align-items:center;display:flex;flex-direction:row;position:relative}.o-header .inner{padding:0 15px}.o-header .m-navbar-desktop{display:none}.o-header .m-logo{flex-basis:10%;margin-left:15px}.o-header .m-logo .a-image{width:80px}.o-header .m-navbar{margin-right:15px}.o-header-menu{display:flex;flex-direction:column;left:100%;min-height:100vh;opacity:0;padding-left:20px;padding-top:5rem;position:absolute;top:0;transition:all .8s ease-in-out;transition-timing-function:cubic-bezier(.37,.96,.22,1.01);visibility:hidden;width:20rem;z-index:1}.o-header-menu.menu-open{opacity:1;right:0}.o-header--is-open .o-header-menu{background-color:#009cde;transform:translate3d(-100%,0,0);visibility:visible}.o-header-hamburger{margin-right:25px;position:relative;z-index:2}@media screen and (min-width:992px){.o-header .m-logo .a-image{width:120px}.o-header .m-navbar-desktop{display:block}.o-header .m-navbar-mobile,.o-header .o-header-hamburger{display:none}}",
+  inject("data-v-1416e040_0", {
+    source: ".o-header{align-items:center;display:flex;flex-direction:row;position:relative}.o-header .m-navbar-desktop{display:none}.o-header .m-logo{flex-basis:10%;margin-left:15px}.o-header .m-logo .a-image{width:80px}.o-header .m-navbar{max-width:calc(100vw - 40px);overflow:hidden}.o-header-menu{display:flex;flex-direction:column;left:100%;min-height:100vh;opacity:0;padding-left:20px;padding-top:5rem;position:absolute;top:0;transition:all .8s ease-in-out;transition-timing-function:cubic-bezier(.37,.96,.22,1.01);visibility:hidden;width:20rem;z-index:1}.o-header-menu.menu-open{opacity:1;right:0}.o-header--is-open .o-header-menu{background-color:#f8f8f8;transform:translate3d(-100%,0,0);visibility:visible}.o-header-hamburger{margin-right:25px;position:relative;z-index:2}@media screen and (min-width:992px){.o-header .m-logo .a-image{width:120px}.o-header .m-navbar-desktop{display:block}.o-header .m-navbar-mobile,.o-header .o-header-hamburger{display:none}}",
     map: undefined,
     media: undefined
   });
