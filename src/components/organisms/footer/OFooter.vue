@@ -1,5 +1,5 @@
 <template>
-    <div class="o-footer">
+    <footer class="o-footer">
         <MScrollToTop v-if="!withoutScrollToTop" :styles="styleScrollToTop" />
 
         <div class="o-footer-cols" :class="computedColsClasses">
@@ -15,7 +15,7 @@
                 <slot name="col-3"></slot>
             </div>
         </div>
-    </div>
+    </footer>
 </template>
 
 <script lang="ts">
