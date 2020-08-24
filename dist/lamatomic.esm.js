@@ -3683,7 +3683,7 @@ var __vue_render__$B = function () {
 
   var _c = _vm._self._c || _h;
 
-  return _c('div', {
+  return _c('footer', {
     staticClass: "o-footer"
   }, [!_vm.withoutScrollToTop ? _c('MScrollToTop', {
     attrs: {
@@ -3709,7 +3709,7 @@ var __vue_staticRenderFns__$B = [];
 
 const __vue_inject_styles__$B = function (inject) {
   if (!inject) return;
-  inject("data-v-16b1c438_0", {
+  inject("data-v-154d05b8_0", {
     source: ".o-footer{animation:1s appear;background-color:#2b2b2b;color:#fff;margin:auto;padding:3rem;transition:all .1s;width:100%}.o-footer .m-scroll-to-top{display:block;margin:auto}.o-footer .o-footer-cols.default{display:flex;flex:1 1 auto;flex-direction:column}@media screen and (min-width:576px){.o-footer .o-footer-cols.default{flex-direction:row}}.o-footer .o-footer-cols>.o-footer-col.default{margin:auto;text-align:center}.o-footer .a-list{flex-wrap:nowrap;justify-content:space-around}",
     map: undefined,
     media: undefined
