@@ -53,6 +53,7 @@ $grey: #333;
 $white: #fff;
 
 .m-card {
+    background-color: $white;
     border-radius: 1rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
     margin-bottom: 2rem;
