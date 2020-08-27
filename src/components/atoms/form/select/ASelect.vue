@@ -6,6 +6,7 @@
       class="a-select-input"
       :name="name"
       :disabled="disabled"
+    :placeholder="placeholder"
       @change="$emit('change', $event.target.value)"
     >
       <option disabled value="">{{ emptyValueLabel }}</option>
@@ -58,6 +59,10 @@ export default Vue.extend({
     emptyValueLabel: {
       type: String,
       default: 'Please select one'
+    },
+    placeholder: {
+        type: String,
+        default: 'Selectionner'
     }
   },
   data () {
