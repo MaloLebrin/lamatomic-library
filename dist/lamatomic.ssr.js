@@ -1132,6 +1132,14 @@ var __vue_component__$9 = /*#__PURE__*/normalizeComponent({
     emptyValueLabel: {
       type: String,
       default: 'Please select one'
+    },
+    placeholder: {
+      type: String,
+      default: 'Selectionner'
+    },
+    withArrow: {
+      type: Boolean,
+      default: false
     }
   },
   data: function data() {
@@ -1163,7 +1171,8 @@ var __vue_render__$a = function __vue_render__() {
     attrs: {
       "id": _vm.id,
       "name": _vm.name,
-      "disabled": _vm.disabled
+      "disabled": _vm.disabled,
+      "placeholder": _vm.placeholder
     },
     on: {
       "change": [function ($event) {
@@ -1194,7 +1203,7 @@ var __vue_render__$a = function __vue_render__() {
         "selected": option.selected
       }
     }, [_vm._v(_vm._s(option.label))]);
-  })], 2), _vm._ssrNode(" <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 284.929 284.929\" class=\"a-select-arrow\"><path d=\"M282.082 76.511l-14.274-14.273c-1.902-1.906-4.093-2.856-6.57-2.856-2.471 0-4.661.95-6.563 2.856L142.466 174.441 30.262 62.241c-1.903-1.906-4.093-2.856-6.567-2.856-2.475 0-4.665.95-6.567 2.856L2.856 76.515C.95 78.417 0 80.607 0 83.082c0 2.473.953 4.663 2.856 6.565l133.043 133.046c1.902 1.903 4.093 2.854 6.567 2.854s4.661-.951 6.562-2.854L282.082 89.647c1.902-1.903 2.847-4.093 2.847-6.565 0-2.475-.945-4.665-2.847-6.571z\"></path></svg>")], 2);
+  })], 2), _vm._ssrNode(" " + (_vm.withArrow ? "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 284.929 284.929\" class=\"a-select-arrow\"><path d=\"M282.082 76.511l-14.274-14.273c-1.902-1.906-4.093-2.856-6.57-2.856-2.471 0-4.661.95-6.563 2.856L142.466 174.441 30.262 62.241c-1.903-1.906-4.093-2.856-6.567-2.856-2.475 0-4.665.95-6.567 2.856L2.856 76.515C.95 78.417 0 80.607 0 83.082c0 2.473.953 4.663 2.856 6.565l133.043 133.046c1.902 1.903 4.093 2.854 6.567 2.854s4.661-.951 6.562-2.854L282.082 89.647c1.902-1.903 2.847-4.093 2.847-6.565 0-2.475-.945-4.665-2.847-6.571z\"></path></svg>" : "<!---->"))], 2);
 };
 
 var __vue_staticRenderFns__$a = [];
@@ -1202,7 +1211,7 @@ var __vue_staticRenderFns__$a = [];
 
 var __vue_inject_styles__$a = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-61fab6ca_0", {
+  inject("data-v-d2531f76_0", {
     source: ".a-select{border:.1rem solid #e1e1e1;border-radius:.3rem;display:inline-flex;position:relative}.a-select-input{background:inherit;border:0;color:inherit;display:block;font-size:inherit;padding:.8rem 1.2rem;padding-right:5rem;width:100%}.a-select-input:focus{box-shadow:0 0 .6rem rgba(43,43,43,.4)}.a-select-arrow{bottom:0;fill:#e1e1e1;height:1.5rem;margin:auto;position:absolute;right:1rem;top:0;width:1.5rem}",
     map: undefined,
     media: undefined
@@ -1214,7 +1223,7 @@ var __vue_inject_styles__$a = function __vue_inject_styles__(inject) {
 var __vue_scope_id__$a = undefined;
 /* module identifier */
 
-var __vue_module_identifier__$a = "data-v-61fab6ca";
+var __vue_module_identifier__$a = "data-v-d2531f76";
 /* functional template */
 
 var __vue_is_functional_template__$a = false;
