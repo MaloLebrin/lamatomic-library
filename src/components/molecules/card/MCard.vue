@@ -70,7 +70,7 @@ $white: #fff;
             }
         }
 
-        > .link {
+        > .a-link {
             bottom: 0;
             color: $grey;
             left: 0;
