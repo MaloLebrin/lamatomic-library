@@ -87,35 +87,6 @@ describe('Atom - ALink', () => {
 
         expect(wrapper.vm.computedHref).toBe('tel:+33123456789')
 
-        wrapper.setProps({
-            href: '+33 123456789'
-        })
-
-        expect(wrapper.vm.computedHref).toBe('tel:+33 123456789')
-
-        wrapper.setProps({
-            href: '01 23 45 67 89'
-        })
-
-        expect(wrapper.vm.computedHref).toBe('tel:01 23 45 67 89')
-
-        wrapper.setProps({
-            href: '+33 1 23 45 67 89'
-        })
-
-        expect(wrapper.vm.computedHref).toBe('tel:+33 1 23 45 67 89')
-
-        wrapper.setProps({
-            href: '33123456789'
-        })
-
-        expect(wrapper.vm.computedHref).toBe('33123456789')
-
-        wrapper.setProps({
-            href: '+33 0123456789'
-        })
-
-        expect(wrapper.vm.computedHref).toBe('+33 0123456789')
     })
 
     test('...with rel = next', () => {
