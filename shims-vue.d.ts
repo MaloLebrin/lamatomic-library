@@ -6,3 +6,4 @@ declare module '*.vue' {
 declare module 'v-calendar'
 declare module 'vue-agile'
 declare module 'vue-typed-js'
+declare module 'vue-multiselect'
