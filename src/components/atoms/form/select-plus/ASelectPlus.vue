@@ -1,15 +1,13 @@
 <template>
   <div class="a-select-plus">
-    <slot />
     <MultiSelect
         v-model="value"
         :options="options"
-        :searchable="false"
-        :close-on-select="false"
-        :show-labels="false"
+        :searchable="searchable"
+        :close-on-select="closeOnSelect"
+        :show-labels="showLabels"
         :placeholder="placeholder"
     ></MultiSelect>
-    <slot name="bottom-slot"></slot>
   </div>
 </template>
 
@@ -19,17 +17,36 @@ import MultiSelect from 'vue-multiselect'
 
 export default Vue.extend({
     name: 'ASelectPlus',
+
     components: { MultiSelect },
+
     props: {
         options: {
-        type: Array,
-        required: true,
+            type: Array,
+            required: true,
         },
+
         placeholder: {
             type: String,
-            default: 'select option'
-        }
+            default: 'Sélectionner une option'
+        },
+
+        searchable: {
+            type: Boolean,
+            default: false
+        },
+
+        closeOnSelect: {
+            type: Boolean,
+            default: true
+        },
+
+        showLabels: {
+            type: Boolean,
+            default: false
+        },
     },
+
     data() {
         return {
             value: '',
@@ -41,14 +58,8 @@ export default Vue.extend({
 <style lang="scss">
 /* stylelint-disable selector-class-pattern */
 $primary: #009cde;
-$red: #d92550;
-$yellow: #ffce00;
-$green: #3ac47d;
 $white: #fff;
-$black: #2b2b2b;
-$dark-grey: #929292;
-$light-grey: #e1e1e1;
-$silver: rgba(192, 192, 192);
+$silver: #c0c0c0;
 
 .a-select-plus {
     .multiselect,
@@ -59,10 +70,28 @@ $silver: rgba(192, 192, 192);
         touch-action: manipulation;
     }
 
+    .multiselect__input,
+    .multiselect__single {
+        background: $white;
+        border: 0;
+        border-image: none;
+        border-radius: 5px;
+        box-sizing: border-box;
+        display: inline-block;
+        line-height: 20px;
+        min-height: 20px;
+        outline: none;
+        position: relative;
+        transition: border 0.1s ease;
+        vertical-align: top;
+        width: 100%;
+    }
+
     .multiselect {
         box-sizing: content-box;
         display: block;
         min-height: 40px;
+        outline: none;
         position: relative;
         text-align: left;
         width: 100%;
@@ -72,7 +101,7 @@ $silver: rgba(192, 192, 192);
             cursor: pointer;
             display: block;
             font-size: 1.4rem;
-            height: 38px;
+            height: 100%;
             line-height: 16px;
             margin: 0;
             padding: 4px 8px;
@@ -96,7 +125,6 @@ $silver: rgba(192, 192, 192);
                 top: 65%;
             }
         }
-
     }
 
     .multiselect--active {
@@ -108,22 +136,22 @@ $silver: rgba(192, 192, 192);
     }
 
     .multiselect__tags {
-        background: #fff;
+        align-items: center;
+        background: $white;
         border: 1px solid #e8e8e8;
         border-radius: 5px;
-        display: block;
+        display: flex;
         font-size: 14px;
         min-height: 40px;
-        padding: 8px 40px 0 8px;
+        padding: 0 40px 0 8px;
 
         .multiselect__single {
-            background: #fff;
+            background: $white;
             border: 0;
             border-radius: 5px;
             box-sizing: border-box;
             display: inline-block;
             line-height: 20px;
-            margin-bottom: 8px;
             min-height: 20px;
             padding: 0 0 0 5px;
             position: relative;
@@ -133,7 +161,7 @@ $silver: rgba(192, 192, 192);
     }
 
     .multiselect__content-wrapper {
-        background: #fff;
+        background: $white;
         border: 1px solid #e8e8e8;
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
@@ -155,6 +183,7 @@ $silver: rgba(192, 192, 192);
     }
 
     .multiselect__option {
+        align-items: center;
         cursor: pointer;
         display: flex;
         line-height: 16px;
