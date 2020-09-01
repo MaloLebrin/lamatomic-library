@@ -128,7 +128,6 @@ $silver: rgba(192, 192, 192);
             padding: 0 0 0 5px;
             position: relative;
             transition: border 0.1s ease;
-            vertical-align: top;
             width: 100%;
         }
     }
