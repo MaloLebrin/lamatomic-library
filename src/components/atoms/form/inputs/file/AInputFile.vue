@@ -2,7 +2,7 @@
     <ALabel :html-for="id" class="a-input-file-wrapper">
         <AButton custom-tag="div" class="a-select-button">
             <AText v-if="value && value.name" span>Fichier sélectionné : {{ value.name }}</AText>
-            <AText v-else span>Choisir un fichier</AText>
+            <AText v-else span>{{ placeholder }}</AText>
         </AButton>
 
         <AInput
@@ -52,6 +52,10 @@ export default Vue.extend({
             type: Boolean,
             default: false
         },
+        placeholder: {
+            type: String,
+            default: 'choisir un fichier'
+        }
     },
 
     data() {
