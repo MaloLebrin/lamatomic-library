@@ -11,7 +11,7 @@ storiesOf('Atoms/Form/FormGroup', module)
   .add('default as FormGroup', () => ({
     ...wrapper,
     template: `<AInputGroup>
-                    <template #preprend>
+                    <template #prepend>
                         <AIcon
                             :iconName="iconName"
                             :iconColor="iconColor"
