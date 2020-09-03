@@ -54,7 +54,7 @@ export default Vue.extend({
         },
         placeholder: {
             type: String,
-            default: 'choisir un fichier'
+            default: 'Choisir un fichier'
         }
     },
 

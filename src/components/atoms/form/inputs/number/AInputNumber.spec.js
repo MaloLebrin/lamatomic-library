@@ -5,7 +5,7 @@ const factory = () => {
     return mount(AInputNumber, {
         data() {
             return {
-                nnumber: '7485'
+                number: '7485'
             }
         }
     })
@@ -40,4 +40,41 @@ describe('Atom - AInputNumber', () => {
 
         expect(wrapper.vm.isNumberValid).toBeFalsy()
     })
+    test (' min & max are number ', () => {
+        const wrapper = factory()
+
+        wrapper.vm.min = 10
+        wrapper.vm.max = 20
+
+        expect(wrapper.vm.min).toBeLessThan(wrapper.vm.max)
+        expect(wrapper.vm.min).toBe(10)
+        expect(wrapper.vm.max).toBeGreaterThan(wrapper.vm.min)
+        expect(wrapper.vm.max).toBe(20)
+    })
+    test('...regex check correctly the given number', () => {
+        const wrapper = factory()
+
+        const regexNumber = wrapper.vm.REGEX_NUMBER
+
+        wrapper.setData({
+            number: '2'
+        })
+        expect(wrapper.vm.number).toMatch(regexNumber)
+
+        wrapper.setData({
+            number: 'er'
+        })
+        expect(wrapper.vm.number).not.toMatch(regexNumber)
+    })
+
+    test('...number pass the checknumber function and correctly populate "isnumberValid" data', () => {
+        const wrapper = factory()
+
+        expect(wrapper.vm.isNumberValid).toBeTruthy()
+
+        wrapper.vm.number = "Ceci n'est pas un number, ni une banane d'ailleurs"
+
+        expect(wrapper.vm.isNumberValid).toBeFalsy()
+    })
+
 })
