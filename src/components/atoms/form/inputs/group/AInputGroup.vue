@@ -18,13 +18,6 @@ import Vue from 'vue'
 export default Vue.extend({
     name: 'AInputGroup',
 
-    props: {
-        id: {
-            type: String,
-            default: null,
-        },
-    },
-
     computed: {
         hasSlotPrepend(this: any) {
             return !!this.$slots.prepend && !!this.$slots.prepend[0]
@@ -42,7 +35,8 @@ export default Vue.extend({
     display: inline-block;
     position: relative;
 
-    .prepend.append {
+    .prepend,
+    .append {
         margin: auto;
         padding: 6px;
         position: absolute;

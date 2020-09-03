@@ -12,7 +12,7 @@ describe('Atom - AInputGroup', () => {
     test('...with just 2 slots used', () => {
         const wrapper = shallowMount(AInputGroup, {
             slots: {
-                'prepend': '<div><p>/p></div>',
+                'prepend': '<div><p></p></div>',
                 'append': '<div><p></p></div>'
             }
         })
@@ -25,15 +25,6 @@ describe('Atom - AInputGroup', () => {
         expect(wrapper.html()).toContain(
             `<div class="append"`
         )
-    })
-    test('...regex check correctly the given tel', () => {
-        const wrapper = shallowMount(AInputGroup, {
-            slots: {
-                'prepend': '<div><p>/p></div>',
-                'append': '<div><p></p></div>'
-            }
-        })
-
         expect(wrapper.vm.hasSlotPrepend).toBeTruthy()
         expect(wrapper.vm.hasSlotAppend).toBeTruthy()
     })

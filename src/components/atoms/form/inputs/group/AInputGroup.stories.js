@@ -13,10 +13,10 @@ storiesOf('Atoms/Form/FormGroup', module)
     template: `<AInputGroup>
                     <template #preprend>
                         <AIcon
-                        :iconName="iconName"
-                        :iconColor="iconColor"
-                        :width="size"
-                        :height="size"
+                            :iconName="iconName"
+                            :iconColor="iconColor"
+                            :width="size"
+                            :height="size"
                         >
                             <path class="st0" d="M424.7,4.5c-8-9.2-23.1-3.5-23.1,8.6v36.7c-18-11.2-41.2-11.6-59.7,0.2V13.1c0-12.1-15.1-17.8-23.1-8.6
                                 c-16.1,18.5-23.2,36.7-21,54.2c2.1,16.5,11.9,27.5,17.5,32.5c-0.8,5.7-0.6-6.9-0.6,170.9c0,21.7-17.5,39.1-39,39.1
@@ -43,10 +43,10 @@ storiesOf('Atoms/Form/FormGroup', module)
                     <AInputText :placeholder="null" />
                     <template #append>
                         <AIcon
-                        :iconName="iconName"
-                        :iconColor="iconColor"
-                        :width="size"
-                        :height="size"
+                            :iconName="iconName"
+                            :iconColor="iconColor"
+                            :width="size"
+                            :height="size"
                         >
                             <path class="st0" d="M424.7,4.5c-8-9.2-23.1-3.5-23.1,8.6v36.7c-18-11.2-41.2-11.6-59.7,0.2V13.1c0-12.1-15.1-17.8-23.1-8.6
                                 c-16.1,18.5-23.2,36.7-21,54.2c2.1,16.5,11.9,27.5,17.5,32.5c-0.8,5.7-0.6-6.9-0.6,170.9c0,21.7-17.5,39.1-39,39.1
