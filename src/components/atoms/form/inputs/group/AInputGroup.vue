@@ -1,7 +1,7 @@
 <template>
     <div class="a-input-group">
-        <div v-if="hasSlotPreprend" class="preprend">
-           <slot name="preprend" />
+        <div v-if="hasSlotPrepend" class="prepend">
+           <slot name="prepend" />
         </div>
 
         <slot />
@@ -26,8 +26,8 @@ export default Vue.extend({
     },
 
     computed: {
-        hasSlotPreprend(this: any) {
-            return !!this.$slots.preprend && !!this.$slots.preprend[0]
+        hasSlotPrepend(this: any) {
+            return !!this.$slots.prepend && !!this.$slots.prepend[0]
         },
 
         hasSlotAppend(this: any) {
@@ -42,17 +42,13 @@ export default Vue.extend({
     display: inline-block;
     position: relative;
 
-    .preprend {
+    .prepend.append {
         margin: auto;
         padding: 6px;
         position: absolute;
-
     }
 
     .append {
-        margin: auto;
-        padding: 6px;
-        position: absolute;
         right: 0;
         top: 0;
     }
