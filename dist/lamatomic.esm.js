@@ -3044,6 +3044,13 @@ var script$s = Vue.extend({
       type: Boolean,
       default: false
     }
+  },
+  computed: {
+    tag() {
+      if (this.isLink) return 'ALink';
+      return 'div';
+    }
+
   }
 });
 
@@ -3058,19 +3065,19 @@ var __vue_render__$s = function () {
 
   var _c = _vm._self._c || _h;
 
-  return _c('div', {
+  return _c(_vm.tag, {
+    tag: "component",
     staticClass: "m-card",
     class: {
       'is-link': _vm.isLink,
       'no-anim': _vm.noAnim
-    }
-  }, [_vm.isLink ? _c('ALink', {
+    },
     attrs: {
       "to": _vm.to,
       "href": _vm.href,
-      "no-line": ""
+      "no-line": _vm.isLink
     }
-  }, [_vm._t("default")], 2) : _c('div', [_vm._t("default")], 2)], 1);
+  }, [_vm._t("default")], 2);
 };
 
 var __vue_staticRenderFns__$s = [];
@@ -3078,8 +3085,8 @@ var __vue_staticRenderFns__$s = [];
 
 const __vue_inject_styles__$s = function (inject) {
   if (!inject) return;
-  inject("data-v-219b4af0_0", {
-    source: ".m-card{background-color:#fff;border-radius:1rem;box-shadow:0 2px 4px rgba(0,0,0,.25);margin-bottom:2rem;overflow:hidden;padding:2rem;transition:all .3s ease-in-out}.m-card.is-link:hover{cursor:pointer}.m-card.is-link:hover a{color:#009cde}.m-card.is-link>.a-link{bottom:0;color:#333;left:0;position:absolute;right:0;top:0}.m-card:not(.no-anim):hover{box-shadow:0 4px 8px rgba(0,0,0,.25)}",
+  inject("data-v-7afb5b0c_0", {
+    source: ".m-card{background-color:#fff;border-radius:1rem;box-shadow:0 2px 4px rgba(0,0,0,.25);margin-bottom:2rem;overflow:hidden;padding:2rem;transition:all .3s ease-in-out}.m-card.is-link:hover{cursor:pointer}.m-card.is-link:hover a{color:#009cde}.m-card:not(.no-anim):hover{box-shadow:0 4px 8px rgba(0,0,0,.25)}",
     map: undefined,
     media: undefined
   });
