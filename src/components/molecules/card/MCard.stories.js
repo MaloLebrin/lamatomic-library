@@ -4,11 +4,7 @@ import { action } from '@storybook/addon-actions'
 
 import MCard from './MCard.vue'
 
-const wrapper = {
-    components: { MCard }
-}
-
-storiesOf('Molecules/Card', module)
+storiesOf('Molecules', module)
     .addDecorator(withKnobs)
     .addParameters({ component: MCard })
 
