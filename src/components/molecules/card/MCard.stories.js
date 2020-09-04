@@ -1,4 +1,7 @@
 import { storiesOf } from '@storybook/vue'
+import { withKnobs, text, boolean } from '@storybook/addon-knobs'
+import { action } from '@storybook/addon-actions'
+
 import MCard from './MCard.vue'
 
 const wrapper = {
@@ -6,22 +9,55 @@ const wrapper = {
 }
 
 storiesOf('Molecules/Card', module)
+    .addDecorator(withKnobs)
     .addParameters({ component: MCard })
 
-    .add("Card simple", () => ({
-        ...wrapper,
-        template:
-            `<MCard><p>Voici une Card simple</p></MCard>`
-    }))
+    .add('Cards',() => ({
+        components: { MCard },
 
-    .add("Card link", () => ({
-        ...wrapper,
-        template:
-            `<MCard isLink to="contact"> Voici une Card link</MCard>`
-    }))
+        props: {
+            to: {
+                type: String,
+                default: text('to', null)
+            },
 
-    .add("Card sans anim", () => ({
-        ...wrapper,
+            href: {
+                type: String,
+                default: text('href', null)
+            },
+
+            slot: {
+                type: String,
+                default: text('Icon name', 'Lamacaaaaaard')
+            },
+
+            isLink: {
+                type: Boolean,
+                default: boolean('Link ?', false)
+            },
+
+            noAnim: {
+                type: Boolean,
+                default: boolean('Without anim', false)
+            },
+        },
+
         template:
-            `<MCard noAnim to="contact"> Une card encore plus simple</MCard>`
-    }))
+            `
+            <MCard
+                :to="to"
+                :href="href"
+                :isLink="isLink"
+                :noAnim="noAnim"
+                @click="action"
+            >
+                {{ slot }}
+            </MCard>
+            `,
+
+        methods: { action: action('AMCard clicked') },
+
+
+        }),
+        { info: true }
+    )

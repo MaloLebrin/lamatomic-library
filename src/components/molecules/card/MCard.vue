@@ -73,15 +73,6 @@ $white: #fff;
                 color: $primary;
             }
         }
-
-        > .a-link {
-            bottom: 0;
-            color: $grey;
-            left: 0;
-            position: absolute;
-            right: 0;
-            top: 0;
-        }
     }
 
     &:not(.no-anim) {
