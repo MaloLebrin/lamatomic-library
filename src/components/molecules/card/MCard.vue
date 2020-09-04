@@ -4,7 +4,7 @@
     :class="{ 'is-link': isLink, 'no-anim': noAnim }"
     :to="to"
     :href="href"
-    no-line>
+    :no-line="isLink">
         <slot />
     </component>
 </template>
