@@ -76,13 +76,13 @@ export default Vue.extend({
             }
         },
 
-        /** "styles" prop - dark or light */
+        /** "styles" prop - white, light or dark */
         styles: {
             type: String,
             default: null,
             required: false,
             validator(value) {
-                return ['light', 'dark'].includes(value)
+                return ['white', 'light', 'dark'].includes(value)
             }
         },
 
@@ -217,7 +217,7 @@ $light-grey: #e1e1e1;
         }
     }
 
-    &.light {
+    &.white {
         background-color: $white;
         border-color: $white;
         color: $primary;
@@ -225,6 +225,18 @@ $light-grey: #e1e1e1;
         &:hover,
         &:focus {
             background-color: $primary;
+            color: $white;
+        }
+    }
+
+    &.light {
+        background-color: $white;
+        border-color: $white;
+        color: $black;
+
+        &:hover,
+        &:focus {
+            background-color: $black;
             color: $white;
         }
     }

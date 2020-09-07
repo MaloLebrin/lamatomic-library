@@ -176,11 +176,12 @@ describe('Atom - AButton', () => {
         expect(state.validator(8)).toBeFalsy()
     })
 
-    test("...styles not in [light, dark] doesn't work", () => {
+    test("...styles not in [white, light, dark] doesn't work", () => {
         const wrapper = mount(AButton)
         const styles = wrapper.vm.$options.props.styles
 
         expect(styles.validator).toBeInstanceOf(Function)
+        expect(styles.validator('white')).toBeTruthy()
         expect(styles.validator('light')).toBeTruthy()
         expect(styles.validator('dark')).toBeTruthy()
         expect(styles.validator('banana')).toBeFalsy()
