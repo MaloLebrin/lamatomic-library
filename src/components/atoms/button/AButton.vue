@@ -94,10 +94,7 @@ export default Vue.extend({
 
         customTag: {
             type: String,
-            default: null,
-            validator(value) {
-                return ['button', 'a', 'div', 'span', 'i'].includes(value)
-            }
+            default: null
         }
     },
 
