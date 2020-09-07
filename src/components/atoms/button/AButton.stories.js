@@ -31,7 +31,7 @@ storiesOf('Atoms', module)
                 type: String,
                 default: options(
                     'Styles',
-                    { 'No styles': null, Light: 'light', Dark: 'dark' },
+                    { 'No styles': null, White: 'white', Light: 'light', Dark: 'dark' },
                     null,
                     { display: 'radio' }
                 )
