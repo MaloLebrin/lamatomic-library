@@ -1,6 +1,6 @@
 <template>
   <div class="a-select-plus">
-    <slot />
+    <slot name="top-slot" />
     <MultiSelect
         v-model="value"
         :options="options"
@@ -8,7 +8,9 @@
         :close-on-select="false"
         :show-labels="false"
         :placeholder="placeholder"
-    ></MultiSelect>
+    >
+        <slot />
+    </MultiSelect>
     <slot name="bottom-slot"></slot>
   </div>
 </template>
