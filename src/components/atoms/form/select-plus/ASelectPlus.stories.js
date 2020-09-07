@@ -5,10 +5,10 @@ const wrapper = {
   components: { ASelectPlus }
 }
 
-storiesOf('Atoms/Form/SelectPlus', module)
+storiesOf('Atoms/Form/Selects', module)
     .addParameters({ component: ASelectPlus })
 
-    .add('default', () => ({
+    .add('Select Plus', () => ({
         ...wrapper,
         template: `
         <div>

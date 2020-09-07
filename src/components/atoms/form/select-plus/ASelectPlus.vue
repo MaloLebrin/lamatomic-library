@@ -51,6 +51,8 @@ $light-grey: #e1e1e1;
 $silver: rgba(192, 192, 192);
 
 .a-select-plus {
+    cursor: pointer;
+
     .multiselect,
     .multiselect__input,
     .multiselect__single {
@@ -155,7 +157,6 @@ $silver: rgba(192, 192, 192);
     }
 
     .multiselect__option {
-        cursor: pointer;
         display: flex;
         line-height: 16px;
         min-height: 40px;
