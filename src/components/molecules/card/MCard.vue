@@ -60,6 +60,7 @@ $white: #fff;
     background-color: $white;
     border-radius: 1rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    display: block;
     margin-bottom: 2rem;
     overflow: hidden;
     padding: 2rem;
