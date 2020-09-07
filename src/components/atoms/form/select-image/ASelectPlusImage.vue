@@ -1,6 +1,6 @@
 <template>
-  <div class="a-select-image a-select-plus">
-    <slot />
+  <div class="a-select-plus a-select-plus-image">
+    <slot name="top-solt"/>
     <multiselect v-bind="allBindings" :options="options" :placeholder="placeholder" v-on="$listeners">
         <template slot="singleLabel" slot-scope="{ option }">
         <img class="option__image" :src="option.img" alt="img to select" />
@@ -26,7 +26,7 @@ import Vue from 'vue'
 import Multiselect from "vue-multiselect";
 
 export default Vue.extend({
-    name: 'ASelectImage',
+    name: 'ASelectPlusImage',
     components: { Multiselect },
     props: {
         options: {
@@ -49,7 +49,7 @@ export default Vue.extend({
 
 <style lang="scss">
 /* stylelint-disable selector-class-pattern */
-.a-select-image {
+.a-select-plus-image {
     .multiselect {
         input {
             display: none;

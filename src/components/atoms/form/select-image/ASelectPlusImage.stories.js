@@ -1,18 +1,18 @@
 import { storiesOf } from '@storybook/vue'
-import ASelectImage from './ASelectImage.vue'
+import ASelectPlusImage from './ASelectPlusImage.vue'
 
 const wrapper = {
-  components: { ASelectImage }
+  components: { ASelectPlusImage }
 }
 
 storiesOf('Atoms/Form/Selects', module)
-    .addParameters({ component: ASelectImage })
+    .addParameters({ component: ASelectPlusImage })
 
     .add('Select Image', () => ({
         ...wrapper,
         template: `
         <div>
-            <ASelectImage v-model="imageValue"
+            <ASelectPlusImage v-model="imageValue"
             :options="imageOptions"
             label="title"
             track-by="title"
