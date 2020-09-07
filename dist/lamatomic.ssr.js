@@ -2850,8 +2850,8 @@ var __vue_staticRenderFns__$s = [];
 
 var __vue_inject_styles__$s = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-7afb5b0c_0", {
-    source: ".m-card{background-color:#fff;border-radius:1rem;box-shadow:0 2px 4px rgba(0,0,0,.25);margin-bottom:2rem;overflow:hidden;padding:2rem;transition:all .3s ease-in-out}.m-card.is-link:hover{cursor:pointer}.m-card.is-link:hover a{color:#009cde}.m-card:not(.no-anim):hover{box-shadow:0 4px 8px rgba(0,0,0,.25)}",
+  inject("data-v-1ac6f7f8_0", {
+    source: ".m-card{background-color:#fff;border-radius:1rem;box-shadow:0 2px 4px rgba(0,0,0,.25);display:block;margin-bottom:2rem;overflow:hidden;padding:2rem;transition:all .3s ease-in-out}.m-card.is-link:hover{cursor:pointer}.m-card.is-link:hover a{color:#009cde}.m-card:not(.no-anim):hover{box-shadow:0 4px 8px rgba(0,0,0,.25)}",
     map: undefined,
     media: undefined
   });
@@ -2862,7 +2862,7 @@ var __vue_inject_styles__$s = function __vue_inject_styles__(inject) {
 var __vue_scope_id__$s = undefined;
 /* module identifier */
 
-var __vue_module_identifier__$s = "data-v-7afb5b0c";
+var __vue_module_identifier__$s = "data-v-1ac6f7f8";
 /* functional template */
 
 var __vue_is_functional_template__$s = false;
