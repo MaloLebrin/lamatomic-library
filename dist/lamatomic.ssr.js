@@ -124,13 +124,13 @@ function _nonIterableRest() {
       }
     },
 
-    /** "styles" prop - dark or light */
+    /** "styles" prop - white, light or dark */
     styles: {
       type: String,
       default: null,
       required: false,
       validator: function validator(value) {
-        return ['light', 'dark'].includes(value);
+        return ['white', 'light', 'dark'].includes(value);
       }
     },
 
@@ -141,10 +141,7 @@ function _nonIterableRest() {
     },
     customTag: {
       type: String,
-      default: null,
-      validator: function validator(value) {
-        return ['button', 'a', 'div', 'span', 'i'].includes(value);
-      }
+      default: null
     }
   },
   computed: {
@@ -343,8 +340,8 @@ var __vue_staticRenderFns__ = [];
 
 var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-6399f3c3_0", {
-    source: ".a-button{animation:1s appear;background-color:#009cde;border:2px solid #009cde;border-radius:5px;color:#fff;cursor:pointer;display:inline-block;fill:#fff;font-size:.8rem;font-size:1.2rem;font-weight:500;letter-spacing:1.5px;line-height:1;margin:auto;padding:10px;padding:10px 30px;text-decoration:none;text-transform:none;transition:.3s all ease}.a-button.success{background-color:#3ac47d;border-color:#3ac47d}.a-button.success:focus,.a-button.success:hover{color:#3ac47d}.a-button.error{background-color:#d92550;border-color:#d92550}.a-button.error:focus,.a-button.error:hover{color:#d92550}.a-button.warning{background-color:#ffce00;border-color:#ffce00}.a-button.warning:focus,.a-button.warning:hover{color:#ffce00}.a-button.light{background-color:#fff;border-color:#fff;color:#009cde}.a-button.light:focus,.a-button.light:hover{background-color:#009cde;color:#fff}.a-button.dark{background-color:#2b2b2b;border-color:#2b2b2b;color:#fff}.a-button.dark:focus,.a-button.dark:hover{background-color:#fff;color:#2b2b2b}.a-button.color-black{color:#2b2b2b}.a-button.color-black:focus,.a-button.color-black:hover{background-color:#2b2b2b;color:#fff}.a-button.color-white{color:#fff}.a-button.no-border{border:0}.a-button.border-black{border:solid 1px #2b2b2b}.a-button:focus,.a-button:hover{background-color:#fff;color:#009cde;text-decoration:none}.a-button.disabled,.a-button.disabled:focus,.a-button.disabled:hover{background-color:#929292;border-color:#929292;color:#e1e1e1;cursor:not-allowed;display:inline-block;text-decoration:none}",
+  inject("data-v-aefe090c_0", {
+    source: ".a-button{animation:1s appear;background-color:#009cde;border:2px solid #009cde;border-radius:5px;color:#fff;cursor:pointer;display:inline-block;fill:#fff;font-size:.8rem;font-size:1.2rem;font-weight:500;letter-spacing:1.5px;line-height:1;margin:auto;padding:10px;padding:10px 30px;text-decoration:none;text-transform:none;transition:.3s all ease}.a-button.success{background-color:#3ac47d;border-color:#3ac47d}.a-button.success:focus,.a-button.success:hover{color:#3ac47d}.a-button.error{background-color:#d92550;border-color:#d92550}.a-button.error:focus,.a-button.error:hover{color:#d92550}.a-button.warning{background-color:#ffce00;border-color:#ffce00}.a-button.warning:focus,.a-button.warning:hover{color:#ffce00}.a-button.white{background-color:#fff;border-color:#fff;color:#009cde}.a-button.white:focus,.a-button.white:hover{background-color:#009cde;color:#fff}.a-button.light{background-color:#fff;border-color:#fff;color:#2b2b2b}.a-button.light:focus,.a-button.light:hover{background-color:#2b2b2b;color:#fff}.a-button.dark{background-color:#2b2b2b;border-color:#2b2b2b;color:#fff}.a-button.dark:focus,.a-button.dark:hover{background-color:#fff;color:#2b2b2b}.a-button.color-black{color:#2b2b2b}.a-button.color-black:focus,.a-button.color-black:hover{background-color:#2b2b2b;color:#fff}.a-button.color-white{color:#fff}.a-button.no-border{border:0}.a-button.border-black{border:solid 1px #2b2b2b}.a-button:focus,.a-button:hover{background-color:#fff;color:#009cde;text-decoration:none}.a-button.disabled,.a-button.disabled:focus,.a-button.disabled:hover{background-color:#929292;border-color:#929292;color:#e1e1e1;cursor:not-allowed;display:inline-block;text-decoration:none}",
     map: undefined,
     media: undefined
   });
@@ -355,7 +352,7 @@ var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
 var __vue_scope_id__ = undefined;
 /* module identifier */
 
-var __vue_module_identifier__ = "data-v-6399f3c3";
+var __vue_module_identifier__ = "data-v-aefe090c";
 /* functional template */
 
 var __vue_is_functional_template__ = false;
