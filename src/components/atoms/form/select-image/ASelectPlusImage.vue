@@ -1,23 +1,25 @@
 <template>
   <div class="a-select-plus a-select-plus-image">
-    <slot name="top-solt"/>
+    <slot name="topSlot" />
+
     <multiselect v-bind="allBindings" :options="options" :placeholder="placeholder" v-on="$listeners">
         <template slot="singleLabel" slot-scope="{ option }">
-        <img class="option__image" :src="option.img" alt="img to select" />
-        <span class="option__desc">
-            <span class="option__title">{{ option.title }}</span>
-        </span>
+            <img class="option__image" :src="option.img" alt="img to select" />
+            <span class="option__desc">
+                <span class="option__title">{{ option.title }}</span>
+            </span>
         </template>
 
         <template slot="option" slot-scope="{ option }">
-        <img class="option__image" :src="option.img" alt="img to select" />
-        <span class="option__desc">
-            <span class="option__title">{{ option.title }}</span>
-            <span class="option__small">{{ option.desc }}</span>
-        </span>
+            <img class="option__image" :src="option.img" alt="img to select" />
+            <span class="option__desc">
+                <span class="option__title">{{ option.title }}</span>
+                <span class="option__small">{{ option.desc }}</span>
+            </span>
         </template>
     </multiselect>
-    <slot name="bottom-slot"></slot>
+
+    <slot name="bottomSlot"></slot>
   </div>
 </template>
 
@@ -27,22 +29,27 @@ import Multiselect from "vue-multiselect";
 
 export default Vue.extend({
     name: 'ASelectPlusImage',
+
     components: { Multiselect },
+
     props: {
         options: {
             type: Array,
-            required: true,
+            default: null,
         },
+
         placeholder: {
             type: String,
             default: 'selectionne ton image'
         }
+
     },
+
     computed: {
-    allBindings() {
-      // Need to proxify both props and attrs, for example for showLabels
-      return { ...this.$props, ...this.$attrs };
-    }
+        allBindings() {
+            // Need to proxify both props and attrs, for example for showLabels
+            return { ...this.$props, ...this.$attrs };
+        }
   }
 })
 </script>
@@ -54,7 +61,6 @@ export default Vue.extend({
         input {
             display: none;
             width: 100% !important;
-
         }
 
         .option__desc,

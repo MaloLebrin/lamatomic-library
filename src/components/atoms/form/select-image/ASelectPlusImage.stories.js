@@ -25,17 +25,17 @@ storiesOf('Atoms/Form/Selects', module)
                     {
                       title: "Random image",
                       desc: "Lorem ipsum dolo",
-                      img: "https://picsum.photos/300/150"
+                      uri: "https://picsum.photos/300/150"
                     },
                     {
                       title: "Cool image",
                       desc: "Accusantium veritatis nesciunt quaerat debitis",
-                      img: "https://picsum.photos/300/151"
+                      uri: "https://picsum.photos/300/151"
                     },
                     {
                       title: "Another cool one",
                       desc: "Sit amet consectetur adipisicing elit",
-                      img: "https://picsum.photos/300/152"
+                      uri: "https://picsum.photos/300/152"
                     }
                   ]
             }

@@ -1,4 +1,4 @@
-import { mount } from '@vue/test-utils'
+import { mount, shallowMount } from '@vue/test-utils'
 import ASelectPlusImage from './ASelectPlusImage.vue'
 
 describe('Atoms/ASelectPlusImage', () => {
@@ -18,4 +18,37 @@ describe('Atoms/ASelectPlusImage', () => {
     expect(wrapper.html()).toContain('<ul class="multiselect__content"')
     expect(wrapper.html()).toContain('<li class="multiselect__element"')
     })
+    test('...with just 1 slot used', () => {
+        const wrapper = shallowMount(ASelectPlusImage, {
+            slots: {
+                topSlot: '<div><p>slot 1</p></div>',
+            },
+        })
+
+        expect(wrapper.html()).toContain(`<p>slot 1</p>`)
+        expect(wrapper.html()).not.toContain(`<p>slot 2</p>`)
+    })
+    test('...with just 2 slot used', () => {
+        const wrapper = shallowMount(ASelectPlusImage, {
+            slots: {
+                topSlot: '<div><p>slot 1</p></div>',
+                bottomSlot: '<div><p>slot 2</p></div>'
+            },
+        })
+
+        expect(wrapper.html()).toContain(`<p>slot 1</p>`)
+        expect(wrapper.html()).toContain(`<p>slot 2</p>`)
+    })
+    test('...with just 1 slot used', () => {
+        const wrapper = shallowMount(ASelectPlusImage, {
+            slots: {
+                bottomSlot: '<div><p>slot 2</p></div>'
+            },
+        })
+
+        expect(wrapper.html()).not.toContain(`<p>slot 1</p>`)
+        expect(wrapper.html()).toContain(`<p>slot 2</p>`)
+    })
+
+
 })

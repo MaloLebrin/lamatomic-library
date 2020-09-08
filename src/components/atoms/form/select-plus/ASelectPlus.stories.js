@@ -11,10 +11,10 @@ storiesOf('Atoms/Form/Selects', module)
     .add('Select Plus', () => ({
         ...wrapper,
         template: `
-        <div>
-            <ASelectPlus :options="options" placeholder="sélectionner" />
+            <div>
+                <ASelectPlus :options="options" placeholder="sélectionner" />
 
-        </div>`,
+            </div>`,
         data () {
             return {
                 options: ['Option A','Option B','Option C','Option D']
