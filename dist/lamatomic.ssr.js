@@ -1413,7 +1413,7 @@ var __vue_render__$c = function __vue_render__() {
         return [_c('img', {
           staticClass: "option__image",
           attrs: {
-            "src": option.img,
+            "src": option.uri,
             "alt": "img to select"
           }
         }), _vm._v(" "), _c('span', {
@@ -1429,7 +1429,7 @@ var __vue_render__$c = function __vue_render__() {
         return [_c('img', {
           staticClass: "option__image",
           attrs: {
-            "src": option.img,
+            "src": option.uri,
             "alt": "img to select"
           }
         }), _vm._v(" "), _c('span', {
@@ -1449,7 +1449,7 @@ var __vue_staticRenderFns__$c = [];
 
 var __vue_inject_styles__$c = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-94eebfee_0", {
+  inject("data-v-18421f77_0", {
     source: ".a-select-plus-image .multiselect input{display:none;width:100%!important}.a-select-plus-image .multiselect .option__desc,.a-select-plus-image .multiselect .option__image{display:inline-block;list-style:none;vertical-align:middle}.a-select-plus-image .multiselect .multiselect__content{display:flex!important}.a-select-plus-image .multiselect .multiselect__option,.a-select-plus-image .multiselect .multiselect__option--highlight{display:inline-grid}",
     map: undefined,
     media: undefined
@@ -1461,7 +1461,7 @@ var __vue_inject_styles__$c = function __vue_inject_styles__(inject) {
 var __vue_scope_id__$c = undefined;
 /* module identifier */
 
-var __vue_module_identifier__$c = "data-v-94eebfee";
+var __vue_module_identifier__$c = "data-v-18421f77";
 /* functional template */
 
 var __vue_is_functional_template__$c = false;
