@@ -1,11 +1,11 @@
-import { mount } from '@vue/test-utils'
+import { mount, shallowMount } from '@vue/test-utils'
 import MCard from './MCard.vue'
 
 describe('Molecule - MCard', () => {
     test('...default has <div> tag', () => {
         const wrapper = mount(MCard)
 
-        expect(wrapper.html()).toContain(`<div class="m-card">`)
+        expect(wrapper.html()).toContain(`<div class="m-card"></div>`)
     })
 
     test('...with link has <a> tag', () => {
@@ -15,7 +15,7 @@ describe('Molecule - MCard', () => {
             }
         })
 
-        expect(wrapper.html()).toBe(`<div class="m-card is-link"><a class="a-link"></a></div>`)
+        expect(wrapper.html()).toBe(`<a class="a-link m-card is-link"></a>`)
     })
 
     test('...without anim', () => {
@@ -23,7 +23,7 @@ describe('Molecule - MCard', () => {
             propsData: { noAnim: true }
         })
 
-        expect(wrapper.html()).toContain(`<div class="m-card no-anim">`)
+        expect(wrapper.html()).toContain(`<div class="m-card no-anim"></div>`)
     })
 
     test('...with link and noAnim', () => {
@@ -34,6 +34,18 @@ describe('Molecule - MCard', () => {
             }
         })
 
-        expect(wrapper.html()).toBe(`<div class="m-card is-link no-anim"><a class="a-link"></a></div>`)
+        expect(wrapper.html()).toBe(`<a class="a-link m-card is-link no-anim"></a>`)
+    })
+
+    test('...with mail valid then not valid', () => {
+        const wrapper = shallowMount(MCard)
+
+        expect(wrapper.vm.tag).toBe('div')
+
+        wrapper.setProps({
+            isLink: true
+        })
+
+        expect(wrapper.vm.tag).toBe('ALink')
     })
 })

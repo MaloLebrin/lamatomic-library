@@ -6,6 +6,7 @@
             class="a-input-radio"
             :value="value"
             :checked="shouldBeChecked"
+            :name="name"
             @change="toggle"
         />
 
@@ -46,6 +47,10 @@ export default Vue.extend({
             type: String,
             default: undefined
         },
+        name: {
+            type: String,
+            default: null
+        }
     },
 
     computed: {

@@ -1,18 +1,12 @@
 <template>
-    <div class="m-card" :class="{ 'is-link': isLink, 'no-anim': noAnim }">
-        <ALink
-            v-if="isLink"
-            :to="to"
-            :href="href"
-            no-line
-        >
-            <slot />
-        </ALink>
-
-        <div v-else>
-            <slot />
-        </div>
-    </div>
+    <component
+    :is="tag" class="m-card"
+    :class="{ 'is-link': isLink, 'no-anim': noAnim }"
+    :to="to"
+    :href="href"
+    :no-line="isLink">
+        <slot />
+    </component>
 </template>
 
 <script lang="ts">
@@ -21,9 +15,11 @@ import ALink from '../../atoms/link/ALink.vue'
 
 export default Vue.extend({
     name: 'MCard',
+
     components: {
         ALink
     },
+
     props: {
         /** "to" prop for vue-router - renders a <a> */
         href: {
@@ -42,6 +38,14 @@ export default Vue.extend({
             type: Boolean,
             default: false
         }
+    },
+
+    computed: {
+        tag(): String {
+            if (this.isLink) return 'ALink'
+
+            return 'div'
+        }
     }
 })
 
@@ -56,6 +60,7 @@ $white: #fff;
     background-color: $white;
     border-radius: 1rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    display: block;
     margin-bottom: 2rem;
     overflow: hidden;
     padding: 2rem;
@@ -68,15 +73,6 @@ $white: #fff;
             a {
                 color: $primary;
             }
-        }
-
-        > .link {
-            bottom: 0;
-            color: $grey;
-            left: 0;
-            position: absolute;
-            right: 0;
-            top: 0;
         }
     }
 

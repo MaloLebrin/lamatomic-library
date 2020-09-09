@@ -158,6 +158,10 @@ $white: #fff;
     font-weight: bold;
     text-decoration: none;
 
+    &:hover {
+        text-decoration: none;
+    }
+
     &.underlined {
         background-image: linear-gradient(to right, $yellow 0, $yellow 100%);
         background-position: 0 1.2em;

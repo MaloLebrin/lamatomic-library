@@ -57,7 +57,8 @@ const external = [
     'vue',
     'v-calendar',
     'vue-agile',
-    'vue-typed-js'
+    'vue-typed-js',
+    'vue-multiselect'
 ]
 
 // UMD/IIFE shared settings: output.globals
@@ -68,7 +69,8 @@ const globals = {
     vue: 'Vue',
     'v-calendar': 'VCalendar',
     'vue-agile': 'VueAgile',
-    'vue-typed-js': 'vue-typed-js'
+    'vue-typed-js': 'vue-typed-js',
+    'vue-multiselect': 'MultiSelect'
 }
 
 // Customize configs for individual targets
