@@ -4,14 +4,14 @@
 
     <multiselect v-bind="allBindings" :options="options" :placeholder="placeholder" v-on="$listeners">
         <template slot="singleLabel" slot-scope="{ option }">
-            <img class="option__image" :src="option.img" alt="img to select" />
+            <img class="option__image" :src="option.uri" alt="img to select" />
             <span class="option__desc">
                 <span class="option__title">{{ option.title }}</span>
             </span>
         </template>
 
         <template slot="option" slot-scope="{ option }">
-            <img class="option__image" :src="option.img" alt="img to select" />
+            <img class="option__image" :src="option.uri" alt="img to select" />
             <span class="option__desc">
                 <span class="option__title">{{ option.title }}</span>
                 <span class="option__small">{{ option.desc }}</span>
