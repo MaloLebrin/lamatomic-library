@@ -1,5 +1,7 @@
 <template>
   <div class="a-select-plus">
+    <slot name="top-slot" />
+
     <MultiSelect
         v-model="value"
         :options="options"
@@ -7,7 +9,11 @@
         :close-on-select="closeOnSelect"
         :show-labels="showLabels"
         :placeholder="placeholder"
-    ></MultiSelect>
+    >
+        <slot />
+    </MultiSelect>
+
+    <slot name="bottom-slot" />
   </div>
 </template>
 
@@ -62,6 +68,8 @@ $white: #fff;
 $silver: #c0c0c0;
 
 .a-select-plus {
+    cursor: pointer;
+
     .multiselect,
     .multiselect__input,
     .multiselect__single {
@@ -183,8 +191,6 @@ $silver: #c0c0c0;
     }
 
     .multiselect__option {
-        align-items: center;
-        cursor: pointer;
         display: flex;
         line-height: 16px;
         min-height: 40px;

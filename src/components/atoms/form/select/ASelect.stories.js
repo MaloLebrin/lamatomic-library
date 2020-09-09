@@ -5,7 +5,7 @@ const wrapper = {
   components: { ASelect }
 }
 
-storiesOf('Atoms/Form/Select', module)
+storiesOf('Atoms/Form/Selects', module)
     .addParameters({ component: ASelect })
 
     .add('single', () => ({
