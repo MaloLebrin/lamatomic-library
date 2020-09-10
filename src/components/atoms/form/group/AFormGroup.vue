@@ -1,7 +1,8 @@
 <template>
-    <ALabel class="a-form-group" :required="required"> {{ label }}
+    <div class="a-form-group">
+        <ALabel :required="required"> {{ label }}</ALabel>
         <slot />
-    </ALabel>
+    </div>
 </template>
 
 <script lang="ts">
@@ -10,18 +11,22 @@ import ALabel from '../label/ALabel.vue'
 
 export default Vue.extend({
     name: 'AFormGroup',
+
     components: {
         ALabel,
     },
+
     props: {
         id: {
             type: String,
             default: null,
         },
+
         label: {
             type: String,
             default: null
         },
+
         required: {
             type: Boolean,
             default: false
