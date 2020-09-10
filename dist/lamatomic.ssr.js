@@ -1124,12 +1124,13 @@ var __vue_render__$9 = function __vue_render__() {
 
   var _c = _vm._self._c || _h;
 
-  return _c('ALabel', {
-    staticClass: "a-form-group",
+  return _c('div', {
+    staticClass: "a-form-group"
+  }, [_c('ALabel', {
     attrs: {
       "required": _vm.required
     }
-  }, [_vm._v(" " + _vm._s(_vm.label) + "\n    "), _vm._t("default")], 2);
+  }, [_vm._v(" " + _vm._s(_vm.label))]), _vm._ssrNode(" "), _vm._t("default")], 2);
 };
 
 var __vue_staticRenderFns__$9 = [];
@@ -1141,7 +1142,7 @@ var __vue_inject_styles__$9 = undefined;
 var __vue_scope_id__$9 = undefined;
 /* module identifier */
 
-var __vue_module_identifier__$9 = "data-v-48b72ee0";
+var __vue_module_identifier__$9 = "data-v-9cb4f60e";
 /* functional template */
 
 var __vue_is_functional_template__$9 = false;
