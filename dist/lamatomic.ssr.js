@@ -1107,6 +1107,10 @@ var __vue_component__$8 = /*#__PURE__*/normalizeComponent({
     label: {
       type: String,
       default: null
+    },
+    required: {
+      type: Boolean,
+      default: false
     }
   }
 });/* script */
@@ -1121,8 +1125,11 @@ var __vue_render__$9 = function __vue_render__() {
   var _c = _vm._self._c || _h;
 
   return _c('ALabel', {
-    staticClass: "a-form-group"
-  }, [_vm._v(" " + _vm._s(_vm.label) + " "), _vm._t("default")], 2);
+    staticClass: "a-form-group",
+    attrs: {
+      "required": _vm.required
+    }
+  }, [_vm._v(" " + _vm._s(_vm.label) + "\n    "), _vm._t("default")], 2);
 };
 
 var __vue_staticRenderFns__$9 = [];
@@ -1134,7 +1141,7 @@ var __vue_inject_styles__$9 = undefined;
 var __vue_scope_id__$9 = undefined;
 /* module identifier */
 
-var __vue_module_identifier__$9 = "data-v-d57cbc1c";
+var __vue_module_identifier__$9 = "data-v-48b72ee0";
 /* functional template */
 
 var __vue_is_functional_template__$9 = false;

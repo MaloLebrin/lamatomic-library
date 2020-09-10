@@ -1101,6 +1101,10 @@ var script$9 = Vue.extend({
     label: {
       type: String,
       default: null
+    },
+    required: {
+      type: Boolean,
+      default: false
     }
   }
 });
@@ -1117,8 +1121,11 @@ var __vue_render__$9 = function () {
   var _c = _vm._self._c || _h;
 
   return _c('ALabel', {
-    staticClass: "a-form-group"
-  }, [_vm._v(" " + _vm._s(_vm.label) + " "), _vm._t("default")], 2);
+    staticClass: "a-form-group",
+    attrs: {
+      "required": _vm.required
+    }
+  }, [_vm._v(" " + _vm._s(_vm.label) + "\n    "), _vm._t("default")], 2);
 };
 
 var __vue_staticRenderFns__$9 = [];
