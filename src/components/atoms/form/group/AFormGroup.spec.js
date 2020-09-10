@@ -9,17 +9,4 @@ describe('Atom - AFormGroup', () => {
         expect(wrapper.html()).toContain('alabel-stub')
 
     })
-    test('renders a * if the label is required', () => {
-        const wrapper = shallowMount(AFormGroup, {
-            propsData: {
-                required: true
-            },
-            slots: {
-                default: 'Full Name'
-            }
-        })
-
-        expect(wrapper.html()).toContain(`<span class="required-indicator">*</span>`)
-    })
-
 })

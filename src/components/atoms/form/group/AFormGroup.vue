@@ -1,6 +1,6 @@
 <template>
-    <ALabel class="a-form-group"> {{ label }}
-        <slot /> <span v-if="required" class="required-indicator">*</span>
+    <ALabel class="a-form-group" :required="required"> {{ label }}
+        <slot />
     </ALabel>
 </template>
 
