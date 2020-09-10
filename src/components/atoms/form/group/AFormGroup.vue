@@ -1,5 +1,7 @@
 <template>
-    <ALabel class="a-form-group"> {{ label }} <slot /> </ALabel>
+    <ALabel class="a-form-group"> {{ label }}
+        <slot /> <span v-if="required" class="required-indicator">*</span>
+    </ALabel>
 </template>
 
 <script lang="ts">
@@ -19,6 +21,10 @@ export default Vue.extend({
         label: {
             type: String,
             default: null
+        },
+        required: {
+            type: Boolean,
+            default: false
         }
     },
 })
