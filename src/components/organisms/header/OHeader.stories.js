@@ -9,7 +9,7 @@ const wrapper = {
 const link1 = getMountedComponent(
     ALink,
     { href: 'https://bananas.com/' },
-    { default: 'je suis unn cabinet' }
+    { default: 'je suis un cabinet' }
 )
 const btn1 = getMountedComponent(AButton, { state: 'success' }, { default: 'Buy now!'})
 const btn2 = getMountedComponent(AButton, { state: 'warning' }, { default: 'Join ours bananas 🍌'})
