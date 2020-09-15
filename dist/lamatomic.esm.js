@@ -333,75 +333,6 @@ const __vue_component__ = /*#__PURE__*/normalizeComponent({
 }, __vue_inject_styles__, __vue_script__, __vue_scope_id__, __vue_is_functional_template__, __vue_module_identifier__, false, createInjector, undefined, undefined);
 
 var script$1 = Vue.extend({
-  name: 'AHamburger',
-  components: {
-    AButton: __vue_component__
-  },
-  props: {
-    isOpen: {
-      type: Boolean,
-      default: false
-    }
-  }
-});
-
-/* script */
-const __vue_script__$1 = script$1;
-/* template */
-
-var __vue_render__$1 = function () {
-  var _vm = this;
-
-  var _h = _vm.$createElement;
-
-  var _c = _vm._self._c || _h;
-
-  return _c('AButton', {
-    staticClass: "a-hamburger",
-    class: {
-      'a-hamburger--is-open': _vm.isOpen
-    },
-    on: {
-      "click": function ($event) {
-        return _vm.$emit('click');
-      }
-    }
-  }, [_c('span', {
-    staticClass: "a-hamburger-bar"
-  })]);
-};
-
-var __vue_staticRenderFns__$1 = [];
-/* style */
-
-const __vue_inject_styles__$1 = function (inject) {
-  if (!inject) return;
-  inject("data-v-d4b667d2_0", {
-    source: ".a-hamburger{border:0;box-shadow:none;cursor:pointer;display:block;font-size:0;height:2.2rem;overflow:hidden;position:relative;transition:background .3s;width:2.8rem}.a-hamburger.a-button{background-color:transparent}.a-hamburger:hover{background-color:transparent}.a-hamburger:focus{outline:0}.a-hamburger-bar{background:#000;display:block;height:.3rem;left:0;position:absolute;right:0;top:.95rem;transition:background 0s .3s}.a-hamburger-bar,.a-hamburger-bar::after,.a-hamburger-bar::before{border-radius:2px}.a-hamburger-bar::after,.a-hamburger-bar::before{background:#000;content:\"\";display:block;height:.3rem;left:0;position:absolute;width:100%}.a-hamburger-bar::before{top:-.7rem;transition:top .3s .3s,transform .3s 0s,background .3s 0s}.a-hamburger-bar::after{bottom:-.7rem;transition:bottom .3s .3s,transform .3s 0s,background .3s 0s}.a-hamburger--is-open .a-hamburger-bar{background:0 0}.a-hamburger--is-open .a-hamburger-bar::after,.a-hamburger--is-open .a-hamburger-bar::before{background-color:#000}.a-hamburger--is-open .a-hamburger-bar::before{top:0;transform:rotate(45deg);transition:top .3s 0s,transform .3s .3s,background .3s 0s}.a-hamburger--is-open .a-hamburger-bar::after{bottom:0;transform:rotate(-45deg);transition:bottom .3s 0s,transform .3s .3s,background .3s 0s}",
-    map: undefined,
-    media: undefined
-  });
-};
-/* scoped */
-
-
-const __vue_scope_id__$1 = undefined;
-/* module identifier */
-
-const __vue_module_identifier__$1 = undefined;
-/* functional template */
-
-const __vue_is_functional_template__$1 = false;
-/* style inject SSR */
-
-/* style inject shadow dom */
-
-const __vue_component__$1 = /*#__PURE__*/normalizeComponent({
-  render: __vue_render__$1,
-  staticRenderFns: __vue_staticRenderFns__$1
-}, __vue_inject_styles__$1, __vue_script__$1, __vue_scope_id__$1, __vue_is_functional_template__$1, __vue_module_identifier__$1, false, createInjector, undefined, undefined);
-
-var script$2 = Vue.extend({
   name: 'AText',
   props: {
     align: {
@@ -455,10 +386,10 @@ var script$2 = Vue.extend({
 });
 
 /* script */
-const __vue_script__$2 = script$2;
+const __vue_script__$1 = script$1;
 /* template */
 
-var __vue_render__$2 = function () {
+var __vue_render__$1 = function () {
   var _vm = this;
 
   var _h = _vm.$createElement;
@@ -474,13 +405,94 @@ var __vue_render__$2 = function () {
   }, [_vm._t("default")], 2);
 };
 
+var __vue_staticRenderFns__$1 = [];
+/* style */
+
+const __vue_inject_styles__$1 = function (inject) {
+  if (!inject) return;
+  inject("data-v-227ca21e_0", {
+    source: ".a-text.left{text-align:left}.a-text.center{text-align:center}.a-text.right{text-align:right}.a-text.justify{text-align:justify}.a-text.no-style{font-style:none!important}.a-text.italic{font-style:italic}.a-text.thin{font-weight:100}.a-text.normal{font-weight:300}.a-text.bold{font-weight:600}.a-text.bolder{font-weight:900}.a-text.no-decoration{text-decoration:none!important}.a-text.blink{text-decoration:blink}.a-text.dashed{text-decoration:dashed}.a-text.dotted{text-decoration:dotted}.a-text.double{text-decoration:double}.a-text.underline{text-decoration:underline}.a-text.no-transform{text-transform:none!important}.a-text.capitalize{text-transform:capitalize}.a-text.lowercase{text-transform:lowercase}.a-text.uppercase{text-transform:uppercase}",
+    map: undefined,
+    media: undefined
+  });
+};
+/* scoped */
+
+
+const __vue_scope_id__$1 = undefined;
+/* module identifier */
+
+const __vue_module_identifier__$1 = undefined;
+/* functional template */
+
+const __vue_is_functional_template__$1 = false;
+/* style inject SSR */
+
+/* style inject shadow dom */
+
+const __vue_component__$1 = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__$1,
+  staticRenderFns: __vue_staticRenderFns__$1
+}, __vue_inject_styles__$1, __vue_script__$1, __vue_scope_id__$1, __vue_is_functional_template__$1, __vue_module_identifier__$1, false, createInjector, undefined, undefined);
+
+var script$2 = Vue.extend({
+  name: 'AHamburger',
+  components: {
+    AButton: __vue_component__,
+    AText: __vue_component__$1
+  },
+  props: {
+    isOpen: {
+      type: Boolean,
+      default: false
+    }
+  },
+  computed: {
+    getMenuText() {
+      if (this.isOpen) return 'Fermer le menu';
+      return 'Menu';
+    }
+
+  }
+});
+
+/* script */
+const __vue_script__$2 = script$2;
+/* template */
+
+var __vue_render__$2 = function () {
+  var _vm = this;
+
+  var _h = _vm.$createElement;
+
+  var _c = _vm._self._c || _h;
+
+  return _c('AButton', {
+    staticClass: "a-hamburger",
+    class: {
+      'a-hamburger--is-open': _vm.isOpen
+    },
+    on: {
+      "click": function ($event) {
+        return _vm.$emit('click');
+      }
+    }
+  }, [_c('span', {
+    staticClass: "a-hamburger-bar"
+  }), _vm._v(" "), _c('AText', {
+    attrs: {
+      "align": "left"
+    }
+  }, [_vm._v(" " + _vm._s(_vm.getMenuText) + " ")])], 1);
+};
+
 var __vue_staticRenderFns__$2 = [];
 /* style */
 
 const __vue_inject_styles__$2 = function (inject) {
   if (!inject) return;
-  inject("data-v-227ca21e_0", {
-    source: ".a-text.left{text-align:left}.a-text.center{text-align:center}.a-text.right{text-align:right}.a-text.justify{text-align:justify}.a-text.no-style{font-style:none!important}.a-text.italic{font-style:italic}.a-text.thin{font-weight:100}.a-text.normal{font-weight:300}.a-text.bold{font-weight:600}.a-text.bolder{font-weight:900}.a-text.no-decoration{text-decoration:none!important}.a-text.blink{text-decoration:blink}.a-text.dashed{text-decoration:dashed}.a-text.dotted{text-decoration:dotted}.a-text.double{text-decoration:double}.a-text.underline{text-decoration:underline}.a-text.no-transform{text-transform:none!important}.a-text.capitalize{text-transform:capitalize}.a-text.lowercase{text-transform:lowercase}.a-text.uppercase{text-transform:uppercase}",
+  inject("data-v-5a97a0fa_0", {
+    source: ".a-hamburger{border:0;border-radius:0;box-shadow:none;cursor:pointer;display:block;height:1.3rem;margin:0;padding:0;position:relative;transition:background .3s;width:1.2rem}.a-hamburger.a-button{background-color:transparent}.a-hamburger.a-button .a-text{color:#000;display:block;font-size:1.2rem;margin:0;position:absolute;top:calc(1.3rem * (.01));left:calc(1.2rem + 1rem)}.a-hamburger:hover{background-color:transparent}.a-hamburger:focus{outline:0}.a-hamburger-bar{background:#000;display:block;height:.2rem;left:0;position:absolute;right:0;top:.55rem;transition:background 0s .3s}.a-hamburger-bar,.a-hamburger-bar::after,.a-hamburger-bar::before{border-radius:.15rem}.a-hamburger-bar::after,.a-hamburger-bar::before{background:#000;content:\"\";display:block;height:.2rem;left:0;position:absolute;width:100%}.a-hamburger-bar::before{top:-.35rem;transition:top .3s .3s,transform .3s 0s,background .3s 0s}.a-hamburger-bar::after{bottom:-.35rem;transition:bottom .3s .3s,transform .3s 0s,background .3s 0s}.a-hamburger--is-open.a-button .a-text{width:10rem}.a-hamburger--is-open .a-hamburger-bar{background:0 0}.a-hamburger--is-open .a-hamburger-bar::after,.a-hamburger--is-open .a-hamburger-bar::before{background-color:#000}.a-hamburger--is-open .a-hamburger-bar::before{top:0;transform:rotate(45deg);transition:top .3s 0s,transform .3s .3s,background .3s 0s}.a-hamburger--is-open .a-hamburger-bar::after{bottom:0;transform:rotate(-45deg);transition:bottom .3s 0s,transform .3s .3s,background .3s 0s}",
     map: undefined,
     media: undefined
   });
@@ -507,7 +519,7 @@ const __vue_component__$2 = /*#__PURE__*/normalizeComponent({
 var script$3 = Vue.extend({
   name: 'AHeading',
   components: {
-    AText: __vue_component__$2
+    AText: __vue_component__$1
   },
   inheritAttrs: false,
   props: {
@@ -2004,7 +2016,7 @@ var script$i = Vue.extend({
   name: 'AInputMail',
   components: {
     AInput: __vue_component__$f,
-    AText: __vue_component__$2
+    AText: __vue_component__$1
   },
   inheritAttrs: false,
   props: {
@@ -2247,7 +2259,7 @@ var script$k = Vue.extend({
     AInput: __vue_component__$f,
     ALabel: __vue_component__$8,
     AButton: __vue_component__,
-    AText: __vue_component__$2
+    AText: __vue_component__$1
   },
   props: {
     id: {
@@ -2421,7 +2433,7 @@ var script$m = Vue.extend({
   name: 'AInputPassword',
   components: {
     AInput: __vue_component__$f,
-    AText: __vue_component__$2,
+    AText: __vue_component__$1,
     AImage: __vue_component__$5
   },
   inheritAttrs: false,
@@ -2754,7 +2766,7 @@ var script$p = Vue.extend({
   name: 'AInputTel',
   components: {
     AInput: __vue_component__$f,
-    AText: __vue_component__$2
+    AText: __vue_component__$1
   },
   inheritAttrs: false,
   props: {
@@ -2938,7 +2950,7 @@ var script$r = Vue.extend({
   name: 'AInputUrl',
   components: {
     AInput: __vue_component__$f,
-    AText: __vue_component__$2
+    AText: __vue_component__$1
   },
   inheritAttrs: false,
   props: {
@@ -3053,7 +3065,7 @@ const __vue_component__$r = /*#__PURE__*/normalizeComponent({
 var script$s = Vue.extend({
   name: "MBadge",
   components: {
-    AText: __vue_component__$2,
+    AText: __vue_component__$1,
     AImage: __vue_component__$5
   },
   props: {
@@ -4167,7 +4179,7 @@ var script$G = Vue.extend({
   components: {
     MLogo: __vue_component__$v,
     MNavbar: __vue_component__$w,
-    AHamburger: __vue_component__$1
+    AHamburger: __vue_component__$2
   },
   props: {
     items: {
@@ -4242,8 +4254,8 @@ var __vue_render__$G = function () {
     }
   }), _vm._v(" "), _c('AHamburger', {
     staticClass: "o-header-hamburger",
-    class: {
-      'a-hamburger--is-open': _vm.menuIsOpen
+    attrs: {
+      "is-open": _vm.menuIsOpen
     },
     on: {
       "click": _vm.toggleMenu
@@ -4268,8 +4280,8 @@ var __vue_staticRenderFns__$G = [];
 
 const __vue_inject_styles__$G = function (inject) {
   if (!inject) return;
-  inject("data-v-1416e040_0", {
-    source: ".o-header{align-items:center;display:flex;flex-direction:row;position:relative}.o-header .m-navbar-desktop{display:none}.o-header .m-logo{flex-basis:10%;margin-left:15px}.o-header .m-logo .a-image{width:80px}.o-header .m-navbar{max-width:calc(100vw - 40px);overflow:hidden}.o-header-menu{display:flex;flex-direction:column;left:100%;min-height:100vh;opacity:0;padding-left:20px;padding-top:5rem;position:absolute;top:0;transition:all .8s ease-in-out;transition-timing-function:cubic-bezier(.37,.96,.22,1.01);visibility:hidden;width:20rem;z-index:1}.o-header-menu.menu-open{opacity:1;right:0}.o-header--is-open .o-header-menu{background-color:#f8f8f8;transform:translate3d(-100%,0,0);visibility:visible}.o-header-hamburger{margin-right:25px;position:relative;z-index:2}@media screen and (min-width:992px){.o-header .m-logo .a-image{width:120px}.o-header .m-navbar-desktop{display:block}.o-header .m-navbar-mobile,.o-header .o-header-hamburger{display:none}}",
+  inject("data-v-22f24404_0", {
+    source: ".o-header{align-items:center;display:flex;flex-direction:row;position:relative}.o-header .m-navbar-desktop{display:none}.o-header .m-logo{flex-basis:10%;margin-left:15px}.o-header .m-logo .a-image{width:80px}.o-header .m-navbar{max-width:calc(100vw - 40px);overflow:hidden}.o-header-menu{display:flex;flex-direction:column;left:100%;min-height:100vh;opacity:0;padding-top:5rem;position:absolute;top:0;transition:all .8s ease-in-out;transition-timing-function:cubic-bezier(.37,.96,.22,1.01);visibility:hidden;width:20rem;z-index:1}.o-header-menu.menu-open{opacity:1;right:0}.o-header--is-open .o-header-menu{background-color:#f8f8f8;transform:translate3d(-100%,0,0);visibility:visible}.o-header-hamburger{margin-right:5rem;position:relative;z-index:2}.o-header-hamburger.a-hamburger--is-open{margin-right:15rem;transition:margin cubic-bezier(.37,.96,.22,1.01) ease-in-out}@media screen and (min-width:992px){.o-header .m-logo .a-image{width:120px}.o-header .m-navbar-desktop{display:block}.o-header .m-navbar-mobile,.o-header .o-header-hamburger{display:none}}",
     map: undefined,
     media: undefined
   });
@@ -4300,7 +4312,7 @@ var script$H = Vue.extend({
     AImage: __vue_component__$5,
     AHeading: __vue_component__$3,
     AButton: __vue_component__,
-    AText: __vue_component__$2
+    AText: __vue_component__$1
   },
   props: {
     withoutImage: {
@@ -4472,13 +4484,13 @@ const __vue_component__$I = /*#__PURE__*/normalizeComponent({
 var components = /*#__PURE__*/Object.freeze({
     __proto__: null,
     AButton: __vue_component__,
-    AHamburger: __vue_component__$1,
+    AHamburger: __vue_component__$2,
     AHeading: __vue_component__$3,
     AIcon: __vue_component__$4,
     AImage: __vue_component__$5,
     ALink: __vue_component__$6,
     AList: __vue_component__$7,
-    AText: __vue_component__$2,
+    AText: __vue_component__$1,
     AFormGroup: __vue_component__$9,
     ALabel: __vue_component__$8,
     ASelect: __vue_component__$a,
@@ -4535,4 +4547,4 @@ const plugin = {
 }; // To auto-install on non-es builds, when vue is found
 
 export default plugin;
-export { __vue_component__ as AButton, __vue_component__$9 as AFormGroup, __vue_component__$1 as AHamburger, __vue_component__$3 as AHeading, __vue_component__$4 as AIcon, __vue_component__$5 as AImage, __vue_component__$g as AInputCheckbox, __vue_component__$h as AInputDate, __vue_component__$i as AInputEmail, __vue_component__$k as AInputFile, __vue_component__$e as AInputGroup, __vue_component__$l as AInputHidden, __vue_component__$j as AInputNumber, __vue_component__$m as AInputPassword, __vue_component__$n as AInputRadio, __vue_component__$o as AInputSearch, __vue_component__$p as AInputTel, __vue_component__$q as AInputText, __vue_component__$r as AInputUrl, __vue_component__$8 as ALabel, __vue_component__$6 as ALink, __vue_component__$7 as AList, __vue_component__$a as ASelect, __vue_component__$b as ASelectPlus, __vue_component__$c as ASelectPlusImage, __vue_component__$2 as AText, __vue_component__$d as ATextarea, __vue_component__$s as MBadge, __vue_component__$t as MCard, __vue_component__$u as MCarousel, __vue_component__$v as MLogo, __vue_component__$w as MNavbar, __vue_component__$x as MPartner, __vue_component__$y as MScrollToTop, __vue_component__$z as MSocialButton, __vue_component__$A as MSocialButtonFacebook, __vue_component__$C as MSocialButtonInstagram, __vue_component__$D as MSocialButtonLinkedin, __vue_component__$B as MSocialButtonTwitter, __vue_component__$E as MTyper, __vue_component__$F as OFooter, __vue_component__$G as OHeader, __vue_component__$H as ONewsletterForm, __vue_component__$I as OPartners };
+export { __vue_component__ as AButton, __vue_component__$9 as AFormGroup, __vue_component__$2 as AHamburger, __vue_component__$3 as AHeading, __vue_component__$4 as AIcon, __vue_component__$5 as AImage, __vue_component__$g as AInputCheckbox, __vue_component__$h as AInputDate, __vue_component__$i as AInputEmail, __vue_component__$k as AInputFile, __vue_component__$e as AInputGroup, __vue_component__$l as AInputHidden, __vue_component__$j as AInputNumber, __vue_component__$m as AInputPassword, __vue_component__$n as AInputRadio, __vue_component__$o as AInputSearch, __vue_component__$p as AInputTel, __vue_component__$q as AInputText, __vue_component__$r as AInputUrl, __vue_component__$8 as ALabel, __vue_component__$6 as ALink, __vue_component__$7 as AList, __vue_component__$a as ASelect, __vue_component__$b as ASelectPlus, __vue_component__$c as ASelectPlusImage, __vue_component__$1 as AText, __vue_component__$d as ATextarea, __vue_component__$s as MBadge, __vue_component__$t as MCard, __vue_component__$u as MCarousel, __vue_component__$v as MLogo, __vue_component__$w as MNavbar, __vue_component__$x as MPartner, __vue_component__$y as MScrollToTop, __vue_component__$z as MSocialButton, __vue_component__$A as MSocialButtonFacebook, __vue_component__$C as MSocialButtonInstagram, __vue_component__$D as MSocialButtonLinkedin, __vue_component__$B as MSocialButtonTwitter, __vue_component__$E as MTyper, __vue_component__$F as OFooter, __vue_component__$G as OHeader, __vue_component__$H as ONewsletterForm, __vue_component__$I as OPartners };
