@@ -24,8 +24,8 @@ export default Vue.extend({
 
     props: {
         isOpen: {
-        type: Boolean,
-        default: false
+            type: Boolean,
+            default: false
         }
     },
 
