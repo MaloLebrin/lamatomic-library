@@ -2,7 +2,7 @@
     <header class="o-header" :class="{'o-header--is-open': menuIsOpen }">
         <MLogo :src="srcLogo" />
         <MNavbar class="m-navbar-desktop" :items="items" @click="toggleMenu" />
-        <AHamburger  class="o-header-hamburger" :is-open="menuIsOpen" @click="toggleMenu"/>
+        <AHamburger class="o-header-hamburger" :is-open="menuIsOpen" @click="toggleMenu"/>
         <MNavbar class="o-header-menu m-navbar-mobile" :class="{ 'menu-open': menuIsOpen }" :items="computedMobileItems" :horizontal="horizontal" @click="toggleMenu" />
     </header>
 </template>
@@ -109,7 +109,6 @@ $light-grey: #e1e1e1;
         left: 100%;
         min-height: 100vh;
         opacity: 0;
-        // padding-left: 20px;
         padding-top: 5rem;
         position: absolute;
         top: 0;
