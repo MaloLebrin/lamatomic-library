@@ -23,4 +23,22 @@ describe('Organism - OHeader', () => {
         expect(wrapper.vm.menuIsOpen).toBeTruthy()
         expect(wrapper.html()).toEqual(expect.not.stringContaining('is-open'))
     })
+
+    // /////// Functions tests /////// //
+    test('... computedMobileItems return mobileItems if it is an array, if not return items', () => {
+        const wrapper = shallowMount(OHeader, {
+            propsData: {
+                mobileItems: ['tab'],
+                items: ['array']
+            },
+        })
+
+        expect(wrapper.vm.computedMobileItems).toStrictEqual(['tab'])
+
+        wrapper.setProps({
+            mobileItems: 13,
+        })
+
+        expect(wrapper.vm.computedMobileItems).toStrictEqual(['array'])
+    })
 })

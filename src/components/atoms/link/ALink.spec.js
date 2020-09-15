@@ -9,6 +9,7 @@ describe('Atom - ALink', () => {
         )
     })
 
+    // /////// Props tests /////// //
     test('...with href, then an to who pass href at null', () => {
         const wrapper = shallowMount(ALink, {
             propsData: {
@@ -40,6 +41,27 @@ describe('Atom - ALink', () => {
         expect(wrapper.vm.computedHref).toBe(null)
     })
 
+    test('...with external = true', () => {
+        const wrapper = mount(ALink, {
+            propsData: {
+                external: true
+            }
+        })
+
+        expect(wrapper.html()).toBe('<a class="a-link external underlined underlined--thin"></a>')
+    })
+
+test('...without "underlined" class when "no-line" prop is true', () => {
+        const wrapper = mount(ALink, {
+            propsData: {
+                'no-line': true
+            }
+        })
+
+        expect(wrapper.html()).toBe('<a class="a-link"></a>')
+    })
+
+    // /////// Functions tests /////// //
     test('...with mail valid then not valid', () => {
         const wrapper = shallowMount(ALink, {
             propsData: {
@@ -60,16 +82,6 @@ describe('Atom - ALink', () => {
         expect(wrapper.vm.computedHref).toBe('prout')
     })
 
-    test('...without "underlined" class when "no-line" prop is true', () => {
-        const wrapper = mount(ALink, {
-            propsData: {
-                'no-line': true
-            }
-        })
-
-        expect(wrapper.html()).toBe('<a class="a-link"></a>')
-    })
-
     test('...with tel valid then not valid', () => {
         const wrapper = mount(ALink, {
             propsData: {
@@ -82,11 +94,10 @@ describe('Atom - ALink', () => {
         expect(wrapper.attributes('title')).toBe('Appeler le 0123456789')
 
         wrapper.setProps({
-            href: '+33123456789'
+            href: '+3312345'
         })
 
-        expect(wrapper.vm.computedHref).toBe('tel:+33123456789')
-
+        expect(wrapper.vm.computedHref).toBe('+3312345')
     })
 
     test('...with rel = next', () => {
@@ -97,16 +108,6 @@ describe('Atom - ALink', () => {
         })
 
         expect(wrapper.attributes('rel')).toBe('next')
-    })
-
-    test('...with external = true', () => {
-        const wrapper = mount(ALink, {
-            propsData: {
-                external: true
-            }
-        })
-
-        expect(wrapper.html()).toBe('<a class="a-link external underlined underlined--thin"></a>')
     })
 
     test('...with target', () => {

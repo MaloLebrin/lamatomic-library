@@ -2,7 +2,7 @@
     <header class="o-header" :class="{'o-header--is-open': menuIsOpen }">
         <MLogo :src="srcLogo" />
         <MNavbar class="m-navbar-desktop" :items="items" @click="toggleMenu" />
-        <AHamburger  class="o-header-hamburger" :class="{'a-hamburger--is-open': menuIsOpen}" @click="toggleMenu"/>
+        <AHamburger class="o-header-hamburger" :is-open="menuIsOpen" @click="toggleMenu"/>
         <MNavbar class="o-header-menu m-navbar-mobile" :class="{ 'menu-open': menuIsOpen }" :items="computedMobileItems" :horizontal="horizontal" @click="toggleMenu" />
     </header>
 </template>
@@ -15,11 +15,13 @@
 
     export default Vue.extend({
         name: 'OHeader',
+
         components: {
             MLogo,
             MNavbar,
             AHamburger
         },
+
         props: {
             items: {
                 type: Array,
@@ -107,7 +109,6 @@ $light-grey: #e1e1e1;
         left: 100%;
         min-height: 100vh;
         opacity: 0;
-        padding-left: 20px;
         padding-top: 5rem;
         position: absolute;
         top: 0;
@@ -132,9 +133,14 @@ $light-grey: #e1e1e1;
     }
 
     &-hamburger {
-        margin-right: 25px;
+        margin-right: 5rem;
         position: relative;
         z-index: 2;
+
+        &.a-hamburger--is-open {
+            margin-right: 15rem;
+            transition: margin $animation-easing ease-in-out;
+        }
     }
 
     @media screen and (min-width: 992px) {

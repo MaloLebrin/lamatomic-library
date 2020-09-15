@@ -1,4 +1,4 @@
-import { mount } from '@vue/test-utils'
+import { mount, shallowMount } from '@vue/test-utils'
 import AInputRadio from './AInputRadio.vue'
 
 const factory = () => {
@@ -18,6 +18,7 @@ describe('Atom - AInputRadio', () => {
         expect(input).toBeTruthy()
     })
 
+    // /////// Props tests /////// //
     test('...given props are correctly used', () => {
         const wrapper = mount(AInputRadio, {
             propsData: {
@@ -32,6 +33,7 @@ describe('Atom - AInputRadio', () => {
         expect(input.attributes().value).toBe('Gogooooo')
     })
 
+    // /////// Functions tests /////// //
     test('...event correctly emits', () => {
         const wrapper = factory()
 
@@ -60,16 +62,26 @@ describe('Atom - AInputRadio', () => {
         expect(input.attributes().checked).toBeFalsy()
     })
 
-    // test('...v-model (and shouldBeChecked) correctly used', () => {
-    //     const wrapper = mount(AInputRadio, {
-    //         propsData: {
-    //             name: 'radio-gaga',
-    //             value: 'Gogooooo'
-    //         }
-    //     })
+    test('... shouldBeChecked return this.checked if modelValue is null, if not return result of modelValue === value', () => {
+        const wrapper = shallowMount(AInputRadio, {
+            propsData: {
+                modelValue: null,
+                value: '0'
+            },
+        })
 
-    //     const input = wrapper.find('input.a-input.a-input-radio[type="radio"]')
-    //     input.trigger('change', true)
-    //     // TODO: Doesn't update this.modelValue, I don't know why...
-    // })
+        expect(wrapper.vm.shouldBeChecked).toStrictEqual(false)
+
+        wrapper.setProps({
+            modelValue: '13',
+        })
+
+        expect(wrapper.vm.shouldBeChecked).toStrictEqual(false)
+
+        wrapper.setProps({
+            value: '13'
+        })
+
+        expect(wrapper.vm.shouldBeChecked).toStrictEqual(true)
+    })
 })
