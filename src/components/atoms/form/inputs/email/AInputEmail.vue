@@ -1,4 +1,4 @@
-<template>
+q<template>
     <div class="a-input-email-wrapper">
         <AInput
             v-model="email"
@@ -7,6 +7,7 @@
             class="a-input-email"
             :class="[checkValidity && email.length > 0 ? { success: isEmailValid, error: !isEmailValid } : '']"
             :placeholder="placeholder"
+            v-on="$listeners"
         />
 
         <div v-if="checkValidity && email.length > 0">

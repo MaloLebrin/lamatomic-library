@@ -3,6 +3,7 @@
         type="search"
         class="a-input-search"
         :placeholder="placeholder"
+        v-on="$listeners"
     />
 </template>
 

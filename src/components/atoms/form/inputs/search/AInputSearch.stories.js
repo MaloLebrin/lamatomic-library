@@ -10,5 +10,11 @@ storiesOf('Atoms/Form/Inputs', module)
 
     .add('Search', () => ({
         ...wrapper,
-        template: `<AInputSearch />`
+        template: `<div><AInputSearch v-model="search" /> {{ search }}</div>`,
+        data () {
+            return {
+                search: '',
+            }
+        }
+
     }))

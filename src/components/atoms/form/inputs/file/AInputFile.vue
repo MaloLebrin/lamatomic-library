@@ -14,6 +14,7 @@
             :multiple="multiple"
             tabindex="-1"
             @change="handleFileChange"
+            v-on="$listeners"
         />
     </ALabel>
 </template>

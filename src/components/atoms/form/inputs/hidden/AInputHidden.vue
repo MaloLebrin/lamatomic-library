@@ -2,6 +2,7 @@
     <AInput
         class="a-input-hidden"
         type="hidden"
+        v-on="$listeners"
     />
 </template>
 

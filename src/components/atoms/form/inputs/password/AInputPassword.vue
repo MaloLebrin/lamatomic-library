@@ -9,6 +9,7 @@
                 :class="[strongVerif && password.length > 0 ? { success: isPasswordValid, error: !isPasswordValid } : '']"
                 :placeholder="placeholder"
                 :required="required"
+                v-on="$listeners"
             />
 
             <AImage

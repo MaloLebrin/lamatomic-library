@@ -8,6 +8,7 @@
         :min="min"
         :max="max"
         :value="value"
+        v-on="$listeners"
     />
 
     <div v-if="checkValidity && number.length > 0">

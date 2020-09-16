@@ -7,6 +7,7 @@
             class="a-input-url"
             :class="[checkValidity && url.length > 0 ? { success: isUrlValid, error: !isUrlValid } : '']"
             :placeholder="placeholder"
+            v-on="$listeners"
         />
 
         <div v-if="checkValidity && url.length > 0">

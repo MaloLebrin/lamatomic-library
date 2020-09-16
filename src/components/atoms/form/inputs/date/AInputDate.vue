@@ -5,6 +5,7 @@
         :mode="mode"
         :color="color"
         :is-dark="isDark"
+        v-on="$listeners"
     />
 </template>
 

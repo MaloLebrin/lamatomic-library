@@ -11,6 +11,12 @@ storiesOf('Atoms/Form/Inputs', module)
     .add('Text',
         () => ({
             ...wrapper,
-            template: '<AInputText name="my-text" />'
+            template: '<div><AInputText name="my-text" v-model="firstname" /> {{ firstname }}</div>',
+            data () {
+                return {
+                    firstname: '',
+                }
+            }
+
         })
     )
