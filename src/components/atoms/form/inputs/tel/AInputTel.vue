@@ -7,6 +7,7 @@
             class="a-input-tel"
             :class="[checkValidity && telNumber.length > 0 ? { success: isTelValid, error: !isTelValid } : '']"
             :placeholder="placeholder"
+            v-on="$listeners"
         />
 
         <div v-if="checkValidity && telNumber.length > 0">

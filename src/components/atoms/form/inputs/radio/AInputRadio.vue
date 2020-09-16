@@ -8,6 +8,7 @@
             :checked="shouldBeChecked"
             :name="name"
             @change="toggle"
+            v-on="$listeners"
         />
 
         <span class="radio-circle"></span>

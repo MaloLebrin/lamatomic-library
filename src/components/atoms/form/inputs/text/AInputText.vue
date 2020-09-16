@@ -1,9 +1,11 @@
 <template>
     <AInput
+        v-bind="$attrs"
         type="text"
         class="a-input-text"
         :placeholder="placeholder"
         :contenteditable="editable"
+        v-on="$listeners"
     />
 </template>
 

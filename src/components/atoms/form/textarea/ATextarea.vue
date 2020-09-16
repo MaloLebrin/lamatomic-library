@@ -6,6 +6,7 @@
         :required="required"
         :rows="rows"
         :cols="cols"
+        v-on="$listeners"
     >
     </textarea>
 </template>

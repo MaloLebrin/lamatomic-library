@@ -6,6 +6,7 @@
             :value="value"
             :checked="shouldBeChecked"
             @change="toggle"
+            v-on="$listeners"
         />
 
         <div class="checkbox-box">
