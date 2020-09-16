@@ -72,10 +72,10 @@ export default Vue.extend({
             color: $hamburger-color;
             display: block;
             font-size: 1.2rem;
+            left: calc(#{$hamburger-width} + 1rem);
             margin: 0;
             position: absolute;
             top: calc(#{$hamburger-height} * (0.01));
-            left: calc(#{$hamburger-width} + 1rem);
         }
     }
 
