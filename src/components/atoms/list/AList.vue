@@ -8,7 +8,6 @@
             horizontal: horizontal
         }"
     >
-        <!-- eslint-disable-next-line vue/no-v-html -->
         <slot />
     </component>
 </template>
