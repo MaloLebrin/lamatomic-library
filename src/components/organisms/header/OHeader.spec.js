@@ -1,6 +1,20 @@
 import { shallowMount } from '@vue/test-utils'
 import OHeader from './OHeader.vue'
 
+Object.defineProperty(window, 'matchMedia', {
+    writable: true,
+    value: jest.fn().mockImplementation((query) => ({
+        matches: false,
+        media: query,
+        onchange: null,
+        addListener: jest.fn(), // deprecated
+        removeListener: jest.fn(), // deprecated
+        addEventListener: jest.fn(),
+        removeEventListener: jest.fn(),
+        dispatchEvent: jest.fn()
+    }))
+})
+
 describe('Organism - OHeader', () => {
 
     test('...has <header> tag', () => {
@@ -24,21 +38,20 @@ describe('Organism - OHeader', () => {
         expect(wrapper.html()).toEqual(expect.not.stringContaining('is-open'))
     })
 
-    // /////// Functions tests /////// //
-    test('... computedMobileItems return mobileItems if it is an array, if not return items', () => {
+    test('...items injected are correctly rendered', () => {
+
         const wrapper = shallowMount(OHeader, {
-            propsData: {
-                mobileItems: ['tab'],
-                items: ['array']
-            },
+            slots: {
+                "navBarItems": `<li><p>Content col 1</p></li>
+                <li><p>Content col 2</p></li>`
+            }
         })
 
-        expect(wrapper.vm.computedMobileItems).toStrictEqual(['tab'])
+        expect(wrapper.html()).toContain('<mnavbar-stub horizontal="true" class="m-navbar-desktop">')
+        expect(wrapper.html()).toContain('<li>')
+        expect(wrapper.html()).toContain('<p>Content col 1</p>')
+        expect(wrapper.html()).toContain('<p>Content col 2</p>')
 
-        wrapper.setProps({
-            mobileItems: 13,
-        })
-
-        expect(wrapper.vm.computedMobileItems).toStrictEqual(['array'])
     })
+
 })

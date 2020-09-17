@@ -8,8 +8,7 @@
             horizontal: horizontal
         }"
     >
-        <!-- eslint-disable-next-line vue/no-v-html -->
-        <li v-for="item in items" :key="item" class="a-list-item" v-html="item"></li>
+        <slot />
     </component>
 </template>
 
@@ -22,11 +21,6 @@ export default Vue.extend({
         type: {
             type: String,
             default: 'ul'
-        },
-
-        items: {
-            type: Array,
-            default: (): Array<any> => []
         },
 
         withoutChips: {

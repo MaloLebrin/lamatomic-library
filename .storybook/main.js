@@ -10,7 +10,6 @@ module.exports = {
         '@storybook/preset-typescript',
         '@storybook/addon-a11y/register',
         '@storybook/addon-docs/preset',
-        '@storybook/addon-viewport/register',
         'storybook-addon-themes'
     ],
     webpackFinal: async (config, { configType }) => {

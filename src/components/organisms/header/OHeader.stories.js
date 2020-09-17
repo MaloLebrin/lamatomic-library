@@ -1,32 +1,28 @@
 import { storiesOf } from '@storybook/vue'
-import { getMountedComponent } from '@/utils'
-import { OHeader, AButton, ALink } from '@/entry'
+import { OHeader, MNavItem } from '@/entry'
 
 const wrapper = {
-    components: { OHeader }
+    components: { OHeader, MNavItem }
 }
-
-const link1 = getMountedComponent(
-    ALink,
-    { href: 'https://bananas.com/' },
-    { default: 'je suis un cabinet' }
-)
-const btn1 = getMountedComponent(AButton, { state: 'success' }, { default: 'Buy now!'})
-const btn2 = getMountedComponent(AButton, { state: 'warning' }, { default: 'Join ours bananas 🍌'})
-
-const items = [link1, btn1, btn2]
-
-const mobileItems= [link1, link1, link1]
 
 storiesOf('Organisms', module)
     .add('Header', () => ({
         ...wrapper,
-        data() {
-            return {
-                items,
-                mobileItems
-            }
-        },
-        template: '<OHeader :items="items" :mobileItems="mobileItems" />'
+        template:
+            `<OHeader srcLogo="https://lamacompta.co/wp-content/uploads/2020/06/Logo-lamacompta-blanc-SVG.svg">
+                <template #navBarItems>
+                    <MNavItem>
+                        <button>Bonjour 1</button>
+                    </MNavItem>
+
+                    <MNavItem>
+                        <button>Bonjour 2</button>
+                    </MNavItem>
+
+                    <MNavItem>
+                        <button>Bonjour 3</button>
+                    </MNavItem>
+                </template>
+            </OHeader>`
     }))
 

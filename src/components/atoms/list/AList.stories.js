@@ -1,8 +1,9 @@
 import { storiesOf } from '@storybook/vue'
 import AList from './AList.vue'
+import AListItem from './AListItem.vue'
 
 const wrapper = {
-    components: { AList }
+    components: { AList, AListItem }
 }
 
 storiesOf('Atoms/List', module)
@@ -10,60 +11,56 @@ storiesOf('Atoms/List', module)
 
     .add('Vertical with chips (default)', () => ({
         ...wrapper,
-        template: '<AList :items="items"></AList>',
-        data() {
-            return {
-                items: ['Lapin 🐇', 'Banane 🍌', 'Papier toilette 🧻']
-            }
-        }
+        template: `<AList>
+                        <AListItem>Lapin 🐇</AListItem>
+                        <AListItem>Banane 🍌</AListItem>
+                        <AListItem>Papier toilette 🧻</AListItem>
+                    </AList>`,
     }))
 
     .add('Vertical without chips', () => ({
         ...wrapper,
-        template: '<AList :items="items" withoutChips></AList>',
-        data() {
-            return {
-                items: ['Hérisson 🦔', 'Pique ♠', 'Kamoulox 💩']
-            }
-        }
+        template: `<AList withoutChips>
+                        <AListItem>Hérisson 🦔</AListItem>
+                        <AListItem>Pique ♠</AListItem>
+                        <AListItem>Kamoulox 💩</AListItem>
+                    </AList>`,
     }))
 
     .add('Vertical, no chips, no padding', () => ({
         ...wrapper,
-        template: '<AList :items="items" withoutChips noPadding></AList>',
-        data() {
-            return {
-                items: ['Ohohoh', 'Héhéhé', 'Hihihi']
-            }
-        }
+        template: `<AList withoutChips noPadding>
+                        <AListItem>Ohohoh</AListItem>
+                        <AListItem>Héhéhé</AListItem>
+                        <AListItem>Hihihi</AListItem>
+                    </AList>`,
     }))
 
     .add('Horizontal with chips', () => ({
         ...wrapper,
-        template: `<AList :items="items" horizontal></AList>`,
-        data() {
-            return {
-                items: ['Poisson 🐠', 'Rouge 🟥', 'La mer 🌊', 'Coquillage 🐚']
-            }
-        }
+        template: `<AList horizontal>
+                        <AListItem>Poisson 🐠</AListItem>
+                        <AListItem>Rouge 🟥</AListItem>
+                        <AListItem>La mer 🌊</AListItem>
+                        <AListItem>Coquillage 🐚</AListItem>
+                    </AList>`,
     }))
 
     .add('Horizontal without chips', () => ({
         ...wrapper,
-        template: `<AList :items="items" horizontal withoutChips></AList>`,
-        data() {
-            return {
-                items: ['Evènement 📅', 'Contact 📞', 'Protection 😷']
-            }
-        }
+        template: `<AList horizontal withoutChips>
+                        <AListItem>Evènement 📅</AListItem>
+                        <AListItem>Contact 📞</AListItem>
+                        <AListItem>Protection 😷</AListItem>
+                    </AList>`,
     }))
 
     .add('Horizontal, no chips, no padding', () => ({
         ...wrapper,
-        template: `<AList :items="items" horizontal withoutChips noPadding></AList>`,
-        data() {
-            return {
-                items: ['Concert 🎙', 'Evènement 📅', 'Contact 📞', 'Protection 😷']
-            }
-        }
+        template: `<AList horizontal withoutChips noPadding>
+                        <AListItem>Concert 🎙</AListItem>
+                        <AListItem>Evènement 📅</AListItem>
+                        <AListItem>Contact 📞</AListItem>
+                        <AListItem>Protection 😷</AListItem>
+                    </AList>`,
     }))

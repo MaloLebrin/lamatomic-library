@@ -1,17 +1,22 @@
 <template>
     <header class="o-header" :class="{'o-header--is-open': menuIsOpen }">
         <MLogo :src="srcLogo" />
-        <MNavbar class="m-navbar-desktop" :items="items" @click="toggleMenu" />
+
+        <MNavbar class="m-navbar-desktop" @click="toggleMenu">
+            <slot name="navBarItems" />
+        </MNavbar>
+
         <AHamburger class="o-header-hamburger" :is-open="menuIsOpen" @click="toggleMenu"/>
-        <MNavbar class="o-header-menu m-navbar-mobile" :class="{ 'menu-open': menuIsOpen }" :items="computedMobileItems" :horizontal="horizontal" @click="toggleMenu" />
+
+        <MNavbar class="o-header-menu m-navbar-mobile" :class="{ 'menu-open': menuIsOpen }" :horizontal="false" @click="toggleMenu">
+            <slot name="navBarItemsMobile" />
+        </MNavbar>
     </header>
 </template>
 
 <script lang="ts">
     import Vue from 'vue'
-    import MNavbar from '@/components/molecules/navbar/MNavbar.vue'
-    import MLogo from '@/components/molecules/logo/MLogo.vue'
-    import AHamburger from '@/components/atoms/hamburger/AHamburger.vue'
+    import { MNavbar, AHamburger, MLogo } from '@/components'
 
     export default Vue.extend({
         name: 'OHeader',
@@ -23,18 +28,6 @@
         },
 
         props: {
-            items: {
-                type: Array,
-                default: null
-            },
-            horizontal: {
-                type: Boolean,
-                default: false
-            },
-            mobileItems: {
-                type: Array,
-                default: null
-            },
             srcLogo: {
                 type: String,
                 default: null
@@ -44,16 +37,6 @@
         data() {
             return {
                 menuIsOpen: false
-            }
-        },
-
-        computed: {
-            computedMobileItems() {
-                if (Array.isArray(this.mobileItems)) {
-                    return this.mobileItems
-                }
-
-                return this.items
             }
         },
 

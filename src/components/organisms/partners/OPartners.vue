@@ -1,6 +1,8 @@
 <template>
     <div class="o-partners">
-        <AList :items="items" :horizontal="horizontal" without-chips />
+        <AList :horizontal="horizontal" without-chips>
+            <slot />
+        </AList>
     </div>
 </template>
 
@@ -14,10 +16,6 @@ export default Vue.extend({
     components: { AList },
 
     props: {
-        items: {
-            type: Array,
-            default: null
-        },
         horizontal: {
             type: Boolean,
             default: true
