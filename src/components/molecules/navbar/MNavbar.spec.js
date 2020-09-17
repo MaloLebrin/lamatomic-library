@@ -1,7 +1,4 @@
 import { shallowMount } from '@vue/test-utils'
-// import AButton from '@/components/atoms/button/AButton.vue'
-// import ALink from '@/components/atoms/link/ALink.vue'
-// import AListItem from '@/components/atoms/list/AListItem.vue'
 import MNavbar from './MNavbar.vue'
 
 Object.defineProperty(window, 'matchMedia', {
