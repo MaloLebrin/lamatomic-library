@@ -8,7 +8,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { AList } from '@/components'
+import AList from '@/components/atoms/list/AList.vue'
 
 export default Vue.extend({
     name: 'MNavbar',

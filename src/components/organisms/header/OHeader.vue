@@ -16,7 +16,9 @@
 
 <script lang="ts">
     import Vue from 'vue'
-    import { MNavbar, AHamburger, MLogo } from '@/components'
+    import AHamburger from '@/components/atoms/hamburger/AHamburger.vue'
+    import MLogo from '@/components/molecules/logo/MLogo.vue'
+    import MNavbar from '@/components/molecules/navbar/MNavbar.vue'
 
     export default Vue.extend({
         name: 'OHeader',

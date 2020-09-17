@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { AListItem } from '@/components'
+import AListItem from '@/components/atoms/list/AListItem.vue'
 
 export default Vue.extend({
     name: 'MNavItem',
