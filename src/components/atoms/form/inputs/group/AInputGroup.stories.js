@@ -7,8 +7,8 @@ const wrapper = {
   components: { AInputGroup, AInputText, AIcon }
 }
 
-storiesOf('Atoms/Form/FormGroup', module)
-  .add('default as FormGroup', () => ({
+storiesOf('Atoms/Form/inputs/InputGroup', module)
+  .add('default as InputGroup', () => ({
     ...wrapper,
     template: `<AInputGroup>
                     <template #prepend>

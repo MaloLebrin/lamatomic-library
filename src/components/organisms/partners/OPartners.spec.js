@@ -1,6 +1,5 @@
 import { mount } from '@vue/test-utils'
-import { OPartners, MPartner } from '@/entry'
-import { getMountedComponent } from '@/utils'
+import { OPartners } from '@/entry'
 
 Object.defineProperty(window, 'matchMedia', {
     writable: true,
@@ -24,19 +23,19 @@ describe('Organism - OPartners', () => {
     })
 
     test('...OPartners contains MPartner', () => {
-        const img1 = getMountedComponent(MPartner, { src:'https://placehold.it/350x150' }, { title: 'Bge'})
-        const img2 = getMountedComponent(MPartner, { src:'https://placehold.it/400x150' }, { title: 'france active 🍌'})
-
-        const items = [img1, img2]
-
         const wrapper = mount(OPartners, {
-            propsData: {
-                items,
+            slots: {
+                default: `  <MPartner src="https://placehold.it/350x150" title="Une super AImage de Lama" alt="un lama super" />
+                            <MPartner src="https://placehold.it/350x150" title="Une super AImage de Lama" alt="un lama super" />
+`
             }
         })
 
         expect(wrapper.html()).toContain(
-            `<li class="a-list-item"><a title="Partner's logo" class="a-link m-partner"><img src="https://placehold.it/350x150" alt="Partner's logo" class="a-image img-partner"></a></li>`
+            `<ul class="a-list without-chips horizontal"`
+        )
+        expect(wrapper.html()).toContain(
+            `<mpartner src="https://placehold.it/350x150" title="Une super AImage de Lama" alt="un lama super"`
         )
     })
 })

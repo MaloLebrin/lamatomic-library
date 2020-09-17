@@ -1,39 +1,25 @@
 import { storiesOf } from '@storybook/vue'
-import { getMountedComponent } from '@/utils'
 import { OPartners, MPartner } from '@/entry'
 
 const wrapper = {
-    components: { OPartners }
+    components: { OPartners, MPartner }
 }
-
-const img1 = getMountedComponent(MPartner, { src: 'https://placehold.it/350x150' }, { title: 'Bge'})
-const img2 = getMountedComponent(MPartner, { src: 'https://placehold.it/350x150' }, { title: 'france active 🍌'})
-const img3 = getMountedComponent(MPartner, { src: 'https://placehold.it/350x150' }, { title: 'ij logo 🍌'})
-const img4 = getMountedComponent(MPartner, { src: 'https://placehold.it/350x150' }, { title: 'Join ours bananas 🍌'})
-const img5 = getMountedComponent(MPartner, { src: 'https://placehold.it/350x150' }, { title: 'Join ours bananas 🍌'})
-const img6 = getMountedComponent(MPartner, { src: 'https://placehold.it/350x150' }, { title: 'Join ours bananas 🍌'})
-const img7 = getMountedComponent(MPartner, { src: 'https://placehold.it/350x150' }, { title: 'Join ours bananas 🍌'})
-const img8 = getMountedComponent(MPartner, { src: 'https://placehold.it/350x150' }, { title: 'Join ours bananas 🍌'})
-
-const items = [img1, img2, img3, img4, img5, img6, img7, img8]
 
 storiesOf('Organisms/Partners', module)
     .add('Default', () => ({
         ...wrapper,
-        data() {
-            return {
-                items
-            }
-        },
-        template: `<OPartners :items="items"  />`
+
+        template: `<OPartners>
+                        <MPartner src="https://placehold.it/350x150" title="Une super AImage de Lama" alt="un lama super" />
+                        <MPartner src="https://placehold.it/350x150" title="Une super AImage de Lama" alt="un lama super" />
+                    </OPartners>`
     }))
 
     .add('Vertical', () => ({
         ...wrapper,
-        data() {
-            return {
-                items
-            }
-        },
-        template: '<OPartners :items="items" :horizontal="false" />'
+
+        template: `<OPartners :horizontal="false">
+                        <MPartner src="https://placehold.it/350x150" title="Une super AImage de Lama" alt="un lama super" />
+                        <MPartner src="https://placehold.it/350x150" title="Une super AImage de Lama" alt="un lama super" />
+                    </OPartners>`
     }))

@@ -1,12 +1,14 @@
 <template>
     <nav class="m-navbar">
-        <AList :items="items" :horizontal="horizontal" without-chips />
+        <AList :horizontal="horizontal" without-chips>
+            <slot />
+        </AList>
     </nav>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import AList from '@/components/atoms/list/AList.vue'
+import { AList } from '@/components'
 
 export default Vue.extend({
     name: 'MNavbar',
@@ -14,11 +16,6 @@ export default Vue.extend({
     components: { AList },
 
     props: {
-        items: {
-            type: Array,
-            default: null
-        },
-
         horizontal: {
             type: Boolean,
             default: true

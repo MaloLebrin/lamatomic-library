@@ -1,52 +1,45 @@
-import { mount } from '@vue/test-utils'
-import AButton from '@/components/atoms/button/AButton.vue'
-import ALink from '@/components/atoms/link/ALink.vue'
-import { getMountedComponent } from '@/utils'
+import { shallowMount } from '@vue/test-utils'
+// import AButton from '@/components/atoms/button/AButton.vue'
+// import ALink from '@/components/atoms/link/ALink.vue'
+// import AListItem from '@/components/atoms/list/AListItem.vue'
 import MNavbar from './MNavbar.vue'
+
+Object.defineProperty(window, 'matchMedia', {
+    writable: true,
+    value: jest.fn().mockImplementation((query) => ({
+        matches: false,
+        media: query,
+        onchange: null,
+        addListener: jest.fn(), // deprecated
+        removeListener: jest.fn(), // deprecated
+        addEventListener: jest.fn(),
+        removeEventListener: jest.fn(),
+        dispatchEvent: jest.fn()
+    }))
+})
 
 describe('Molecule - MNavbar', () => {
     test('...as default has nav wrapper, a list component and horizontal props is true', () => {
-        const wrapper = mount(MNavbar)
+        const wrapper = shallowMount(MNavbar)
 
         expect(wrapper.html()).toContain('<nav class="m-navbar"')
-        expect(wrapper.html()).toContain('<ul class="a-list without-chips horizontal">')
+        expect(wrapper.html()).toContain('<alist-stub type="ul" withoutchips="true" horizontal="true"')
         expect(wrapper.props().horizontal).toBeTruthy()
     })
 
     test('...items injected are correctly rendered', () => {
-        const link1 = getMountedComponent(
-            ALink,
-            { href: 'https://bananas.com/' },
-            { default: 'Super lien' }
-        )
-        const btn1 = getMountedComponent(
-            AButton,
-            { state: 'success' },
-            { default: 'Ohohoh' }
-        )
-        const btn2 = getMountedComponent(
-            AButton,
-            { state: 'error' },
-            { default: 'Yes!' }
-        )
 
-        const items = [link1, btn1, btn2]
-
-        const wrapper = mount(MNavbar, {
-            propsData: {
-                items,
-                horizontal: false
+        const wrapper = shallowMount(MNavbar, {
+            slots: {
+                default: `<li><p>Content col 1</p></li>
+                <li><p>Content col 2</p></li>`
             }
         })
 
-        expect(wrapper.props().horizontal).toBeFalsy()
-        expect(wrapper.html()).toContain('<ul class="a-list without-chips">')
-        expect(wrapper.html()).toContain('<li class="a-list-item"')
-        expect(wrapper.html()).toContain('href="https://bananas.com/')
-        expect(wrapper.html()).toContain('<a ')
-        expect(wrapper.html()).toContain('Super lien')
-        expect(wrapper.html()).toContain('<button ')
-        expect(wrapper.html()).toContain('Ohohoh')
-        expect(wrapper.html()).toContain('Yes!')
+        expect(wrapper.html()).toContain('<alist-stub type="ul" withoutchips="true" horizontal="true"')
+        expect(wrapper.html()).toContain('<li>')
+        expect(wrapper.html()).toContain('<p>Content col 1</p>')
+        expect(wrapper.html()).toContain('<p>Content col 2</p>')
+
     })
 })
