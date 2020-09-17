@@ -1,5 +1,6 @@
 import { mount } from '@vue/test-utils'
 import AList from './AList.vue'
+import AListItem from './AListItem.vue'
 
 describe('Atom - AList', () => {
     test('...default has <ul> tag', () => {
@@ -16,16 +17,6 @@ describe('Atom - AList', () => {
         expect(wrapper.find('ol')).toBeTruthy()
     })
 
-    test('...list has items', () => {
-        const wrapper = mount(AList, {
-            propsData: { items: ['ohoh', 'héhé', 'hihi'] }
-        })
-
-        expect(wrapper.find('ol')).toBeTruthy()
-        expect(wrapper.html()).toContain('<li class="a-list-item">ohoh</li>')
-        expect(wrapper.html()).toContain('<li class="a-list-item">héhé</li>')
-        expect(wrapper.html()).toContain('<li class="a-list-item">hihi</li>')
-    })
 
     test('...renders the correct classes based on props passed', () => {
         const wrapper = mount(AList, {
@@ -39,5 +30,12 @@ describe('Atom - AList', () => {
         expect(wrapper.attributes().class).toContain('without-chips')
         expect(wrapper.attributes().class).toContain('horizontal')
         expect(wrapper.attributes().class).toContain('no-padding')
+    })
+})
+
+describe('Atom -AListItem', () => {
+    test('...default has <li>', () => {
+        const wrapper = mount(AListItem)
+        expect(wrapper.find('li')).toBeTruthy()
     })
 })

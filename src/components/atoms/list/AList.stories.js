@@ -1,19 +1,27 @@
 import { storiesOf } from '@storybook/vue'
+import getMountedComponent from '@/utils.ts'
 import AList from './AList.vue'
+import AListItem from './AListItem.vue'
 
 const wrapper = {
-    components: { AList }
+    components: { AList, AListItem }
 }
+
+const item1 = getMountedComponent(AListItem, {}, {default: 'premier item'})
+const item2 = getMountedComponent(AListItem, {}, {default: 'deuxième item'})
+const item3 = getMountedComponent(AListItem, {}, {default: '3eme item'})
+
+const items = [item1, item2, item3]
 
 storiesOf('Atoms/List', module)
     .addParameters({ component: AList})
 
     .add('Vertical with chips (default)', () => ({
         ...wrapper,
-        template: '<AList :items="items"></AList>',
-        data() {
+        template: `<AList :items="items"></AList>`,
+        data () {
             return {
-                items: ['Lapin 🐇', 'Banane 🍌', 'Papier toilette 🧻']
+                items
             }
         }
     }))
@@ -23,7 +31,7 @@ storiesOf('Atoms/List', module)
         template: '<AList :items="items" withoutChips></AList>',
         data() {
             return {
-                items: ['Hérisson 🦔', 'Pique ♠', 'Kamoulox 💩']
+                items
             }
         }
     }))
@@ -33,7 +41,7 @@ storiesOf('Atoms/List', module)
         template: '<AList :items="items" withoutChips noPadding></AList>',
         data() {
             return {
-                items: ['Ohohoh', 'Héhéhé', 'Hihihi']
+                items
             }
         }
     }))
@@ -43,7 +51,7 @@ storiesOf('Atoms/List', module)
         template: `<AList :items="items" horizontal></AList>`,
         data() {
             return {
-                items: ['Poisson 🐠', 'Rouge 🟥', 'La mer 🌊', 'Coquillage 🐚']
+                items
             }
         }
     }))
@@ -53,7 +61,7 @@ storiesOf('Atoms/List', module)
         template: `<AList :items="items" horizontal withoutChips></AList>`,
         data() {
             return {
-                items: ['Evènement 📅', 'Contact 📞', 'Protection 😷']
+                items
             }
         }
     }))
@@ -63,7 +71,7 @@ storiesOf('Atoms/List', module)
         template: `<AList :items="items" horizontal withoutChips noPadding></AList>`,
         data() {
             return {
-                items: ['Concert 🎙', 'Evènement 📅', 'Contact 📞', 'Protection 😷']
+                items
             }
         }
     }))
