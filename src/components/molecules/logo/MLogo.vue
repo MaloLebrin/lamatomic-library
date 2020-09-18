@@ -5,9 +5,10 @@
         title="Me rendre à la page d'accueil"
         no-line
     >
-        <AImage
+        <AImage v-if="src !== null"
             :src="src"
         />
+        <slot />
     </ALink>
 </template>
 
@@ -26,7 +27,7 @@ export default Vue.extend({
     props: {
         src: {
             type: String,
-            default: "http://www.institutfrance.si/modules/uploader/uploads/news/pictures_news/AF_Slovenie_Logo_site_2.jpg"
+            default: null
         },
 
     },
