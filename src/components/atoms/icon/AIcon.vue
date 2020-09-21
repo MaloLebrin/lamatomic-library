@@ -1,64 +1,49 @@
 <template>
-    <svg
-        xmlns="http://www.w3.org/2000/svg"
+    <ASvg
+        v-bind="$attrs"
         class="a-icon"
-        :width="width"
-        :height="height"
-        :viewBox="getViewBox"
-        :aria-labelledby="iconName"
-        role="presentation"
+        :height="sizeIcon"
+        :width="sizeIcon"
     >
-        <title
-            :id="iconName"
-            lang="en"
-        >
-            {{ iconName }} icon
-        </title>
-
-        <g :fill="iconColor">
-            <slot />
-        </g>
-    </svg>
+    <slot />
+    </ASvg>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-
 export default Vue.extend({
     name: 'AIcon',
 
     props: {
-        iconName: {
+        size: {
             type: String,
-            default: 'lama'
-        },
-        width: {
-            type: [Number, String],
-            default: 18
-        },
-        height: {
-            type: [Number, String],
-            default: 18
-        },
-        iconColor: {
-            type: String,
-            default: 'currentColor'
-        },
-        sizeX: {
-            type: Number,
-            default: 512
-        },
-        sizeY: {
-            type: Number,
-            default: 512
+            default: null,
+            validator(value) {
+                return ['xs', 's', 'm', 'l',].includes(value)
+            }
         }
     },
 
     computed: {
-        getViewBox(): String {
-            return "0 0 " + this.sizeX + " " + this.sizeY
+        sizeIcon(this: any) {
+            switch (this.size) {
+                case 'xs':
+                    return '23px'
+
+                case 's':
+                    return '50px'
+
+                case 'm':
+                    return '100px'
+
+                case 'l':
+                    return '200px'
+
+                default:
+                    return '100px'
+            }
         }
-    }
+    },
 })
 </script>
 
