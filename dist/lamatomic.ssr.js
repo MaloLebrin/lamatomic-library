@@ -3163,7 +3163,7 @@ var __vue_component__$v = /*#__PURE__*/normalizeComponent({
   props: {
     src: {
       type: String,
-      default: "http://www.institutfrance.si/modules/uploader/uploads/news/pictures_news/AF_Slovenie_Logo_site_2.jpg"
+      default: null
     }
   }
 });/* script */
@@ -3184,11 +3184,11 @@ var __vue_render__$w = function __vue_render__() {
       "title": "Me rendre à la page d'accueil",
       "no-line": ""
     }
-  }, [_c('AImage', {
+  }, [_vm.src !== null ? _c('AImage', {
     attrs: {
       "src": _vm.src
     }
-  })], 1);
+  }) : _vm._e(), _vm._v(" "), _vm._t("default")], 2);
 };
 
 var __vue_staticRenderFns__$w = [];
@@ -3196,7 +3196,7 @@ var __vue_staticRenderFns__$w = [];
 
 var __vue_inject_styles__$w = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-bb8ae842_0", {
+  inject("data-v-601e6132_0", {
     source: ".m-logo{animation:1s appear;margin:auto}",
     map: undefined,
     media: undefined
@@ -3208,7 +3208,7 @@ var __vue_inject_styles__$w = function __vue_inject_styles__(inject) {
 var __vue_scope_id__$w = undefined;
 /* module identifier */
 
-var __vue_module_identifier__$w = "data-v-bb8ae842";
+var __vue_module_identifier__$w = "data-v-601e6132";
 /* functional template */
 
 var __vue_is_functional_template__$w = false;
@@ -4007,7 +4007,7 @@ var __vue_render__$I = function __vue_render__() {
     attrs: {
       "src": _vm.srcLogo
     }
-  }), _vm._ssrNode(" "), _c('MNavbar', {
+  }, [_vm._t("LogoSvg")], 2), _vm._ssrNode(" "), _c('MNavbar', {
     staticClass: "m-navbar-desktop",
     on: {
       "click": _vm.toggleMenu
@@ -4039,7 +4039,7 @@ var __vue_staticRenderFns__$I = [];
 
 var __vue_inject_styles__$I = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-70870302_0", {
+  inject("data-v-2b6c47b8_0", {
     source: ".o-header{align-items:center;display:flex;flex-direction:row;position:relative}.o-header .m-navbar-desktop{display:none}.o-header .m-logo{flex-basis:10%;margin-left:15px}.o-header .m-logo .a-image{width:80px}.o-header .m-navbar{max-width:calc(100vw - 40px);overflow:hidden}.o-header-menu{display:flex;flex-direction:column;left:100%;min-height:100vh;opacity:0;padding-top:5rem;position:absolute;top:0;transition:all .8s ease-in-out;transition-timing-function:cubic-bezier(.37,.96,.22,1.01);visibility:hidden;width:20rem;z-index:1}.o-header-menu.menu-open{opacity:1;right:0}.o-header--is-open .o-header-menu{background-color:#f8f8f8;transform:translate3d(-100%,0,0);visibility:visible}.o-header-hamburger{margin-right:5rem;position:relative;z-index:2}.o-header-hamburger.a-hamburger--is-open{margin-right:15rem;transition:margin cubic-bezier(.37,.96,.22,1.01) ease-in-out}@media screen and (min-width:992px){.o-header .m-logo .a-image{width:120px}.o-header .m-navbar-desktop{display:block}.o-header .m-navbar-mobile,.o-header .o-header-hamburger{display:none}}",
     map: undefined,
     media: undefined
@@ -4051,7 +4051,7 @@ var __vue_inject_styles__$I = function __vue_inject_styles__(inject) {
 var __vue_scope_id__$I = undefined;
 /* module identifier */
 
-var __vue_module_identifier__$I = "data-v-70870302";
+var __vue_module_identifier__$I = "data-v-2b6c47b8";
 /* functional template */
 
 var __vue_is_functional_template__$I = false;
