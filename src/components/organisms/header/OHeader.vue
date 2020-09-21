@@ -1,7 +1,7 @@
 <template>
     <header class="o-header" :class="{'o-header--is-open': menuIsOpen }">
         <MLogo :src="srcLogo">
-            <slot />
+            <slot name="LogoSvg" />
         </MLogo>
 
         <MNavbar class="m-navbar-desktop" @click="toggleMenu">

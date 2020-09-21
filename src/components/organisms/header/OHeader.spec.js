@@ -58,7 +58,7 @@ describe('Organism - OHeader', () => {
 
         const wrapper = shallowMount(OHeader, {
             slots: {
-                default: `<li><p>LOGO SVG</p></li>`
+                'LogoSvg': `<li><p>LOGO SVG</p></li>`
             }
         })
 
@@ -68,7 +68,7 @@ describe('Organism - OHeader', () => {
 
     })
 
-    test('...slot used for svg passed', () => {
+    test('...src used used for svg passed', () => {
 
         const wrapper = shallowMount(OHeader, {
             propsData: {
