@@ -30,7 +30,7 @@ export default Vue.extend({
     props: {
         iconName: {
             type: String,
-            default: 'lama'
+            default: ''
         },
 
         width: {
@@ -72,6 +72,5 @@ export default Vue.extend({
     animation: 1s appear;
     height: 100%;
     text-decoration: none;
-    width: 100%;
 }
 </style>
