@@ -650,7 +650,7 @@ var __vue_component__$3 = /*#__PURE__*/normalizeComponent({
   props: {
     iconName: {
       type: String,
-      default: 'lama'
+      default: ''
     },
     width: {
       type: [Number, String],
@@ -707,8 +707,8 @@ var __vue_staticRenderFns__$4 = [];
 
 var __vue_inject_styles__$4 = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-1945bd89_0", {
-    source: ".a-svg{animation:1s appear;height:100%;text-decoration:none;width:100%}",
+  inject("data-v-d2f0a48e_0", {
+    source: ".a-svg{animation:1s appear;height:100%;text-decoration:none}",
     map: undefined,
     media: undefined
   });
@@ -719,7 +719,7 @@ var __vue_inject_styles__$4 = function __vue_inject_styles__(inject) {
 var __vue_scope_id__$4 = undefined;
 /* module identifier */
 
-var __vue_module_identifier__$4 = "data-v-1945bd89";
+var __vue_module_identifier__$4 = "data-v-d2f0a48e";
 /* functional template */
 
 var __vue_is_functional_template__$4 = false;
@@ -730,6 +730,9 @@ var __vue_component__$4 = /*#__PURE__*/normalizeComponent({
   staticRenderFns: __vue_staticRenderFns__$4
 }, __vue_inject_styles__$4, __vue_script__$4, __vue_scope_id__$4, __vue_is_functional_template__$4, __vue_module_identifier__$4, false, undefined, createInjectorSSR, undefined);var script$5 = Vue.extend({
   name: 'AIcon',
+  components: {
+    ASvg: __vue_component__$4
+  },
   props: {
     size: {
       type: String,
@@ -784,7 +787,7 @@ var __vue_staticRenderFns__$5 = [];
 
 var __vue_inject_styles__$5 = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-62d02048_0", {
+  inject("data-v-ca6d2b74_0", {
     source: ".a-icon{animation:1s appear;text-decoration:none}",
     map: undefined,
     media: undefined
@@ -796,7 +799,7 @@ var __vue_inject_styles__$5 = function __vue_inject_styles__(inject) {
 var __vue_scope_id__$5 = undefined;
 /* module identifier */
 
-var __vue_module_identifier__$5 = "data-v-62d02048";
+var __vue_module_identifier__$5 = "data-v-ca6d2b74";
 /* functional template */
 
 var __vue_is_functional_template__$5 = false;
@@ -4286,7 +4289,7 @@ var __vue_is_functional_template__$L = false;
 var __vue_component__$L = /*#__PURE__*/normalizeComponent({
   render: __vue_render__$L,
   staticRenderFns: __vue_staticRenderFns__$L
-}, __vue_inject_styles__$L, __vue_script__$L, __vue_scope_id__$L, __vue_is_functional_template__$L, __vue_module_identifier__$L, false, undefined, createInjectorSSR, undefined);/* eslint-disable import/prefer-default-export */var components=/*#__PURE__*/Object.freeze({__proto__:null,AButton: __vue_component__,AHamburger: __vue_component__$2,AHeading: __vue_component__$3,ASvg: __vue_component__$4,AIcon: __vue_component__$5,AImage: __vue_component__$6,ALink: __vue_component__$7,AList: __vue_component__$8,AListItem: __vue_component__$9,AText: __vue_component__$1,AFormGroup: __vue_component__$b,ALabel: __vue_component__$a,ASelect: __vue_component__$c,ASelectPlus: __vue_component__$d,ASelectPlusImage: __vue_component__$e,ATextarea: __vue_component__$f,AInputGroup: __vue_component__$g,AInputCheckbox: __vue_component__$i,AInputDate: __vue_component__$j,AInputEmail: __vue_component__$k,AInputNumber: __vue_component__$l,AInputFile: __vue_component__$m,AInputHidden: __vue_component__$n,AInputPassword: __vue_component__$o,AInputRadio: __vue_component__$p,AInputSearch: __vue_component__$q,AInputTel: __vue_component__$r,AInputText: __vue_component__$s,AInputUrl: __vue_component__$t,MBadge: __vue_component__$u,MCard: __vue_component__$v,MCarousel: __vue_component__$w,MLogo: __vue_component__$x,MNavbar: __vue_component__$y,MNavItem: __vue_component__$z,MPartner: __vue_component__$A,MScrollToTop: __vue_component__$B,MSocialButton: __vue_component__$C,MSocialButtonFacebook: __vue_component__$D,MSocialButtonTwitter: __vue_component__$E,MSocialButtonInstagram: __vue_component__$F,MSocialButtonLinkedin: __vue_component__$G,MTyper: __vue_component__$H,OFooter: __vue_component__$I,OHeader: __vue_component__$J,ONewsletterForm: __vue_component__$K,OPartners: __vue_component__$L});// eslint-disable-next-line @typescript-eslint/no-explicit-any
+}, __vue_inject_styles__$L, __vue_script__$L, __vue_scope_id__$L, __vue_is_functional_template__$L, __vue_module_identifier__$L, false, undefined, createInjectorSSR, undefined);/* eslint-disable import/prefer-default-export */var components=/*#__PURE__*/Object.freeze({__proto__:null,AButton: __vue_component__,AHamburger: __vue_component__$2,AHeading: __vue_component__$3,AIcon: __vue_component__$5,ASvg: __vue_component__$4,AImage: __vue_component__$6,ALink: __vue_component__$7,AList: __vue_component__$8,AListItem: __vue_component__$9,AText: __vue_component__$1,AFormGroup: __vue_component__$b,ALabel: __vue_component__$a,ASelect: __vue_component__$c,ASelectPlus: __vue_component__$d,ASelectPlusImage: __vue_component__$e,ATextarea: __vue_component__$f,AInputGroup: __vue_component__$g,AInputCheckbox: __vue_component__$i,AInputDate: __vue_component__$j,AInputEmail: __vue_component__$k,AInputNumber: __vue_component__$l,AInputFile: __vue_component__$m,AInputHidden: __vue_component__$n,AInputPassword: __vue_component__$o,AInputRadio: __vue_component__$p,AInputSearch: __vue_component__$q,AInputTel: __vue_component__$r,AInputText: __vue_component__$s,AInputUrl: __vue_component__$t,MBadge: __vue_component__$u,MCard: __vue_component__$v,MCarousel: __vue_component__$w,MLogo: __vue_component__$x,MNavbar: __vue_component__$y,MNavItem: __vue_component__$z,MPartner: __vue_component__$A,MScrollToTop: __vue_component__$B,MSocialButton: __vue_component__$C,MSocialButtonFacebook: __vue_component__$D,MSocialButtonTwitter: __vue_component__$E,MSocialButtonInstagram: __vue_component__$F,MSocialButtonLinkedin: __vue_component__$G,MTyper: __vue_component__$H,OFooter: __vue_component__$I,OHeader: __vue_component__$J,ONewsletterForm: __vue_component__$K,OPartners: __vue_component__$L});// eslint-disable-next-line @typescript-eslint/no-explicit-any
 
 // install function executed by Vue.use()
 var install = function installLamatomic(Vue) {

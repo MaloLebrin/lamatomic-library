@@ -601,7 +601,7 @@ var script$4 = Vue.extend({
   props: {
     iconName: {
       type: String,
-      default: 'lama'
+      default: ''
     },
     width: {
       type: [Number, String],
@@ -670,8 +670,8 @@ var __vue_staticRenderFns__$4 = [];
 
 const __vue_inject_styles__$4 = function (inject) {
   if (!inject) return;
-  inject("data-v-1945bd89_0", {
-    source: ".a-svg{animation:1s appear;height:100%;text-decoration:none;width:100%}",
+  inject("data-v-d2f0a48e_0", {
+    source: ".a-svg{animation:1s appear;height:100%;text-decoration:none}",
     map: undefined,
     media: undefined
   });
@@ -697,6 +697,9 @@ const __vue_component__$4 = /*#__PURE__*/normalizeComponent({
 
 var script$5 = Vue.extend({
   name: 'AIcon',
+  components: {
+    ASvg: __vue_component__$4
+  },
   props: {
     size: {
       type: String,
@@ -756,7 +759,7 @@ var __vue_staticRenderFns__$5 = [];
 
 const __vue_inject_styles__$5 = function (inject) {
   if (!inject) return;
-  inject("data-v-62d02048_0", {
+  inject("data-v-ca6d2b74_0", {
     source: ".a-icon{animation:1s appear;text-decoration:none}",
     map: undefined,
     media: undefined
@@ -4615,8 +4618,8 @@ var components = /*#__PURE__*/Object.freeze({
     AButton: __vue_component__,
     AHamburger: __vue_component__$2,
     AHeading: __vue_component__$3,
-    ASvg: __vue_component__$4,
     AIcon: __vue_component__$5,
+    ASvg: __vue_component__$4,
     AImage: __vue_component__$6,
     ALink: __vue_component__$7,
     AList: __vue_component__$8,

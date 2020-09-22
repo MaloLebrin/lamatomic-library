@@ -11,7 +11,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { ASvg } from '@/entry'
+import ASvg from '@/components/atoms/svg/ASvg.vue'
 
 export default Vue.extend({
     name: 'AIcon',
