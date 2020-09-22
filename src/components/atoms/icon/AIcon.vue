@@ -11,8 +11,11 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { ASvg } from '@/entry'
 export default Vue.extend({
     name: 'AIcon',
+
+    components: { ASvg },
 
     props: {
         size: {
