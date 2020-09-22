@@ -5,7 +5,7 @@
         :height="sizeIcon"
         :width="sizeIcon"
     >
-    <slot />
+        <slot />
     </ASvg>
 </template>
 
@@ -19,7 +19,7 @@ export default Vue.extend({
             type: String,
             default: null,
             validator(value) {
-                return ['xs', 's', 'm', 'l',].includes(value)
+                return ['xs', 's', 'm', 'l' ].includes(value)
             }
         }
     },

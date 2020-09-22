@@ -2,8 +2,8 @@ import { storiesOf } from '@storybook/vue'
 import AIcon from '.AIcon.vue'
 
 const wrapper = {
-    components: { AIcon}
-  }
+    components: { AIcon }
+}
 
 storiesOf('Atoms', module)
 

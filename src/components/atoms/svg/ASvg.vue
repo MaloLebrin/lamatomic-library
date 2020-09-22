@@ -32,22 +32,27 @@ export default Vue.extend({
             type: String,
             default: 'lama'
         },
+
         width: {
             type: [Number, String],
             default: 18
         },
+
         height: {
             type: [Number, String],
             default: 18
         },
+
         iconColor: {
             type: String,
             default: 'currentColor'
         },
+
         sizeX: {
             type: Number,
             default: 512
         },
+
         sizeY: {
             type: Number,
             default: 512
