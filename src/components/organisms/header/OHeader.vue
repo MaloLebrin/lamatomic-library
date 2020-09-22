@@ -1,8 +1,6 @@
 <template>
     <header class="o-header" :class="{'o-header--is-open': menuIsOpen }">
-        <MLogo :src="srcLogo">
-            <slot name="LogoSvg" />
-        </MLogo>
+        <slot name="addLogo" />
 
         <MNavbar class="m-navbar-desktop" @click="toggleMenu">
             <slot name="navBarItems" />
@@ -19,23 +17,14 @@
 <script lang="ts">
     import Vue from 'vue'
     import AHamburger from '@/components/atoms/hamburger/AHamburger.vue'
-    import MLogo from '@/components/molecules/logo/MLogo.vue'
     import MNavbar from '@/components/molecules/navbar/MNavbar.vue'
 
     export default Vue.extend({
         name: 'OHeader',
 
         components: {
-            MLogo,
             MNavbar,
             AHamburger
-        },
-
-        props: {
-            srcLogo: {
-                type: String,
-                default: null
-            }
         },
 
         data() {

@@ -58,7 +58,7 @@ describe('Organism - OHeader', () => {
 
         const wrapper = shallowMount(OHeader, {
             slots: {
-                'LogoSvg': `<li><p>LOGO SVG</p></li>`
+                'addLogo': `<li><p>LOGO SVG</p></li>`
             }
         })
 
@@ -67,18 +67,4 @@ describe('Organism - OHeader', () => {
         expect(wrapper.html()).toContain('<p>LOGO SVG</p>')
 
     })
-
-    test('...src used used for svg passed', () => {
-
-        const wrapper = shallowMount(OHeader, {
-            propsData: {
-                srcLogo: 'http://www.institutfrance.si/modules/uploader/uploads/news/pictures_news/AF_Slovenie_Logo_site_2.jpg'
-            }
-        })
-
-        expect(wrapper.html()).toContain(`<mlogo-stub src="http://www.institutfrance.si/modules/uploader/uploads/news/pictures_news/AF_Slovenie_Logo_site_2.jpg"`)
-
-    })
-
-
 })
