@@ -4340,15 +4340,8 @@ const __vue_component__$I = /*#__PURE__*/normalizeComponent({
 var script$J = Vue.extend({
   name: 'OHeader',
   components: {
-    MLogo: __vue_component__$x,
     MNavbar: __vue_component__$y,
     AHamburger: __vue_component__$2
-  },
-  props: {
-    srcLogo: {
-      type: String,
-      default: null
-    }
   },
 
   data() {
@@ -4381,11 +4374,7 @@ var __vue_render__$J = function () {
     class: {
       'o-header--is-open': _vm.menuIsOpen
     }
-  }, [_c('MLogo', {
-    attrs: {
-      "src": _vm.srcLogo
-    }
-  }, [_vm._t("LogoSvg")], 2), _vm._v(" "), _c('MNavbar', {
+  }, [_vm._t("addLogo"), _vm._v(" "), _c('MNavbar', {
     staticClass: "m-navbar-desktop",
     on: {
       "click": _vm.toggleMenu
@@ -4409,7 +4398,7 @@ var __vue_render__$J = function () {
     on: {
       "click": _vm.toggleMenu
     }
-  }, [_vm._t("navBarItemsMobile")], 2)], 1);
+  }, [_vm._t("navBarItemsMobile")], 2)], 2);
 };
 
 var __vue_staticRenderFns__$J = [];
@@ -4417,7 +4406,7 @@ var __vue_staticRenderFns__$J = [];
 
 const __vue_inject_styles__$J = function (inject) {
   if (!inject) return;
-  inject("data-v-2b6c47b8_0", {
+  inject("data-v-72b40605_0", {
     source: ".o-header{align-items:center;display:flex;flex-direction:row;position:relative}.o-header .m-navbar-desktop{display:none}.o-header .m-logo{flex-basis:10%;margin-left:15px}.o-header .m-logo .a-image{width:80px}.o-header .m-navbar{max-width:calc(100vw - 40px);overflow:hidden}.o-header-menu{display:flex;flex-direction:column;left:100%;min-height:100vh;opacity:0;padding-top:5rem;position:absolute;top:0;transition:all .8s ease-in-out;transition-timing-function:cubic-bezier(.37,.96,.22,1.01);visibility:hidden;width:20rem;z-index:1}.o-header-menu.menu-open{opacity:1;right:0}.o-header--is-open .o-header-menu{background-color:#f8f8f8;transform:translate3d(-100%,0,0);visibility:visible}.o-header-hamburger{margin-right:5rem;position:relative;z-index:2}.o-header-hamburger.a-hamburger--is-open{margin-right:15rem;transition:margin cubic-bezier(.37,.96,.22,1.01) ease-in-out}@media screen and (min-width:992px){.o-header .m-logo .a-image{width:120px}.o-header .m-navbar-desktop{display:block}.o-header .m-navbar-mobile,.o-header .o-header-hamburger{display:none}}",
     map: undefined,
     media: undefined
