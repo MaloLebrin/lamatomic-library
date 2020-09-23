@@ -5,23 +5,24 @@
         :href="href"
         target="_blank"
     >
-        <AImage
-            :src="src"
-            :alt="title"
-        />
+        <ASvg
+            v-bind="$attrs"
+        >
+            <slot />
+        </ASvg>
     </AButton>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import AImage from '../../atoms/image/AImage.vue'
+import ASvg from '../../atoms/svg/ASvg.vue'
 import AButton from '../../atoms/button/AButton.vue'
 
 export default Vue.extend({
     name: 'MSocialButton',
 
     components: {
-        AImage,
+        ASvg,
         AButton
     },
 
@@ -54,15 +55,14 @@ export default Vue.extend({
     padding: 5px;
     width: 30px;
 
-    .a-image {
+    svg {
         height: 100%;
         width: 100%;
-    }
 
-    &:hover {
-        .a-image {
-            filter: invert(47%) sepia(95%) saturate(2181%) hue-rotate(166deg) brightness(91%) contrast(104%);
+        &:hover {
+            fill: #000;
         }
     }
+
 }
 </style>

@@ -8,7 +8,7 @@ describe('Atom - ASvg', () => {
         expect(wrapper.html()).toContain(
             '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"'
         )
-        expect(wrapper.html()).toContain('<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 512 512" aria-labelledby="" role="presentation" class="a-svg')
+        expect(wrapper.html()).toContain('<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 512 512" aria-labelledby="" role="presentation" class="a-svg"')
         expect(wrapper.html()).toContain('<g fill="currentColor"></g>')
     })
 
