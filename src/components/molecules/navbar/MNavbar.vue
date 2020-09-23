@@ -30,9 +30,5 @@ export default Vue.extend({
     > .a-list {
         padding-left: 0;
     }
-
-    .a-list-item {
-        margin-bottom: 1.5rem;
-    }
 }
 </style>
