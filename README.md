@@ -1,0 +1,34 @@
+# lamatomic-library
+# Launch unit tests on all feature branches
+unit test:
+  image: node:12.16.3
+  stage: test
+  script:
+    - yarn install
+    - yarn test --coverage
+  coverage: /All\sfiles.*?\s+(\d+.\d+)/
+
+# Official framework image. Look for the different tagged releases at:
+# https://hub.docker.com/r/library/node/tags/
+image: node:12.16.3
+
+# This folder is cached between builds
+# http://docs.gitlab.com/ce/ci/yaml/README.html#cache
+cache:
+    paths:
+      - node_modules/
+
+# This job is required for GitLab Pages
+pages:
+    stage: deploy
+    # Export storybook as a static site (to public)
+    script:
+      - yarn install
+      - yarn build-storybook -o public
+    # Required artifact for GitLab Pages
+    artifacts:
+        paths:
+          - public
+    # Only run on the `master` branch
+    only:
+      - master
