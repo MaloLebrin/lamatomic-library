@@ -1,32 +1,34 @@
 <template>
-    <video
-        class="a-video"
+    <iframe
+        :width="width"
+        :height="height"
         :src="src"
-        :alt="alt"
-        :title="title"
-        :type="type"
-        :autoplay="autoplay"
-        :controls="controls"
-        :loop="loop"
-        :muted="muted"
-        :preload="preload"
-        :poster="poster"
-
-        >
-        <slot />
-    </video>
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+    />
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 
 export default Vue.extend({
-    name: 'AVideo',
+    name: 'AVideoYoutube',
 
     props: {
         src: {
             type: String,
-            default: null
+            default: 'https://www.youtube.com/embed/DkXhSAW5pTQ'
+        },
+
+        height: {
+            type: String,
+            default: '315'
+        },
+
+        width: {
+            type: String,
+            default: '640'
         },
 
         alt: {
@@ -61,7 +63,7 @@ export default Vue.extend({
 
         preload: {
             type: String,
-            default:'none',
+            default:'auto',
             validator(value) {
                 return ['none', 'metadata', 'auto'].includes(value)
             }

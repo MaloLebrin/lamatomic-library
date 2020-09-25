@@ -63,6 +63,5 @@ export default Vue.extend({
             fill: #000;
         }
     }
-
 }
 </style>

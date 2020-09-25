@@ -65,24 +65,7 @@ storiesOf('Atoms', module)
 
 
         template:
-            `
-            <video
-                class="a-video"
-                :src="src"
-                :alt="lamaalt"
-                :title="lamatitle"
-                :type="type"
-                :autoplay="autoplay"
-                :controls="controls"
-                :loop="loop"
-                :muted="muted"
-                :preload="preload"
-                :poster="poster"
-
-                >
-                {{lamatitle}}
-            </video>
-                `
+            `<AVideo />`
         }),
         { info: true }
     )

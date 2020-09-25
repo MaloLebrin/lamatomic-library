@@ -1,25 +1,15 @@
 import { mount } from '@vue/test-utils'
-import AVideo from './AVideo.vue'
+import AVideoYoutube from './AVideoYoutube.vue'
 
-describe('Atom - AVideo', () => {
+describe('Atom - AVideoYoutube', () => {
     test('...has <img> tag', () => {
-        const wrapper = mount(AVideo)
-        expect(wrapper.find('video')).toBeTruthy()
-        expect(wrapper.html()).toContain('<video controls="controls" preload="none" class="a-video"')
-    })
-
-    test('...with title', () => {
-        const wrapper = mount(AVideo, {
-            propsData: {
-                title: 'Lama vert'
-            }
-        })
-
-        expect(wrapper.attributes('title')).toBe('Lama vert')
+        const wrapper = mount(AVideoYoutube)
+        expect(wrapper.find('iframe')).toBeTruthy()
+        expect(wrapper.html()).toContain('<iframe width="640" height="315" src="https://www.youtube.com/embed/DkXhSAW5pTQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"')
     })
 
     test('...with wrong file path for src', () => {
-        const wrapper = mount(AVideo, {
+        const wrapper = mount(AVideoYoutube, {
             propsData: {
                 src: 'Lama rouge'
             }
@@ -30,7 +20,7 @@ describe('Atom - AVideo', () => {
 
 
     test('...with correct src', () => {
-        const wrapper = mount(AVideo, {
+        const wrapper = mount(AVideoYoutube, {
             propsData: {
                 src: 'https://youtu.be/DkXhSAW5pTQ'
             }
@@ -39,18 +29,8 @@ describe('Atom - AVideo', () => {
         expect(wrapper.attributes('src')).toBe('https://youtu.be/DkXhSAW5pTQ')
     })
 
-    test('...with alt', () => {
-        const wrapper = mount(AVideo, {
-            propsData: {
-                alt: 'Lama jaune'
-            }
-        })
-
-        expect(wrapper.attributes('alt')).toBe('Lama jaune')
-    })
-
     test('...with autoplay /loop / muted / controls false', () => {
-        const wrapper = mount(AVideo)
+        const wrapper = mount(AVideoYoutube)
 
         expect(wrapper.vm.autoplay).toBeFalsy()
         expect(wrapper.vm.muted).toBeFalsy()
@@ -59,7 +39,7 @@ describe('Atom - AVideo', () => {
 
     })
     test("...validator works only with none, metadata, auto ", () => {
-        const wrapper = mount(AVideo)
+        const wrapper = mount(AVideoYoutube)
         const type = wrapper.vm.$options.props.preload
 
         expect(type.validator).toBeInstanceOf(Function)

@@ -10,7 +10,7 @@ export { default as ALink } from './atoms/link/ALink.vue'
 export { default as AList } from './atoms/list/AList.vue'
 export { default as AListItem } from './atoms/list/AListItem.vue'
 export { default as AText } from './atoms/text/AText.vue'
-export { default as AVideo } from './atoms/video/AVideo.vue'
+export { default as AVideoYoutube } from './atoms/video/AVideoYoutube.vue'
 // Form
 export { default as AFormGroup } from './atoms/form/group/AFormGroup.vue'
 export { default as ALabel } from './atoms/form/label/ALabel.vue'
